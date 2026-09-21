@@ -1,0 +1,24 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Dynamic Master Control",
+  "effects": [
+    {
+      "id": "ghost-factory-dynamic",
+      "type": "dynamic",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "lowControl": 0,
+        "lowMidControl": 0,
+        "presenceControl": 0,
+        "harshnessControl": 0,
+        "sensitivity": 0,
+        "smoothness": 0,
+        "output": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

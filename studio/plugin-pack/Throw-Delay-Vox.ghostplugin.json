@@ -1,0 +1,28 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Throw Delay Vox",
+  "effects": [
+    {
+      "id": "ghost-factory-throw",
+      "type": "throw",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "time": 0,
+        "sync": 0,
+        "division": 3,
+        "feedback": 0,
+        "tone": 0,
+        "ducking": 0,
+        "saturation": 0,
+        "width": 0,
+        "intensity": 0,
+        "mix": 0,
+        "freeze": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

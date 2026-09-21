@@ -1,0 +1,24 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Stereo Image Control",
+  "effects": [
+    {
+      "id": "ghost-factory-imager",
+      "type": "imager",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "width": 0,
+        "lowMono": 0,
+        "midSpread": 0,
+        "highWidth": 0,
+        "centerFocus": 0,
+        "msBalance": 0,
+        "output": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

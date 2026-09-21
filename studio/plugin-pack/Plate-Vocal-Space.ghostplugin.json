@@ -1,0 +1,26 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Plate Vocal Space",
+  "effects": [
+    {
+      "id": "ghost-factory-plate",
+      "type": "plate",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "preDelay": 0,
+        "decay": 0.1,
+        "brightness": 0,
+        "damping": 0,
+        "lowCut": 0,
+        "highCut": 20000,
+        "width": 0,
+        "modulation": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

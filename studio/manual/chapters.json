@@ -1,0 +1,1678 @@
+[
+  {
+    "id": "app-map",
+    "title": "Choose the right workspace",
+    "where": "Home / Ghost Rack → links below the console",
+    "intro": "The app has separate audio sessions and several kinds of saved files. Start by choosing the workspace for your task.",
+    "labels": [
+      [
+        "Ghost Rack",
+        "One audio source through Dynamics A"
+      ],
+      [
+        "Full DAW",
+        "Multiple tracks, arrangement and mixing"
+      ],
+      [
+        "Plugin Prompt Forge",
+        "Text recipes from your supplied ZIP"
+      ],
+      [
+        "Radio",
+        "Stream and submit station songs"
+      ],
+      [
+        "Lyrics",
+        "Writing brief and temporary drafts"
+      ],
+      [
+        "Plugin workshop",
+        "Build actual DAW effect chains"
+      ]
+    ],
+    "steps": [
+      "Open the studio. The photographic console is Ghost Rack; /rack opens the same console directly.",
+      "For one-file compression, stay in Ghost Rack. For stems, editing or multi-track mixing, use Full DAW below the rack.",
+      "Use Radio to listen to or upload station tracks. A radio upload does not load a track into the rack or DAW.",
+      "Use Lyrics for writing. Use Plugin workshop for actual DAW inserts; the prompt library supplies text instructions.",
+      "Keep the manual in another tab. Use its search box to find the exact label on your screen."
+    ],
+    "rows": [
+      [
+        "Audio sessions",
+        "Ghost Rack, Full DAW and Radio have separate playback state. Loading a song in one does not load it in the others."
+      ],
+      [
+        "Where files live",
+        "Rack presets and DAW saves are local to that browser. Radio uploads are stored on the station. A downloaded backup travels with you."
+      ],
+      [
+        "Phone use",
+        "Open the site in your phone browser. Scroll below the photographic rack to reach workspace links and the prompt library."
+      ]
+    ],
+    "note": "Illustrations in this manual are labeled control diagrams and operation sequences, not screenshots. Match the printed control names; responsive layouts can place them differently."
+  },
+  {
+    "id": "rack",
+    "title": "Play a song in the 3D rack",
+    "where": "Ghost Rack → Upload audio and transport",
+    "intro": "The rack runs one Dynamics A compressor on a mono or stereo audio file. Its other category buttons open plugin references.",
+    "labels": [
+      [
+        "Upload audio",
+        "Choose the recording on your device"
+      ],
+      [
+        "Play / Pause",
+        "Start or pause the current source"
+      ],
+      [
+        "Previous / Next",
+        "Move backward or forward five seconds"
+      ],
+      [
+        "Timecode / seek bar",
+        "Read and change playback position"
+      ],
+      [
+        "Waveform / IN / OUT",
+        "See the current signal and levels"
+      ],
+      [
+        "Record",
+        "Capture microphone audio"
+      ]
+    ],
+    "steps": [
+      "Tap Upload audio and select your recording. Wait for the filename and duration to appear.",
+      "Press Play. Move the seek bar to another part of the song; Pause holds the position.",
+      "Use Previous or Next to jump five seconds. These are not previous-song and next-song controls.",
+      "Watch the IN and OUT meters while listening. The waveform is the output signal, not a measurement of mastering quality.",
+      "To record instead, tap Record and allow the microphone. Tap Record again to finish; the take becomes the rack source. Save your existing project before replacing its source."
+    ],
+    "rows": [
+      [
+        "Play with no file",
+        "Loads the synthesized sound check. This is demo audio, not your song."
+      ],
+      [
+        "Microphone monitoring",
+        "Listening is muted while recording to reduce feedback; the take is captured dry."
+      ],
+      [
+        "Track limits",
+        "Rack import supports mono and stereo. Browser codec and memory limits still apply."
+      ],
+      [
+        "Separate session",
+        "The rack does not insert itself into a Full DAW track. Export a WAV if you want to transfer its processed result."
+      ]
+    ]
+  },
+  {
+    "id": "rack-dials",
+    "title": "Adjust Dynamics A",
+    "where": "Ghost Rack → six dials and action buttons",
+    "intro": "Drag a dial upward to increase it and downward to decrease it. Start with Ghost Neutral Start when you want no compression or added gain.",
+    "labels": [
+      [
+        "Threshold",
+        "Level where compression begins"
+      ],
+      [
+        "Ratio",
+        "Compression strength above threshold"
+      ],
+      [
+        "Attack",
+        "Response time in milliseconds"
+      ],
+      [
+        "Release",
+        "Recovery time in milliseconds"
+      ],
+      [
+        "Knee",
+        "Width of the soft transition"
+      ],
+      [
+        "Makeup",
+        "Gain after compression"
+      ]
+    ],
+    "steps": [
+      "Open Presets and load Ghost Neutral Start if you have imported it. Its ratio is 1:1 and makeup is 0 dB.",
+      "Play a representative loud section. Enable IN and keep BYPASS off when auditioning processing.",
+      "Drag one dial at a time. On a keyboard, use arrow keys; Shift gives finer adjustment during dragging.",
+      "Compare BYPASS and IN at similar listening levels. Read GAIN REDUCTION to see how much the compressor is acting.",
+      "Use A/B to switch between two settings snapshots. Save or download a preset when you want to keep a setting."
+    ],
+    "rows": [
+      [
+        "Threshold",
+        "−60 to 0 dB. A threshold by itself does not determine gain reduction; source level and ratio matter."
+      ],
+      [
+        "Ratio",
+        "1:1 to 20:1. At 1:1, no compression is applied."
+      ],
+      [
+        "Attack / Release",
+        "Attack: 0–1,000 ms. Release: 1–1,000 ms. Timing values must be valid, not all literal zero."
+      ],
+      [
+        "Knee / Makeup",
+        "Knee: 0–40 dB. Makeup: −12 to +24 dB."
+      ],
+      [
+        "IN / BYPASS",
+        "IN off or BYPASS on passes the dry source. Neither unloads your song."
+      ],
+      [
+        "SOLO",
+        "There is only one source in this rack. SOLO is a state indicator and does not isolate a separate stem or detector signal."
+      ],
+      [
+        "RESET / double-click",
+        "Restores the rack’s original default settings, not Ghost Neutral Start: −18 dB, 4:1, 10 ms, 120 ms, 6 dB knee, +3 dB makeup."
+      ],
+      [
+        "A/B",
+        "Changes settings snapshots, not source recordings. The current slot is shown on the button."
+      ]
+    ]
+  },
+  {
+    "id": "rack-presets",
+    "title": "Import and save presets",
+    "where": "Ghost Rack → Presets",
+    "intro": "A preset contains Dynamics A settings only. Importing it updates the six dials without replacing the loaded song.",
+    "labels": [
+      [
+        "Import preset",
+        "Pick a compatible JSON file"
+      ],
+      [
+        "Load preset",
+        "Apply a saved or factory setting"
+      ],
+      [
+        "Preset name",
+        "Name your current settings"
+      ],
+      [
+        "Save preset",
+        "Keep it in this browser"
+      ],
+      [
+        "Download current settings",
+        "Create a portable preset file"
+      ],
+      [
+        "Export saved bank",
+        "Download all user presets"
+      ]
+    ],
+    "steps": [
+      "Download Ghost-Dynamics-A-Neutral.json to your device if you want the neutral starter.",
+      "Open Presets → Import preset. Choose the JSON from Downloads. Read the result message; it names the preset loaded.",
+      "Select Ghost Neutral Start in Load preset. Check ratio 1:1 and makeup 0 dB on the rack.",
+      "To keep your own changes, adjust the dials, open Presets, enter a name, then tap Save preset.",
+      "Tap Download current settings for a portable file, or Export saved bank to back up all user presets.",
+      "After a refresh, open Presets → Load preset. If the name is still listed, this browser retained it. Export before clearing browser data."
+    ],
+    "rows": [
+      [
+        "Compatible input",
+        "Dynamics A preset JSON, its exported bank, the six numeric parameters, or compressor settings extracted from a Ghost Rack project."
+      ],
+      [
+        "Not compatible",
+        "A DAW .ghostplugin, lyrics draft, ZIP package or VST/AU preset is not a Dynamics A preset. File extension alone does not make formats interchangeable."
+      ],
+      [
+        "Import limits",
+        "10 MB per import, 1–100 presets per file and 200 user presets in the browser. Invalid or out-of-range controls are rejected."
+      ],
+      [
+        "Units",
+        "Attack and release are milliseconds. Other values must use the supported numeric ranges."
+      ],
+      [
+        "Duplicate names",
+        "The importer adds a numbered suffix rather than overwriting an existing named preset."
+      ],
+      [
+        "Storage unavailable",
+        "The result message warns if a preset is only available for the current session. Download a copy immediately."
+      ],
+      [
+        "Prompt reference library",
+        "This separate button opens text prompts; it does not apply their settings to the compressor."
+      ]
+    ]
+  },
+  {
+    "id": "rack-projects",
+    "title": "Save and export a rack project",
+    "where": "Ghost Rack → Projects",
+    "intro": "A rack project preserves its source audio, current settings, A/B snapshots, playback position and switch states. A WAV contains rendered sound only.",
+    "labels": [
+      [
+        "Save project",
+        "Download the rack project JSON"
+      ],
+      [
+        "Open project",
+        "Restore audio and rack state"
+      ],
+      [
+        "Export WAV",
+        "Render the current rack result"
+      ],
+      [
+        "Monitor volume",
+        "Listening level only"
+      ],
+      [
+        "Clipping message",
+        "Lower makeup before export"
+      ],
+      [
+        "Settings",
+        "Visuals, meters and sound check"
+      ]
+    ],
+    "steps": [
+      "Open Projects → Save project before replacing a recording or leaving the rack. Keep the downloaded JSON.",
+      "To restore it, use Projects → Open project and choose that rack project. This can replace the current source and pauses playback.",
+      "To create an audio file, load your source, set IN/BYPASS and compressor controls, then choose Export WAV.",
+      "If export reports an output above 0 dBFS, lower Makeup and export again. The rack refuses a clipped integer WAV.",
+      "Open the downloaded WAV and listen. Keep the project separately if you need editable settings."
+    ],
+    "rows": [
+      [
+        "WAV format",
+        "Rack export is 16-bit PCM at the source buffer’s sample rate, with one or two channels."
+      ],
+      [
+        "Monitor volume",
+        "Affects listening but is not included in the exported WAV."
+      ],
+      [
+        "Project limit",
+        "Rack project import is limited to 180 MB. Use its own project loader, not the Full DAW project loader."
+      ],
+      [
+        "Settings switches",
+        "Animated waveform, LED meters and Reduced motion change visuals. Load sound check replaces the source with the procedural demo."
+      ]
+    ]
+  },
+  {
+    "id": "prompt-forge",
+    "title": "Use the ZIP plugin and prompt library",
+    "where": "Rack category tiles / Tools / AI prompts → Plugin Prompt Forge",
+    "intro": "This library contains 66 plugin references and 531 preset prompts. It helps you write instructions; it is not a bank of 66 working audio effects.",
+    "labels": [
+      [
+        "Plugin library",
+        "Search and filter reference cards"
+      ],
+      [
+        "Preset selector",
+        "Choose a card’s prompt settings"
+      ],
+      [
+        "Favorites",
+        "Keep useful preset references"
+      ],
+      [
+        "Chain drawer",
+        "Order preset references"
+      ],
+      [
+        "Artifact triage",
+        "Read guidance by audible problem"
+      ],
+      [
+        "Prompt builder",
+        "Build a production instruction"
+      ]
+    ],
+    "steps": [
+      "Tap a rack category such as Dynamics or Cleanup. The page scrolls to matching references below the console.",
+      "Search by name or purpose. Clear filters if a card appears missing; favorites and type filters narrow the results.",
+      "Choose a preset on the card and inspect its parameters and prompt text. Copy the text you need.",
+      "Add references to the chain, open the chain drawer, and use its up/down controls to order them. Copy chain prompt exports text.",
+      "Open Tools for Chain recipes, or AI prompts for Prompt builder. Fill the visible fields and copy the resulting instruction.",
+      "For a real audio change in this app, return to Dynamics A or use Full DAW → Plugin workshop."
+    ],
+    "rows": [
+      [
+        "Built-in / Chat-built labels",
+        "These describe references in the supplied library. They do not prove an effect is implemented in this app."
+      ],
+      [
+        "Artifact triage",
+        "Choose the problem you hear, read the guidance, and audition any real processing cautiously. The panel does not analyze an uploaded recording."
+      ],
+      [
+        "Favorites / chain",
+        "Stored locally in this browser. Copy important chains to a file for a backup."
+      ],
+      [
+        "Preset prompts",
+        "These are text, not the JSON settings used by the rack importer."
+      ]
+    ]
+  },
+  {
+    "id": "start",
+    "title": "Start here: your first session",
+    "where": "Top of the DAW page",
+    "intro": "A song file contains the recording, including the singer. Stems are separate recordings such as vocals, drums and bass. MIDI contains notes, not the original singer.",
+    "labels": [
+      [
+        "DAW",
+        "Mix and edit your recordings"
+      ],
+      [
+        "Import song / stems",
+        "Choose WAV, MP3 or supported audio"
+      ],
+      [
+        "Play / Stop",
+        "Listen or return to the start"
+      ],
+      [
+        "Mixer",
+        "Balance each stem"
+      ],
+      [
+        "Projects → Download project backup",
+        "Keep the editable session"
+      ],
+      [
+        "Export mix",
+        "Make a finished audio file"
+      ]
+    ],
+    "steps": [
+      "From Ghost Rack, open Full DAW below the console. Tap DAW, then Import song / stems and choose your song or aligned stems.",
+      "Wait until importing finishes. Read the import report if any file failed. Imported stems start together at 0:00.",
+      "Press Play. If the app says it is preparing audio, wait for preparation to finish. Stop cancels preparation.",
+      "Use the Mixer to balance stems. Select a stem before opening Track detail or adding its plugins.",
+      "Tap Projects → Download project backup to keep the editable project, then Export mix to create a WAV."
+    ],
+    "note": "The manual uses labeled diagrams of the current controls, not screenshots. On phones, controls wrap into more rows and panels stack vertically. Scroll down within the DAW to find Mixer, Master inserts and Track detail."
+  },
+  {
+    "id": "navigation",
+    "title": "Where everything lives",
+    "where": "Full DAW → navigation under the Creative Studio banner",
+    "intro": "These navigation groups belong to the Full DAW workspace. From Ghost Rack, first choose Full DAW below the console. Use Search everything to find a tool or source reference.",
+    "labels": [
+      [
+        "Home & Radio",
+        "Station, EQ and current session"
+      ],
+      [
+        "Create",
+        "Lyrics, blueprints and prompts"
+      ],
+      [
+        "Record & Mix",
+        "Stems, MIDI, mixer and recording"
+      ],
+      [
+        "Plugins & Cleanup",
+        "Processors, repair and chains"
+      ],
+      [
+        "Sound Library",
+        "Genres, voices and instruments"
+      ],
+      [
+        "Projects & Help",
+        "Projects, exports, manual and settings"
+      ]
+    ],
+    "rows": [
+      [
+        "Search everything",
+        "Search tools and all 1,268 connected workflow references. Filter by category, save favorites, and open a result directly. Ctrl/Cmd+K opens search."
+      ],
+      [
+        "DAW",
+        "Session bar at top; transport below; arrangement, mixer, master inserts and selected-track detail underneath."
+      ],
+      [
+        "Plugin workshop",
+        "Opens the effect editor in the DAW work area. The current audio session remains loaded."
+      ],
+      [
+        "Music Library",
+        "A reference workspace with its own controls in the main page scroll."
+      ],
+      [
+        "Prompt Encyclopedia",
+        "An embedded reference browser with category tabs, search and copy controls."
+      ],
+      [
+        "Lyrics Creator",
+        "Blueprints and effect references at top, writing form and draft output below."
+      ],
+      [
+        "Ghost connection",
+        "Connection dialog. Only the owner can activate or use the API."
+      ],
+      [
+        "Question mark / Capabilities & limits",
+        "Short studio guide. The illustrated manual link opens this longer guide."
+      ]
+    ],
+    "steps": [
+      "Open Full DAW from the rack’s workspace links.",
+      "Choose the group for your task, or open Search everything.",
+      "Type a tool, genre, voice or instrument name and open a matching result.",
+      "Star useful entries for faster access in this browser."
+    ]
+  },
+  {
+    "id": "files",
+    "title": "Import, save and reopen",
+    "where": "Session bar → Import song / stems, Save or Projects",
+    "intro": "Save stores one session in this browser. A project backup is the portable copy containing audio and edits. Exporting a mix does not preserve editable tracks.",
+    "labels": [
+      [
+        "Session name",
+        "Name the current project"
+      ],
+      [
+        "Import song / stems",
+        "Add recorded audio"
+      ],
+      [
+        "Save",
+        "Store this browser’s session"
+      ],
+      [
+        "Open saved session",
+        "Restore that local save"
+      ],
+      [
+        "Download project backup",
+        "Download a .ghostproject file"
+      ],
+      [
+        "Open project file",
+        "Restore a downloaded backup"
+      ]
+    ],
+    "rows": [
+      [
+        "Undo / Redo",
+        "Step backward or forward through supported edits. They are not a replacement for a project backup."
+      ],
+      [
+        "Save / Save on this browser",
+        "Save the current project locally. A later save replaces the single locally saved session."
+      ],
+      [
+        "Projects",
+        "Opens the four save/reopen options pictured above."
+      ],
+      [
+        "Import report",
+        "Appears below the transport after importing. Shows each file’s success or failure; valid files can load even if another file fails."
+      ],
+      [
+        "Load sound check",
+        "Creates three synthesized test stems. This is demo audio, not your song; it asks before replacing a populated session."
+      ]
+    ],
+    "note": "Limits: up to 24 tracks, 160 MB per audio file and 12-minute stems. Codec support depends on the browser. The phone and PC do not share browser saves. Download a project backup before switching devices or clearing browser data.",
+    "steps": [
+      "Name your session and import audio in the Full DAW.",
+      "Tap Save to keep the current session in this browser.",
+      "Open Projects → Download project backup and keep the .ghostproject file.",
+      "To restore it later, use Projects → Open project file; Open saved session restores the local browser save instead."
+    ]
+  },
+  {
+    "id": "transport",
+    "title": "Playback, tempo and timeline",
+    "where": "DAW → transport, Arrangement and time-range row",
+    "intro": "The timeline shows when each recording plays. Moving and trimming a clip changes the arrangement while retaining the original source.",
+    "labels": [
+      [
+        "Stop · Play · Loop",
+        "Transport buttons"
+      ],
+      [
+        "Time readout · BPM · Zoom",
+        "Position, musical grid and view"
+      ],
+      [
+        "Ruler / playhead",
+        "Tap to seek"
+      ],
+      [
+        "Track / waveform clip",
+        "Select; drag horizontally to move"
+      ],
+      [
+        "Time range · Start · End",
+        "Choose session seconds"
+      ],
+      [
+        "Split at playhead",
+        "Divide the selected audio clip"
+      ]
+    ],
+    "rows": [
+      [
+        "Stop / Play",
+        "Stop returns to the beginning. Play toggles playback and pause. Space works when you are not typing."
+      ],
+      [
+        "Loop session",
+        "Repeats the session; when Time range is enabled, repeats that range."
+      ],
+      [
+        "BPM (40–240)",
+        "Controls the beat grid, MIDI timing and tempo-synced effects. It does not independently stretch or repitch imported audio."
+      ],
+      [
+        "Zoom",
+        "Changes how much of the timeline fits on screen. It does not change audio speed."
+      ],
+      [
+        "Snap to beat",
+        "Snaps clip moves to the musical grid."
+      ],
+      [
+        "Follow playhead",
+        "Keeps the playback position in view."
+      ],
+      [
+        "Time range / Start / End",
+        "Marks a region in absolute session seconds. Choose Time range in Export to render it."
+      ],
+      [
+        "Split at playhead",
+        "Select an audio clip, seek inside it, then split. The two pieces can be arranged separately. MIDI notes are edited in the piano roll."
+      ]
+    ],
+    "steps": [
+      "Press Play and tap the ruler to seek.",
+      "Select a clip and drag it horizontally to change its start time; use Snap to beat if wanted.",
+      "Set Time range Start and End to loop or export a region.",
+      "Seek inside a selected audio clip and choose Split at playhead to make two pieces."
+    ]
+  },
+  {
+    "id": "mixer",
+    "title": "Faders, knobs and the master bus",
+    "where": "DAW → Mixer, below Arrangement",
+    "intro": "Each imported stem gets a channel strip. The master controls the combined output. Start by balancing tracks before adding processing.",
+    "labels": [
+      [
+        "Track name",
+        "Select this channel"
+      ],
+      [
+        "Pan knob",
+        "Place sound left or right"
+      ],
+      [
+        "Vertical fader",
+        "Set track level"
+      ],
+      [
+        "M · S",
+        "Mute / Solo"
+      ],
+      [
+        "MASTER output trim",
+        "Level of the combined mix"
+      ],
+      [
+        "Master rack / Master inserts",
+        "Effects on the combined mix"
+      ]
+    ],
+    "rows": [
+      [
+        "Volume fader",
+        "Track gain from −60 to +12 dB. 0 dB is unity gain, not silence. Double-click resets to 0 dB."
+      ],
+      [
+        "Pan knob",
+        "Center is 0; left is −1 and right is +1. Drag vertically or use arrow keys. Double-click resets."
+      ],
+      [
+        "M / Mute",
+        "Exclude that track from audible playback and the mix."
+      ],
+      [
+        "S / Solo",
+        "Listen to soloed tracks. Check Solo if some stems seem missing."
+      ],
+      [
+        "Meters",
+        "Show signal while playing. A meter alone does not prove a release is mastered correctly."
+      ],
+      [
+        "3D depth on/off",
+        "Changes the appearance of the controls, not the audio."
+      ],
+      [
+        "AUTOMATED / PAN · AUTO",
+        "An enabled automation lane owns the control. Disable its lane in Track detail to use the manual fader or pan."
+      ],
+      [
+        "Master inserts",
+        "A neutral Master Rack Pro is present by default. Enabling and adjusting it affects the full mix."
+      ]
+    ],
+    "steps": [
+      "Select the stem you want to balance.",
+      "Play the mix and drag its fader; center its pan knob if you do not want panning.",
+      "Use M to mute or S to solo; clear unwanted solos before exporting.",
+      "Open Master inserts only when you intend to affect the entire mix."
+    ]
+  },
+  {
+    "id": "track",
+    "title": "Track detail and clip editing",
+    "where": "Select a track → scroll below Master inserts to Track detail",
+    "intro": "This panel always edits the selected track. Check its displayed name before changing timing, processing or automation.",
+    "labels": [
+      [
+        "Timeline start",
+        "Where the clip begins in the song"
+      ],
+      [
+        "Trim in / Trim out",
+        "Which part of the original file plays"
+      ],
+      [
+        "Track role · Analyze",
+        "Tell Ghost the role; measure source"
+      ],
+      [
+        "Effect checkbox · Edit chain",
+        "Enable or edit track effects"
+      ],
+      [
+        "Duplicate / Move / Disable / Reverse",
+        "Clip editing tools"
+      ],
+      [
+        "Fades · Clip gain · Automation",
+        "Shape clip playback"
+      ]
+    ],
+    "rows": [
+      [
+        "Timeline start · seconds",
+        "Moves the clip on the session timeline."
+      ],
+      [
+        "Trim in / Trim out · source seconds",
+        "Defines the source excerpt. Trim in must precede trim out; trim out must stay within the original file."
+      ],
+      [
+        "Track role",
+        "Instrument, Vocal, Drums or Bass. Used by local analysis and suggestions."
+      ],
+      [
+        "Analyze / Analyze stem",
+        "Measures the original source before effects. It is not an AI listening session."
+      ],
+      [
+        "Add plugin",
+        "Opens Plugin workshop. Choose Selected stem as destination to insert here."
+      ],
+      [
+        "Enable effect / Edit chain / Remove effect",
+        "The checkbox engages processing; Edit chain opens its editor; × removes the effect from this track."
+      ],
+      [
+        "Replace with workshop chain",
+        "Replaces this track’s inserts with the current workshop chain. Use Undo if needed."
+      ],
+      [
+        "Duplicate / Move up / Move down",
+        "Copies the clip or changes its track order."
+      ],
+      [
+        "Disable clip / Enable clip",
+        "Excludes or restores clip playback without deleting the track."
+      ],
+      [
+        "Reverse clip / Restore forward audio",
+        "Reverses audio playback. MIDI notes are not reversed by this action."
+      ],
+      [
+        "Fade in / Fade out",
+        "Applies edge fades in seconds, up to 30 seconds, to smooth starts and endings."
+      ],
+      [
+        "Clip gain",
+        "Changes the clip’s level before later mix processing, from −60 to +12 dB."
+      ],
+      [
+        "Remove track",
+        "Removes the selected track from the session. Keep a backup before major edits."
+      ]
+    ],
+    "steps": [
+      "Select a track in the arrangement or mixer.",
+      "Check the name in Track detail, then set timeline start and trim points.",
+      "Use fades or clip gain for local edits; listen before and after.",
+      "Use Undo for an unwanted edit and save a backup after useful changes."
+    ]
+  },
+  {
+    "id": "plugins",
+    "title": "Build and insert your own plugin chain",
+    "where": "Plugin workshop tab",
+    "intro": "A workshop plugin is a chain of browser audio processors. It is not a VST or AU plugin file. The selected destination matters: a track chain affects one stem; the master chain affects the whole mix.",
+    "labels": [
+      [
+        "New chain / Zero entire chain",
+        "Start a chain or reset it"
+      ],
+      [
+        "Plugin name / Add module",
+        "Name it and choose processors"
+      ],
+      [
+        "Module controls",
+        "Enable, adjust and compare"
+      ],
+      [
+        "Destination / Insert chain",
+        "Selected stem or master bus"
+      ],
+      [
+        "Save / Download / Import plugin",
+        "Reuse your custom chain"
+      ],
+      [
+        "Factory catalog and shortcuts",
+        "Browse 18 included processors"
+      ]
+    ],
+    "steps": [
+      "Select the stem in the DAW if this chain belongs on one track.",
+      "Open Plugin workshop. Tap New chain, give it a name, select a module, then Add module.",
+      "New modules start neutral and bypassed. Enable the module and adjust only what you need. A wet/dry Mix of 0% still gives dry sound.",
+      "Choose Destination: Selected stem or Master bus. Tap Insert chain.",
+      "Use Save plugin for the local library, or Download plugin for a portable settings file."
+    ],
+    "rows": [
+      [
+        "Zero entire chain",
+        "Restores neutral defaults and bypasses processing. Valid frequency, timing and ratio defaults may be nonzero."
+      ],
+      [
+        "Factory preset",
+        "An opt-in sound setting. Selecting one can add processing; do not assume it fits every song."
+      ],
+      [
+        "Edit live chain",
+        "Opening a track or master chain edits those live inserts. Check the editor’s displayed context before adjusting."
+      ],
+      [
+        "A/B compare",
+        "Keeps two settings snapshots for comparison. Match perceived level before judging sound quality."
+      ],
+      [
+        "Full vocal chain / Vocal essentials",
+        "Loads eight or four vocal modules in the defined order, neutral and bypassed."
+      ],
+      [
+        "Master bus chain / Master essentials",
+        "Loads eight or four mastering modules in the defined order, neutral and bypassed."
+      ],
+      [
+        "Download pack settings",
+        "Exports the supplied settings catalog, not a desktop plugin installer."
+      ],
+      [
+        "Saved custom plugins",
+        "Your browser-local chains. Export important ones before clearing browser storage."
+      ]
+    ],
+    "note": "The complete processor and knob reference is further down this manual. Adding saturation, widening, reverb or delay intentionally changes the sound; those are creative effects, not artifact removal."
+  },
+  {
+    "id": "workflow-chains",
+    "title": "Choose genre and source chains",
+    "where": "Full DAW → Workflows & chains",
+    "intro": "The reference browser connects 1,268 entries to 66 reusable chain templates. Several genres or sources can share a template; the entry’s context provides direction.",
+    "labels": [
+      [
+        "Search / kind / family",
+        "Find the source or genre"
+      ],
+      [
+        "Workflow & chains",
+        "Open its detailed guide"
+      ],
+      [
+        "Channel or bus chain",
+        "Expand a route"
+      ],
+      [
+        "Stage list",
+        "Read processor order"
+      ],
+      [
+        "Open in Plugin workshop",
+        "Prepare a neutral chain draft"
+      ],
+      [
+        "Insert chain",
+        "Apply the draft to a destination"
+      ]
+    ],
+    "steps": [
+      "Open Workflows & chains from a library entry or its workflow button. Search for your source, genre or vocal style.",
+      "Select Workflow & chains on the matching card. Read Source direction and the recording-to-export workflow.",
+      "Expand a channel or bus chain. Check whether its destination is Selected track or Master bus.",
+      "Use the route’s workshop button to open a neutral draft. Opening a draft does not insert or activate it.",
+      "In the workshop, check the destination and Insert chain. Enable one stage at a time and adjust from the actual audio.",
+      "Copy full workflow or Download guide if you want the text instructions outside the app."
+    ],
+    "rows": [
+      [
+        "Channel versus bus",
+        "A channel is one selected track. A master-bus chain affects the combined mix."
+      ],
+      [
+        "Shared templates",
+        "A large reference count does not mean every entry has a unique DSP chain. Shared templates intentionally start neutral."
+      ],
+      [
+        "Subchain / route",
+        "An expandable choice for a source or destination. Read its stage list before loading it."
+      ]
+    ]
+  },
+  {
+    "id": "repair",
+    "title": "Analyze stems and remove noise",
+    "where": "Selected track → Analyze; Plugin workshop → Repair → Stem Cleanup",
+    "intro": "Work from the cleanest source you have. Cleanup can reduce some noise and isolated clicks, but it cannot guarantee reconstruction of damaged or clipped audio.",
+    "labels": [
+      [
+        "Track role",
+        "Choose vocal, drums, bass or instrument"
+      ],
+      [
+        "Analyze stem",
+        "Measure the source before effects"
+      ],
+      [
+        "Source measurements",
+        "Peak, RMS, crest, DC and channels"
+      ],
+      [
+        "Insert suggestion / Apply needed plugins",
+        "Apply a measured starting point"
+      ],
+      [
+        "Stem Cleanup",
+        "Noise reduction and click repair"
+      ],
+      [
+        "Undo / bypass / compare",
+        "Check whether the change helps"
+      ]
+    ],
+    "steps": [
+      "Import the original stems and set their roles in Track detail.",
+      "Select one stem and Analyze it. Read the explanation beside each suggestion.",
+      "Use Insert suggestion for one recommendation, or ask Ghost: Apply needed plugins to the selected stem.",
+      "Audition the result. Compare with the original at similar volume. Reduce or undo settings if consonants, transients or sustained notes sound damaged.",
+      "Stem Cleanup can require background preparation. Playback continues with the previous result until the updated sound is ready. Read the preparation status before judging the new settings."
+    ],
+    "rows": [
+      [
+        "Apply needed plugins",
+        "This supported local command measures audible imported stems and applies justified processing. Add ‘to the selected stem’ to limit it to one track."
+      ],
+      [
+        "Noise Reduction",
+        "Maximum reduction strength in dB. Start from 0; increase only when necessary."
+      ],
+      [
+        "Noise Floor",
+        "Detection reference in dBFS. The neutral 0 value is not an instruction to use it as a real measured noise floor."
+      ],
+      [
+        "Click Repair",
+        "Repair strength for isolated clicks. Aggressive values can damage legitimate transients."
+      ],
+      [
+        "Mix",
+        "Blends processed and dry signal. At 0%, the original dry signal remains."
+      ],
+      [
+        "S / T harshness",
+        "Smart De-Esser Pro or Dynamic Master Control may help specific harshness; they cannot reliably remove every AI artifact."
+      ]
+    ],
+    "note": "The source analysis is not an integrated LUFS or certified true-peak measurement. No synthesized hiss or export dither is added by the app. Creative saturation can still produce distortion when deliberately enabled."
+  },
+  {
+    "id": "ghost",
+    "title": "Use Ghost and understand API access",
+    "where": "Ghost panel beside the DAW on wider screens; below on phones",
+    "intro": "Ghost has local studio commands and an optional online AI connection. Visitors use the local tools. Only the studio owner can save, test, remove or use the OpenAI API connection.",
+    "labels": [
+      [
+        "Ghost avatar",
+        "Artwork or geometric 3D view"
+      ],
+      [
+        "Analyze stem",
+        "Source measurement shortcut"
+      ],
+      [
+        "Chat log",
+        "Questions, replies and actions"
+      ],
+      [
+        "Ask Ghost / Send",
+        "Type your request"
+      ],
+      [
+        "Connection settings",
+        "Owner-only online AI"
+      ],
+      [
+        "Local guide / Clear chat",
+        "Local mode and session messages"
+      ]
+    ],
+    "rows": [
+      [
+        "Local command examples",
+        "play; stop; set tempo to 120; create MIDI track; add chord C major; apply needed plugins to the selected stem; undo; redo."
+      ],
+      [
+        "Local guide",
+        "Handles supported commands and help. It is not a general-purpose language model."
+      ],
+      [
+        "Online AI — owner only",
+        "Receives chat, submitted lyrics, track names, settings and measurements. It does not receive or hear the song audio through this connection."
+      ],
+      [
+        "Save connection",
+        "Stores the owner’s key encrypted on the server. Saving does not make a paid model request."
+      ],
+      [
+        "Test Ghost",
+        "Makes one short paid API request. Only the owner can run it."
+      ],
+      [
+        "Use local guide",
+        "Disables online AI use on this device; the saved key stays on the server."
+      ],
+      [
+        "Remove saved key",
+        "Disconnects the online app. Does not revoke the key at OpenAI or clear usage history."
+      ],
+      [
+        "Usage display",
+        "Tracks this app’s estimated monthly budget and daily request limit. It is not an account-wide OpenAI billing cap."
+      ],
+      [
+        "Clear chat",
+        "Clears session chat. Previously downloaded project backups can still contain their saved chat."
+      ]
+    ],
+    "steps": [
+      "Open Full DAW and locate the Ghost panel.",
+      "For local operation, type play, stop or set tempo to 120 and press Send.",
+      "Select a stem, set its role and use Analyze stem to inspect source measurements.",
+      "Use a supported suggestion only after reading it. Online chat and Test Ghost require the owner’s API connection and can incur API charges."
+    ]
+  },
+  {
+    "id": "midi",
+    "title": "MIDI instruments and recording",
+    "where": "DAW → Composition and recording → Piano roll",
+    "intro": "MIDI is an editable performance of instrument notes. A track named ‘Synth Voice’ still does not contain sung words. Import a WAV/MP3 vocal stem to hear the original singer.",
+    "labels": [
+      [
+        "+ MIDI instrument / Import MIDI notes",
+        "Create or import a note track"
+      ],
+      [
+        "Piano roll / Grid / Quantize",
+        "Edit note timing and pitches"
+      ],
+      [
+        "Local synth patch / Apply",
+        "Set the synthesized instrument"
+      ],
+      [
+        "Musical typing / Keyboard",
+        "Preview instrument notes"
+      ],
+      [
+        "Chord / Arpeggio tools",
+        "Add a simple note pattern"
+      ],
+      [
+        "Record source / Record / Input offset",
+        "Capture audio input or MIDI"
+      ]
+    ],
+    "rows": [
+      [
+        "Clip · beats / Grid",
+        "Sets MIDI clip length and note-entry time grid."
+      ],
+      [
+        "Quantize starts",
+        "Moves note starts toward the selected timing grid. This does not quantize recorded audio."
+      ],
+      [
+        "View from octave / Key / Scale highlight",
+        "Changes the visible piano range and scale guides."
+      ],
+      [
+        "Note detail",
+        "Select a note to edit its pitch, position, duration or velocity using the displayed fields."
+      ],
+      [
+        "Local synth patch",
+        "Chooses the app’s synthesizer settings. Tap Apply instrument controls after knob edits."
+      ],
+      [
+        "Musical typing / Octave − / Octave +",
+        "Uses a physical keyboard for note previews and shifts its range. The on-screen keys work by touch."
+      ],
+      [
+        "Chord root / Chord / Arpeggio",
+        "Adds the chosen note pattern to the selected MIDI instrument."
+      ],
+      [
+        "Metronome · monitor only",
+        "Playback guide, not included in the exported mix."
+      ],
+      [
+        "Time signature / Beat unit",
+        "Sets the bar grid’s musical counting."
+      ],
+      [
+        "Record source / Record",
+        "Audio input uses browser microphone recording. MIDI notes record a performance from supported note input. Recording begins at the playhead."
+      ],
+      [
+        "Input offset · ms",
+        "Timing adjustment for device recording latency. Test and set it for your own device; automatic calibration is not provided."
+      ]
+    ],
+    "note": "Hardware MIDI availability and microphone recording depend on browser and device permissions. Loop takes and comping are not implemented. Keyboard previews do not audition the full track insert chain; timeline playback does.",
+    "steps": [
+      "Open Composition and recording and choose + MIDI instrument or Import MIDI notes.",
+      "Select the note track and edit pitch, timing, duration and velocity in Piano roll / Note detail.",
+      "Choose a synth patch and Apply instrument controls. Use on-screen keys to preview.",
+      "Choose Record source, place the playhead and press Record when ready. Stop recording and audition the new material."
+    ]
+  },
+  {
+    "id": "automation",
+    "title": "Automation and MIDI learn",
+    "where": "Track detail → Track volume & pan automation; Plugin workshop → Automation & MIDI learn",
+    "intro": "Automation changes a control over time. It is stored in the project and follows session seconds during playback and export.",
+    "labels": [
+      [
+        "Track volume & pan automation",
+        "Open track lanes"
+      ],
+      [
+        "Enable lane / points",
+        "Choose when values change"
+      ],
+      [
+        "Focus a plugin control",
+        "Choose the parameter to automate"
+      ],
+      [
+        "Record controls",
+        "Capture knob gestures"
+      ],
+      [
+        "Connect MIDI / MIDI learn",
+        "Map supported hardware controls"
+      ],
+      [
+        "Cancel learn",
+        "Stop waiting for a controller"
+      ]
+    ],
+    "rows": [
+      [
+        "Track automation points",
+        "Time values use absolute session seconds. Enabled lanes override the manual track fader or pan."
+      ],
+      [
+        "Plugin automation focus",
+        "Touch or focus the desired plugin control before editing its automation or MIDI mapping."
+      ],
+      [
+        "Record controls",
+        "Records gestures at up to 16 points per second; playback applies values per audio block."
+      ],
+      [
+        "Touch override",
+        "Touching an automated plugin control overrides it until playback restarts."
+      ],
+      [
+        "Connect MIDI",
+        "Requests supported hardware MIDI access. It does not connect an OpenAI API key."
+      ],
+      [
+        "MIDI mappings",
+        "Saved with the project. A different device may send different channel/controller numbers."
+      ]
+    ],
+    "steps": [
+      "Select a track and open its volume and pan automation, or focus a plugin control in the workshop.",
+      "Enable the lane and set points using absolute session seconds.",
+      "Play the session to hear the lane. Turn the lane off to return control to the manual fader or pan.",
+      "For a hardware control, Connect MIDI, focus the desired parameter, start its learn action and move the controller. Save the project to keep mappings."
+    ]
+  },
+  {
+    "id": "references",
+    "title": "Music Library and Prompt Encyclopedia",
+    "where": "Sound Library or Create → search for the reference workspace",
+    "intro": "These are text reference tools. Copying a plugin prompt or production recipe does not install an audio processor, reproduce a commercial plugin, or guarantee an external music generator will obey it.",
+    "labels": [
+      [
+        "Music Library",
+        "Vocal, genre and production references"
+      ],
+      [
+        "Library search and categories",
+        "Find a style or recipe"
+      ],
+      [
+        "Library Studio overlay",
+        "PRESETS, VOCALS, BEATS and more"
+      ],
+      [
+        "Prompt Encyclopedia categories",
+        "Choose a reference group"
+      ],
+      [
+        "Search / Show Prompt",
+        "Find and expand a card"
+      ],
+      [
+        "COPY / Lyrics Creator",
+        "Copy text, then use it in a brief"
+      ]
+    ],
+    "rows": [
+      [
+        "Music Library",
+        "Browse the embedded collection’s visible categories, cards, comparisons and saved-style tools. Reference pages expand into the main page scroll."
+      ],
+      [
+        "Library Studio overlay",
+        "The embedded Studio tools have PRESETS, VOCALS, BEATS, GENRES, PLUGINS, BUILDER and SUNO GUIDE tabs, their own search field, and CLOSE."
+      ],
+      [
+        "Prompt Encyclopedia",
+        "Pick a category, enter a search phrase, then Show Prompt on a matching card. COPY copies its text; Hide Prompt collapses it."
+      ],
+      [
+        "Using a reference",
+        "Copy only the direction you need into Lyrics Creator → Story & production direction → Reference / library prompt."
+      ],
+      [
+        "Audio processing",
+        "For actual sound changes, return to Plugin workshop and insert an implemented processor."
+      ],
+      [
+        "External app instructions",
+        "Some imported references reflect older third-party conventions. Treat them as creative suggestions; verify the destination app’s current syntax and capabilities."
+      ]
+    ],
+    "steps": [
+      "Open Music Library or Prompt Encyclopedia from Full DAW.",
+      "Choose a category and search for the reference you need.",
+      "Expand Show Prompt and use COPY.",
+      "Paste it into your writing brief; use Plugin workshop separately for actual processing."
+    ]
+  },
+  {
+    "id": "lyrics",
+    "title": "Create or rewrite lyrics",
+    "where": "Create → Lyrics Creator",
+    "intro": "Use concrete moments, actions and details in the brief. The AI writing action is owner-only. Visitors can still browse references and work with local draft editing, copying and draft files.",
+    "labels": [
+      [
+        "Mode / Title / Story brief",
+        "Choose a new song or rewrite"
+      ],
+      [
+        "Original lyrics / Keep / Protect / Fix",
+        "Direct a rewrite"
+      ],
+      [
+        "Sound & delivery",
+        "Genres, instruments, voice and tempo"
+      ],
+      [
+        "Story & production direction",
+        "Audience, emotion and references"
+      ],
+      [
+        "Write song package",
+        "Owner-only AI generation"
+      ],
+      [
+        "Draft cards / Copy / Download",
+        "Edit and keep the result"
+      ]
+    ],
+    "steps": [
+      "Choose Write new lyrics or Rewrite my lyrics. Enter a title if you have one, and explain what actually happens in the song.",
+      "For a rewrite, paste the original or Import a text file. Fill Keep, Exact lines to protect, Fix and Extend as needed. Protected lines must already exist in the original.",
+      "Open Sound & delivery. Set Genre / blend, Instruments, Lead voice, Tempo, Key, Language, Target length and Writing / rhyme.",
+      "Open Story & production direction for Audience, Core emotion, Perspective, Reference / library prompt and Avoid.",
+      "The owner can tap Write song package. Read the result, edit the output cards, and check warnings before copying or exporting.",
+      "Copy or download anything you want to keep before leaving. The workspace is temporary and clears when you exit."
+    ],
+    "rows": [
+      [
+        "Clear lyrics / leaving the page",
+        "The bright yellow Clear lyrics button resets the writing form and output. Leaving Lyrics Creator, refreshing or closing the page clears the workspace. Copy or explicitly download first. Browser draft saving is disabled for everyone; old browser drafts are removed when the updated app opens."
+      ],
+      [
+        "Writing / rhyme",
+        "No deliberate rhyming, Natural unforced rhyme, or My own scheme. The custom scheme field appears when selected."
+      ],
+      [
+        "Production blueprint",
+        "Use blueprint sets the writing tempo to 69 BPM and replaces the reference field. It does not apply the referenced EQs to your audio."
+      ],
+      [
+        "Hybrid effects-chain library",
+        "Browse the 25 reference profiles. Use in Lyrics Creator replaces the writing reference, not your live inserts."
+      ],
+      [
+        "Rewrite this draft",
+        "Copies current lyrics into rewrite mode. No automatic draft history is kept."
+      ],
+      [
+        "Open draft file",
+        "Loads a Ghost lyrics JSON draft without a model request."
+      ],
+      [
+        "Copy full framework / Download",
+        "Exports the song brief, style, voice, structure, lyrics, negatives and notes. Individual output cards have their own Copy buttons."
+      ],
+      [
+        "Save draft file",
+        "Keeps an editable draft for transfer or backup."
+      ],
+      [
+        "Text limits",
+        "Original lyrics: 12,000 characters; brief: 6,000. Output cards display guidance for 1,000-character style/instrumental prompts and 5,000-character lyrics."
+      ]
+    ],
+    "note": "Generated text still needs your editorial judgment. A prompt label does not guarantee Suno will sing, pronounce or arrange it exactly as written."
+  },
+  {
+    "id": "export",
+    "title": "Export the mix or stems",
+    "where": "Session bar → Export mix",
+    "intro": "Export renders the audible tracks. A WAV is audio; a .mid is notes; a .ghostproject is the editable session. Choose the right one for the job.",
+    "labels": [
+      [
+        "Source",
+        "Mix, selected stem, aligned stems or MIDI"
+      ],
+      [
+        "Time span",
+        "Full session or Time range"
+      ],
+      [
+        "Sample rate",
+        "48,000 or 44,100 Hz"
+      ],
+      [
+        "Bit depth",
+        "16 / 24-bit PCM or 32-bit float"
+      ],
+      [
+        "Peak ceiling",
+        "Estimated peak protection"
+      ],
+      [
+        "Render / export",
+        "Prepare the download"
+      ]
+    ],
+    "rows": [
+      [
+        "Audible mix",
+        "Stereo WAV including audible tracks, edits, faders, pans and active track/master processing."
+      ],
+      [
+        "Selected stem through master",
+        "Exports the selected stem with master-bus processing."
+      ],
+      [
+        "Aligned stems · ZIP · no master",
+        "Equal-length stems beginning at the same session time. Includes track processing, fades, automation, faders and pan; excludes master processing and output trim."
+      ],
+      [
+        "Selected MIDI notes · .mid",
+        "Exports editable notes, not the instrument’s audio and not sung lyrics."
+      ],
+      [
+        "Full session / Time range",
+        "Renders all of the session or the range set under Arrangement."
+      ],
+      [
+        "Sample rate / Bit depth",
+        "Match the receiving service’s requirements. 24-bit PCM WAV is a common production interchange choice; it is not a guarantee every service accepts it."
+      ],
+      [
+        "Peak ceiling · dBTP estimate",
+        "Offers −1, −2 and −3 dBTP estimates. Uses 4× interpolation with an extra 0.1 dB margin and only reduces gain when needed."
+      ],
+      [
+        "Render / export",
+        "Wait until the download is offered. Keep this tab open while it works."
+      ]
+    ],
+    "note": "This app does not provide a certified true-peak meter or an integrated LUFS mastering guarantee. Listen to the exported file. Keep a project backup separately.",
+    "steps": [
+      "Save a project backup before exporting.",
+      "Open Export mix and select mix, selected stem, aligned stems or MIDI as appropriate.",
+      "Choose Full session or Time range, then sample rate, bit depth and peak ceiling for audio.",
+      "Tap Render / export, wait for the download, and listen to the exported file."
+    ]
+  },
+  {
+    "id": "radio",
+    "title": "Listen and adjust the radio EQ",
+    "where": "Radio → Listen",
+    "intro": "The radio streams approved station tracks. Its listening EQ changes what you hear on this device; it does not remaster the uploaded file.",
+    "labels": [
+      [
+        "Genre buttons",
+        "Filter the station library"
+      ],
+      [
+        "Track row",
+        "Select a song"
+      ],
+      [
+        "Play / Previous / Next",
+        "Control the station queue"
+      ],
+      [
+        "Shuffle / Repeat",
+        "Change playback order"
+      ],
+      [
+        "10-band equalizer",
+        "Adjust listening tone"
+      ],
+      [
+        "Reset / Bypass EQ",
+        "Return flat or compare"
+      ]
+    ],
+    "steps": [
+      "Open Radio and choose Listen. Pick All music or a genre, then tap a song.",
+      "Use Play/Pause and the position slider. Previous and Next change tracks in this player.",
+      "Turn Shuffle on for random order; Repeat playlist repeats the playlist rather than selecting one-track looping.",
+      "Open the 10-band equalizer or tap Ghost to reveal it. Start with Reset, then change a band only if wanted.",
+      "Compare Bypass EQ with the adjusted version. Use Volume for listening level and preamp to cut or boost the listening level."
+    ],
+    "rows": [
+      [
+        "Band centers",
+        "31, 60, 125, 250, 500, 1,000, 2,000, 4,000, 8,000 and 12,000 Hz."
+      ],
+      [
+        "Band gain",
+        "−9 to +9 dB in 0.5 dB steps. The app compensates for boosts to provide headroom."
+      ],
+      [
+        "Preamp",
+        "−18 to +18 dB, with 0 dB centered. Positive gain boosts listening level and can clip if pushed too far. EQ headroom is based on the combined filter curve. These controls affect monitoring only."
+      ],
+      [
+        "Reset",
+        "Sets all bands and preamp to 0 dB and turns bypass off."
+      ],
+      [
+        "Preferences",
+        "EQ, volume, preamp and bypass are saved locally. They are not a shared station master setting."
+      ]
+    ]
+  },
+  {
+    "id": "radio-upload",
+    "title": "Upload and manage station songs",
+    "where": "Radio → Upload / Manage",
+    "intro": "Uploading to the radio publishes or submits a station copy. It is separate from importing audio for private editing in the DAW.",
+    "labels": [
+      [
+        "Choose file",
+        "Owner batch or one listener MP3"
+      ],
+      [
+        "Title / artist / genre",
+        "Identify the track"
+      ],
+      [
+        "Cover artwork",
+        "Choose JPG or PNG"
+      ],
+      [
+        "Permission checkbox",
+        "Confirm sharing rights"
+      ],
+      [
+        "Upload status",
+        "Wait for Added or review status"
+      ],
+      [
+        "Manage",
+        "Preview, approve and remove"
+      ]
+    ],
+    "steps": [
+      "Sign in and open Upload. Choose the file or, for the owner, select several tracks.",
+      "Check titles, artist and genre. An owner batch shares the chosen artist, genre and cover.",
+      "Choose optional artwork and confirm that you have permission to share the audio and image.",
+      "Start the upload and wait for the saved result. Use Retry unfinished uploads for failures; avoid uploading successful entries again.",
+      "The owner opens Manage to Preview submissions, then Approve or Reject. Listener submissions stay private until approved.",
+      "Use Change cover or Unpublish for existing entries. Delete permanently removes the station copy after confirmation; keep your original files."
+    ],
+    "rows": [
+      [
+        "Owner audio",
+        "MP3, WAV or MP4, up to 100 MB each, with multiple selection."
+      ],
+      [
+        "Listener audio",
+        "One MP3 at a time, up to 12 MB, subject to owner review."
+      ],
+      [
+        "Artwork",
+        "Owner: JPG/PNG up to 20 MB. Listener: JPG/PNG up to 1 MB."
+      ],
+      [
+        "Station capacity",
+        "The Manage screen displays the 2,000 MB station limit."
+      ],
+      [
+        "Reset stuck upload",
+        "Clears a stalled upload session so you can try again; wait until the current upload is no longer active."
+      ],
+      [
+        "New genre",
+        "Owner: Manage → Add a genre → enter name → Add."
+      ],
+      [
+        "Install app",
+        "Use Install app or the browser’s Add to Home screen option. Installing does not change upload permissions."
+      ]
+    ]
+  },
+  {
+    "id": "file-types",
+    "title": "Choose the correct file loader",
+    "where": "Presets / Projects / Plugin workshop / Lyrics",
+    "intro": "A JSON extension is not enough to identify a file. Each loader expects a different document structure.",
+    "labels": [
+      [
+        "Rack preset JSON",
+        "Six Dynamics A settings"
+      ],
+      [
+        "Rack project JSON",
+        "One source and rack state"
+      ],
+      [
+        ".ghostproject",
+        "Full DAW session and audio"
+      ],
+      [
+        ".ghostplugin.json",
+        "Workshop chain settings"
+      ],
+      [
+        "Lyrics draft JSON",
+        "Writing form and draft"
+      ],
+      [
+        "Audio WAV / MP3",
+        "Recorded sound"
+      ]
+    ],
+    "steps": [
+      "Identify what the file contains, not just its extension.",
+      "Use Rack Presets for Dynamics A settings and Rack Projects for a one-source project.",
+      "Use Full DAW Projects for .ghostproject; use Plugin workshop → Import plugin for .ghostplugin.json.",
+      "Use Lyrics → Open draft file for lyrics JSON. Use an audio importer for a recording."
+    ],
+    "rows": [
+      [
+        "Preset versus project",
+        "Presets hold settings; projects can include source audio and editable state."
+      ],
+      [
+        "Prompt text / ZIP",
+        "Prompt text does not load into the Dynamics A preset importer. A source-code ZIP is not an audio plugin installer."
+      ],
+      [
+        "Portable backups",
+        "Download files you need on another device. A browser-local save is not cloud sync."
+      ]
+    ]
+  },
+  {
+    "id": "trouble",
+    "title": "Fix common problems",
+    "where": "Footer → Audio mode & troubleshooting",
+    "intro": "Save or download a backup before closing the tab, replacing a session, or clearing browser data.",
+    "labels": [
+      [
+        "Audio mode & troubleshooting",
+        "Open the footer panel"
+      ],
+      [
+        "Automatic",
+        "Try the live audio module first"
+      ],
+      [
+        "Prepared playback",
+        "Render before playing"
+      ],
+      [
+        "Preparation progress / Stop",
+        "Wait or cancel"
+      ],
+      [
+        "Download audio diagnostics",
+        "Save technical details for help"
+      ],
+      [
+        "Projects → backup",
+        "Protect the session first"
+      ]
+    ],
+    "rows": [
+      [
+        "No singer; only instrument notes",
+        "You imported MIDI or loaded the sound check. Import the actual audio through Import song / stems. Check mute and solo if both audio and MIDI are present."
+      ],
+      [
+        "Not every stem loaded",
+        "Read the per-file import report. Check the 24-track, 160 MB/file and 12-minute limits, file validity and codec support."
+      ],
+      [
+        "Audio module / worklet error",
+        "Choose Prepared playback in the footer. It takes time before audio starts, and edits require preparing again."
+      ],
+      [
+        "Playback stops when I turn a knob",
+        "Current plugin and mix edits prepare in the background while playback continues. Wait for Updated sound is playing. If updating fails, the previous sound remains; read the status, save a backup and download diagnostics."
+      ],
+      [
+        "Memory error",
+        "Long stems or heavy repair can exceed available memory. Work with shorter source clips or a smaller session after saving a backup. A phone has finite browser memory."
+      ],
+      [
+        "Plugin makes no difference",
+        "Check enable, Mix, destination, mute/solo and preparation status. New inserts are bypassed and neutral. Reference prompts do not process audio."
+      ],
+      [
+        "Plugin makes the sound worse",
+        "Bypass it or Undo. Reset to neutral; adjust one justified control at a time. Saturation, drive, widening and heavy repair can change or damage the sound."
+      ],
+      [
+        "Cannot connect the API",
+        "Only the owner is allowed. Visitors should use local tools. The owner should sign in with the owner account and read the connection error; do not share the API key."
+      ],
+      [
+        "Saved work missing on another device",
+        "Saves are local to each browser. Open your downloaded project or draft file on the other device."
+      ],
+      [
+        "Cannot find a panel on mobile",
+        "Scroll the whole page. Ghost Rack’s workspace links and prompt library sit below the photo. Full DAW panels stack vertically; open the relevant group and use Search everything."
+      ]
+    ],
+    "steps": [
+      "Read the status or error message without clearing your session.",
+      "Check source type, track selection, mute/solo, IN/BYPASS and volume.",
+      "If sound changes are still preparing, wait for the completion message.",
+      "Save a project backup, then use Audio mode & troubleshooting → Download audio diagnostics when asking for help."
+    ]
+  }
+]

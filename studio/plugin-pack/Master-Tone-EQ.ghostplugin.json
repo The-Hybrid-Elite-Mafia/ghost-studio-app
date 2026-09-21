@@ -1,0 +1,25 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Master Tone EQ",
+  "effects": [
+    {
+      "id": "ghost-factory-mastereq",
+      "type": "mastereq",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "hpf": 0,
+        "lowShelf": 0,
+        "lowMidTilt": 0,
+        "presence": 0,
+        "airShelf": 0,
+        "deHarsh": 0,
+        "output": 0,
+        "msMode": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

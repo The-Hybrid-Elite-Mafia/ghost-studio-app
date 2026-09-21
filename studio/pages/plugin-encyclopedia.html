@@ -1,0 +1,1551 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prompt Encyclopedia · HEM Creative Studio</title><style>/* HEM Plugin Encyclopedia 2.0 - Main Stylesheet */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #d4af37;
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: #c41e3a;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.badge {
+  background: #d4af37;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  color: #000;
+}
+
+.stats {
+  color: #666;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d4af37;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  font-weight: bold;
+  transition: color 0.2s;
+  font-size: 0.95rem;
+}
+
+.tab:hover {
+  color: #333;
+}
+
+.tab.active {
+  color: #d4af37;
+  border-bottom-color: #d4af37;
+}
+
+/* Search */
+.search {
+  margin-bottom: 15px;
+}
+
+.search input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d4af37;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: #c41e3a;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Plugin Cards */
+.card {
+  background: #fff;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  border-color: #c41e3a;
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.card-num {
+  background: #d4af37;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  color: #000;
+}
+
+.card-title {
+  font-weight: bold;
+  word-break: break-word;
+  font-size: 0.95rem;
+}
+
+/* Toggle */
+.toggle {
+  cursor: pointer;
+  color: #d4af37;
+  margin: 10px 0;
+  font-weight: bold;
+  user-select: none;
+  display: block;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.toggle:hover {
+  color: #c41e3a;
+}
+
+/* Prompt Box */
+.prompt-box {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 10px 0;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #333;
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.prompt-box.show {
+  max-height: 3000px;
+  overflow-y: auto;
+}
+
+.char-count {
+  font-size: 0.7rem;
+  color: #999;
+  text-align: right;
+  margin: 6px 0;
+}
+
+/* Copy Button */
+.copy-btn {
+  width: 100%;
+  padding: 10px;
+  background: #d4af37;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+.copy-btn:hover {
+  background: #c41e3a;
+  color: #fff;
+}
+
+.copy-btn:active {
+  transform: scale(0.97);
+}
+
+/* Copy Status */
+.copy-status {
+  font-size: 0.75rem;
+  color: #2ecc40;
+  font-weight: bold;
+  min-height: 14px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* Results Count */
+.results-count {
+  color: #666;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .tabs {
+    gap: 5px;
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .prompt-box {
+    font-size: 0.7rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .prompt-box {
+    page-break-inside: avoid;
+  }
+}
+
+.toggle{font:inherit;background:transparent;border:0;text-align:left}.copy-status{min-height:1.4em}</style></head><body><div class="container"><header><div class="creative-reference-title"><img class="creative-reference-logo" src="branding/hem-creative-studio-logo.webp" width="88" height="88" alt=""><div><span class="eyebrow">HEM CREATIVE STUDIO</span><h1>Prompt Encyclopedia</h1></div></div><p class="subtitle">Music production prompt library</p><p class="badge">VOCALS (51) | INSTRUMENTS (43) | ARTIFACTS (51) | PROCESSING (21) | EFFECTS (20) | MASTERING (15)</p><p class="stats">201 prompts · Browse, search and copy</p><p>These are writing and production references. Audio processing happens in your DAW’s Plugin workshop.</p></header><nav class="tabs" id="tabs" aria-label="Prompt categories"></nav><div class="search"><label for="search">Search this category</label><input id="search" type="search" placeholder="Search names, numbers or prompt text"></div><div id="results"></div></div><script>/**
+ * HEM Plugin Encyclopedia 2.0 - Prompt Data
+ * 
+ * 240 production prompts across 6 categories:
+ * - Vocals (51)
+ * - Instruments (82)
+ * - Artifact Removal (51)
+ * - Processing (21)
+ * - Effects (20)
+ * - Mastering (15)
+ * 
+ * Data extracted from production encyclopedia
+ */
+
+const allData = {
+  "vocals": [
+    {
+      "n": 1,
+      "name": "Trap Aggressive Snap",
+      "p": "Aggressive snarl, tight articulation, forward presence, slight rasp edge, confrontational attitude.\n\nVoice Range: Baritone / Mid-Tenor | Register: Chest dominant, edge register | Resonance: Forward-oral\nVibrato: Minimal, controlled | Ornamentation: Sharp attacks, clipped tails, no slides\n\nMic: Shure SM7B or Neumann U87 (bright)\nFX: Minimal reverb (tight room 0.5s), no delay, subtle compression for bite\nEQ: +3dB 2kHz (presence), +2dB 5kHz (sharpness), -2dB 200Hz (mud), +1dB 80Hz (weight)\n\nMixing: Aggressive in mix, punchy and forward, tight dynamics, dry character. Confrontational through delivery."
+    },
+    {
+      "n": 2,
+      "name": "Trap Melodic Hook",
+      "p": "Smooth vibrato, emotional resonance, sung hook moments, present tone, melodic contour.\n\nVoice Range: Tenor / Baritone | Register: Mixed voice | Resonance: Throat-nasal blend\nVibrato: Moderate, musical, natural | Ornamentation: Legato runs, slides, melodic phrasing\n\nMic: Neumann U87 or AKG C414 (warm)\nFX: Plate reverb (1.2s), subtle analog delay (120ms), light chorus for width\nEQ: +2dB 300Hz (body), +2dB 1kHz (presence), -1dB 4kHz (harshness), +1dB 8kHz (clarity)\n\nMixing: Sits present in mix, emotional depth preserved, moderate reverb, melodic phrasing encouraged."
+    },
+    {
+      "n": 3,
+      "name": "Drill Sharp Menace",
+      "p": "Razor-sharp articulation, dark threatening tone, high-mid presence, cold calculated delivery.\n\nVoice Range: Low Tenor / High Baritone | Register: Chest, aggressive edge | Resonance: Hard-palate (cutting)\nVibrato: None, straight tone | Ornamentation: Sharp staccato, no slides, clipped phrases\n\nMic: Shure SM7B or Sennheiser MD421 (dark)\nFX: Tight room reverb (200ms), no delay, tight gating for control\nEQ: +4dB 3kHz (cut), +2dB 6kHz (edge), -3dB 500Hz (mud), -1dB 80Hz (low rumble)\n\nMixing: Cutting in mix, precise and threatening, minimal effects, dry delivery. Dark EQ approach."
+    },
+    {
+      "n": 4,
+      "name": "Emo Rap Vulnerable",
+      "p": "Raw emotional delivery, breathy texture, natural imperfections preserved, vocal cracks allowed.\n\nVoice Range: Tenor / Baritone | Register: Mixed, chest dominant with head access | Resonance: Throat-pharyngeal\nVibrato: Moderate, slow, emotional | Ornamentation: Vocal cracks, breathy gaps, natural imperfections\n\nMic: Neumann U87 or Shure KSM9 (warm, forgiving)\nFX: Plate reverb (warm, 1.5s), slapback delay (120ms), minimal compression\nEQ: +2dB 250Hz (warmth), +1dB 1kHz (presence), -1dB 4kHz (harshness), +2dB 80Hz (body)\n\nMixing: Intimate close-mic'd, natural dynamics preserved, emotional truth prioritized. Slight beat distance."
+    },
+    {
+      "n": 5,
+      "name": "Plugg Ethereal Float",
+      "p": "Floating ethereal quality, smooth legato phrasing, breathy airy texture, atmospheric presence.\n\nVoice Range: Tenor / Alto-Tenor | Register: Mixed, head accessible | Resonance: Soft palate-nasal\nVibrato: Moderate, natural, musical | Ornamentation: Legato slides, breathiness, musical phrasing\n\nMic: Neumann TLM103 or AKG C414 (warm, musical)\nFX: Lush reverb (2.5s plate or hall), subtle chorus, analog delay (moderate)\nEQ: +1dB 300Hz (warmth), +2dB 1.5kHz (musicality), -1dB 3kHz (harshness), +1dB 10kHz (air)\n\nMixing: Blends with production, moderate reverb/delay integration, breathy spaces preserved. Sits back slightly."
+    },
+    {
+      "n": 6,
+      "name": "Afrobeats Swag",
+      "p": "Confident delivery, rhythmic connection, swag presence, authentic delivery, infectious energy.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward-nasal\nVibrato: Moderate, rhythmic | Ornamentation: Rhythmic phrasing, syncopation, groove connection\n\nMic: Neumann U87 or Shure KSM9 (warm, present)\nFX: Tight room reverb (300ms), subtle slapback delay (100ms), minimal compression\nEQ: +2dB 400Hz (body), +2dB 2kHz (presence), -1dB 5kHz (harshness), +1dB 100Hz (power)\n\nMixing: Sits present in groove, rhythmic pocket tight, confident attitude through delivery. Swag character."
+    },
+    {
+      "n": 7,
+      "name": "R&B Silky Falsetto",
+      "p": "Silky smooth falsetto, breathy intimate texture, vulnerable emotional expression, natural vibrato.\n\nVoice Range: Tenor with falsetto octave up | Register: Falsetto dominant | Resonance: Soft palate-nasal\nVibrato: Moderate to slow, musical | Ornamentation: Legato runs, slides, breathy gaps\n\nMic: Neumann U87 or Telefunken ELA M 251 (warm, intimate)\nFX: Warm plate reverb (1.2s), subtle analog delay, lush chorus optional\nEQ: +2dB 250Hz (body), +1dB 1kHz (presence), -2dB 3kHz (harshness), +1dB 8kHz (silkiness)\n\nMixing: Intimate close-mic'd, natural dynamics, warm reverb. Stack-ready for harmonies. Emotional vulnerability."
+    },
+    {
+      "n": 8,
+      "name": "Pop Bright Tenor",
+      "p": "Youthful edge, hook-optimized, clear articulation, slight breathiness, pleasant presence.\n\nVoice Range: Tenor | Register: Mixed voice | Resonance: Forward-oral\nVibrato: Moderate, natural | Ornamentation: Clean articulation, legato runs, hook phrasing\n\nMic: Neumann KM9 or Shure KSM8 (bright, present)\nFX: Room reverb (400ms), subtle delay (80ms), light chorus for width\nEQ: +2dB 500Hz (body), +3dB 2kHz (presence), -1dB 4kHz (harshness), +1dB 10kHz (air)\n\nMixing: Bright and present in mix, radio-friendly character, hook-optimized. Light effects for radio sheen."
+    },
+    {
+      "n": 9,
+      "name": "Rock Gritty Rasp",
+      "p": "Raw raspy delivery, vocal gravel, distorted undertone, rebellion character, unfiltered.\n\nVoice Range: Baritone / Low Tenor | Register: Chest, edge register | Resonance: Throat (raw)\nVibrato: Minimal, straight tone with grit | Ornamentation: Raspy texture, growls, rough phrasing\n\nMic: Shure SM7B or Electro-Voice RE20 (durable, colored)\nFX: Natural room reverb (600ms), subtle slapback delay, light distortion character\nEQ: +3dB 500Hz (grit), +2dB 3kHz (presence), -2dB 200Hz (mud), +2dB 80Hz (power)\n\nMixing: Raw and present, unfiltered character, natural dynamics, slight aggression. Rebellion through tone."
+    },
+    {
+      "n": 10,
+      "name": "Hyperpop Chaotic",
+      "p": "Chaotic delivery, heavily processed, genre-pushing, experimental, intentional artificiality.\n\nVoice Range: Extended, flexible | Register: Mixed with edge | Resonance: Variable, shifting\nVibrato: Irregular, experimental | Ornamentation: Pitch shifts, effects, chaotic phrasing\n\nMic: Neumann U87 or Shure KSM8 (flexible)\nFX: Heavy compression, aggressive saturation, digital effects, pitch shifting, intentional glitches\nEQ: +4dB 2kHz, +3dB 5kHz, -3dB 500Hz, intentional tonal chaos\n\nMixing: Experimental and pushed, chaotic character, effects-heavy, digital character intentional. Genre-pushing."
+    },
+    {
+      "n": 11,
+      "name": "Drill Rapid Fire",
+      "p": "Fast bars, rapid delivery, quick articulation, grime-influenced, street authenticity.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward-palatal\nVibrato: None, straight tone | Ornamentation: Rapid staccato, quick syllables, clipped phrases\n\nMic: Shure SM7B or Sennheiser MD421 (precise, durable)\nFX: Tight room reverb (150ms), no delay, tight gating for syllable clarity\nEQ: +4dB 3kHz (clarity), +2dB 6kHz (cut), -3dB 500Hz (mud), -1dB 80Hz (low)\n\nMixing: Tight in mix, rapid syllable clarity, minimal effects. Street authentic attitude. Quick and precise."
+    },
+    {
+      "n": 12,
+      "name": "Emo Rap Crying",
+      "p": "Crying tone, tear-filled delivery, maximum emotional depth, raw anguish, unfiltered pain.\n\nVoice Range: Tenor / Baritone | Register: Mixed, accessing head voice | Resonance: Throat-pharyngeal\nVibrato: Slow, emotional, unstable | Ornamentation: Vocal breaks, tremolo, crying sounds\n\nMic: Neumann U87 or Shure KSM9 (warm, sensitive)\nFX: Lush plate reverb (2s), slapback delay (150ms), light chorus for depth\nEQ: +2dB 200Hz (tears), +1dB 1kHz (emotion), -1dB 4kHz (harshness), +2dB 80Hz (depth)\n\nMixing: Maximum emotional vulnerability, natural dynamics, reverb-heavy approach. Crying authenticity prioritized."
+    },
+    {
+      "n": 13,
+      "name": "Plugg Sung Melodic",
+      "p": "Sung melodic delivery, almost R&B character, smooth flowing, crossing genre boundaries.\n\nVoice Range: Tenor / Alto-Tenor | Register: Mixed voice dominant | Resonance: Soft palate-nasal\nVibrato: Moderate, musical, flowing | Ornamentation: Legato runs, melodic phrasing, smooth transitions\n\nMic: Neumann U87 or AKG C414 (warm, musical)\nFX: Plate reverb (1.5s), subtle chorus, analog delay for musicality\nEQ: +1dB 300Hz (warmth), +2dB 1.5kHz (musicality), -1dB 3kHz (harshness), +1dB 10kHz (air)\n\nMixing: Sits present, R&B-influenced smoothness, melodic integration with production. Genre-crossing character."
+    },
+    {
+      "n": 14,
+      "name": "Rage Vocal Extreme",
+      "p": "Maximum aggression, primal delivery, emotional intensity, raw rage, guttural quality.\n\nVoice Range: Extended, low to high | Register: Chest, edge, fry | Resonance: Throat-laryngeal\nVibrato: None, aggressive straight | Ornamentation: Screams, growls, primal roar\n\nMic: Shure SM7B or Audix i5 (durable, handles extremes)\nFX: Aggressive compression, slight distortion, high-pass filter\nEQ: +5dB 3kHz (rage), +3dB 8kHz (edge), -3dB 200Hz (mud), -2dB 100Hz (rumble)\n\nMixing: Maximum intensity and aggression, tight compression for control, aggressive presence. Raw unfiltered rage."
+    },
+    {
+      "n": 15,
+      "name": "Psychedelic Trippy",
+      "p": "Psychedelic experimental, mind-bending, trippy character, processing-heavy, intentional strangeness.\n\nVoice Range: Tenor / Baritone (flexible) | Register: Mixed, variable | Resonance: Shifting, experimental\nVibrato: Irregular, experimental, wavy | Ornamentation: Pitch shifts, effects, strange phrasing\n\nMic: Neumann U87 or Shure KSM8 (flexible)\nFX: Heavy reverb (3s+), analog delay (multiple taps), chorus/flanger effects\nEQ: Experimental boosting at unusual frequencies: +2dB 600Hz, +3dB 4kHz, -2dB 1kHz\n\nMixing: Psychedelic and floating, effects-heavy, mind-bending character. Trippy through processing and delivery."
+    },
+    {
+      "n": 16,
+      "name": "Bedroom Pop Intimate",
+      "p": "Intimate personal diary, close-mic confession, whispered quality, confessional closeness, bedroom aesthetic.\n\nVoice Range: Tenor / Alto-Tenor | Register: Mixed, head-voice access | Resonance: Throat-nasal (intimate)\nVibrato: Subtle, natural | Ornamentation: Breathy gaps, natural imperfections, whispered moments\n\nMic: Neumann U87 or Shure KSM9 (warm, intimate, forgiving)\nFX: Light room reverb (300ms), subtle slapback delay (100ms), minimal compression\nEQ: +1dB 250Hz (warmth), +1dB 1kHz (presence), -1dB 4kHz (harshness), +1dB 8kHz (air)\n\nMixing: Intimately close-mic'd, bedroom aesthetic, breathy spaces preserved. Personal diary confessional tone."
+    },
+    {
+      "n": 17,
+      "name": "Dark Trap Menacing",
+      "p": "Dark threatening, ominous atmosphere, horror-movie character, evil undertone, menacing delivery.\n\nVoice Range: Baritone / Low Tenor | Register: Chest, dark edge | Resonance: Throat-pharyngeal (dark)\nVibrato: Minimal, controlled darkness | Ornamentation: Growls, snarls, dark phrasing\n\nMic: Shure SM7B or Sennheiser MD421 (dark, present)\nFX: Minimal tight reverb (200ms), no delay, subtle compression for menace\nEQ: +4dB 300Hz (dark body), +2dB 5kHz (menace), -3dB 200Hz (mud), -1dB 80Hz (low rumble)\n\nMixing: Dark and menacing in mix, minimal effects, ominous character. Horror-trap atmosphere through tone."
+    },
+    {
+      "n": 18,
+      "name": "Lo-Fi Chill Rap",
+      "p": "Lo-fi chill delivery, relaxed pocket, bedroom vibes, organic feel, laid-back character.\n\nVoice Range: Baritone / Tenor | Register: Chest dominant | Resonance: Forward-nasal (relaxed)\nVibrato: Minimal, natural | Ornamentation: Relaxed phrasing, slight imperfections, organic character\n\nMic: Dynamic mic or condenser (lo-fi character) — Shure SM58 or Rode Procaster\nFX: Light room reverb (250ms), vintage tape saturation, slight analog feel\nEQ: +1dB 300Hz (warmth), +1dB 1kHz (presence), -1dB 3kHz (harshness), no high-end boost\n\nMixing: Lo-fi aesthetic preserved, bedroom vibe, relaxed pocket, slight tape saturation. Organic and laid-back."
+    },
+    {
+      "n": 19,
+      "name": "Grime Rapid Fire",
+      "p": "Grime delivery, rapid-fire bars, MCing presence, street authenticity, energetic throughout.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant, edge register | Resonance: Forward-palatal\nVibrato: None, straight tone | Ornamentation: Rapid staccato, quick syllables, MCing bounce\n\nMic: Shure SM7B or Sennheiser MD421 (precise, gritty)\nFX: Tight room reverb (150ms), no delay, tight gating for clarity\nEQ: +4dB 3kHz (clarity), +2dB 6kHz (cut), -3dB 500Hz (mud), -1dB 80Hz (low)\n\nMixing: Tight MCing presence, rapid syllable clarity, street authentic. Energy and bounce preserved."
+    },
+    {
+      "n": 20,
+      "name": "Metal Harsh Screams",
+      "p": "Harsh metal screams, extreme edge register, primal roar, maximum intensity, guttural extreme.\n\nVoice Range: Extended high extremes | Register: Edge, fry register | Resonance: Throat-laryngeal\nVibrato: None, aggressive | Ornamentation: Screams, growls, primal sounds\n\nMic: Shure SM7B or Audix i5 (durable, extreme-capable)\nFX: Aggressive distortion/saturation, compression for control, high-pass filter\nEQ: +5dB 4kHz (scream), +3dB 8kHz (edge), -4dB 200Hz (mud), -2dB 100Hz (rumble)\n\nMixing: Aggressive and loud, extreme character, tight compression, high-pass for clarity. Raw unfiltered intensity."
+    },
+    {
+      "n": 21,
+      "name": "Trap Storytelling",
+      "p": "Narrative-driven bars, detailed storytelling, character-driven content, descriptive focus, poetic.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward-nasal (present)\nVibrato: Moderate, natural | Ornamentation: Legato phrasing, narrative flow, descriptive articulation\n\nMic: Neumann U87 or Shure KSM9 (warm, present)\nFX: Light room reverb (300ms), subtle delay (100ms), minimal compression\nEQ: +2dB 300Hz (warmth), +2dB 1.5kHz (presence), -1dB 4kHz (harshness), +1dB 10kHz (clarity)\n\nMixing: Present in mix, narrative clarity prioritized, story-driven delivery. Character and detail come through."
+    },
+    {
+      "n": 22,
+      "name": "Trap Flex Confident",
+      "p": "Confident bragging, swagger-focused, flex-heavy, dominance attitude, self-assured delivery.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward, confident\nVibrato: Minimal, controlled swagger | Ornamentation: Clean articulation, confident phrasing\n\nMic: Neumann U87 or Shure KSM9 (present, confident)\nFX: Minimal reverb (tight room, 300ms), subtle delay (100ms), light compression for punch\nEQ: +3dB 2kHz (presence), +2dB 5kHz (swagger), -2dB 200Hz (mud), +1dB 100Hz (weight)\n\nMixing: Confident and forward, swagger attitude through delivery. Self-assured presence in mix."
+    },
+    {
+      "n": 23,
+      "name": "Trap Pain Raw",
+      "p": "Raw painful emotion, honest struggle expression, vulnerable underneath aggression, authentic pain.\n\nVoice Range: Tenor / Baritone | Register: Mixed, chest dominant | Resonance: Throat-pharyngeal\nVibrato: Moderate, emotional | Ornamentation: Vocal cracks, breathy gaps, emotional phrasing\n\nMic: Neumann U87 or Shure KSM9 (warm, forgiving)\nFX: Plate reverb (warm, 1.5s), slapback delay (120ms), minimal compression\nEQ: +2dB 250Hz (warmth), +1dB 1kHz (emotion), -1dB 4kHz (harshness), +2dB 80Hz (depth)\n\nMixing: Emotional vulnerability preserved, natural dynamics, reverb-moderate approach. Raw pain authenticity."
+    },
+    {
+      "n": 24,
+      "name": "Emo Rap Frustrated",
+      "p": "Frustrated anger, internal conflict, emotional tension, turbulent delivery, volatile energy.\n\nVoice Range: Tenor / Baritone | Register: Chest, edge register | Resonance: Throat-forward\nVibrato: Irregular, tense | Ornamentation: Aggressive phrasing, vocal tension, conflict energy\n\nMic: Shure SM7B or Neumann U87 (can handle aggression and emotion)\nFX: Moderate reverb (1s), slight distortion for edge, minimal compression\nEQ: +3dB 2kHz (tension), +2dB 5kHz (aggression), -2dB 200Hz (mud), +1dB 80Hz (depth)\n\nMixing: Frustrated and turbulent in mix, internal conflict expressed, emotional tension prioritized."
+    },
+    {
+      "n": 25,
+      "name": "Emo Rap Screamed",
+      "p": "Screaming emotional release, primal roar, cathartic unleash, full emotional intensity, explosive.\n\nVoice Range: Extended range | Register: Chest, edge, head | Resonance: Throat-laryngeal\nVibrato: None, raw scream | Ornamentation: Screams, roars, cathartic sounds\n\nMic: Shure SM7B or Audix i5 (durable, emotional-capable)\nFX: Plate reverb (1.5s), slight distortion for emotional intensity, compression for control\nEQ: +4dB 3kHz (scream), +2dB 8kHz (intensity), -2dB 200Hz (mud), +1dB 80Hz (depth)\n\nMixing: Cathartic and intense, emotional release emphasized, reverb-heavy for impact. Primal roar character."
+    },
+    {
+      "n": 26,
+      "name": "Plugg Rhythmic",
+      "p": "Groove-locked delivery, beat-connected flow, rhythmic pocket, rhythmic integration, syncopation.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward-nasal\nVibrato: Moderate, rhythmic | Ornamentation: Syncopated phrasing, rhythmic articulation\n\nMic: Shure KSM9 or Neumann U87 (warm, rhythmic-friendly)\nFX: Tight room reverb (250ms), subtle delay synced to beat (100ms), light compression\nEQ: +2dB 300Hz (body), +2dB 1.5kHz (rhythm), -1dB 4kHz (harshness), +1dB 100Hz (pocket)\n\nMixing: Groove-locked tight, rhythm-centric delivery, beat-integrated feel. Pocket is everything."
+    },
+    {
+      "n": 27,
+      "name": "Afrobeats Sung",
+      "p": "Sung melodic delivery, emotional musicality, almost R&B character, smooth flowing, musical.\n\nVoice Range: Tenor / Alto-Tenor | Register: Mixed voice | Resonance: Soft palate-nasal\nVibrato: Moderate, musical, flowing | Ornamentation: Legato runs, melodic slides\n\nMic: Neumann U87 or AKG C414 (warm, musical)\nFX: Plate reverb (1.5s), subtle chorus, analog delay (moderate)\nEQ: +1dB 300Hz (warmth), +2dB 1.5kHz (musicality), -1dB 3kHz (harshness), +1dB 10kHz (air)\n\nMixing: Melodic and smooth, musical character emphasized, Afrobeats with R&B smoothness. Emotionally musical."
+    },
+    {
+      "n": 28,
+      "name": "Afrobeats Party",
+      "p": "High-energy party, celebratory, infectious joy, festive character, uplifting, celebratory presence.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward-nasal\nVibrato: Moderate, energetic | Ornamentation: Energetic phrasing, celebratory articulation\n\nMic: Shure KSM9 or Neumann U87 (warm, energetic-capable)\nFX: Tight room reverb (300ms), minimal delay (80ms), light compression for bounce\nEQ: +2dB 400Hz (party body), +2dB 2kHz (presence), -1dB 4kHz (harshness), +1dB 100Hz (power)\n\nMixing: High-energy and infectious, celebratory attitude, festive feel. Uplifting presence throughout."
+    },
+    {
+      "n": 29,
+      "name": "R&B Baritone",
+      "p": "Warm baritone, rich resonance, emotional anchor, soulful presence, deep grounding, warmth.\n\nVoice Range: Baritone | Register: Chest dominant | Resonance: Throat-warm\nVibrato: Moderate, soulful | Ornamentation: Legato phrasing, soulful runs, rich articulation\n\nMic: Neumann U87 or Telefunken ELA M 251 (warm, rich)\nFX: Plate reverb (1.5s), subtle delay, light chorus for richness\nEQ: +2dB 200Hz (warmth), +1dB 1kHz (presence), -1dB 3kHz (harshness), +1dB 80Hz (depth)\n\nMixing: Rich and present, soulful character, emotional grounding. Warmth is essential."
+    },
+    {
+      "n": 30,
+      "name": "R&B Sensual",
+      "p": "Sensual intimate, smooth soulful character, romantic presence, seductive delivery, vulnerable.\n\nVoice Range: Baritone / Tenor | Register: Chest, head accessible | Resonance: Soft palate-smooth\nVibrato: Moderate, musical, seductive | Ornamentation: Legato slides, sensual phrasing\n\nMic: Neumann U87 or Telefunken ELA M 251 (warm, intimate)\nFX: Plate reverb (1.5s), subtle analog delay, light chorus optional\nEQ: +2dB 250Hz (sensuality), +1dB 1.5kHz (presence), -1dB 3kHz (harshness), +1dB 8kHz (air)\n\nMixing: Sensual and intimate, smooth delivery, romantic character. Seduction through tone and delivery."
+    },
+    {
+      "n": 31,
+      "name": "Pop Dark Moody",
+      "p": "Dark moody pop, indie edge, introspective tone, alternative character, brooding, wistful.\n\nVoice Range: Tenor / Baritone | Register: Mixed voice | Resonance: Throat-forward\nVibrato: Moderate, moody | Ornamentation: Introspective phrasing, moody articulation\n\nMic: Neumann U87 or Shure KSM9 (warm, introspective)\nFX: Lush reverb (1.5s), analog delay (120ms), subtle saturation for edge\nEQ: +1dB 300Hz (body), +1dB 1.5kHz (introspection), -1dB 4kHz (harshness), +1dB 8kHz (air)\n\nMixing: Dark and moody in mix, introspective character, indie edge. Brooding alternative feel."
+    },
+    {
+      "n": 32,
+      "name": "Pop Energetic",
+      "p": "Energetic infectious, celebratory character, bright presence, uplifting, joyful, radio-friendly.\n\nVoice Range: Tenor | Register: Mixed voice | Resonance: Forward-bright\nVibrato: Moderate, energetic | Ornamentation: Energetic phrasing, bright articulation\n\nMic: Shure KSM8 or Neumann KM9 (bright, energetic)\nFX: Room reverb (400ms), minimal delay (80ms), light chorus for width\nEQ: +2dB 500Hz (body), +3dB 2kHz (energy), -1dB 4kHz (harshness), +1dB 10kHz (brightness)\n\nMixing: Bright and energetic, celebratory character, infectious joy. Uplifting throughout."
+    },
+    {
+      "n": 33,
+      "name": "Rock Opera",
+      "p": "Operatic delivery, power notes, dramatic character, arena-filling, theatrical presence, commanding.\n\nVoice Range: Tenor / Baritone (extended high) | Register: Head voice dominant | Resonance: Open, resonant\nVibrato: Moderate to slow, operatic | Ornamentation: Power notes, dramatic runs, operatic phrasing\n\nMic: Neumann U87 or Shure KSM9 (can handle power)\nFX: Hall reverb (2s+), minimal delay, natural acoustic space\nEQ: +1dB 300Hz (body), +2dB 1kHz (power), -1dB 4kHz (harshness), +1dB 8kHz (air)\n\nMixing: Dramatic and powerful, operatic character, arena-filling presence. Theatrical through delivery."
+    },
+    {
+      "n": 34,
+      "name": "Rock Punk",
+      "p": "Punk aggression, rebellious attitude, raw energy, anti-establishment, loud presence, fierce.\n\nVoice Range: Baritone / Tenor | Register: Chest, edge register | Resonance: Throat-forward (aggressive)\nVibrato: None, aggressive straight | Ornamentation: Aggressive staccato, raw phrasing\n\nMic: Shure SM7B or Electro-Voice RE20 (durable, loud)\nFX: Minimal tight reverb (200ms), slight distortion for attitude, compression for aggression\nEQ: +4dB 2kHz (aggression), +2dB 5kHz (edge), -2dB 200Hz (mud), +1dB 100Hz (power)\n\nMixing: Aggressive and loud, rebellious attitude, punk energy. Anti-establishment through delivery."
+    },
+    {
+      "n": 35,
+      "name": "Hyperpop Pitched",
+      "p": "Pitch-shifted vocals, chipmunk-like character, intentional artificiality, experimental extreme.\n\nVoice Range: Extended through pitch shifting | Register: Variable | Resonance: Shifted, artificial\nVibrato: Irregular, experimental | Ornamentation: Pitch shifts, intentional processing\n\nMic: Neumann U87 (flexible for processing)\nFX: Heavy pitch shifting, vocal effects, intentional artificiality, aggressive processing\nEQ: Intentionally unusual: +3dB 4kHz, +2dB 8kHz, -2dB 500Hz, shifted frequencies\n\nMixing: Experimental and processed, chipmunk-like character, intentional artificiality. Genre-pushing attitude."
+    },
+    {
+      "n": 36,
+      "name": "Hyperpop Distorted",
+      "p": "Heavily distorted, unrecognizable, maximum processing, experimental extreme, chaotic character.\n\nVoice Range: Extended, obscured | Register: Distorted, variable | Resonance: Processing-masked\nVibrato: Irregular, buried | Ornamentation: Heavy distortion, maximum effects\n\nMic: Neumann U87 (can handle aggressive processing)\nFX: Maximum distortion, aggressive saturation, extreme compression, digital effects stacking\nEQ: Intentionally chaotic: +5dB 3kHz, +4dB 8kHz, -3dB 200Hz, -2dB 500Hz\n\nMixing: Maximum distortion and processing, almost unrecognizable, experimental extreme. Experimental priority."
+    },
+    {
+      "n": 37,
+      "name": "Metal Growl",
+      "p": "Deep guttural character, intense menacing, low register, dark extreme, aggressive intensity.\n\nVoice Range: Low Baritone / Bass | Register: Fry register, chest | Resonance: Throat-laryngeal (deep)\nVibrato: None, growling straight | Ornamentation: Growls, snarls, guttural sounds\n\nMic: Shure SM7B or Audix i5 (can handle extremes)\nFX: Minimal tight reverb (150ms), slight compression for control, high-pass filter\nEQ: +4dB 200Hz (growl body), +2dB 3kHz (intensity), -3dB 1kHz (boom), -1dB 80Hz\n\nMixing: Deep and menacing, guttural intensity, tight control. Menace through low register."
+    },
+    {
+      "n": 38,
+      "name": "Psychedelic Cosmic",
+      "p": "Cosmic character, space exploration, ethereal floating, transcendent, experimental, cosmic.\n\nVoice Range: Tenor / Baritone (flexible) | Register: Mixed, head accessible | Resonance: Shifting, ethereal\nVibrato: Irregular, floating | Ornamentation: Floating phrasing, experimental effects\n\nMic: Neumann U87 or AKG C414 (flexible)\nFX: Heavy reverb (3s+), analog delay (multiple), chorus/flanger, tape saturation\nEQ: +1dB 300Hz (warmth), +2dB 1.5kHz (musicality), -1dB 3kHz (harshness), +2dB 10kHz (space)\n\nMixing: Cosmic and floating, space exploration feel, ethereal presence. Transcendent through production."
+    },
+    {
+      "n": 39,
+      "name": "Bedroom Pop Sad",
+      "p": "Sad melancholic, introspective sadness, nostalgic character, wistful presence, tender.\n\nVoice Range: Tenor / Alto-Tenor | Register: Mixed, head-accessible | Resonance: Throat-nasal (intimate)\nVibrato: Subtle, melancholic | Ornamentation: Breathy gaps, introspective phrasing\n\nMic: Neumann U87 or Shure KSM9 (warm, forgiving)\nFX: Light room reverb (300ms), subtle delay (100ms), minimal compression\nEQ: +1dB 250Hz (warmth), +1dB 1kHz (presence), -1dB 4kHz (harshness), +1dB 8kHz (air)\n\nMixing: Sad and intimate, melancholic character, introspective sadness. Wistful bedroom aesthetic."
+    },
+    {
+      "n": 40,
+      "name": "Dark Trap Demonic",
+      "p": "Demonic character, horror-trap style, evil undertone, supernatural menace, dark extreme.\n\nVoice Range: Baritone / Low Tenor | Register: Chest, dark edge | Resonance: Throat-laryngeal (demonic)\nVibrato: Minimal, controlled darkness | Ornamentation: Growls, demonic effects, dark phrasing\n\nMic: Shure SM7B or Sennheiser MD421 (dark, aggressive)\nFX: Minimal tight reverb (150ms), slight distortion for demonic character, compression control\nEQ: +4dB 300Hz (demonic), +3dB 5kHz (menace), -3dB 200Hz (mud), -1dB 80Hz\n\nMixing: Demonic and menacing, horror-trap atmosphere, evil undertone. Supernatural character through tone."
+    },
+    {
+      "n": 41,
+      "name": "Lo-Fi Melancholic",
+      "p": "Melancholic tone, sad vibes, introspective delivery, wistful character, nostalgic, organic.\n\nVoice Range: Baritone / Tenor | Register: Chest dominant | Resonance: Forward-warm (sad)\nVibrato: Minimal, natural | Ornamentation: Relaxed phrasing, melancholic articulation\n\nMic: Shure SM58 or Rode Procaster (lo-fi character)\nFX: Light room reverb (250ms), vintage tape saturation, analog warmth\nEQ: +1dB 300Hz (warmth), +1dB 1kHz (presence), -1dB 3kHz (harshness), no high boost\n\nMixing: Lo-fi aesthetic, melancholic and sad, introspective character. Nostalgic tape warmth."
+    },
+    {
+      "n": 42,
+      "name": "Grime Sharp MCing",
+      "p": "Sharp MCing, quick syllables, London character, authentic street grime presence, precision.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward-palatal (sharp)\nVibrato: None, straight tone | Ornamentation: Sharp staccato, rapid articulation, MCing bounce\n\nMic: Shure SM7B or Sennheiser MD421 (precise, gritty)\nFX: Tight room reverb (150ms), no delay, tight gating for clarity\nEQ: +4dB 3kHz (clarity), +2dB 6kHz (cut), -3dB 500Hz (mud), -1dB 80Hz\n\nMixing: Sharp MCing presence, London character, street authenticity. Quick and precise throughout."
+    },
+    {
+      "n": 43,
+      "name": "Rage Screamed",
+      "p": "Full screaming, cathartic release, primal roar, emotional explosion, maximum intensity.\n\nVoice Range: Extended high extremes | Register: Edge, fry register | Resonance: Throat-laryngeal\nVibrato: None, aggressive scream | Ornamentation: Screams, roars, primal sounds\n\nMic: Shure SM7B or Audix i5 (durable, scream-capable)\nFX: Plate reverb (1.5s), slight distortion for intensity, compression for control\nEQ: +5dB 3kHz (scream), +3dB 8kHz (intensity), -3dB 200Hz (mud), +1dB 80Hz\n\nMixing: Cathartic screaming, emotional explosion, reverb-heavy impact. Primal roar character."
+    },
+    {
+      "n": 44,
+      "name": "Rage Pent Up",
+      "p": "Pent-up anger, explosive energy, manic delivery, pressure release, volatile, turbulent.\n\nVoice Range: Tenor / Baritone | Register: Chest, edge register | Resonance: Throat-forward\nVibrato: Irregular, tense | Ornamentation: Explosive phrasing, pressure-release articulation\n\nMic: Shure SM7B or Neumann U87 (handles aggression)\nFX: Moderate reverb (1s), slight distortion, compression for control\nEQ: +4dB 2kHz (tension), +2dB 5kHz (explosion), -2dB 200Hz (mud), +1dB 80Hz\n\nMixing: Explosive and volatile, pent-up pressure, manic energy. Pressure release expressed vocally."
+    },
+    {
+      "n": 45,
+      "name": "Trap Whispered",
+      "p": "Intimate whispered, conspiracy vibes, secretive tone, close-mic proximity, intimate menace.\n\nVoice Range: Baritone / Low Tenor | Register: Chest, whispered | Resonance: Throat-intimate\nVibrato: None, whispered straight | Ornamentation: Whispered phrasing, intimate articulation\n\nMic: Neumann U87 or AKG C414 (captures whisper intimacy)\nFX: Light room reverb (200ms), slapback delay (80ms), minimal compression\nEQ: +2dB 250Hz (intimacy), +2dB 2kHz (whisper presence), -1dB 4kHz (harshness), +1dB 10kHz (air)\n\nMixing: Intimately close-mic'd, conspiracy vibes, secretive character. Menace through whispered intimacy."
+    },
+    {
+      "n": 46,
+      "name": "Trap Chaotic",
+      "p": "Chaotic energy, unpredictable flow, manic delivery, uncontrolled intensity, wild character.\n\nVoice Range: Extended, flexible | Register: Chest, variable | Resonance: Shifting, chaotic\nVibrato: Irregular, chaotic | Ornamentation: Chaotic phrasing, unpredictable articulation\n\nMic: Shure SM7B or Neumann U87 (handles chaos)\nFX: Moderate reverb (800ms), slight distortion, compression for dynamic control\nEQ: +3dB 2kHz (chaos), +2dB 5kHz (energy), -2dB 200Hz (mud), +1dB 80Hz (power)\n\nMixing: Chaotic and unpredictable, manic energy, uncontrolled intensity. Wild through delivery."
+    },
+    {
+      "n": 47,
+      "name": "Trap Smooth",
+      "p": "Laid-back delivery, relaxed pocket, effortless flow, smooth integration, groove-locked.\n\nVoice Range: Baritone / Tenor | Register: Chest dominant | Resonance: Forward-warm (relaxed)\nVibrato: Minimal, relaxed | Ornamentation: Smooth phrasing, groovy articulation\n\nMic: Shure KSM9 or Neumann U87 (warm, relaxed-capable)\nFX: Tight room reverb (250ms), subtle delay (100ms), light compression for groove\nEQ: +2dB 300Hz (warmth), +1dB 1.5kHz (smoothness), -1dB 4kHz (harshness), +1dB 100Hz (pocket)\n\nMixing: Smooth and laid-back, effortless flow, groove-pocket tight. Relaxed throughout."
+    },
+    {
+      "n": 48,
+      "name": "Trap Philosophical",
+      "p": "Philosophical introspective, thoughtful delivery, contemplative character, wise tone, measured.\n\nVoice Range: Baritone | Register: Chest dominant | Resonance: Throat-warm (thoughtful)\nVibrato: Moderate, measured | Ornamentation: Measured phrasing, contemplative articulation\n\nMic: Neumann U87 or Shure KSM9 (warm, thoughtful)\nFX: Plate reverb (1.2s), subtle delay (120ms), minimal compression\nEQ: +2dB 250Hz (warmth), +1dB 1.5kHz (wisdom), -1dB 4kHz (harshness), +1dB 80Hz (depth)\n\nMixing: Stoic and philosophical, contemplative character, wise presence. Thoughtful delivery throughout."
+    },
+    {
+      "n": 49,
+      "name": "Trap Sarcastic",
+      "p": "Sarcastic delivery, comedic menace, tongue-in-cheek attitude, witty character, playful mockery.\n\nVoice Range: Tenor / Baritone | Register: Chest dominant | Resonance: Forward (sarcastic)\nVibrato: Minimal, sarcastic | Ornamentation: Sarcastic phrasing, witty articulation\n\nMic: Shure KSM9 or Neumann U87 (warm, communicative)\nFX: Light room reverb (300ms), subtle delay (100ms), light compression\nEQ: +2dB 300Hz (body), +2dB 1.5kHz (wit), -1dB 4kHz (harshness), +1dB 10kHz (clarity)\n\nMixing: Sarcastic and witty, comedic menace, playful mockery. Tongue-in-cheek character expressed."
+    },
+    {
+      "n": 50,
+      "name": "Trap Breathless",
+      "p": "Out-of-breath feel, exhaustion showing, real panic, vulnerable energy, desperation, anxiety.\n\nVoice Range: Tenor / Baritone | Register: Chest, struggling | Resonance: Throat-tight (panicked)\nVibrato: Irregular, panicked | Ornamentation: Breathy gasping, desperate phrasing\n\nMic: Neumann U87 or Shure KSM9 (captures desperation)\nFX: Moderate reverb (1s), slight saturation for urgency, minimal compression for raw feeling\nEQ: +2dB 300Hz (breath audibility), +2dB 2kHz (panic presence), -1dB 4kHz (harshness), +1dB 10kHz (air)\n\nMixing: Out-of-breath and panicked, exhaustion audible, vulnerable energy. Desperation through delivery."
+    },
+    {
+      "n": 51,
+      "name": "Nursery Rhyme Rap Beef",
+      "p": "Dual male/girl vocals, nursery melody over rap beat, playful menace, theatrical comedy.\n\nMale Voice - Baritone/Tenor | Register: Chest | Resonance: Forward (confident) | Vibrato: Minimal | Articulation: Confident teasing\nGirl Voice - Soprano/Alto | Register: Head | Resonance: Bright (sassy) | Vibrato: Light | Articulation: Sassy comebacks\n\nMic: Neumann U87 or Shure KSM9 (captures both voices)\nFX: Light room reverb (250ms), minimal delay (80ms), light compression\nEQ: Male +2dB 1kHz, Girl +2dB 2kHz, both -1dB 4kHz, +1dB 10kHz for air\n\nMixing: Both voices clear and balanced, trading back-and-forth, playful menace, story-focused. Nursery melody over rap beat. Entertainment-focused playground battle vibe."
+    }
+  ],
+  "instruments": [
+    {
+      "n": 200,
+      "name": "Gibson Les Paul",
+      "p": "Classic rock guitar, warm thick tone, iconic sustain, legendary character for rock.\n\nSonic Character: Warm thick overtones, natural compression character, sustaining resonance, iconic rock voice.\nMicrophone: Shure SM57 (classic rock mic on amp), Neumann U87 (ribbon-like warmth), Royer R-121 (ribbon warmth on amp)\nRecording: Close mic'd amp speaker (1-3 inches) for body, optionally room mic for ambience\nEffects: Natural amp sag, overdrive/distortion, subtle reverb for space, phase/delay optional\nEQ: +2dB 200Hz (warm body), +3dB 500Hz (classic midrange), -1dB 2kHz (smoothness), +2dB 5kHz (presence)\nMixing: Sits present in mix, thick iconic character, natural sustain preserved."
+    },
+    {
+      "n": 201,
+      "name": "Fender Stratocaster",
+      "p": "Bright articulate guitar, versatile character, legendary tone, cutting edge for blues/rock/pop.\n\nSonic Character: Bright articulate, cutting edge, flexible character, iconic twang with sustain.\nMicrophone: Shure SM57 (dynamic, captures brightness), Neumann U87 (detailed capture), Coles 4038 (ribbon, warm capture)\nRecording: Close mic'd amp speaker, optionally dual microphone (dynamic + condenser) for full character\nEffects: Clean to mild overdrive, reverb for space, chorus/tremolo for character, delay optional\nEQ: +1dB 250Hz (body), +2dB 1kHz (articulation), +3dB 3kHz (brightness), +1dB 8kHz (cut)\nMixing: Bright and present, articulate character preserved. Versatile sitting in mix."
+    },
+    {
+      "n": 202,
+      "name": "Fender Telecaster",
+      "p": "Sharp cutting tone, twang character, classic bright attack, iconic definition for country/rock.\n\nSonic Character: Sharp cutting tone, bright twang, percussive attack, iconic Tele character.\nMicrophone: Shure SM57 (captures twang), Neumann U87 (detailed), Electro-Voice RE20 (colored)\nRecording: Close mic'd amp speaker for direct character, room mic optional for country spaciousness\nEffects: Clean to slight breakup, twang reverb, minimal chorus/delay\nEQ: +1dB 200Hz (body), +3dB 2kHz (twang), +3dB 4kHz (cutting), +2dB 8kHz (definition)\nMixing: Sharp and cutting, twang character strong. Sits bright in mix."
+    },
+    {
+      "n": 203,
+      "name": "Martin D-28",
+      "p": "Warm acoustic guitar, legendary tone, iconic warmth and resonance, fingerstyle/strumming character.\n\nSonic Character: Warm legendary resonance, rich bass, articulate high-mids, iconic acoustic voice.\nMicrophone: Neumann KM141 (omnidirectional, room-aware), AKG C414 (detailed, versatile), Earthworks Audio (bright capture)\nRecording: Pair of microphones - one near soundhole, one near frets (or X-Y stereo overhead)\nEffects: Minimal - natural microphone placement is key, optional subtle reverb if needed\nEQ: +2dB 100Hz (warmth), +2dB 400Hz (body), +1dB 2kHz (articulation), +1dB 10kHz (air)\nMixing: Warm and legendary in mix, iconic character preserved."
+    },
+    {
+      "n": 204,
+      "name": "Taylor 814",
+      "p": "Balanced acoustic, modern clarity tone, contemporary character with warmth, fingerstyle-friendly.\n\nSonic Character: Balanced clarity, modern bright warmth, defined articulation, contemporary acoustic voice.\nMicrophone: Neumann KM141 (balanced, modern), AKG C414 (detailed), Earthworks SR (bright)\nRecording: Stereo pair - one near 12th fret (articulation), one near soundhole (body)\nEffects: Minimal natural recording, subtle room reverb if needed\nEQ: +1dB 150Hz (body), +2dB 500Hz (midrange), +2dB 2kHz (articulation), +2dB 10kHz (modern air)\nMixing: Modern and clear, contemporary character, balanced acoustic tone."
+    },
+    {
+      "n": 205,
+      "name": "Yamaha Nylon Classical",
+      "p": "Warm nylon string, classical character, traditional tone, fingerstyle/classical application.\n\nSonic Character: Warm classical resonance, smooth articulation, mellow overtones, traditional character.\nMicrophone: Neumann KM141 (classical standard), Schoeps CMC6 (detailed), AKG C414 (versatile)\nRecording: Omnidirectional or cardioid stereo pair, room-aware placement for classical resonance\nEffects: Minimal - natural acoustic capture is priority, subtle reverb only if needed\nEQ: +2dB 200Hz (warmth), +1dB 500Hz (body), +1dB 2kHz (articulation), +1dB 8kHz (air)\nMixing: Warm classical presence, fingerstyle articulation, traditional character."
+    },
+    {
+      "n": 206,
+      "name": "PRS Custom",
+      "p": "Premium electric guitar, warmth and clarity blend, sophisticated tone, professional character.\n\nSonic Character: Warm clarity blend, premium character, balanced presence, sophisticated electric voice.\nMicrophone: Shure SM57 (classic capture), Neumann U87 (detailed warmth), Royer R-121 (ribbon premium)\nRecording: Close mic'd amp speaker, optionally dual mic approach for full character\nEffects: Light gain, warm reverb, subtle modulation, phase/delay optional\nEQ: +2dB 250Hz (warmth), +2dB 1.5kHz (presence), -1dB 3kHz (smoothness), +2dB 6kHz (clarity)\nMixing: Premium and present, warm clarity character, sophisticated presence."
+    },
+    {
+      "n": 207,
+      "name": "Ibanez",
+      "p": "Modern electric clarity, bright character, contemporary tone, high-energy applications.\n\nSonic Character: Bright modern clarity, cutting edge, contemporary electric voice, energetic character.\nMicrophone: Shure SM57 (captures brightness), Neumann U87 (detailed), AKG D112 (aggressive)\nRecording: Close mic'd amp speaker, tight miking for clarity emphasis\nEffects: Moderate gain, bright reverb/delay, modulation for character\nEQ: +1dB 300Hz (body), +3dB 2kHz (presence), +3dB 5kHz (brightness), +2dB 8kHz (cut)\nMixing: Bright and energetic, modern character, cutting edge present."
+    },
+    {
+      "n": 208,
+      "name": "Jackson",
+      "p": "Aggressive rock electric, bold character, high-energy tone, metal/rock applications.\n\nSonic Character: Aggressive bold character, powerful presence, high-energy electric voice.\nMicrophone: Shure SM57 (durable, aggressive), Electro-Voice RE20 (colored, aggressive), AKG D112 (heavy)\nRecording: Close mic'd amp, tight miking for aggression capture\nEffects: High gain, aggressive reverb, heavy distortion/overdrive character\nEQ: +2dB 300Hz (power), +4dB 2kHz (aggression), +2dB 5kHz (edge), -1dB 80Hz (tighten)\nMixing: Aggressive and powerful, bold character strong. High-energy presence."
+    },
+    {
+      "n": 209,
+      "name": "Fender Precision Bass",
+      "p": "Classic fat bass tone, iconic character, warmth and depth, classic bass foundation.\n\nSonic Character: Warm fat resonance, iconic bass voice, natural compression character, classic tone.\nMicrophone: Shure Beta 52 (bass mic), Neumann U87 (detailed warmth), Royer R-121 (ribbon warmth)\nRecording: Close mic'd amp speaker cabinet, optionally DI blend for definition\nEffects: Subtle compression for tone, minimal reverb, optional slight EQ shaping\nEQ: +3dB 80Hz (warmth), +2dB 300Hz (body), +1dB 1.5kHz (definition), -1dB 3kHz (boxiness)\nMixing: Classic warm presence, iconic character strong. Fat bass foundation in mix."
+    },
+    {
+      "n": 210,
+      "name": "Fender Jazz Bass",
+      "p": "Warm versatile bass, smooth character, classic tone, jazz and pop applications.\n\nSonic Character: Warm smooth versatility, classic resonance, articulate character, flexible bass voice.\nMicrophone: Shure Beta 52 (bass mic), Neumann U87 (detailed), Royer R-121 (ribbon)\nRecording: Close mic'd amp speaker, optional DI blend for tonal flexibility\nEffects: Light compression, subtle reverb, optional chorus/warm effects\nEQ: +2dB 80Hz (warmth), +2dB 250Hz (body), +1dB 2kHz (articulation), +1dB 8kHz (air)\nMixing: Warm and smooth, classic character, versatile sitting in mix."
+    },
+    {
+      "n": 211,
+      "name": "Musicman Stingray",
+      "p": "Punchy modern bass, bright character, contemporary tone, modern rock/pop applications.\n\nSonic Character: Bright punchy character, modern electric voice, articulate presence, energetic tone.\nMicrophone: Shure Beta 52 (captures punch), Neumann U87 (detailed), AKG D112 (modern)\nRecording: Close mic'd amp speaker, DI blend optional for modern definition\nEffects: Subtle compression, bright reverb, minimal modulation\nEQ: +2dB 100Hz (punch), +2dB 1.5kHz (presence), +2dB 4kHz (brightness), +1dB 8kHz (cut)\nMixing: Punchy and modern, bright character, contemporary presence."
+    },
+    {
+      "n": 212,
+      "name": "Warwick",
+      "p": "Aggressive tight bass, modern character, precision tone, tight groove applications.\n\nSonic Character: Aggressive tight character, precise modern voice, punchy presence, controlled tone.\nMicrophone: Shure Beta 52 (tight), Neumann U87 (precise), AKG D112 (aggressive)\nRecording: Close mic'd amp, tight miking for precision capture\nEffects: Tight compression, minimal reverb, optional slight distortion for character\nEQ: +1dB 100Hz (tightness), +3dB 2kHz (precision), +2dB 5kHz (aggression), -1dB 80Hz (control)\nMixing: Aggressive and tight, modern precision, controlled presence."
+    },
+    {
+      "n": 213,
+      "name": "Spector",
+      "p": "Dark aggressive bass, edgy character, powerful tone, heavy applications.\n\nSonic Character: Dark aggressive character, edgy powerful voice, heavy presence, intense tone.\nMicrophone: Shure Beta 52 (aggressive), Neumann U87 (dark), AKG D112 (heavy)\nRecording: Close mic'd amp speaker, optional distortion amp chain for darkness\nEffects: Compression for character, slight distortion, dark reverb optional\nEQ: +2dB 200Hz (darkness), +3dB 1.5kHz (aggression), +2dB 4kHz (edge), -1dB 80Hz (control)\nMixing: Dark and aggressive, edgy character strong. Heavy presence in mix."
+    },
+    {
+      "n": 214,
+      "name": "Ludwig Drums",
+      "p": "Classic jazz drums, warm character, iconic tone, jazz and traditional drumming.\n\nSonic Character: Warm classic resonance, iconic jazz voice, natural tone, warm articulation.\nMicrophone: Shure SM81 (overheads), Neumann KM137 (bright overheads), Audix D6 (kick)\nRecording: Overhead stereo pair, kick drum mic, optional tom and snare close mics\nEffects: Minimal - natural tuning and resonance, optional light room reverb\nEQ: Kick +3dB 50Hz (warmth), +1dB 3kHz (beater); Snare +2dB 200Hz (warmth), +3dB 4kHz (crack); Overhead +1dB 10kHz (air)\nMixing: Warm classic character, jazz sensibility, natural tone preserved."
+    },
+    {
+      "n": 215,
+      "name": "Gretsch Drums",
+      "p": "Vintage rock drums, warm character, classic tone, rock and vintage applications.\n\nSonic Character: Warm vintage resonance, classic rock voice, natural warmth, vintage articulation.\nMicrophone: Shure SM81 (overheads), Neumann KM137 (vintage warmth), Audix D6 (kick)\nRecording: Overhead stereo pair, kick drum mic, optional tom/snare close mics\nEffects: Minimal - natural tuning, optional light reverb for vintage character\nEQ: Kick +3dB 60Hz (vintage warmth), +1dB 4kHz (beater); Snare +2dB 250Hz (vintage), +3dB 5kHz (crack); Overhead +1dB 8kHz (vintage air)\nMixing: Vintage and warm, rock character, classic warmth strong."
+    },
+    {
+      "n": 216,
+      "name": "Tama Drums",
+      "p": "Modern crisp drums, bright character, contemporary tone, modern music applications.\n\nSonic Character: Bright modern clarity, crisp electric voice, contemporary tone, sharp articulation.\nMicrophone: Shure SM81 (bright overheads), Neumann KM137 (crisp), Audix D6 (modern kick)\nRecording: Overhead stereo pair, kick drum mic, close mics for tom/snare definition\nEffects: Minimal - crisp tuning, subtle room mic for modern feel\nEQ: Kick +2dB 60Hz (modern), +2dB 4kHz (beater); Snare +1dB 300Hz (body), +4dB 5kHz (snap); Overhead +2dB 10kHz (modern air)\nMixing: Modern and crisp, bright character, contemporary presence."
+    },
+    {
+      "n": 217,
+      "name": "Pearl Drums",
+      "p": "Versatile drum tone, balanced character, professional tone, all-purpose applications.\n\nSonic Character: Balanced versatile character, professional voice, adaptable tone, clear articulation.\nMicrophone: Shure SM81 (versatile overheads), Neumann KM137 (detailed), Audix D6 (professional kick)\nRecording: Overhead stereo pair, kick drum mic, optional close mics for definition\nEffects: Minimal - professional tuning, light room reverb optional\nEQ: Kick +2dB 60Hz (body), +1dB 4kHz (beater); Snare +1dB 250Hz (tone), +3dB 5kHz (crack); Overhead +1dB 8kHz (clarity)\nMixing: Professional versatile tone, balanced presence, adaptable character."
+    },
+    {
+      "n": 218,
+      "name": "Zildjian Cymbals",
+      "p": "Classic bright cymbals, traditional character, articulate shimmer, jazz/rock applications.\n\nSonic Character: Bright articulate shimmer, traditional cymbal voice, clean stick definition, classic character.\nMicrophone: Shure SM81 (captures brightness), Neumann KM137 (detailed), Coles 4038 (warm capture)\nRecording: Overhead stereo pair positioning, optional room mic for ambience\nEffects: Minimal - cymbal character essential, optional subtle room reverb\nEQ: +2dB 1kHz (body), +3dB 5kHz (definition), +2dB 10kHz (shimmer), -1dB 200Hz (boxiness)\nMixing: Bright and articulate, traditional cymbal presence, clean stick definition."
+    },
+    {
+      "n": 219,
+      "name": "Sabian Cymbals",
+      "p": "Modern bright cymbals, contemporary character, crisp articulation, modern music applications.\n\nSonic Character: Bright modern shimmer, contemporary cymbal voice, crisp stick definition, modern character.\nMicrophone: Shure SM81 (captures modern brightness), Neumann KM137 (detailed), AKG C414 (versatile)\nRecording: Overhead stereo pair, optional room mic for modern space\nEffects: Minimal - natural cymbal tone, optional subtle room reverb\nEQ: +1dB 1.5kHz (modern body), +4dB 5kHz (crispness), +3dB 10kHz (air), -1dB 200Hz (control)\nMixing: Modern and crisp, contemporary character, bright presence."
+    },
+    {
+      "n": 220,
+      "name": "Steinway Grand Piano",
+      "p": "Warm legendary piano, iconic resonance, rich character, classical/jazz/pop applications.\n\nSonic Character: Warm legendary resonance, rich harmonic character, iconic Steinway voice, warm sustain.\nMicrophone: Neumann U87 (stereo pair, one treble one bass), Coles 4038 (ribbon warmth), AKG C414 (detailed)\nRecording: Stereo pair inside piano lid, close-positioned for intimacy\nEffects: Minimal - natural piano resonance, optional subtle room reverb\nEQ: +2dB 100Hz (bass warmth), +1dB 500Hz (body), +1dB 2kHz (articulation), +1dB 10kHz (air)\nMixing: Warm and legendary, iconic character, rich resonance preserved."
+    },
+    {
+      "n": 221,
+      "name": "Yamaha Grand Piano",
+      "p": "Balanced bright piano, modern character, clean articulation, contemporary applications.\n\nSonic Character: Balanced bright tone, modern clean character, articulate attack, contemporary voice.\nMicrophone: Neumann U87 (stereo pair), Coles 4038 (warm alternative), Shure KSM9 (bright alternative)\nRecording: Stereo pair inside lid, balanced positioning for modern character\nEffects: Minimal - natural piano tone, optional subtle room reverb\nEQ: +1dB 150Hz (body), +2dB 500Hz (midrange), +2dB 2kHz (articulation), +2dB 10kHz (air)\nMixing: Modern and bright, balanced character, clean articulation."
+    },
+    {
+      "n": 222,
+      "name": "Hammond B3 Organ",
+      "p": "Classic warm organ, iconic soul character, rich harmonic complexity, jazz/soul applications.\n\nSonic Character: Warm iconic organ voice, rich harmonic complexity, soul character, natural mechanical warmth.\nMicrophone: Neumann U87 (captures warmth), Royer R-121 (ribbon warmth), Shure KSM9 (detailed)\nRecording: Close-positioned for direct character, optional room mic for ambience\nEffects: Rotary speaker effect (Leslie simulation), mild compression, warm reverb\nEQ: +2dB 100Hz (warmth), +2dB 400Hz (body), +1dB 2kHz (presence), +1dB 10kHz (air)\nMixing: Warm and iconic, soul character strong, harmonic richness preserved."
+    },
+    {
+      "n": 223,
+      "name": "Moog Synthesizer",
+      "p": "Classic warm synth, legendary character, rich analog warmth, experimental applications.\n\nSonic Character: Warm analog character, legendary Moog voice, rich harmonic warmth, experimental flexibility.\nMicrophone: Neumann U87 (captures warmth), Shure KSM9 (detailed), Audio-Technica AT2020 (bright)\nRecording: Line-level connection or close mic'd, line level preferred for purity\nEffects: Analog warmth character, optional mild compression, subtle reverb\nEQ: +2dB 100Hz (analog warmth), +1dB 500Hz (body), +1dB 2kHz (presence), +1dB 8kHz (air)\nMixing: Warm and legendary, analog character strong, experimental character."
+    },
+    {
+      "n": 224,
+      "name": "Roland Juno",
+      "p": "Bright modern synth, contemporary character, crisp tone, pop/electronic applications.\n\nSonic Character: Bright contemporary character, crisp electronic voice, modern tone, energetic presence.\nMicrophone: Shure KSM9 (bright capture), Neumann U87 (detailed), Audio-Technica AT2020 (clear)\nRecording: Line-level connection, tight monitoring for character\nEffects: Mild compression, contemporary reverb/delay, optional modulation\nEQ: +1dB 300Hz (body), +2dB 2kHz (presence), +2dB 5kHz (brightness), +1dB 10kHz (air)\nMixing: Modern and bright, contemporary character, crisp presence."
+    },
+    {
+      "n": 225,
+      "name": "Yamaha DX7",
+      "p": "Bright digital synth, iconic 80s character, crisp articulation, pop/electronic applications.\n\nSonic Character: Bright digital character, iconic 80s voice, crisp articulation, digital presence.\nMicrophone: Shure KSM9 (bright capture), Neumann U87 (detailed), Audio-Technica AT2020 (clear)\nRecording: Line-level connection, tight monitoring\nEffects: Light compression, 80s-style reverb/delay, optional modulation\nEQ: +1dB 300Hz (body), +3dB 2kHz (80s presence), +2dB 5kHz (brightness), +1dB 8kHz (air)\nMixing: Bright and iconic, 80s character, crisp digital presence."
+    },
+    {
+      "n": 226,
+      "name": "Selmer Saxophone",
+      "p": "Warm bright saxophone, classic character, rich articulation, jazz/soul applications.\n\nSonic Character: Warm bright tone, classic saxophone voice, rich articulation, soulful character.\nMicrophone: Shure SM81 (dynamic, captures warmth), Neumann U87 (detailed), AKG C414 (versatile)\nRecording: Close-positioned to bell (6-12 inches), single mic or stereo pair\nEffects: Minimal - natural tone essential, optional subtle room reverb\nEQ: +1dB 300Hz (body), +2dB 1kHz (warmth), +2dB 3kHz (articulation), +1dB 8kHz (air)\nMixing: Warm and bright, classic character, rich articulation preserved."
+    },
+    {
+      "n": 227,
+      "name": "Stradivarius Violin",
+      "p": "Legendary warm violin, iconic character, rich resonance, classical/chamber applications.\n\nSonic Character: Warm legendary resonance, iconic Strad voice, rich character, classical presence.\nMicrophone: Neumann KM141 (omnidirectional), Schoeps CMC6 (detailed), AKG C414 (versatile)\nRecording: Stereo pair positioning, room-aware for classical resonance\nEffects: Minimal - natural violin tone, optional subtle room reverb\nEQ: +1dB 200Hz (warmth), +1dB 600Hz (body), +1dB 2kHz (articulation), +1dB 10kHz (air)\nMixing: Legendary and warm, iconic character, rich resonance."
+    },
+    {
+      "n": 228,
+      "name": "Guarneri Violin",
+      "p": "Rich warm violin, golden character, sonorous tone, classical applications.\n\nSonic Character: Rich warm tone, golden violin voice, sonorous character, classical resonance.\nMicrophone: Neumann KM141 (omnidirectional), Schoeps CMC6 (detailed), Coles 4038 (ribbon warmth)\nRecording: Stereo pair, room-aware positioning for resonance\nEffects: Minimal - natural tone, optional subtle room reverb\nEQ: +2dB 200Hz (warmth), +1dB 600Hz (body), +1dB 2kHz (articulation), +1dB 8kHz (air)\nMixing: Rich and warm, golden character, sonorous presence."
+    },
+    {
+      "n": 229,
+      "name": "Banjo 5-String",
+      "p": "Bright percussive banjo, iconic twang, folk/bluegrass character, traditional applications.\n\nSonic Character: Bright percussive twang, iconic banjo voice, folk character, articulate attack.\nMicrophone: Shure SM81 (captures twang), Neumann KM137 (bright), AKG C414 (versatile)\nRecording: Close-positioned to head (6-12 inches), single or stereo pair\nEffects: Minimal - natural percussive tone, optional subtle room reverb\nEQ: +2dB 400Hz (body), +3dB 2kHz (twang), +2dB 5kHz (articulation), +1dB 8kHz (brightness)\nMixing: Bright and percussive, folk character, iconic twang."
+    },
+    {
+      "n": 230,
+      "name": "Fiddle",
+      "p": "Bright articulate fiddle, folk character, percussive presence, bluegrass/folk applications.\n\nSonic Character: Bright articulate character, folk fiddle voice, percussive attack, traditional tone.\nMicrophone: Shure SM81 (captures brightness), Neumann KM137 (detailed), AKG C414 (versatile)\nRecording: Close-positioned (6-12 inches), single or stereo pair\nEffects: Minimal - natural tone, optional room reverb for folk character\nEQ: +1dB 300Hz (body), +3dB 2kHz (articulation), +2dB 5kHz (brightness), +1dB 8kHz (air)\nMixing: Bright and articulate, folk character, percussive presence."
+    },
+    {
+      "n": 231,
+      "name": "Bagpipes",
+      "p": "Warm loud bagpipes, traditional character, harmonic richness, folk/Celtic applications.\n\nSonic Character: Warm loud character, traditional bagpipe voice, harmonic richness, Celtic presence.\nMicrophone: Shure SM81 (dynamic, durable for volume), Neumann U87 (detailed), AKG C414 (versatile)\nRecording: Close-positioned with distance management for volume\nEffects: Minimal - natural tone, optional subtle room reverb for tradition\nEQ: +2dB 100Hz (warmth), +2dB 400Hz (body), +1dB 2kHz (tone), +1dB 8kHz (air)\nMixing: Warm and loud, traditional character, harmonic richness."
+    },
+    {
+      "n": 232,
+      "name": "Harmonica",
+      "p": "Warm intimate harmonica, folk character, organic presence, blues/folk applications.\n\nSonic Character: Warm intimate character, folk harmonica voice, organic presence, emotional tone.\nMicrophone: Shure SM57 (classic harmonica mic), Neumann U87 (detailed), Royer R-121 (ribbon warmth)\nRecording: Close-mic'd (3-6 inches), direct mic or amp capture\nEffects: Minimal - natural harmonica tone, optional subtle room reverb\nEQ: +1dB 300Hz (body), +2dB 1kHz (warmth), +2dB 3kHz (articulation), +1dB 8kHz (air)\nMixing: Warm and intimate, folk character, organic presence."
+    },
+    {
+      "n": 233,
+      "name": "Sitar",
+      "p": "Exotic bright sitar, Indian character, complex harmonic overtones, world music applications.\n\nSonic Character: Bright exotic character, Indian sitar voice, complex harmonics, ethnic presence.\nMicrophone: Neumann KM141 (omnidirectional), Schoeps CMC6 (detailed), AKG C414 (versatile)\nRecording: Stereo pair for harmonic capture, room-aware positioning\nEffects: Minimal - natural sitar tone, optional subtle room reverb\nEQ: +1dB 300Hz (body), +2dB 1kHz (warmth), +2dB 3kHz (articulation), +2dB 8kHz (air)\nMixing: Exotic and bright, Indian character, complex harmonics."
+    },
+    {
+      "n": 234,
+      "name": "Oud",
+      "p": "Warm exotic oud, Middle Eastern character, rich resonance, world music applications.\n\nSonic Character: Warm exotic character, Middle Eastern oud voice, rich resonance, ethnic presence.\nMicrophone: Neumann KM141 (omnidirectional), AKG C414 (detailed), Coles 4038 (ribbon warmth)\nRecording: Stereo pair, room-aware positioning for resonance\nEffects: Minimal - natural tone, optional subtle room reverb\nEQ: +2dB 200Hz (warmth), +1dB 600Hz (body), +1dB 2kHz (articulation), +1dB 8kHz (air)\nMixing: Warm and exotic, Middle Eastern character, rich resonance."
+    },
+    {
+      "n": 235,
+      "name": "Kalimba",
+      "p": "Bright warm kalimba, African character, organic presence, world music applications.\n\nSonic Character: Bright warm character, African kalimba voice, organic presence, percussive tone.\nMicrophone: Shure SM81 (captures brightness), Neumann KM137 (detailed), AKG C414 (versatile)\nRecording: Close-positioned (6-12 inches), single or stereo pair\nEffects: Minimal - natural tone, optional subtle room reverb\nEQ: +1dB 300Hz (body), +2dB 1.5kHz (warmth), +2dB 5kHz (brightness), +1dB 10kHz (air)\nMixing: Bright and warm, African character, organic presence."
+    },
+    {
+      "n": 236,
+      "name": "Theremin",
+      "p": "Ethereal theremin, experimental character, eerie presence, electronic/experimental applications.\n\nSonic Character: Ethereal experimental character, theremin voice, eerie presence, electronic tone.\nMicrophone: Neumann U87 (captures ethereal quality), Shure KSM9 (detailed), Audio-Technica AT2020 (clear)\nRecording: Line-level connection or close mic'd (distance matters for pitch)\nEffects: Optional reverb for ethereal quality, minimal compression, subtle delay\nEQ: +1dB 200Hz (body), +1dB 1kHz (presence), +1dB 5kHz (articulation), +2dB 10kHz (air)\nMixing: Ethereal and eerie, experimental character, electronic presence."
+    },
+    {
+      "n": 237,
+      "name": "Mellotron",
+      "p": "Warm retro mellotron, 70s character, lush character, progressive/experimental applications.\n\nSonic Character: Warm retro character, 70s mellotron voice, lush presence, vintage tone.\nMicrophone: Neumann U87 (captures warmth), Shure KSM9 (detailed), Royer R-121 (ribbon warmth)\nRecording: Line-level connection or close mic'd, tape character preserved\nEffects: Warm compression for character, analog reverb, subtle saturation\nEQ: +2dB 100Hz (warmth), +1dB 500Hz (body), +1dB 2kHz (presence), +1dB 8kHz (air)\nMixing: Warm and retro, 70s character, lush presence."
+    },
+    {
+      "n": 238,
+      "name": "Steelpan",
+      "p": "Warm bright steelpan, Caribbean character, rhythmic presence, world music applications.\n\nSonic Character: Warm bright character, Caribbean steelpan voice, rhythmic presence, ethnic tone.\nMicrophone: Shure SM81 (captures brightness), Neumann KM137 (detailed), AKG C414 (versatile)\nRecording: Close-positioned (6-12 inches), single or stereo pair\nEffects: Minimal - natural tone, optional subtle room reverb for Caribbean character\nEQ: +1dB 300Hz (body), +2dB 1.5kHz (warmth), +2dB 5kHz (brightness), +1dB 10kHz (air)\nMixing: Warm and bright, Caribbean character, rhythmic presence."
+    },
+    {
+      "n": 239,
+      "name": "Timpani",
+      "p": "Deep warm timpani, classical character, resonant presence, orchestral applications.\n\nSonic Character: Deep warm character, classical timpani voice, resonant presence, traditional tone.\nMicrophone: Shure SM81 (overheads), Audix D6 (deep capture), Neumann KM137 (detailed)\nRecording: Overhead stereo positioning, optional close mic for definition\nEffects: Minimal - natural resonance, optional subtle room reverb\nEQ: +3dB 80Hz (deep warmth), +1dB 400Hz (body), +1dB 2kHz (articulation), +1dB 8kHz (air)\nMixing: Deep and warm, classical character, resonant presence."
+    },
+    {
+      "n": 240,
+      "name": "Vibraphone",
+      "p": "Bright warm vibraphone, jazz character, shimmering presence, jazz/pop applications.\n\nSonic Character: Bright warm character, jazz vibraphone voice, shimmering presence, smooth tone.\nMicrophone: Shure SM81 (captures shimmer), Neumann KM137 (detailed), AKG C414 (versatile)\nRecording: Overhead stereo positioning for shimmer capture\nEffects: Minimal - natural vibrato, optional subtle reverb\nEQ: +1dB 300Hz (body), +1dB 1.5kHz (warmth), +2dB 5kHz (shimmer), +1dB 10kHz (air)\nMixing: Bright and warm, jazz character, shimmering presence."
+    },
+    {
+      "n": 241,
+      "name": "Marimba",
+      "p": "Warm bright marimba, classical character, rich articulation, orchestral applications.\n\nSonic Character: Warm bright character, classical marimba voice, rich articulation, resonant tone.\nMicrophone: Shure SM81 (overheads), Neumann KM137 (detailed), AKG C414 (versatile)\nRecording: Overhead stereo positioning, optional close mic for definition\nEffects: Minimal - natural resonance, optional subtle reverb\nEQ: +1dB 300Hz (body), +1dB 1.5kHz (warmth), +2dB 5kHz (articulation), +1dB 10kHz (air)\nMixing: Warm and bright, classical character, rich articulation."
+    },
+    {
+      "n": 242,
+      "name": "Xylophone",
+      "p": "Bright crisp xylophone, percussive character, sharp articulation, orchestral applications.\n\nSonic Character: Bright crisp character, percussive xylophone voice, sharp articulation, clear tone.\nMicrophone: Shure SM81 (bright overheads), Neumann KM137 (detailed), AKG C414 (versatile)\nRecording: Overhead stereo positioning, tight miking for clarity\nEffects: Minimal - natural tone, optional subtle room reverb\nEQ: +1dB 300Hz (body), +2dB 2kHz (articulation), +3dB 5kHz (brightness), +2dB 10kHz (air)\nMixing: Bright and crisp, percussive character, sharp articulation."
+    }
+  ],
+  "artifacts": [
+    {
+      "n": 400,
+      "name": "De-Hiss Smart",
+      "p": "Surgical AI hiss removal, intelligent frequency-specific targeting, transparent operation, artifact removal.\n\nCharacteristics: Targets high-frequency hiss (typically 8-16kHz range), AI-aware detection, multiband approach.\nTechnology: Spectral gating, adaptive threshold, frequency-specific targeting, transient protection.\nApplication: Removes constant high-frequency hiss while preserving vocal clarity and breath sounds.\nParameters: Threshold -30dB to -20dB, frequency range 6-16kHz, attack 5-10ms, release 50-100ms.\nEQ Impact: Surgical reduction in hiss band only, -3dB to -6dB in hiss frequencies, minimal collateral.\nMixing Notes: Transparent operation, no tonal change, vocal character preserved completely."
+    },
+    {
+      "n": 401,
+      "name": "De-Crackle Smart",
+      "p": "Intelligent crackle/click removal, AI detection of digital artifacts, transparent healing, artifact removal.\n\nCharacteristics: Targets digital crackles and clicks, AI pattern recognition, automatic detection.\nTechnology: Spectral analysis, click detection algorithm, adaptive removal, waveform reconstruction.\nApplication: Removes digital crackles and clicks from AI vocal generation without affecting tone.\nParameters: Sensitivity 50-80%, frequency range 1-8kHz, click duration detection, threshold adaptive.\nEQ Impact: Minimal - only crackle frequencies affected, no tonal coloration, clean result.\nMixing Notes: Transparent and invisible, vocal integrity preserved, natural sound maintained."
+    },
+    {
+      "n": 402,
+      "name": "De-Sibilance Smart",
+      "p": "Surgical sibilance control, S and SH sound reduction, transparent operation, artifact removal.\n\nCharacteristics: Targets harsh S and SH sounds, frequency-specific gating, multiband approach, AI-aware.\nTechnology: Spectral gating, frequency-specific targeting (4-8kHz), transient protection, adaptive.\nApplication: Reduces harsh sibilance while preserving vocal presence and articulation completely.\nParameters: Threshold -25dB to -15dB, frequency range 4-8kHz, attack 2-5ms, release 30-50ms.\nEQ Impact: Targeted reduction in sibilance band only, -2dB to -4dB, minimal vocal impact.\nMixing Notes: Vocal clarity preserved, consonants remain crisp, natural sound maintained throughout."
+    },
+    {
+      "n": 403,
+      "name": "De-Plosive Pro",
+      "p": "Surgical plosive transient removal, T P K D specific targeting, transparent control, artifact removal.\n\nCharacteristics: Targets plosive bursts (P, T, K, D sounds), transient-specific detection and removal.\nTechnology: Transient detection, frequency-specific targeting (100-500Hz range), dynamic processing.\nApplication: Removes plosive transients while maintaining vocal power and presence completely.\nParameters: Threshold -20dB to -10dB, frequency range 100-400Hz, attack 1-3ms, release 20-40ms.\nEQ Impact: Minimal - only plosive frequencies affected, vocal weight maintained, power preserved.\nMixing Notes: Vocal intensity unaffected, consonant clarity enhanced, natural delivery maintained."
+    },
+    {
+      "n": 404,
+      "name": "Breath Control Gate",
+      "p": "Intelligent breath sound detection and removal, selective gating, natural breathing preserved, artifact removal.\n\nCharacteristics: Detects breath sounds, intelligent gating, frequency-specific removal, breath preservation.\nTechnology: Breath pattern detection, frequency-specific gating (400-1500Hz), adaptive thresholds.\nApplication: Removes distracting breath sounds between phrases while maintaining natural breathing.\nParameters: Threshold -35dB to -25dB, frequency range 400-1500Hz, attack 10-20ms, release 50-100ms.\nEQ Impact: Minimal - only breath frequencies, vocal clarity untouched, natural sound preserved.\nMixing Notes: Breathing sounds removed, vocal realism maintained, natural phrasing preserved."
+    },
+    {
+      "n": 405,
+      "name": "Spectral Glitch Removal",
+      "p": "AI-specific spectral glitch removal, digital artifact targeting, transparent healing, artifact removal.\n\nCharacteristics: Targets Suno-specific spectral glitches, digital artifact detection, AI-aware removal.\nTechnology: Spectral analysis, glitch pattern recognition, waveform reconstruction, adaptive.\nApplication: Removes Suno-specific spectral glitches without affecting vocal tone or quality.\nParameters: Sensitivity 60-80%, glitch duration detection, threshold adaptive, frequency adaptive.\nEQ Impact: Minimal collateral, spectral glitches targeted only, tone completely unaffected.\nMixing Notes: Invisible removal, vocal character preserved, AI generation artifacts eliminated."
+    },
+    {
+      "n": 406,
+      "name": "Hum Buzz Elimination",
+      "p": "Low-frequency hum and buzz removal, 50/60Hz targeting, transparent operation, artifact removal.\n\nCharacteristics: Targets electrical hum (50/60Hz and harmonics), low-frequency buzz, analog artifacts.\nTechnology: Notch filtering, harmonic detection, adaptive bandwidth, transient protection.\nApplication: Removes hum and buzz while preserving bass content and low-end character.\nParameters: Center frequency 50-60Hz (or 100-120Hz for harmonics), Q factor 10-20, depth -3dB to -6dB.\nEQ Impact: Surgical in hum/buzz frequencies only, bass character preserved, low-end intact.\nMixing Notes: Clean result, no tonal coloration, natural sound maintained, transparency achieved."
+    },
+    {
+      "n": 407,
+      "name": "Wind Noise Suppression",
+      "p": "Wind noise removal, environmental noise suppression, artifact-specific targeting, artifact removal.\n\nCharacteristics: Targets wind noise artifacts, environmental noise, air movement sounds.\nTechnology: Spectral gating, transient detection, frequency-specific targeting, adaptive.\nApplication: Removes wind noise while preserving vocal clarity and authentic sound character.\nParameters: Threshold -30dB to -20dB, frequency range 200-2000Hz, attack 20-30ms, release 100-150ms.\nEQ Impact: Minimal - wind noise frequencies only, vocal character preserved completely.\nMixing Notes: Clean wind noise removal, vocal integrity untouched, natural sound maintained."
+    },
+    {
+      "n": 408,
+      "name": "Room Echo Reduction",
+      "p": "Room echo and reverb reduction, early reflection removal, space collapse artifact removal.\n\nCharacteristics: Targets room reflections and echo, early reflection removal, space normalization.\nTechnology: Spectral analysis, echo detection, adaptive removal, waveform correction.\nApplication: Reduces room echo while maintaining natural vocal resonance and presence.\nParameters: Sensitivity 50-70%, reflection detection, adaptive threshold, frequency range 100-8000Hz.\nEQ Impact: Minimal - echo frequencies only, resonance character preserved, vocal tone intact.\nMixing Notes: Room artifacts removed, vocal presence enhanced, natural sound achieved."
+    },
+    {
+      "n": 409,
+      "name": "Vocal Sharpness Control",
+      "p": "Harsh vocal sharpness reduction, edge softening, tone refinement, artifact removal.\n\nCharacteristics: Reduces harsh vocal sharpness, edge softening, frequency-specific toning.\nTechnology: Spectral balancing, frequency-specific gating, adaptive equalization.\nApplication: Softens harsh vocal edges while maintaining clarity and presence.\nParameters: Threshold -20dB to -10dB, frequency range 3-6kHz, attack 5-10ms, release 50-100ms.\nEQ Impact: Targeted reduction in sharpness band, -1dB to -3dB, vocal character preserved.\nMixing Notes: Edge softened, clarity maintained, vocal warmth enhanced, presence intact."
+    },
+    {
+      "n": 410,
+      "name": "Vocal Mud Removal",
+      "p": "Muddy vocal frequency removal, clarity enhancement, presence restoration, artifact removal.\n\nCharacteristics: Targets muddy vocal frequencies, clarity enhancement, presence restoration.\nTechnology: Spectral analysis, frequency-specific gating, adaptive EQ, transient protection.\nApplication: Removes mud while restoring clarity and presence.\nParameters: Threshold -25dB to -15dB, frequency range 200-500Hz, attack 10-20ms, release 50-100ms.\nEQ Impact: Targeted reduction in mud band, -2dB to -4dB, presence enhanced.\nMixing Notes: Clarity restored, presence enhanced, vocal tone improved, natural sound."
+    },
+    {
+      "n": 411,
+      "name": "Vocal Boxiness Removal",
+      "p": "Boxy vocal frequency removal, space opening, resonance cleaning, artifact removal.\n\nCharacteristics: Targets boxy resonances (300-800Hz), space opening, resonance refinement.\nTechnology: Spectral gating, frequency-specific targeting, adaptive removal.\nApplication: Removes boxy character while maintaining natural vocal resonance.\nParameters: Threshold -20dB to -10dB, frequency range 300-800Hz, attack 5-10ms, release 50-100ms.\nEQ Impact: Targeted reduction in box band, -2dB to -3dB, resonance preserved.\nMixing Notes: Space opened, boxiness removed, vocal clarity enhanced, tone improved."
+    },
+    {
+      "n": 412,
+      "name": "Nasal Tone Reduction",
+      "p": "Nasal vocal tone reduction, oral positioning correction, natural tone restoration, artifact removal.\n\nCharacteristics: Reduces nasal vocal tone, oral positioning correction, natural resonance restoration.\nTechnology: Spectral analysis, frequency-specific gating, adaptive equalization.\nApplication: Removes excessive nasal tone while maintaining vocal authenticity.\nParameters: Threshold -18dB to -8dB, frequency range 2-4kHz, attack 5-10ms, release 50-100ms.\nEQ Impact: Targeted reduction in nasal band, -1dB to -2dB, oral character enhanced.\nMixing Notes: Nasal quality reduced, natural tone restored, vocal quality improved."
+    },
+    {
+      "n": 413,
+      "name": "Vocal Fatigue Removal",
+      "p": "Tired vocal quality removal, energy restoration, freshness enhancement, artifact removal.\n\nCharacteristics: Removes tired/fatigued vocal character, energy restoration, freshness.\nTechnology: Spectral balancing, frequency-specific enhancement, dynamic optimization.\nApplication: Removes fatigue character while restoring energy and freshness.\nParameters: Sensitivity 60-80%, frequency range 2-4kHz (presence), attack adaptive, release adaptive.\nEQ Impact: Presence band enhancement, +1dB to +2dB in presence range, overall lift.\nMixing Notes: Fatigue removed, energy restored, vocal freshness enhanced."
+    },
+    {
+      "n": 414,
+      "name": "Vocal Rasp Removal",
+      "p": "Raspy vocal quality removal, smoothness restoration, tone refinement, artifact removal.\n\nCharacteristics: Targets raspy vocal character, smoothness restoration, tone refinement.\nTechnology: Spectral gating, frequency-specific targeting, adaptive smoothing.\nApplication: Removes rasp while maintaining vocal power and presence.\nParameters: Threshold -20dB to -10dB, frequency range 4-8kHz, attack 5-10ms, release 50-100ms.\nEQ Impact: Targeted reduction in rasp band, -1dB to -2dB, clarity preserved.\nMixing Notes: Rasp removed, smoothness restored, vocal tone improved."
+    },
+    {
+      "n": 415,
+      "name": "Vocal Strain Removal",
+      "p": "Strained vocal quality removal, relaxation restoration, natural delivery enhancement, artifact removal.\n\nCharacteristics: Removes strained vocal character, relaxation restoration, natural delivery.\nTechnology: Spectral analysis, dynamic optimization, frequency-specific release.\nApplication: Removes strain character while maintaining vocal intensity.\nParameters: Sensitivity 60-80%, frequency range 2-4kHz, dynamic optimization, soft compression.\nEQ Impact: Presence enhancement, relaxation tone, +1dB in natural range, overall ease.\nMixing Notes: Strain removed, relaxation achieved, vocal ease enhanced."
+    },
+    {
+      "n": 416,
+      "name": "Pitch Wobble Correction",
+      "p": "AI pitch instability correction, subtle vibrato normalization, stability enhancement, artifact removal.\n\nCharacteristics: Corrects pitch wobbles and instabilities, vibrato normalization, stability.\nTechnology: Pitch detection, adaptive correction, subtle processing, artifact-specific.\nApplication: Stabilizes pitch without removing natural vibrato character.\nParameters: Sensitivity 70-90%, correction amount 20-40%, vibrato preservation enabled.\nEQ Impact: Minimal - pitch processing only, tone completely unchanged.\nMixing Notes: Pitch stability enhanced, vibrato preserved, vocal character maintained."
+    },
+    {
+      "n": 417,
+      "name": "Vocal Clarity Booster",
+      "p": "AI vocal clarity enhancement, presence restoration, definition improvement, artifact removal.\n\nCharacteristics: Enhances vocal clarity, presence restoration, definition improvement.\nTechnology: Spectral enhancement, frequency-specific boosting, dynamic optimization.\nApplication: Boosts clarity without introducing harshness or artifacts.\nParameters: Sensitivity 60-80%, frequency range 2-5kHz, boost +1dB to +3dB, soft knee.\nEQ Impact: Presence band enhancement, natural clarity boost, +2dB in clarity range.\nMixing Notes: Clarity enhanced, presence restored, definition improved, natural sound."
+    },
+    {
+      "n": 418,
+      "name": "Vocal Warmth Restoration",
+      "p": "Warm vocal tone restoration, low-mid enhancement, presence balance, artifact removal.\n\nCharacteristics: Restores vocal warmth, low-mid enhancement, presence balancing.\nTechnology: Spectral balancing, frequency-specific enhancement, dynamic optimization.\nApplication: Adds warmth while maintaining clarity and presence.\nParameters: Sensitivity 60-80%, frequency range 200-800Hz, boost +1dB to +2dB, soft slope.\nEQ Impact: Warmth band enhancement, +2dB to +3dB in warm range, natural tone.\nMixing Notes: Warmth restored, presence balanced, vocal tone improved."
+    },
+    {
+      "n": 419,
+      "name": "Vocal Presence Maximizer",
+      "p": "Vocal presence maximization, forward positioning, energy enhancement, artifact removal.\n\nCharacteristics: Maximizes vocal presence, forward positioning, energy enhancement.\nTechnology: Spectral enhancement, frequency-specific boosting, dynamic optimization.\nApplication: Pushes vocal forward without introducing harshness.\nParameters: Sensitivity 70-90%, frequency range 1.5-4kHz, boost +2dB to +4dB, controlled slope.\nEQ Impact: Presence band significant enhancement, +3dB to +4dB, forward character.\nMixing Notes: Presence maximized, vocal pushed forward, energy enhanced."
+    },
+    {
+      "n": 420,
+      "name": "Vocal Compress Gentle",
+      "p": "Gentle vocal compression, dynamic smoothing, consistency enhancement, artifact removal.\n\nCharacteristics: Applies gentle compression, dynamic smoothing, consistency.\nTechnology: Soft-knee compression, frequency-aware processing, artifact-specific.\nApplication: Smooths dynamics without losing vocal character or energy.\nParameters: Ratio 2:1 to 3:1, threshold -12dB to -8dB, attack 10-20ms, release 100-150ms.\nEQ Impact: Minimal - dynamic processing only, tone unchanged, smoothness added.\nMixing Notes: Dynamics smoothed, consistency enhanced, vocal character preserved."
+    },
+    {
+      "n": 421,
+      "name": "Vocal Expand Gentle",
+      "p": "Gentle vocal expansion, dynamic enhancement, energy restoration, artifact removal.\n\nCharacteristics: Applies gentle expansion, dynamic enhancement, energy restoration.\nTechnology: Soft-knee expansion, frequency-aware processing, artifact-specific.\nApplication: Enhances dynamics while maintaining vocal intimacy.\nParameters: Ratio 1:1 to 1.5:1, threshold -20dB to -15dB, attack 5-10ms, release 50-100ms.\nEQ Impact: Minimal - dynamic processing, tone unchanged, dynamic enhancement.\nMixing Notes: Dynamics enhanced, energy restored, vocal character preserved."
+    },
+    {
+      "n": 422,
+      "name": "Vocal De-Ess Gentle",
+      "p": "Gentle de-essing, sibilance control, character preservation, artifact removal.\n\nCharacteristics: Gentle sibilance reduction, character preservation, transparent control.\nTechnology: Spectral gating, frequency-specific targeting, adaptive thresholds.\nApplication: Reduces sibilance without affecting vocal character or presence.\nParameters: Threshold -20dB to -10dB, frequency range 4-8kHz, gentle ratio, soft knee.\nEQ Impact: Subtle reduction in sibilance, -1dB to -2dB, minimal character change.\nMixing Notes: Sibilance controlled, character preserved, natural sound maintained."
+    },
+    {
+      "n": 423,
+      "name": "Vocal Breathiness Tamer",
+      "p": "Excessive breathiness control, presence enhancement, clarity restoration, artifact removal.\n\nCharacteristics: Controls excessive breathiness, presence enhancement, clarity.\nTechnology: Spectral gating, frequency-specific targeting, adaptive processing.\nApplication: Reduces breathiness while maintaining natural vocal authenticity.\nParameters: Threshold -28dB to -18dB, frequency range 500-2000Hz, attack 10-20ms, release 50-100ms.\nEQ Impact: Targeted reduction in breathiness, -1dB to -2dB, clarity enhanced.\nMixing Notes: Breathiness controlled, presence enhanced, clarity improved."
+    },
+    {
+      "n": 424,
+      "name": "Vocal Glitch Killer",
+      "p": "AI-specific vocal glitch removal, stutters and artifacts, transparent healing, artifact removal.\n\nCharacteristics: Targets vocal glitches, stutters, digital artifacts, AI-specific.\nTechnology: Glitch detection, waveform reconstruction, adaptive removal.\nApplication: Removes vocal glitches without affecting surrounding audio.\nParameters: Sensitivity 70-90%, glitch duration detection, threshold adaptive.\nEQ Impact: Glitch frequencies only, tone unaffected, transparent result.\nMixing Notes: Glitches removed, vocal integrity preserved, seamless healing."
+    },
+    {
+      "n": 425,
+      "name": "Vocal Harmonic Clarity",
+      "p": "Harmonic enhancement, overtone clarity, richness restoration, artifact removal.\n\nCharacteristics: Enhances vocal harmonics, overtone clarity, richness restoration.\nTechnology: Spectral enhancement, harmonic-specific boosting, dynamic optimization.\nApplication: Adds harmonic richness without losing vocal character.\nParameters: Sensitivity 60-80%, harmonic range enhancement, boost +1dB to +2dB.\nEQ Impact: Harmonic enrichment, +1dB to +2dB in harmonic range, natural richness.\nMixing Notes: Harmonics enhanced, overtone clarity improved, vocal richness."
+    },
+    {
+      "n": 426,
+      "name": "Vocal Micro-Noise Gate",
+      "p": "Ultra-sensitive micro-noise gating, background artifact removal, silence clarity, artifact removal.\n\nCharacteristics: Gates micro-noise, background artifacts, ultra-sensitive control.\nTechnology: Micro-noise detection, adaptive gating, frequency-aware processing.\nApplication: Removes micro-noise without affecting vocal dynamics.\nParameters: Threshold -40dB to -30dB, attack 1-5ms, release 50-100ms, frequency adaptive.\nEQ Impact: Minimal - micro-noise frequencies only, tone unchanged.\nMixing Notes: Micro-noise removed, silence clarity enhanced, vocal preserved."
+    },
+    {
+      "n": 427,
+      "name": "Vocal Air Presence",
+      "p": "Vocal air and presence enhancement, brightness restoration, clarity optimization, artifact removal.\n\nCharacteristics: Enhances vocal air, presence, brightness restoration, clarity.\nTechnology: Spectral enhancement, frequency-specific boosting, dynamic optimization.\nApplication: Adds air and presence without harshness.\nParameters: Sensitivity 60-80%, frequency range 8-12kHz, boost +1dB to +2dB.\nEQ Impact: Air band enhancement, +2dB to +3dB in air range, brightness added.\nMixing Notes: Air added, presence enhanced, brightness improved, natural."
+    },
+    {
+      "n": 428,
+      "name": "Vocal Intelligibility Maximizer",
+      "p": "Speech intelligibility enhancement, consonant clarity, articulation improvement, artifact removal.\n\nCharacteristics: Maximizes vocal intelligibility, consonant clarity, articulation.\nTechnology: Spectral enhancement, frequency-specific boosting, artifact-aware.\nApplication: Enhances intelligibility without affecting vocal tone.\nParameters: Sensitivity 70-90%, frequency range 2-4kHz, boost +1dB to +3dB.\nEQ Impact: Intelligibility band enhancement, +2dB to +3dB, clarity optimized.\nMixing Notes: Intelligibility maximized, consonants clear, articulation enhanced."
+    },
+    {
+      "n": 429,
+      "name": "Vocal Emotion Preserver",
+      "p": "Emotional vocal character preservation, tone authenticity, artistic integrity, artifact removal.\n\nCharacteristics: Preserves emotional character, tone authenticity, artistic integrity.\nTechnology: Spectral analysis, selective processing, character-aware artifact removal.\nApplication: Removes artifacts while preserving emotional vocal character.\nParameters: Sensitivity 70-90%, frequency-aware processing, character detection.\nEQ Impact: Minimal - artifact removal only, character preserved, emotion intact.\nMixing Notes: Emotion preserved, character authentic, artistic integrity maintained."
+    },
+    {
+      "n": 430,
+      "name": "Vocal Coherence Tightener",
+      "p": "Vocal timing tightening, phase coherence, lock enhancement, artifact removal.\n\nCharacteristics: Tightens vocal timing, phase coherence, lock enhancement.\nTechnology: Phase detection, timing correction, adaptive processing.\nApplication: Tightens vocal timing without losing natural character.\nParameters: Sensitivity 70-90%, correction amount 10-30%, character preservation.\nEQ Impact: Minimal - timing adjustment only, tone unchanged.\nMixing Notes: Timing tightened, lock enhanced, natural feel maintained."
+    },
+    {
+      "n": 431,
+      "name": "Vocal Sustain Enhancer",
+      "p": "Vocal sustain extension, decay control, duration enhancement, artifact removal.\n\nCharacteristics: Enhances vocal sustain, decay control, duration extension.\nTechnology: Spectral sustain detection, decay modeling, adaptive extension.\nApplication: Extends sustain without introducing artifacts or unnatural character.\nParameters: Sensitivity 60-80%, sustain extension 10-20%, decay modeling enabled.\nEQ Impact: Minimal - sustain modeling only, tone unchanged.\nMixing Notes: Sustain enhanced, duration extended, natural sound maintained."
+    },
+    {
+      "n": 432,
+      "name": "Vocal Attack Tightening",
+      "p": "Vocal attack sharpening, onset definition, transient clarity, artifact removal.\n\nCharacteristics: Sharpens vocal attack, onset definition, transient clarity.\nTechnology: Transient detection, attack shaping, adaptive processing.\nApplication: Tightens attack without losing vocal warmth.\nParameters: Sensitivity 70-90%, attack sharpening 10-20%, warmth preservation.\nEQ Impact: Attack band slight enhancement, clarity added.\nMixing Notes: Attack sharpened, definition enhanced, warmth preserved."
+    },
+    {
+      "n": 433,
+      "name": "Vocal Blend Enhancer",
+      "p": "Vocal blend and cohesion, stacked vocal tightening, unity improvement, artifact removal.\n\nCharacteristics: Enhances vocal blending, cohesion, unity improvement.\nTechnology: Phase analysis, timing detection, coherence optimization.\nApplication: Tightens stacked vocals without losing individual character.\nParameters: Sensitivity 70-90%, blend detection, unity optimization enabled.\nEQ Impact: Minimal - blend processing, individual tones preserved.\nMixing Notes: Blend enhanced, unity improved, individual clarity maintained."
+    },
+    {
+      "n": 434,
+      "name": "Vocal Sweetener Subtle",
+      "p": "Subtle vocal sweetening, tone refinement, character enhancement, artifact removal.\n\nCharacteristics: Subtle sweetening, tone refinement, character enhancement.\nTechnology: Spectral balancing, harmonic enhancement, dynamic optimization.\nApplication: Sweetens tone without obvious processing character.\nParameters: Sensitivity 60-80%, enhancement subtle, character preservation enabled.\nEQ Impact: Subtle enhancement across presence and harmonics, +0.5dB to +1dB overall.\nMixing Notes: Tone sweetened subtly, character enhanced, natural sound."
+    },
+    {
+      "n": 435,
+      "name": "Vocal Fatigue Index Monitor",
+      "p": "Fatigue detection and reporting, vocal health monitoring, sustainability analysis, artifact removal.\n\nCharacteristics: Monitors vocal fatigue, health indicator, sustainability analysis.\nTechnology: Fatigue detection, health modeling, analysis reporting.\nApplication: Alerts to vocal fatigue without affecting audio.\nParameters: Monitoring enabled, sensitivity 70-90%, reporting detailed.\nEQ Impact: No impact - monitoring only, analysis tool.\nMixing Notes: Fatigue monitored, health tracked, sustainability assessed."
+    },
+    {
+      "n": 436,
+      "name": "Vocal Formant Shaper",
+      "p": "Vocal formant shaping, vowel character control, resonance tuning, artifact removal.\n\nCharacteristics: Shapes vocal formants, vowel character control, resonance tuning.\nTechnology: Formant detection, frequency-specific shaping, resonance modeling.\nApplication: Adjusts formant character for consistency across song.\nParameters: Sensitivity 70-90%, formant band detection, subtle shaping enabled.\nEQ Impact: Formant-specific, character controlled, tone optimized.\nMixing Notes: Formants shaped, vowels consistent, resonance tuned."
+    },
+    {
+      "n": 437,
+      "name": "Vocal Presence Balance",
+      "p": "Vocal presence band balancing, frequency optimization, sonic balance, artifact removal.\n\nCharacteristics: Balances vocal presence band, frequency optimization, sonic balance.\nTechnology: Spectral analysis, frequency-specific optimization, adaptive balancing.\nApplication: Optimizes presence band for ideal mix placement.\nParameters: Sensitivity 70-90%, band detection, balance optimization enabled.\nEQ Impact: Presence band optimization, balance improved, sonic clarity.\nMixing Notes: Presence balanced, frequency optimized, sonic improvement."
+    },
+    {
+      "n": 438,
+      "name": "Vocal Dynamics Profile",
+      "p": "Vocal dynamics profiling, consistency monitoring, variation analysis, artifact removal.\n\nCharacteristics: Profiles vocal dynamics, consistency monitoring, variation analysis.\nTechnology: Dynamics detection, pattern analysis, reporting system.\nApplication: Analyzes vocal dynamic character for consistency assessment.\nParameters: Monitoring enabled, sensitivity 70-90%, detailed profiling.\nEQ Impact: No impact - profiling only, analysis tool.\nMixing Notes: Dynamics profiled, patterns analyzed, consistency tracked."
+    },
+    {
+      "n": 439,
+      "name": "Vocal Resonance Unlock",
+      "p": "Buried resonance restoration, voice unblocking, character revelation, artifact removal.\n\nCharacteristics: Unlocks buried resonance, voice unblocking, character revelation.\nTechnology: Resonance detection, frequency-specific enhancement, character analysis.\nApplication: Reveals natural vocal character buried in performance.\nParameters: Sensitivity 70-90%, resonance detection, character enhancement enabled.\nEQ Impact: Resonance enhancement, character revealed, voice unlocked.\nMixing Notes: Resonance restored, voice unblocked, character revealed."
+    },
+    {
+      "n": 440,
+      "name": "Vocal Tone Matcher",
+      "p": "Tone matching across vocal takes, consistency enhancement, unity improvement, artifact removal.\n\nCharacteristics: Matches vocal tones across takes, consistency enhancement, unity.\nTechnology: Tone analysis, matching algorithm, adaptive adjustment.\nApplication: Balances vocal tone across multiple takes for consistency.\nParameters: Sensitivity 70-90%, tone matching enabled, consistency prioritized.\nEQ Impact: Tone matching optimization, consistency enhanced, balance achieved.\nMixing Notes: Tones matched, consistency enhanced, unity improved."
+    },
+    {
+      "n": 441,
+      "name": "Vocal Purity Enhancer",
+      "p": "Vocal purity and clarity maximization, interference removal, clean character, artifact removal.\n\nCharacteristics: Maximizes vocal purity, clarity enhancement, interference removal.\nTechnology: Spectral cleaning, interference detection, clarity optimization.\nApplication: Achieves purest vocal character without unnatural processing.\nParameters: Sensitivity 80-90%, clarity maximization, purity optimization enabled.\nEQ Impact: Purity enhancement, clarity maximized, clean character achieved.\nMixing Notes: Purity enhanced, clarity maximized, character clean."
+    },
+    {
+      "n": 442,
+      "name": "Vocal Reality Check",
+      "p": "Vocal authenticity verification, realism assessment, natural character monitoring, artifact removal.\n\nCharacteristics: Verifies vocal authenticity, realism assessment, character monitoring.\nTechnology: Realism detection, authenticity analysis, monitoring system.\nApplication: Ensures vocal maintains natural and authentic character throughout.\nParameters: Monitoring enabled, sensitivity 70-90%, detailed assessment.\nEQ Impact: No impact - assessment only, monitoring tool.\nMixing Notes: Authenticity verified, realism confirmed, character natural."
+    },
+    {
+      "n": 443,
+      "name": "Vocal Artifact Scan Complete",
+      "p": "Comprehensive artifact scanning, full-spectrum analysis, detailed artifact mapping, complete identification.\n\nCharacteristics: Comprehensive artifact scanning, full-spectrum analysis, artifact mapping.\nTechnology: Full-spectrum scanning, artifact detection, detailed mapping.\nApplication: Identifies all artifacts for targeted removal planning.\nParameters: Scan sensitivity 90%, full-spectrum analysis, detailed reporting.\nEQ Impact: No impact - scanning only, analysis tool.\nMixing Notes: Artifacts identified, mapping complete, removal planned."
+    },
+    {
+      "n": 444,
+      "name": "Vocal Non-Linear Correction",
+      "p": "Non-linear distortion correction, harmonic balancing, linearity restoration, artifact removal.\n\nCharacteristics: Corrects non-linear distortion, harmonic balancing, linearity.\nTechnology: Distortion detection, harmonic analysis, linearity modeling.\nApplication: Removes non-linear artifacts without losing vocal character.\nParameters: Sensitivity 70-90%, distortion detection, linearity restoration enabled.\nEQ Impact: Distortion removal, harmonics balanced, linearity restored.\nMixing Notes: Distortion corrected, harmonics balanced, linearity achieved."
+    },
+    {
+      "n": 445,
+      "name": "Vocal Phase Coherence",
+      "p": "Phase coherence optimization, stereo/mono alignment, coherence maximization, artifact removal.\n\nCharacteristics: Optimizes phase coherence, stereo alignment, coherence maximization.\nTechnology: Phase analysis, alignment detection, coherence optimization.\nApplication: Ensures optimal phase relationships for coherent vocal character.\nParameters: Sensitivity 70-90%, phase detection, coherence optimization enabled.\nEQ Impact: Phase optimization, coherence enhanced, alignment improved.\nMixing Notes: Phase coherent, alignment optimized, coherence maximized."
+    },
+    {
+      "n": 446,
+      "name": "Vocal Frequency Mapping",
+      "p": "Frequency mapping and analysis, harmonic distribution, frequency balance, artifact removal.\n\nCharacteristics: Maps vocal frequencies, harmonic distribution analysis, balance assessment.\nTechnology: Frequency analysis, harmonic mapping, distribution modeling.\nApplication: Analyzes frequency content for optimization.\nParameters: Analysis enabled, sensitivity 80%, detailed mapping.\nEQ Impact: No impact - analysis only, mapping tool.\nMixing Notes: Frequencies mapped, distribution analyzed, balance assessed."
+    },
+    {
+      "n": 447,
+      "name": "Vocal Transient Preservation",
+      "p": "Transient protection, attack preservation, dynamics integrity, artifact removal.\n\nCharacteristics: Preserves vocal transients, attack protection, dynamics integrity.\nTechnology: Transient detection, protective processing, dynamics preservation.\nApplication: Protects transient detail while removing artifacts.\nParameters: Sensitivity 80-90%, transient detection, protection enabled.\nEQ Impact: Attack preservation, transient integrity, dynamics protected.\nMixing Notes: Transients preserved, attack intact, dynamics natural."
+    },
+    {
+      "n": 448,
+      "name": "Vocal Spectral Cleanness",
+      "p": "Spectral cleanliness optimization, noise floor reduction, spectral purity, artifact removal.\n\nCharacteristics: Optimizes spectral cleanliness, noise floor reduction, purity.\nTechnology: Spectral analysis, noise modeling, purity optimization.\nApplication: Achieves clean spectral character without artifacts.\nParameters: Sensitivity 80-90%, noise floor detection, purity optimization enabled.\nEQ Impact: Spectral cleanliness enhanced, noise reduced, purity improved.\nMixing Notes: Spectral clean, noise floor low, purity achieved."
+    },
+    {
+      "n": 449,
+      "name": "Vocal Character Lock",
+      "p": "Vocal character preservation, identity lock, authenticity protection, artifact removal.\n\nCharacteristics: Locks vocal character, identity preservation, authenticity protection.\nTechnology: Character analysis, identity detection, protection modeling.\nApplication: Ensures vocal character remains authentic through processing.\nParameters: Sensitivity 90%, character detection, protection enabled.\nEQ Impact: Character preservation, identity locked, authenticity protected.\nMixing Notes: Character locked, identity preserved, authenticity protected."
+    },
+    {
+      "n": 450,
+      "name": "Vocal Perfection Balance",
+      "p": "Balance between perfection and authenticity, character vs clarity, optimization balance, artifact removal.\n\nCharacteristics: Balances perfection with authenticity, clarity with character.\nTechnology: Optimization modeling, balance detection, characteristic preservation.\nApplication: Achieves clean sound while maintaining vocal authenticity.\nParameters: Sensitivity 80%, balance optimization, character preservation enabled.\nEQ Impact: Balanced optimization, clarity and character coexist.\nMixing Notes: Perfection and authenticity balanced, optimization achieved."
+    }
+  ],
+  "processing": [
+    {
+      "n": 500,
+      "name": "Parametric EQ 3-Band",
+      "p": "3-band parametric EQ, classic control, frequency shaping, processing.\n\nControls: Low (100-400Hz), Mid (400-4000Hz), High (4000-16000Hz), each with gain -12dB to +12dB.\nTechnology: Parametric filtering, gentle slopes, transparent operation.\nApplication: Basic frequency shaping for tone adjustment and character control.\nUse: Boost lows for warmth, boost mids for presence, boost highs for air."
+    },
+    {
+      "n": 501,
+      "name": "Parametric EQ 7-Band",
+      "p": "7-band parametric EQ, detailed control, surgical shaping, processing.\n\nControls: 80Hz, 300Hz, 600Hz, 2kHz, 4kHz, 8kHz, 12kHz, each with gain -12dB to +12dB.\nTechnology: Parametric filtering, Q control, transparent operation.\nApplication: Surgical frequency shaping for detailed tone control.\nUse: Precise frequency targeting for problem-solving and character enhancement."
+    },
+    {
+      "n": 502,
+      "name": "Graphic EQ 10-Band",
+      "p": "10-band graphic EQ, visual control, frequency balancing, processing.\n\nBands: 31Hz, 63Hz, 125Hz, 250Hz, 500Hz, 1kHz, 2kHz, 4kHz, 8kHz, 16kHz.\nTechnology: Fixed-frequency filtering, visual feedback, preset curves.\nApplication: Intuitive frequency balancing with visual reference.\nUse: Quick tone adjustments, preset-based character shaping."
+    },
+    {
+      "n": 503,
+      "name": "Compressor Standard",
+      "p": "Classic compressor, dynamic control, consistency enhancement, processing.\n\nControls: Ratio (1:1 to ∞:1), Threshold (-40dB to 0dB), Attack (1-100ms), Release (10-1000ms).\nTechnology: VCA compression, soft knee, makeup gain automatic.\nApplication: Controls dynamic range for consistency.\nUse: 2:1 ratio for subtle control, 4:1 for moderate control, 8:1+ for brick-wall limiting."
+    },
+    {
+      "n": 504,
+      "name": "Compressor Multiband",
+      "p": "Multiband compressor, frequency-specific control, dynamic balancing, processing.\n\nBands: Low (<200Hz), Low-Mid (200-800Hz), Mid-High (800-3000Hz), High (>3000Hz).\nControls: Each band has independent ratio, threshold, attack, release.\nTechnology: Crossover filtering, multiband processing, character preservation.\nApplication: Frequency-specific dynamic control without tonal shift.\nUse: Control bass without affecting vocals, tame mids without losing presence."
+    },
+    {
+      "n": 505,
+      "name": "Gate Standard",
+      "p": "Classic noise gate, threshold silencing, background suppression, processing.\n\nControls: Threshold (-60dB to 0dB), Attack (0.5-10ms), Release (10-1000ms), Range (-60dB to 0dB).\nTechnology: Threshold detection, gate circuit, envelope control.\nApplication: Removes background noise below threshold.\nUse: Reduce hum and noise between vocal phrases."
+    },
+    {
+      "n": 506,
+      "name": "De-Esser Standard",
+      "p": "De-esser control, sibilance reduction, character preservation, processing.\n\nControls: Threshold (-40dB to 0dB), Frequency (2kHz to 8kHz), Attack (1-10ms), Release (50-500ms).\nTechnology: Frequency-specific gating, spectral processing, character-aware.\nApplication: Reduces harsh sibilance intelligently.\nUse: Reduce S sounds without affecting vocal character."
+    },
+    {
+      "n": 507,
+      "name": "Saturation Subtle",
+      "p": "Subtle saturation, harmonic warmth, analog character, processing.\n\nControls: Saturation amount (0-100%), Tone (Warm to Bright), Output level (-12dB to +12dB).\nTechnology: Soft saturation, harmonic generation, transparent operation.\nApplication: Adds subtle harmonic warmth and fullness.\nUse: Adds analog warmth to digital vocals."
+    },
+    {
+      "n": 508,
+      "name": "Saturation Medium",
+      "p": "Medium saturation, character enhancement, presence boost, processing.\n\nControls: Saturation amount (0-100%), Tone (Warm to Bright), Output level (-12dB to +12dB).\nTechnology: Medium saturation, harmonic generation, character enhancement.\nApplication: Medium saturation for character and presence.\nUse: Adds presence and character to vocals."
+    },
+    {
+      "n": 509,
+      "name": "Saturation Aggressive",
+      "p": "Aggressive saturation, dramatic character, coloration, processing.\n\nControls: Saturation amount (0-100%), Tone (Dark to Bright), Output level (-12dB to +12dB).\nTechnology: Aggressive saturation, harmonic generation, character transformation.\nApplication: Dramatic character addition and presence boost.\nUse: Adds dramatic character and presence to vocals."
+    },
+    {
+      "n": 510,
+      "name": "Distortion Subtle",
+      "p": "Subtle distortion, edge addition, character grit, processing.\n\nControls: Distortion amount (0-100%), Tone (Dark to Bright), Output level (-12dB to +12dB).\nTechnology: Soft clipping, harmonic generation, edge addition.\nApplication: Adds subtle edge and grit to vocals.\nUse: Adds slight edge without harshness."
+    },
+    {
+      "n": 511,
+      "name": "Limiter Hard",
+      "p": "Hard limiter, ceiling control, peak protection, processing.\n\nControls: Threshold (-40dB to 0dB), Attack (0.1-1ms), Release (50-500ms), Ceiling (-12dB to 0dB).\nTechnology: Brick-wall limiting, fast response, peak protection.\nApplication: Prevents peaks from exceeding ceiling.\nUse: Protects against unexpected peaks and clipping."
+    },
+    {
+      "n": 512,
+      "name": "Limiter Soft",
+      "p": "Soft limiter, gentle peak control, peak management, processing.\n\nControls: Threshold (-40dB to 0dB), Attack (1-10ms), Release (100-1000ms), Ceiling (-12dB to 0dB).\nTechnology: Soft-knee limiting, gentle response, peak management.\nApplication: Gently manages peak levels without harsh control.\nUse: Smooths peaks while maintaining vocal dynamics."
+    },
+    {
+      "n": 513,
+      "name": "Expander Standard",
+      "p": "Classic expander, dynamic enhancement, quiet enhancement, processing.\n\nControls: Ratio (1:1 to 1:8), Threshold (-60dB to 0dB), Attack (1-100ms), Release (50-1000ms).\nTechnology: Expansion circuit, envelope control, dynamic enhancement.\nApplication: Enhances quiet material below threshold.\nUse: Enhances quiet vocal details and breathy sounds."
+    },
+    {
+      "n": 514,
+      "name": "Transient Shaper",
+      "p": "Transient shaping, attack control, sustain adjustment, processing.\n\nControls: Attack Boost (-100 to +100%), Sustain Control (-100 to +100%).\nTechnology: Transient detection, selective boosting/reduction, envelope shaping.\nApplication: Shapes transient and sustain character.\nUse: Sharpen vocal attacks or enhance sustain."
+    },
+    {
+      "n": 515,
+      "name": "Analog Character Warm",
+      "p": "Analog warmth modeling, tape saturation, classic character, processing.\n\nControls: Warmth (0-100%), Tape type (Warm to Aggressive), Output level.\nTechnology: Tape saturation modeling, harmonic generation, character emulation.\nApplication: Adds classic tape warmth and character.\nUse: Adds vintage tape character to modern vocals."
+    },
+    {
+      "n": 516,
+      "name": "Analog Character Bright",
+      "p": "Analog brightness modeling, tube character, presence boost, processing.\n\nControls: Brightness (0-100%), Tube type (Soft to Aggressive), Output level.\nTechnology: Tube character modeling, harmonic generation, presence enhancement.\nApplication: Adds tube character and brightness.\nUse: Adds vintage tube character and presence."
+    },
+    {
+      "n": 517,
+      "name": "Phase Inverter",
+      "p": "Phase inversion, polarity reversal, phase correction, processing.\n\nControls: On/Off switch, Phase flip, visual phase indicator.\nTechnology: Phase inversion circuit, polarity reversal, visual feedback.\nApplication: Inverts phase for alignment or cancellation.\nUse: Fixes phase issues in multi-track vocals."
+    },
+    {
+      "n": 518,
+      "name": "Stereo Widener",
+      "p": "Stereo image widening, width control, spatial enhancement, processing.\n\nControls: Width (0-300%), Center preservation, Frequency range control.\nTechnology: Mid-side processing, width control, center preservation.\nApplication: Widens stereo image while preserving center.\nUse: Enhances spatial character without losing mono compatibility."
+    },
+    {
+      "n": 519,
+      "name": "Chorus Subtle",
+      "p": "Subtle chorus effect, pitch modulation, width enhancement, processing.\n\nControls: Rate (0.1-5Hz), Depth (0-100%), Wet/Dry Mix (0-100%), Feedback (0-50%).\nTechnology: Pitch modulation, time-based modulation, character enhancement.\nApplication: Adds subtle width and movement.\nUse: Adds subtle dimensionality without obvious effect."
+    },
+    {
+      "n": 520,
+      "name": "Flanger Classic",
+      "p": "Classic flanger effect, time-based modulation, character enhancement, processing.\n\nControls: Rate (0.1-5Hz), Depth (0-100%), Wet/Dry Mix (0-100%), Feedback (0-100%).\nTechnology: Comb filtering, time-based modulation, feedback loop.\nApplication: Adds classic flanger character and movement.\nUse: Adds classic flanger effect without overwhelming."
+    }
+  ],
+  "effects": [
+    {
+      "n": 600,
+      "name": "Reverb Room Small",
+      "p": "Small room reverb, intimate character, natural reverb, effects.\n\nControls: Pre-delay (0-100ms), Room size (Small), Decay (0.5-2s), Wet/Dry Mix (0-100%).\nTechnology: Convolution or algorithmic reverb, room modeling, natural character.\nApplication: Adds intimate room reverb for closeness.\nUse: Adds subtle space without losing intimacy."
+    },
+    {
+      "n": 601,
+      "name": "Reverb Room Medium",
+      "p": "Medium room reverb, balanced character, natural space, effects.\n\nControls: Pre-delay (0-100ms), Room size (Medium), Decay (1-3s), Wet/Dry Mix (0-100%).\nTechnology: Convolution or algorithmic reverb, balanced modeling.\nApplication: Adds balanced room reverb for natural space.\nUse: Adds professional room character."
+    },
+    {
+      "n": 602,
+      "name": "Reverb Room Large",
+      "p": "Large room reverb, spacious character, grand reverb, effects.\n\nControls: Pre-delay (0-200ms), Room size (Large), Decay (2-4s), Wet/Dry Mix (0-100%).\nTechnology: Convolution or algorithmic reverb, large space modeling.\nApplication: Adds spacious room reverb for grandness.\nUse: Adds grand spacious character."
+    },
+    {
+      "n": 603,
+      "name": "Reverb Plate Classic",
+      "p": "Classic plate reverb, warm character, vintage character, effects.\n\nControls: Pre-delay (0-100ms), Plate Character (Warm), Decay (1-3s), Wet/Dry Mix (0-100%).\nTechnology: Plate reverb modeling, warm saturation, character.\nApplication: Adds classic plate reverb warmth.\nUse: Adds vintage plate warmth to vocals."
+    },
+    {
+      "n": 604,
+      "name": "Reverb Hall Grand",
+      "p": "Grand hall reverb, majestic character, orchestral, effects.\n\nControls: Pre-delay (0-200ms), Hall size (Grand), Decay (2-4s), Wet/Dry Mix (0-100%).\nTechnology: Hall reverb modeling, majestic character, grand space.\nApplication: Adds grand hall reverb for orchestral character.\nUse: Adds orchestral grandness and space."
+    },
+    {
+      "n": 605,
+      "name": "Reverb Spring Vintage",
+      "p": "Vintage spring reverb, unique character, vintage tone, effects.\n\nControls: Tension (Tight to Loose), Tank Size (Small to Large), Decay (0.5-2s), Wet/Dry Mix.\nTechnology: Spring reverb emulation, vintage character, unique tone.\nApplication: Adds vintage spring reverb character.\nUse: Adds vintage spring character and uniqueness."
+    },
+    {
+      "n": 606,
+      "name": "Delay Echo Short",
+      "p": "Short echo delay, slap delay, rhythmic character, effects.\n\nControls: Time (50-250ms), Feedback (0-100%), Wet/Dry Mix (0-100%), Tone (Dark to Bright).\nTechnology: Time-based delay, feedback loop, rhythmic modulation.\nApplication: Adds short rhythmic echo.\nUse: Adds rhythmic echo without obvious effect."
+    },
+    {
+      "n": 607,
+      "name": "Delay Echo Medium",
+      "p": "Medium echo delay, slapback character, rhythmic presence, effects.\n\nControls: Time (250-500ms), Feedback (0-100%), Wet/Dry Mix (0-100%), Tone (Dark to Bright).\nTechnology: Time-based delay, feedback loop, rhythmic modulation.\nApplication: Adds medium rhythmic echo.\nUse: Adds slapback character and presence."
+    },
+    {
+      "n": 608,
+      "name": "Delay Echo Long",
+      "p": "Long echo delay, atmospheric character, spacious delay, effects.\n\nControls: Time (500-1000ms), Feedback (0-80%), Wet/Dry Mix (0-100%), Tone (Dark to Bright).\nTechnology: Time-based delay, feedback loop, atmospheric modulation.\nApplication: Adds long atmospheric echo.\nUse: Adds spacious atmospheric character."
+    },
+    {
+      "n": 609,
+      "name": "Modulation Vibrato",
+      "p": "Vibrato modulation, pitch wobble, character modulation, effects.\n\nControls: Rate (0.5-5Hz), Depth (0-100%), Wet/Dry Mix (0-100%).\nTechnology: Pitch modulation, rate control, character wobble.\nApplication: Adds vibrato pitch modulation.\nUse: Adds subtle vibrato without overwhelming."
+    },
+    {
+      "n": 610,
+      "name": "Modulation Phaser",
+      "p": "Phaser modulation, sweeping character, modulation movement, effects.\n\nControls: Rate (0.1-5Hz), Depth (0-100%), Feedback (0-100%), Wet/Dry Mix (0-100%).\nTechnology: All-pass filtering, modulation sweep, feedback loop.\nApplication: Adds phaser sweep modulation.\nUse: Adds classic phaser sweep character."
+    },
+    {
+      "n": 611,
+      "name": "Modulation Tremolo",
+      "p": "Tremolo amplitude modulation, volume wobble, rhythmic character, effects.\n\nControls: Rate (0.5-10Hz), Depth (0-100%), Wet/Dry Mix (0-100%).\nTechnology: Amplitude modulation, rate control, rhythmic wobble.\nApplication: Adds tremolo volume modulation.\nUse: Adds rhythmic tremolo character."
+    },
+    {
+      "n": 612,
+      "name": "Modulation Chorus Double",
+      "p": "Chorus doubling, vocal thickening, width enhancement, effects.\n\nControls: Rate (0.3-2Hz), Depth (0-100%), Wet/Dry Mix (0-100%), Voices (2-3).\nTechnology: Pitch modulation, multiple voices, width enhancement.\nApplication: Thickens vocals with chorus doubling.\nUse: Thickens vocals without obvious effect."
+    },
+    {
+      "n": 613,
+      "name": "Modulation Chorus Lush",
+      "p": "Lush chorus effect, dimensional character, rich thickening, effects.\n\nControls: Rate (0.2-1Hz), Depth (0-100%), Wet/Dry Mix (0-100%), Voices (3-5).\nTechnology: Pitch modulation, multiple voices, dimensional enhancement.\nApplication: Creates lush dimensional character.\nUse: Creates rich lush vocal character."
+    },
+    {
+      "n": 614,
+      "name": "Modulation Leslie Rotary",
+      "p": "Leslie rotary speaker, vintage character, rotating effect, effects.\n\nControls: Speed (Slow to Fast), Slow Rate (0.5-1Hz), Fast Rate (3-6Hz), Wet/Dry Mix.\nTechnology: Leslie speaker emulation, rotary character, speed modulation.\nApplication: Adds vintage Leslie character.\nUse: Adds vintage rotating speaker character."
+    },
+    {
+      "n": 615,
+      "name": "Distortion Warm Vintage",
+      "p": "Warm vintage distortion, harmonic character, vintage tone, effects.\n\nControls: Distortion (0-100%), Tone (Warm), Output level, Character (Soft to Hard).\nTechnology: Harmonic distortion, vintage saturation, warm character.\nApplication: Adds warm vintage distortion.\nUse: Adds warm vintage distortion character."
+    },
+    {
+      "n": 616,
+      "name": "Distortion Bright Modern",
+      "p": "Bright modern distortion, edge character, presence boost, effects.\n\nControls: Distortion (0-100%), Tone (Bright), Output level, Character (Soft to Hard).\nTechnology: Harmonic distortion, modern saturation, bright character.\nApplication: Adds bright modern distortion.\nUse: Adds bright modern distortion and presence."
+    },
+    {
+      "n": 617,
+      "name": "Bitcrusher Digital",
+      "p": "Digital bitcrushing, lo-fi character, digital degradation, effects.\n\nControls: Bit Depth (8-16 bits), Sample Rate (8-44.1kHz), Wet/Dry Mix (0-100%).\nTechnology: Bit reduction, sample rate reduction, digital degradation.\nApplication: Adds lo-fi digital character.\nUse: Adds intentional digital lo-fi character."
+    },
+    {
+      "n": 618,
+      "name": "Spectral Shimmer Ethereal",
+      "p": "Ethereal spectral shimmer, ambient character, spacious shimmer, effects.\n\nControls: Shimmer (0-100%), Decay (1-5s), Wet/Dry Mix (0-100%), Tone (Dark to Bright).\nTechnology: Spectral processing, ambient character, ethereal shimmer.\nApplication: Adds ethereal ambient shimmer.\nUse: Adds ethereal ambient spacious character."
+    },
+    {
+      "n": 619,
+      "name": "Granular Time Stretch",
+      "p": "Granular time stretching, time manipulation, character preservation, effects.\n\nControls: Time Factor (0.5-2x), Grain Size (5-100ms), Dry/Wet Mix (0-100%).\nTechnology: Granular processing, time stretching, character preservation.\nApplication: Stretches time while preserving character.\nUse: Adjusts vocal timing without pitch shift."
+    }
+  ],
+  "mastering": [
+    {
+      "n": 700,
+      "name": "Limiter Final Brick Wall",
+      "p": "Final brick-wall limiter, peak control, overload protection, mastering.\n\nControls: Threshold (-12dB to 0dB), Attack (0.1-0.5ms), Release (50-200ms), Ceiling (-0.1dB to 0dB).\nTechnology: Fast-acting limiter, brick-wall protection, safety ceiling.\nApplication: Prevents any peaks from exceeding 0dB.\nUse: Final safety ceiling, absolute peak protection."
+    },
+    {
+      "n": 701,
+      "name": "Linear Phase EQ Mastering",
+      "p": "Linear phase EQ, phase-neutral equalization, mastering-grade clarity, mastering.\n\nControls: 7-band parametric, ±12dB per band, Linear phase option, Zero latency.\nTechnology: Linear phase filtering, zero-distortion EQ, mastering-grade clarity.\nApplication: Transparent EQ without phase shift.\nUse: Final tonal balance without phase coloration."
+    },
+    {
+      "n": 702,
+      "name": "Multiband Mastering EQ",
+      "p": "Multiband mastering EQ, frequency-specific balance, surgical mastering, mastering.\n\nBands: Sub (20-60Hz), Bass (60-250Hz), Low-Mid (250-1000Hz), Mid (1000-4000Hz), Hi-Mid (4000-10000Hz), High (10000Hz+).\nTechnology: Crossover filtering, independent control per band, mastering precision.\nApplication: Surgical frequency balance for final mix.\nUse: Tonal balance across full frequency spectrum."
+    },
+    {
+      "n": 703,
+      "name": "Compressor Mastering Gentle",
+      "p": "Gentle mastering compressor, dynamic smoothing, consistency, mastering.\n\nControls: Ratio (1.5:1 to 3:1), Threshold (-20dB to 0dB), Attack (10-30ms), Release (100-300ms).\nTechnology: Transparent compression, soft-knee, makeup gain automatic.\nApplication: Gentle dynamic smoothing without obvious control.\nUse: Final consistency without compression pumping."
+    },
+    {
+      "n": 704,
+      "name": "Compressor Mastering Transparent",
+      "p": "Transparent mastering compressor, invisible control, clarity preservation, mastering.\n\nControls: Ratio (1:1 to 2:1), Threshold (-25dB to -10dB), Attack (20-50ms), Release (200-500ms).\nTechnology: Transparent compression, soft-knee, clarity preservation.\nApplication: Controls dynamics transparently.\nUse: Final dynamics control maintaining clarity."
+    },
+    {
+      "n": 705,
+      "name": "Metering Loudness LUFS",
+      "p": "Loudness metering in LUFS, platform loudness compliance, streaming optimization, mastering.\n\nModes: Integrated (overall loudness), Short-term (2s window), Momentary (400ms window).\nStandards: YouTube (-4LUFS), Spotify (-14LUFS), Apple Music (-16LUFS), Broadcast (-23LUFS).\nTechnology: ITU-R BS.1770 standard loudness metering, color-coded feedback.\nApplication: Optimizes loudness for streaming platforms.\nUse: Ensures platform compliance before distribution."
+    },
+    {
+      "n": 706,
+      "name": "Metering Reference True Peak",
+      "p": "True peak metering reference, oversampling protection, inter-sample peaks, mastering.\n\nControls: Display mode (Peak, True Peak, LUFS), Zone visualization, Margin indicator.\nTechnology: 4x oversampling, true peak detection, inter-sample peak capture.\nApplication: Detects true peaks including inter-sample peaks.\nUse: Prevents clipping in mastering chain."
+    },
+    {
+      "n": 707,
+      "name": "Stereo Imaging Mastering",
+      "p": "Stereo imaging optimization, width control, mono compatibility, mastering.\n\nControls: Stereo Width (0-200%), Mono Check (On/Off), Phase Correlation Display.\nTechnology: Mid-side processing, mono compatibility analysis, width control.\nApplication: Optimizes stereo image while preserving mono.\nUse: Final stereo optimization and mono check."
+    },
+    {
+      "n": 708,
+      "name": "Reference Level Monitor",
+      "p": "Reference level monitoring, headroom tracking, margin control, mastering.\n\nControls: Target Level (-6dB to 0dB), Headroom Display, Warning Threshold.\nTechnology: Real-time level tracking, headroom calculation, visual feedback.\nApplication: Monitors levels against reference standards.\nUse: Maintains optimal headroom throughout mastering."
+    },
+    {
+      "n": 709,
+      "name": "Spectral Analyzer Mastering",
+      "p": "Mastering spectral analyzer, frequency content analysis, balance visualization, mastering.\n\nModes: Real-time spectrum, Waterfall view, Frequency balance analysis, Reference comparison.\nTechnology: FFT analysis, real-time display, reference curves.\nApplication: Analyzes frequency content for balance.\nUse: Final frequency balance verification."
+    },
+    {
+      "n": 710,
+      "name": "Dithering 24-bit to 16-bit",
+      "p": "Dithering for 24-bit to 16-bit reduction, noise shaping, transparency, mastering.\n\nTypes: Noise shaping (TPDF, PDF, Shaped), Bit depth reduction (24 to 16-bit).\nTechnology: Dither algorithm, noise shaping, transparent reduction.\nApplication: Reduces bit depth transparently for CD mastering.\nUse: Final reduction for CD distribution."
+    },
+    {
+      "n": 711,
+      "name": "Loudness Maximizer Transparent",
+      "p": "Transparent loudness maximizer, final loudness boost, transparency, mastering.\n\nControls: Amount (0dB to +6dB), Lookahead (10-100ms), Preserve Dynamics (On/Off).\nTechnology: Look-ahead limiting, transparent maximization, dynamics preservation.\nApplication: Boosts final loudness while preserving dynamics.\nUse: Final loudness optimization for streaming."
+    },
+    {
+      "n": 712,
+      "name": "Linear Workflow Monitor",
+      "p": "Linear phase workflow monitor, latency compensation, phase coherence, mastering.\n\nControls: Latency display, Phase coherence check, Linear phase mode, Compensation.\nTechnology: Linear phase detection, latency tracking, compensation calculation.\nApplication: Ensures linear phase workflow integrity.\nUse: Verifies linear phase processing integrity."
+    },
+    {
+      "n": 713,
+      "name": "Analog Mastering Character Warm",
+      "p": "Analog mastering warmth, vintage character, cohesion, mastering.\n\nControls: Warmth (0-100%), Saturation (Subtle to Medium), Output level.\nTechnology: Harmonic saturation, analog character modeling, cohesion.\nApplication: Adds cohesive analog warmth to master.\nUse: Adds final cohesive analog character."
+    },
+    {
+      "n": 714,
+      "name": "Final Check Mastering Suite",
+      "p": "Complete final mastering check suite, verification system, quality assurance, mastering.\n\nChecks: Loudness (LUFS), Peak levels (True Peak), Frequency balance, Stereo imaging, Mono compatibility.\nTechnology: Integrated analysis, visual feedback, verification reporting.\nApplication: Complete final verification before delivery.\nUse: Final quality assurance before distribution."
+    }
+  ]
+};
+
+/**
+ * HEM Plugin Encyclopedia 2.0 - Main Application Logic
+ * 
+ * Handles:
+ * - Tab navigation between categories
+ * - Search and filtering
+ * - Prompt display and toggling
+ * - Copy-to-clipboard functionality
+ */
+
+/* ARENA_REFERENCE_DATA */
+// Tab configuration
+const TAB_LABELS = {
+  vocals: 'VOCALS (51)',
+  instruments: 'INSTRUMENTS (82)',
+  artifacts: 'ARTIFACTS (51)',
+  processing: 'PROCESSING (21)',
+  effects: 'EFFECTS (20)',
+  mastering: 'MASTERING (15)',
+  vocalProfiles: 'VOICE PROFILES (43)',
+  industrialVocals: 'INDUSTRIAL VOCALS (16)',
+  genreBlueprints: 'GENRE BLUEPRINTS (40)',
+  productionGuides: 'SETTINGS & GUIDES (8)'
+};
+
+const TAB_ORDER = ['vocals', 'instruments', 'artifacts', 'processing', 'effects', 'mastering', 'vocalProfiles', 'industrialVocals', 'genreBlueprints', 'productionGuides'];
+
+// Application state
+let currentTab = 'vocals';
+let searchQuery = '';
+
+/**
+ * Initialize the application
+ */
+function initializeApp() {
+  const available=TAB_ORDER.filter(k=>allData[k]);
+  document.querySelector('.badge').textContent=available.map(k=>TAB_LABELS[k].replace(/\(\d+\)/,'('+allData[k].length+')')).join(' | ');
+  document.querySelector('.stats').textContent=available.reduce((n,k)=>n+allData[k].length,0)+' prompts · Browse, search and copy';
+  const note=document.createElement('p');note.textContent='New: 107 voice profiles, genre blueprints and settings guides. Blueprint macros, gear references and automatic repair describe intended designs; they do not install new audio processors. Later solo-studio revisions are included.';
+  document.querySelector('header').append(note);
+  const download=document.createElement('button');download.type='button';download.textContent='Download added reference library';download.className='tab';
+  download.onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(referencePack,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='hybrid-production-references.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+  document.querySelector('header').append(download);
+  renderTabs();
+  setupEventListeners();
+  render();
+}
+
+/**
+ * Render tab buttons
+ */
+function renderTabs() {
+  const tabsContainer = document.getElementById('tabs');
+  tabsContainer.innerHTML = TAB_ORDER.map(tabId => `
+    <button 
+      class="tab ${tabId === currentTab ? 'active' : ''}" 
+      onclick="switchTab('${tabId}')"
+    >
+      ${TAB_LABELS[tabId].replace(/\(\d+\)/, '(' + allData[tabId].length + ')')}
+    </button>
+  `).join('');
+}
+
+/**
+ * Switch to a different tab
+ */
+function switchTab(tabId) {
+  currentTab = tabId;
+  searchQuery = '';
+  document.getElementById('search').value = '';
+  renderTabs();
+  render();
+}
+
+/**
+ * Setup event listeners
+ */
+function setupEventListeners() {
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', handleSearch);
+}
+
+/**
+ * Handle search input
+ */
+function handleSearch(event) {
+  searchQuery = event.target.value.toLowerCase().trim();
+  render();
+}
+
+/**
+ * Main render function - display prompts
+ */
+function render() {
+  const data = allData[currentTab] || [];
+  const filtered = filterPrompts(data, searchQuery);
+
+  let html = `<div class="results-count" role="status">${filtered.length} prompts found</div><div class="grid">`;
+
+  for (let item of filtered) {
+    const promptId = `prompt_${currentTab}_${item.n}`;
+    const statusId = `status_${currentTab}_${item.n}`;
+    const promptText = (item.p || '').trim();
+
+    html += `
+      <div class="card">
+        <div class="card-header">
+          <div class="card-num">#${item.n}</div>
+          <div class="card-title">${escapeHtml(item.name)}</div>
+        </div>
+        ${item.kind ? '<p>Production blueprint · settings, macros and presets</p>' : ''}
+        ${item.aliases?.length ? '<p>Also known as: '+escapeHtml(item.aliases.join(', '))+'</p>' : ''}
+        <button type="button" class="toggle" aria-expanded="false" aria-controls="${promptId}" onclick="togglePrompt('${promptId}',this)">▼ Show Prompt</button>
+        <div class="prompt-box" id="${promptId}">${escapeHtml(promptText)}</div>
+        <div class="char-count">${promptText.length} characters</div>
+        <button class="copy-btn" onclick="copyPrompt('${promptId}','${statusId}')">📋 COPY</button>
+        <button type="button" class="ghost-chain-link" data-chain-source="encyclopedia" data-chain-key="${escapeHtml(currentTab+':'+item.n)}">Workflow &amp; chains</button>
+        <div class="copy-status" role="status" id="${statusId}"></div>
+      </div>
+    `;
+  }
+
+  html += '</div>';
+  document.getElementById('results').innerHTML = html;
+}
+
+/**
+ * Filter prompts by search query
+ */
+function filterPrompts(data, query) {
+  if (!query) return data;
+
+  return data.filter(item => {
+    const name = item.name.toLowerCase();
+    const number = String(item.n);
+    const prompt = (item.p || '').toLowerCase();
+
+    return (
+      name.includes(query) ||
+      (item.aliases || []).some(alias=>alias.toLowerCase().includes(query)) ||
+      number.includes(query) ||
+      prompt.includes(query)
+    );
+  });
+}
+
+/**
+ * Toggle prompt visibility
+ */
+function togglePrompt(promptId, button) {
+  const element = document.getElementById(promptId);
+  if (element) {
+    const visible = element.classList.toggle('show');
+    if (button) { button.setAttribute('aria-expanded', String(visible)); button.textContent = visible ? '▲ Hide Prompt' : '▼ Show Prompt'; }
+  }
+}
+
+/**
+ * Copy prompt to clipboard
+ */
+async function copyPrompt(promptId, statusId) {
+  const promptElement = document.getElementById(promptId);
+  const statusElement = document.getElementById(statusId);
+
+  if (!promptElement || !statusElement) return;
+
+  const text = promptElement.textContent || '';
+
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      showCopyStatus(statusId, '✓ Copied!');
+      return;
+    }
+  } catch {}
+  fallbackCopy(text, statusId);
+}
+
+/**
+ * Fallback copy method for browsers without clipboard API
+ */
+function fallbackCopy(text, statusId) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-99999px';
+  textarea.style.top = '-99999px';
+
+  document.body.appendChild(textarea);
+
+  try {
+    textarea.select();
+    const copied = document.execCommand('copy');
+    showCopyStatus(statusId, copied ? '✓ Copied!' : 'Copy failed — select the prompt and copy manually');
+  } catch (err) {
+    console.error('Fallback copy failed:', err);
+    showCopyStatus(statusId, 'Copy failed - try again');
+  } finally {
+    document.body.removeChild(textarea);
+  }
+}
+
+/**
+ * Show copy status message
+ */
+function showCopyStatus(statusId, message) {
+  const element = document.getElementById(statusId);
+  if (!element) return;
+
+  element.textContent = message;
+
+  setTimeout(() => {
+    element.textContent = '';
+  }, 2000);
+}
+
+/**
+ * Escape HTML to prevent injection
+ */
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, char => map[char]);
+}
+
+/**
+ * Initialize app when DOM is ready
+ */
+document.addEventListener('DOMContentLoaded', initializeApp);
+</script></body></html>

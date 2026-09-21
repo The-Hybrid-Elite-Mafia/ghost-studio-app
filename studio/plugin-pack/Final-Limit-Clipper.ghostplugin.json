@@ -1,0 +1,25 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Final Limit Clipper",
+  "effects": [
+    {
+      "id": "ghost-factory-final",
+      "type": "final",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "inputDrive": 0,
+        "ceiling": 0,
+        "clipAmount": 0,
+        "limiterAmount": 0,
+        "release": 100,
+        "lowProtect": 0,
+        "overshoot": 0,
+        "tone": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

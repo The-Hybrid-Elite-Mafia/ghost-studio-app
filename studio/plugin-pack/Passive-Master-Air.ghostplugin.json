@@ -1,0 +1,26 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Passive Master Air",
+  "effects": [
+    {
+      "id": "ghost-factory-passive",
+      "type": "passive",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "lowBoost": 0,
+        "lowAttenuation": 0,
+        "lowFrequency": 60,
+        "highBoost": 0,
+        "highFrequency": 10000,
+        "bandwidth": 0,
+        "highAttenuation": 0,
+        "output": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

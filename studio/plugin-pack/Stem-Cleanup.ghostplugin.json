@@ -1,0 +1,21 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Stem Cleanup",
+  "effects": [
+    {
+      "id": "ghost-factory-cleanup",
+      "type": "cleanup",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "noiseReduction": 0,
+        "noiseFloor": 0,
+        "clickRepair": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

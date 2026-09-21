@@ -1,0 +1,25 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Smart De-Esser Pro",
+  "effects": [
+    {
+      "id": "ghost-factory-deesser",
+      "type": "deesser",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "threshold": 0,
+        "frequency": 6500,
+        "range": 0,
+        "mode": 0,
+        "smoothness": 0,
+        "airPreserve": 0,
+        "monitor": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

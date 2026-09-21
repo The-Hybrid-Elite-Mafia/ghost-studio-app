@@ -1,0 +1,200 @@
+/* Glass control screens inspired by the user's Ghost studio reference. */
+:root {
+  --ghost-bg:#050a15; --ghost-panel:#0a1525; --ghost-line:#28445f;
+  --ghost-ink:#edf8ff; --ghost-muted:#a8bdd2; --ghost-cyan:#62ebff; --ghost-violet:#cf9bff;
+  --ghost-glass:linear-gradient(132deg,#112a3d,#081523 45%,#17172e);
+  --ghost-rim:linear-gradient(128deg,#57ddefb3,#32647999 36%,#8b64c299 74%,#cf9bffb3);
+  --ghost-surface:var(--ghost-glass);
+  --ghost-depth:0 12px 28px #0006,0 0 18px #45dfff0a,inset 0 0 0 3px #070e1b,inset 0 0 0 4px #75d8f21a;
+  --bg:var(--ghost-bg); --panel:var(--ghost-panel); --panel2:#101f32;
+  --line:var(--ghost-line); --ink:var(--ghost-ink); --muted:var(--ghost-muted);
+  --cyan:var(--ghost-cyan); --violet:var(--ghost-violet);
+}
+body {
+  background:radial-gradient(ellipse at 0 0,#12526926,transparent 42%),
+    radial-gradient(ellipse at 100% 32%,#702f9d1c,transparent 48%),var(--ghost-bg);
+  color:var(--ghost-ink);
+}
+/* Opaque reading surfaces inside translucent-looking, illuminated rims. */
+.desk,.module-item,.factory-card,.plugin-panel[class],.ghost-genie-bar,
+.resource-page>.page-heading,.lyrics-page>.page-heading,
+html.ghost-reference-page :is(.bg-card,[data-slot=card],.card),html.ghost-encyclopedia header {
+  background:var(--ghost-glass) padding-box,var(--ghost-rim) border-box;
+  border:1px solid transparent; border-radius:10px;
+  box-shadow:var(--ghost-depth); color:var(--ghost-ink);
+}
+.resource-page>.page-heading,.lyrics-page>.page-heading { padding:22px; }
+.resource-frame {
+  background:var(--ghost-bg); border:1px solid #53bfd46b; border-radius:10px;
+  box-shadow:0 0 0 3px #070f1c,0 0 0 4px #9367d133,0 18px 32px #0005;
+}
+.topbar { height:auto; min-height:104px; padding:18px 0; gap:18px; border-bottom:1px solid #568eb144; }
+.topbar .topnav { display:flex; flex-wrap:wrap; align-items:stretch; align-self:center; height:auto; gap:10px; }
+.topnav .nav-tab svg { flex:0 0 20px; width:20px; height:20px; fill:none; stroke:var(--ghost-cyan); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.topnav .nav-tab:nth-child(even) svg { stroke:var(--ghost-violet); }
+.topnav .nav-tab span { min-width:0; }
+
+/* Each navigation tab is a small framed screen; the accent strips are decorative. */
+.topnav .nav-tab,html.ghost-hem header nav a,
+html.ghost-reference-page [role=tab],html.ghost-encyclopedia .tab {
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  gap:9px; min-width:0; min-height:58px; padding:14px 17px 18px;
+  border:1px solid transparent; border-radius:7px;
+  background:var(--ghost-glass) padding-box,var(--ghost-rim) border-box;
+  box-shadow:0 5px 12px #0006,0 0 12px #5eeaff08; color:#c6dbea;
+  font:600 .875rem/1.4 'Space Grotesk',system-ui,sans-serif;
+  letter-spacing:.025em; text-align:center; text-decoration:none;
+  white-space:normal; overflow-wrap:anywhere;
+  transition:border-color .16s ease,box-shadow .16s ease,color .16s ease;
+}
+.topnav .nav-tab::before,html.ghost-hem header nav a::before,
+html.ghost-reference-page [role=tab]::before,html.ghost-encyclopedia .tab::before {
+  content:''; position:absolute; inset:4px; border:1px solid #76d9ef26;
+  border-radius:3px; background:linear-gradient(132deg,#bef4ff08,transparent 42%); pointer-events:none;
+}
+.topnav .nav-tab::after,html.ghost-hem header nav a::after,
+html.ghost-reference-page [role=tab]::after,html.ghost-encyclopedia .tab::after {
+  content:''; position:absolute; left:16px; right:16px; bottom:8px; height:2px;
+  border-radius:2px; pointer-events:none;
+  background:linear-gradient(90deg,#62ebff75 0 26%,transparent 26% 34%,#cf9bff75 34% 47%,#5489aa26 47%);
+}
+.topnav .nav-tab.active,html.ghost-hem header nav a.bg-primary,
+html.ghost-reference-page [role=tab][data-state=active],
+html.ghost-reference-page [role=tab][aria-selected=true],html.ghost-encyclopedia .tab.active {
+  background:linear-gradient(130deg,#12344a,#102238 60%,#29203e) padding-box,
+    linear-gradient(120deg,#75f1ff,#62b8e5 50%,#d9a8ff) border-box;
+  color:#c4faff; box-shadow:0 0 0 1px #62ebff2e,0 0 19px #50dfff22,0 6px 15px #0007;
+}
+.topnav .nav-tab.active::after,html.ghost-hem header nav a.bg-primary::after,
+html.ghost-encyclopedia .tab.active::after,
+html.ghost-reference-page [role=tab][data-state=active]::after {
+  background:linear-gradient(90deg,#62ebff,#cf9bff); box-shadow:0 0 7px #62ebff66;
+}
+html.ghost-hem header nav { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:8px 0 12px; }
+html.ghost-hem header nav a svg {
+  display:block; flex:0 0 20px; width:20px; height:20px;
+  color:var(--ghost-cyan); filter:drop-shadow(0 0 5px #62ebff38);
+}
+html.ghost-hem header nav a:nth-child(even) svg { color:var(--ghost-violet); }
+html.ghost-hem header nav a span { min-width:0; }
+html.ghost-hem header { background:#07111ef5; border-bottom:1px solid #578bab66; box-shadow:0 12px 24px #0005; }
+html.ghost-hem header .container { max-width:1400px; padding-top:16px; }
+html.ghost-hem header>.container>a>img { border-color:#62ebff70!important; box-shadow:0 0 12px #62ebff26!important; }
+html.ghost-hem main h1 { font-size:clamp(2rem,6vw,4rem); line-height:1.1; }
+html.ghost-hem main p { line-height:1.7; }
+
+/* Existing knobs, meter values, shortcuts, and audio states retain their behavior. */
+.primary,.export,.secondary,.quiet,.ghost-genie-motion {
+  background:linear-gradient(145deg,#17344a,#0d1c30); color:var(--ghost-ink);
+  border:1px solid #46708e; box-shadow:inset 0 1px 0 #9eefff12,0 3px 8px #0004; min-height:44px;
+}
+.primary,.export { border-color:#63d4e8; color:#bef7ff; }
+.export { border-color:#ac7dda; color:#e3c8ff; }
+.primary:hover,.export:hover,.secondary:hover,.quiet:hover { background:#19364b; color:#fff; }
+.section-toolbar { border-bottom-color:#4164815c; }
+.section-toolbar h2,.ghost-header h2 { color:var(--ghost-ink); }
+.eyebrow,.pack-kicker { color:var(--ghost-cyan); }
+.page-heading p,.page-note { font-size:1rem; color:var(--ghost-muted); }
+.eyebrow { font-size:.75rem; }
+.channel-strip {
+  background:var(--ghost-glass) padding-box,var(--ghost-rim) border-box;
+  border:1px solid transparent; box-shadow:0 7px 14px #0006,inset 0 0 0 3px #75d8f20a;
+}
+.channel-strip.selected { background:linear-gradient(135deg,#173b4c,#10213a); border-color:#62ebff99; }
+.plugin-panel[class],.factory-card { --panel-accent:var(--ghost-cyan); }
+.plugin-panel.theme-violet,.plugin-panel.theme-gold,
+.factory-card.theme-violet,.factory-card.theme-gold { --panel-accent:var(--ghost-violet); }
+.plugin-panel::before,.plugin-panel::after {
+  content:''; bottom:7px; width:18px; height:3px; border-radius:0;
+  background:var(--panel-accent); opacity:.5; pointer-events:none;
+  box-shadow:0 0 6px color-mix(in srgb,var(--panel-accent) 35%,transparent);
+}
+.rack-child,.plugin-graph-wrap,.plugin-meter-panel { background:#050d1ba6; border:1px solid #38688366; border-radius:7px; }
+.rack-section { border-top-color:#44668166; }
+.rack-section>summary,.rack-child-head h4 { color:#d8c4f2; }
+.rack-item,.plugin-row { border-color:#35577188; }
+.segmented { background:#050d1b; border-color:#42627c; gap:3px; }
+.segmented button { min-height:36px; font-size:.75rem; }
+.segmented button.active { background:#183247; color:var(--ghost-cyan); box-shadow:inset 0 0 0 1px #62ebff4d; }
+.studio-dialog { background:#0b1728; border:1px solid #699bbe; box-shadow:var(--ghost-depth); }
+.studio-dialog::backdrop { background:#020611cf; backdrop-filter:blur(7px); }
+.lyrics-form label,.lyrics-draft-bar label { font-size:.875rem; }
+.lyrics-form :is(input,textarea,select),.lyrics-card textarea { font-size:1rem; }
+.lyrics-card h3,.lyrics-form summary,.lyrics-framework summary { font-size:.875rem; }
+.lyrics-card output,.lyrics-small-actions output { font-size:.75rem; }
+.flat-depth .desk { background:#0b1728; box-shadow:none; }
+.ghost-genie-bar { padding:14px 18px; }
+.ghost-genie-art { flex-basis:80px; width:80px; height:80px; box-shadow:0 0 24px -10px #62ebff80; }
+.ghost-genie-choice select { background:#081323!important; border-color:#466c8a!important; }
+
+/* Tailwind color tokens for the embedded production library. */
+:root.ghost-reference-page,html.ghost-reference-page.dark {
+  --background:220 62% 5%; --foreground:201 100% 96%;
+  --card:216 56% 10%; --card-foreground:201 100% 96%;
+  --card-border:204 42% 29%; --border:204 42% 29%;
+  --sidebar:216 56% 8%; --sidebar-foreground:201 100% 96%; --sidebar-border:204 42% 29%;
+  --sidebar-primary:188 100% 69%; --sidebar-primary-foreground:220 62% 5%;
+  --sidebar-accent:214 43% 16%; --sidebar-ring:188 100% 69%;
+  --primary:188 100% 69%; --primary-foreground:220 62% 5%;
+  --secondary:214 43% 16%; --secondary-foreground:201 100% 96%;
+  --muted:214 43% 16%; --muted-foreground:209 32% 73%;
+  --accent:267 100% 80%; --accent-foreground:220 62% 5%;
+  --popover:216 56% 10%; --popover-foreground:201 100% 96%;
+  --input:204 42% 29%; --ring:188 100% 69%; --radius:.625rem;
+}
+html.ghost-reference-page :is(input,textarea,select) { background-color:#081323; border-color:#466c8a; }
+html.ghost-reference-page :is(button,input,select) { min-height:44px; }
+html.ghost-reference-page [role=tablist],html.ghost-encyclopedia .tabs {
+  display:flex; flex-wrap:wrap; gap:10px; height:auto; padding:10px;
+  border:1px solid #42688155; border-radius:9px; background:#050d1b;
+}
+html.ghost-reference-page [role=tab] { flex:1 1 135px; }
+html.ghost-hem :is(a,button).bg-primary:not(header nav a) {
+  background:linear-gradient(130deg,#133d50,#152a43); border:1px solid #62ebff88;
+  color:#cffaff; min-height:44px; height:auto; padding-top:12px; padding-bottom:12px;
+  box-shadow:inset 0 0 0 3px #091323;
+}
+html.ghost-encyclopedia header { padding:24px; }
+html.ghost-encyclopedia .tab { flex:1 1 140px; }
+html.ghost-encyclopedia :is(.badge,.card-num) { background:#173248; color:var(--ghost-cyan); }
+html.ghost-encyclopedia .copy-btn { background:#163449; color:#cffaff; border:1px solid #63d4e8; border-radius:6px; font-size:.875rem; }
+html.ghost-encyclopedia .prompt-box { background:#060f1e; border-color:#426881; }
+html.ghost-encyclopedia .toggle { min-height:44px; display:inline-flex; align-items:center; }
+
+@media(hover:hover) and (pointer:fine) {
+  .topnav .nav-tab:hover,html.ghost-hem header nav a:hover,
+  html.ghost-reference-page [role=tab]:hover,html.ghost-encyclopedia .tab:hover {
+    color:#fff; border-color:#7de8ff; box-shadow:0 0 18px #62ebff28,0 7px 15px #0007;
+  }
+}
+.topnav .nav-tab:focus-visible,html.ghost-reference-page :is(a,button,input,textarea,select):focus-visible,
+.ghost-genie-bar :focus-visible { outline:2px solid #aff6ff; outline-offset:4px; }
+@media(max-width:1050px) {
+  .topbar .topnav { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); width:100%; flex-basis:100%; margin:0; }
+  .topnav .nav-tab { padding-inline:12px; }
+}
+@media(max-width:680px) {
+  .topbar { padding:16px 0; gap:14px; }
+  .topbar .topnav { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .topbar .topnav .nav-tab { min-height:58px; font-size:.875rem; padding:13px 14px 18px; }
+  .topbar .topnav .nav-tab:last-child:nth-child(odd) { grid-column:1 / -1; }
+  html.ghost-hem header nav { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  html.ghost-hem header nav a { padding:12px 12px 18px; font-size:.875rem; letter-spacing:0; }
+  html.ghost-hem header nav a:last-child:nth-child(odd) { grid-column:1 / -1; }
+  html.ghost-hem header nav a svg { flex-basis:18px; width:18px; height:18px; }
+  .ghost-genie-bar { gap:12px; padding:14px; flex-wrap:wrap; }
+  .ghost-genie-art { flex-basis:64px; width:64px; height:64px; }
+  .ghost-genie-copy { flex-basis:calc(100% - 82px); }
+  .ghost-genie-choice { flex:1; }
+  .ghost-genie-motion { align-self:end; }
+  .resource-page>.page-heading,.lyrics-page>.page-heading { padding:20px; }
+  .page-heading h1 { font-size:1.65rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .ghost-genie-art { animation:none; }
+  .topnav .nav-tab,html.ghost-reference-page a,html.ghost-reference-page button { transition:none; }
+}
+@media(forced-colors:active) {
+  .topnav .nav-tab,html.ghost-hem header nav a,html.ghost-reference-page [role=tab],html.ghost-encyclopedia .tab { border:1px solid ButtonText; }
+  .topnav .nav-tab.active,html.ghost-hem header nav a.bg-primary,html.ghost-encyclopedia .tab.active { border:2px solid Highlight; }
+}

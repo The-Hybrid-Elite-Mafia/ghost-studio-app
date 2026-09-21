@@ -1,0 +1,25 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Vocal Air EQ",
+  "effects": [
+    {
+      "id": "ghost-factory-vocalair",
+      "type": "vocalair",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "hpf": 0,
+        "body": 0,
+        "mudCut": 0,
+        "presence": 0,
+        "air": 0,
+        "deHarsh": 0,
+        "output": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

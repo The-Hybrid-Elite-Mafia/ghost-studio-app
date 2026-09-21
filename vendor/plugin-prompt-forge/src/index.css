@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #070810;
+    font-family:
+      ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      "Noto Sans", sans-serif;
+  }
+
+  ::selection {
+    background-color: rgb(16 185 129 / 0.35);
+    color: #fff;
+  }
+
+  /* console-style scrollbars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.14) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(255 255 255 / 0.14);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  select option {
+    background-color: #151824;
+    color: #e2e8f0;
+  }
+}
+/* Ghost Studios: physical panel depth, inset glass, and quiet activity lights. */
+:root{color-scheme:dark}body{margin:0;background:#03090d}.forge-room{background:radial-gradient(ellipse at top,#163340aa,transparent 60%),#050b10;color:#d9edf5;min-height:100svh}.studio-marquee{position:relative;text-align:center;padding:44px 20px 38px;border-bottom:2px solid #74c4cf;background:linear-gradient(90deg,#061219e8,#07101699,#061219e8),url('./studio-reference.png') center 8% / cover;box-shadow:inset 0 -10px 25px #000,0 7px 25px #000;isolation:isolate}.studio-marquee p{font-size:clamp(18px,4vw,36px);font-weight:900;letter-spacing:.1em;color:#d0ecf2;text-shadow:0 2px #445961,0 4px #03070a,0 0 18px #1ee7ff}.studio-marquee h1{font-size:clamp(32px,7vw,66px);font-weight:950;font-style:italic;color:#68f4ff;text-shadow:0 3px #094452,0 6px #001318,0 0 28px #10dfff;line-height:1.2}.studio-marquee>span{font-size:14px;letter-spacing:.35em;color:#d3fbff}.forge-header{background:linear-gradient(#17262f,#061017);border:1px solid #578894;border-radius:15px;margin:16px auto;max-width:1250px;box-shadow:inset 0 2px #9fdae84d,inset 0 -4px #000,0 9px 0 #020608,0 15px 30px #0009}.forge-utilities{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:14px}.forge-utilities a{padding:10px;color:#84f3ff}.forge-room button,.forge-room select{position:relative;min-height:44px;border:1px solid #397080!important;border-radius:9px;background:linear-gradient(155deg,#233a46,#0b1b25 52%,#061117)!important;color:#cdf7ff!important;box-shadow:inset 0 2px 1px #b2eaff30,inset 0 -3px 2px #000b,0 4px 0 #010507,0 6px 12px #0008;transition:transform .18s,box-shadow .18s,border-color .18s;isolation:isolate}.forge-room button::after{content:'';position:absolute;width:13px;height:2px;right:9px;bottom:5px;border-radius:2px;background:#62eaff;box-shadow:0 0 6px #1ceaff;opacity:.55;animation:panel-breathe 5s ease-in-out infinite;pointer-events:none}.forge-room button:disabled::after{display:none}.forge-room button:nth-child(3n)::after{animation-delay:-1.7s}.forge-room button:nth-child(3n + 1)::after{animation-delay:-3.2s}.forge-room button:active{transform:translateY(3px);box-shadow:inset 0 2px 7px #000,0 1px #020507}.forge-room button[aria-pressed=true]{border-color:#63efff!important;background:linear-gradient(145deg,#176078,#092a39)!important;box-shadow:inset 0 0 16px #19c8ed40,0 0 10px #16ccea60,0 4px #020709}.forge-room button:focus-visible,.forge-room select:focus-visible,.forge-room a:focus-visible{outline:3px solid #ffe4a0;outline-offset:4px}.forge-room input,.forge-room textarea,.forge-room pre{background:#030c13!important;color:#c9f5ff!important;border-color:#376272!important;box-shadow:inset 0 3px 12px #000;max-width:100%}.forge-room select{font-size:16px!important;padding:12px}.forge-room option{background:#102431;color:#e1f7ff}.forge-intro{display:flex;gap:24px;align-items:center;padding:26px;margin-bottom:24px;border-left:3px solid #54d8ed;background:linear-gradient(130deg,#112833,#071219);border-radius:12px;box-shadow:inset 0 1px #c1f3ff30,0 12px 25px #0006}.forge-intro h2{font-size:24px;font-weight:800;color:#e4faff}.forge-intro p{max-width:750px;font-size:15px;line-height:1.75;color:#b2cbd5}.console-caption{letter-spacing:.15em;font-size:12px!important;color:#55ddea!important}.neutral-badge{flex-shrink:0;text-align:center;font-size:11px;color:#a1dbe5;border:1px solid #315969;padding:16px;border-radius:8px;background:#041018;box-shadow:inset 0 3px 12px #000}.neutral-badge strong{display:block;font:36px monospace;color:#a2ffe6;text-shadow:0 0 10px #23ddb999}.neutral-badge span{display:block;color:#aec5cd}.category-console{padding:20px;background:linear-gradient(160deg,#162a35,#061016);border:1px solid #4f7c89;border-radius:16px;box-shadow:inset 0 2px #b7e9ed44,inset 0 -5px #000,0 10px 24px #0009}.category-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}.category-tile{min-height:134px!important;flex-direction:column;justify-content:center!important;padding:18px 8px!important}.category-name{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:14px;text-align:center}.category-dial{display:block;position:relative;width:52px;height:52px;border:2px solid #4ce6f8;border-radius:50%;background:conic-gradient(#526d7b,#081018,#4c6572,#090e12,#344956,#526d7b);box-shadow:0 0 11px #1accf466,3px 6px 7px #000,inset 0 0 0 5px #101c24,inset 0 0 0 7px #5d707c}.category-dial i{position:absolute;left:23px;top:6px;width:3px;height:13px;background:#c7fcff;box-shadow:0 0 4px #65eaff;border-radius:2px;transform-origin:50% 19px;transform:rotate(-35deg);transition:transform .3s}.category-tile[aria-pressed=true] .category-dial i{transform:rotate(35deg)}.hardware-card{border:1px solid #497783!important;background:linear-gradient(120deg,#18303b,#07151e 45%,#10232d)!important;border-radius:16px!important;box-shadow:inset 0 2px #c9f5ff44,inset 0 -5px #000,0 7px 0 #02070c,0 14px 28px #0009!important;margin-bottom:12px}.hardware-card h3{font-size:20px;color:#93f5ff;text-shadow:0 0 10px #15b9d855}.hardware-card>div:first-child{background:#5cdfff!important}.hardware-card .text-slate-600,.forge-room .text-slate-500,.forge-room .text-slate-600{color:#9bbac7!important}.forge-room .text-slate-400{color:#b8cdd6!important}.forge-room [class*='text-[10px]'],.forge-room [class*='text-[11px]']{font-size:13px!important}.hardware-card dl{font-size:14px}.forge-footer{max-width:1200px;margin:auto;padding:35px 24px;color:#9bb7c4;line-height:1.7;border-top:1px solid #376272}.forge-footer strong{color:#78e6f5}.forge-room .fixed.inset-0{backdrop-filter:none}.forge-room .fixed.inset-0>div{max-width:100%}@keyframes panel-breathe{0%,100%{opacity:.4}50%{opacity:1}}.motion-off *,.motion-off *::after{animation:none!important;transition:none!important}.motion-off button::after{opacity:.8}@media(hover:hover){.forge-room button:hover{border-color:#94f8ff!important;transform:translateY(-2px);box-shadow:inset 0 2px #c5f8ff33,0 0 12px #28d7f555,0 6px 0 #02070c,0 12px 18px #0009}}@media(max-width:700px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category-tile{min-height:115px!important}.forge-intro{flex-direction:column;align-items:stretch;padding:18px}.neutral-badge{display:none}.forge-header{margin:8px;border-radius:12px}.studio-marquee{padding:30px 12px}.forge-room main{padding:16px 12px}.category-console{padding:14px}.forge-header nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.hardware-card .p-5{padding:16px}.forge-room .shrink-0{max-width:100%}.forge-room dd{white-space:normal;overflow-wrap:anywhere}.forge-room [class*='text-']{overflow-wrap:anywhere}}@media(prefers-reduced-motion:reduce){.forge-room *,.forge-room *::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* Embedded in the dedicated Ghost Rack page; one outer page scrollbar. */
+.rack-embedded,.rack-embedded body{height:auto!important;min-height:0!important;overflow:hidden!important}
+.rack-embedded .forge-room{min-height:0!important;padding-bottom:24px}
+.rack-embedded .forge-room>.studio-marquee{display:none}
+.rack-embedded .forge-header{position:relative!important;top:auto!important}
+
+.rack-embedded .fixed.inset-0.z-50{top:var(--rack-modal-top,0px)!important;bottom:auto!important;height:var(--rack-modal-height,700px)!important}
+.rack-embedded .fixed.inset-0.z-50>div[class*="max-h-"]{max-height:calc(var(--rack-modal-height,700px)*.9)!important}
+.rack-embedded [class*="max-h-[70vh]"]{max-height:calc(var(--rack-modal-height,700px)*.7)!important}
+
+.plugin-picker{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.plugin-picker button,.catalog-pages button{min-height:44px;padding:12px;border:1px solid #366a7b;border-radius:8px;background:linear-gradient(140deg,#1e4353,#07131d);color:#d2f7ff;font-size:14px;text-align:left;box-shadow:inset 0 1px #bdf5ff33,0 3px #02080d}.plugin-picker button[aria-pressed=true]{border-color:#62edff;box-shadow:0 0 12px #2bdafa44}.catalog-pages{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0;font-size:14px}.catalog-pages button:disabled{opacity:.4}.plugin-detail{min-width:0}@media(min-width:1000px){.forge-library{display:grid!important;grid-template-columns:280px minmax(0,1fr)}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}

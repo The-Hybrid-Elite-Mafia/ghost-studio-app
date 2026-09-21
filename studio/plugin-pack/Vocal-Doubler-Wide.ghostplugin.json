@@ -1,0 +1,26 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Vocal Doubler Wide",
+  "effects": [
+    {
+      "id": "ghost-factory-doubler",
+      "type": "doubler",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "amount": 0,
+        "leftDetune": 0,
+        "rightDetune": 0,
+        "leftDelay": 0,
+        "rightDelay": 0,
+        "width": 0,
+        "centerKeep": 0,
+        "modulation": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Vocal 73 Front End",
+  "effects": [
+    {
+      "id": "ghost-factory-vocal73",
+      "type": "vocal73",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "inputDrive": 0,
+        "output": 0,
+        "hpf": 0,
+        "body": 0,
+        "presence": 0,
+        "air": 0,
+        "saturation": 0,
+        "toneMode": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

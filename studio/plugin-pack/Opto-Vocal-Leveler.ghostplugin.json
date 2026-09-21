@@ -1,0 +1,23 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Opto Vocal Leveler",
+  "effects": [
+    {
+      "id": "ghost-factory-opto",
+      "type": "opto",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "peakReduction": 0,
+        "gain": 0,
+        "mode": 0,
+        "warmth": 0,
+        "emphasis": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+/* User-supplied room artwork with working HTML equipment in front. */
+:root,:host{--console-glass:linear-gradient(120deg,#18343bf5,#030c12 40%,#091921);--console-frame:inset 0 1px 1px #e6d0a888,inset 0 0 0 4px #060a0d,inset 0 0 0 5px #47778277,0 5px 0 #030609,0 7px 0 #84634388,0 18px 28px #000c;--hem-face:conic-gradient(from 30deg,#070c0f,#53656e 40deg,#121b21 65deg,#020508 170deg,#4b5c62 235deg,#121a1d 265deg,#070c0f);--hem-dial-shadow:0 0 0 3px #08141b,0 0 0 5px #20cbdf,0 5px 0 5px #03090d,0 9px 14px #000,inset 0 1px 4px #c9eaf866,0 0 17px #00dcff55}
+body{background:linear-gradient(#03080bdd,#03080bf5),url('/branding/ghost-studio-room.png') top center/1100px auto fixed!important}
+.studio-shell{max-width:1440px;padding-inline:24px}
+.dashboard-active .studio-shell{max-width:1100px;padding:0 0 35px;background:url('/branding/ghost-studio-room.png') center top/100% auto no-repeat,#03090d;box-shadow:0 0 100px #000}
+.dashboard-active .topbar{display:none!important}
+.command-dashboard{padding:0 0 28px;background:transparent}
+.command-dashboard:before{display:none}
+.room-masthead{height:auto;aspect-ratio:864/319;width:100%;background:url('/branding/ghost-studio-room.png') top center/100% auto no-repeat;position:relative}
+.room-workstation{width:88%;margin:0 auto;position:relative;padding-bottom:28px;isolation:isolate}
+.room-workstation:before{content:'';position:absolute;inset:0 -2% 0;z-index:-1;background:#030b10;box-shadow:0 0 20px 15px #020b10aa}
+.room-nav,.room-categories,.room-rack,.room-transport,.room-side-tablet,.room-bottom-nav{border:1px solid #72b8c2;border-top-color:#c4b388;border-radius:13px;background:linear-gradient(115deg,#132830,#040c11 40%,#0b1b23);box-shadow:var(--console-frame)}
+.room-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));padding:9px 14px 13px;gap:6px;margin-bottom:20px}
+.room-nav button{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:65px;border-radius:5px;text-transform:uppercase;font-size:14px;color:#bbcdd2}
+.room-nav button>span{font-size:27px;line-height:1.2;color:#cef8ff}
+.room-nav button.active,.room-nav button:hover{background:linear-gradient(130deg,#06354b,#05121c);border:1px solid #24e8ff;box-shadow:inset 0 0 15px #04d8ff55,0 0 10px #00dfff77;color:#a3faff}
+.room-categories{padding:18px 22px 16px;margin-bottom:22px}
+.room-categories h2{text-align:center;text-transform:uppercase;color:#65edff;font-size:15px;margin-bottom:16px;text-shadow:0 0 9px #16d4ff}
+.room-category-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.room-category-grid button{min-width:0;min-height:110px;border:1px solid #387480;border-radius:7px;background:linear-gradient(135deg,#21323b,#050d12 55%,#11212a);box-shadow:inset 0 1px 1px #93cdd744,inset 0 0 0 3px #07131a,0 4px 7px #000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:8px 3px}
+.room-category-grid button span{font-size:44px;line-height:1;color:#32e4ff;text-shadow:0 2px 0 #16687e,0 0 14px #00cfff88;filter:drop-shadow(3px 6px 2px #000)}
+.room-category-grid button:nth-child(5) span{color:#ffd269;text-shadow:0 0 12px #df9b29}
+.room-category-grid button:nth-child(8) span{color:#a77aff;text-shadow:0 0 16px #845aff}
+.room-category-grid strong{font-size:14px;font-weight:500;text-transform:uppercase;color:#b6eaf1}
+.room-category-grid button.active{border-color:#53eaff;box-shadow:inset 0 0 12px #1ad8ff55,0 0 0 1px #49e6ff,0 0 15px #00d9ff99}
+.room-picker{display:flex;align-items:center;gap:14px;padding-top:16px;font-size:14px;color:#96d4dc}.room-picker select{width:100%;min-width:0;max-width:none!important;border:1px solid #2e6474;background:#020b12;color:#c8faff;min-height:42px;font-size:14px;border-radius:4px}
+.room-rack{padding:14px 16px 18px;margin:0 -3% 24px;position:relative;border-bottom:3px solid #79654b}
+.room-rack-status{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#79e9f6;font-size:14px;padding:0 4px 10px;border-bottom:1px solid #28505d}.room-rack-status button{font-size:14px;min-height:40px}
+.room-wave{position:relative;margin:14px 4px 0;background:#02080d;box-shadow:inset 0 0 20px #000;border:1px solid #1e4653}.room-wave canvas{display:block;width:100%;height:100px}.room-wave span{position:absolute;top:5px;left:8px;color:#8eb9c2;font:12px ui-monospace,monospace;background:#02090cbb}
+#roomModules .plugin-panel,.plugin-panel{--panel-accent:#31e7ff!important;border-radius:8px!important;background:linear-gradient(135deg,#122b34,#040d14 60%,#0b202a)!important;color:#daf4fa!important;border:1px solid #37717f!important;box-shadow:inset 0 1px 0 #b4f7ff44,0 4px 10px #000!important}
+#roomModules .plugin-panel{margin:10px 0!important;padding:18px 12px!important}
+#roomModules .module-heading{padding-bottom:10px;border-bottom:1px solid #214551}#roomModules h3{color:#6eeaff;font-size:18px}#roomModules .pack-kicker{color:#aec8ce;font-size:12px}
+#roomModules .module-knobs{display:flex;flex-wrap:wrap;justify-content:center;gap:24px 20px;padding:24px 8px 14px}#roomModules .knob-control{flex:0 1 85px;min-width:75px;gap:12px}#roomModules .knob-label{font-size:12px;color:#dcf6f9;text-transform:uppercase;min-height:30px}#roomModules .knob-value{font-size:14px;color:#adc9d3}
+.knob-face{background:var(--hem-face)!important}.knob{border:2px solid #4bddf4!important}
+#roomModules .preset-row{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0}#roomModules select{max-width:100%;font-size:14px;background:#05141d;color:#d1eff5;border-color:#316273}
+#roomModules .plugin-meter-panel{margin:12px 0;background:#01090e;border:1px solid #244752;border-radius:4px;padding:12px}
+#roomModules .module-description{font-size:14px;line-height:1.6;color:#9db9c2}#roomModules .preset-guidance{font-size:14px;color:#a0c3cf}
+#roomInsert .forge-actions{display:flex;flex-wrap:wrap;gap:10px;padding:12px 3px;background:transparent;border:0}#roomInsert button{font-size:14px;min-height:44px}#roomInsert .target-label{flex:1;min-width:150px;font-size:14px}
+.room-bottom-deck{display:grid;grid-template-columns:1fr 2.2fr 1fr;gap:20px;align-items:center;padding:12px 0 26px;perspective:1000px}
+.room-side-tablet{min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:15px 8px;transform:rotateY(8deg) rotateZ(-3deg);border:2px solid #338ba4;box-shadow:inset 0 0 0 5px #030b10,inset 0 0 0 6px #4fc8e6,var(--console-frame)}
+.room-side-tablet:last-child{transform:rotateY(-8deg) rotateZ(3deg)}.room-side-tablet>span{font-size:30px;color:#49e5ff;text-shadow:0 0 12px #20dbff}.room-side-tablet strong{text-transform:uppercase;font-size:14px;color:#62e9ff}.room-side-tablet small{font-size:12px;color:#a6d6e2}
+.room-transport{padding:18px 12px;transform:rotateX(8deg);border-bottom-width:5px}.room-session{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:12px;color:#9fd1dd;padding-bottom:15px}.room-session span{max-width:100%;overflow-wrap:anywhere}.room-session output{font-family:monospace;font-size:14px;color:#d4faff}.room-transport-buttons{display:flex;gap:10px;justify-content:center}.room-transport button{font-size:14px;min-height:46px;padding:8px 14px;border:1px solid #426b7a;border-radius:4px;background:linear-gradient(#234451,#06121a);box-shadow:0 4px 0 #02060a,inset 0 1px 1px #91d9e866}.room-transport #roomPlay{color:#72ffd0;border:1px solid #19f7b4;box-shadow:0 0 16px #13ffad66,inset 0 0 12px #1affb944;font-size:22px}.room-transport p{font-size:12px;text-align:center;color:#8baeba;margin-top:15px}
+.room-bottom-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:10px;margin-top:4px}.room-bottom-nav button{font-size:14px;min-height:46px;color:#a2c5d0}.room-bottom-nav button.active{color:#6eedff;text-shadow:0 0 12px #00ddff;background:#0b2936}
+.dashboard-radio,.dashboard-bottom{width:88%;margin-inline:auto}.dashboard-radio{margin-top:5px!important;background:#04121bf5!important}.dashboard-bottom{margin-top:25px}.dashboard-active .app-footer{width:88%;margin-inline:auto;background:#030c12;padding:15px}
+:is(.desk,.glass-panel,.lyrics-card,.studio-dialog,.bc,.vc,.gs,.daw-panel){border-radius:10px!important;border-color:#4a8e9c!important}
+:is(button,summary):hover{border-color:#72eaff}button:active{filter:brightness(1.2)}
+@media(max-width:650px){.room-workstation{width:94%}.room-nav{padding:7px;gap:3px;border-radius:9px;margin-bottom:15px}.room-nav button{font-size:12px;min-height:58px;padding:3px 1px}.room-nav button>span{font-size:23px}.room-categories{padding:14px 12px}.room-category-grid{gap:8px}.room-category-grid button{min-height:82px}.room-category-grid button span{font-size:32px}.room-category-grid strong{font-size:12px}.room-rack{margin-inline:0;padding:12px 9px}.room-rack-status{flex-wrap:wrap;gap:3px}.room-bottom-deck{gap:9px;grid-template-columns:1fr 1.65fr 1fr}.room-side-tablet{min-height:123px;padding:10px 4px}.room-side-tablet strong{font-size:12px}.room-transport{padding:12px 8px}.room-transport-buttons{gap:5px}.room-transport button{padding:7px 10px}.room-transport #roomMix{font-size:12px;padding:5px}.room-bottom-nav{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.dashboard-radio,.dashboard-bottom{width:94%}#roomModules .module-knobs{gap:20px 12px}#roomModules .module-heading{gap:12px}.room-wave canvas{height:75px}.studio-shell{padding-inline:12px}}
+@media(max-width:380px){.room-category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.room-nav{grid-template-columns:repeat(3,minmax(0,1fr))}.room-bottom-deck{grid-template-columns:1fr 1fr}.room-transport{grid-column:1/-1;grid-row:1}.room-category-grid button{min-height:90px}}
+@media(prefers-reduced-motion:reduce){.room-workstation *{scroll-behavior:auto!important;animation:none!important}}

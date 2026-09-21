@@ -1,0 +1,11 @@
+import {build} from 'esbuild';
+import postcss from 'postcss';
+import tailwind from '@tailwindcss/postcss';
+import {readFile,writeFile} from 'node:fs/promises';
+import path from 'node:path';
+const base=path.resolve('vendor/plugin-prompt-forge');
+const result=await build({entryPoints:[base+'/src/main.tsx'],bundle:true,write:false,minify:true,format:'iife',jsx:'automatic',define:{'process.env.NODE_ENV':'"production"'},loader:{'.png':'dataurl'},plugins:[{name:'css-separate',setup(b){b.onLoad({filter:/\.css$/},()=>({contents:'',loader:'js'}))}}]});
+const artwork='data:image/png;base64,'+(await readFile(base+'/src/studio-reference.png')).toString('base64');
+const css=await postcss([tailwind({base})]).process((await readFile(base+'/src/index.css','utf8')).replaceAll('./studio-reference.png',artwork),{from:base+'/src/index.css'});
+await writeFile('public/plugin-prompts.html','<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ghost Studios · Plugin Prompt Forge</title><style>'+css.css+'</style></head><body><div id="root"></div><script>'+result.outputFiles[0].text.replaceAll('</script','<\\/script')+'</script></body></html>');
+console.log('Built Plugin Prompt Forge');

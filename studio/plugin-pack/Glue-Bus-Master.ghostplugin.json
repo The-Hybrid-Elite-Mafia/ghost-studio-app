@@ -1,0 +1,25 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Glue Bus Master",
+  "effects": [
+    {
+      "id": "ghost-factory-glue",
+      "type": "glue",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "threshold": 0,
+        "ratio": 1.5,
+        "attack": 10,
+        "release": 100,
+        "autoRelease": 0,
+        "makeup": 0,
+        "sidechainHPF": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

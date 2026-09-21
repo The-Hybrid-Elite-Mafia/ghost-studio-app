@@ -1,0 +1,4951 @@
+{
+  "format": "ghost-plugin-catalog",
+  "version": 1,
+  "defaultPolicy": "zero-neutral-bypassed",
+  "plugins": [
+    {
+      "type": "vocal73",
+      "name": "Vocal 73 Front End",
+      "pack": "Vocals",
+      "theme": "amber",
+      "description": "Broad vocal tone and original harmonic shaping; not a measured hardware emulation.",
+      "params": {
+        "inputDrive": [
+          0,
+          24,
+          0,
+          "dB"
+        ],
+        "output": [
+          -24,
+          12,
+          0,
+          "dB"
+        ],
+        "hpf": [
+          0,
+          160,
+          0,
+          "Hz"
+        ],
+        "body": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "presence": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "air": [
+          -6,
+          8,
+          0,
+          "dB"
+        ],
+        "saturation": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "toneMode": [
+          0,
+          2,
+          0,
+          ""
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "hpf": [
+          [
+            0,
+            "Off"
+          ],
+          [
+            50,
+            "50 Hz"
+          ],
+          [
+            80,
+            "80 Hz"
+          ],
+          [
+            100,
+            "100 Hz"
+          ],
+          [
+            160,
+            "160 Hz"
+          ]
+        ],
+        "toneMode": [
+          [
+            0,
+            "Clean"
+          ],
+          [
+            1,
+            "Warm"
+          ],
+          [
+            2,
+            "Console"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Clean Pop Vocal",
+          "params": {
+            "inputDrive": 0,
+            "output": 0,
+            "hpf": 80,
+            "body": 0,
+            "presence": 0.8,
+            "air": 1,
+            "saturation": 4,
+            "toneMode": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Warm Rap Lead",
+          "params": {
+            "inputDrive": 2,
+            "output": -2,
+            "hpf": 80,
+            "body": 1.5,
+            "presence": 1,
+            "air": 0,
+            "saturation": 18,
+            "toneMode": 1,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Bright Female Lead",
+          "params": {
+            "inputDrive": 0,
+            "output": 0,
+            "hpf": 100,
+            "body": 0,
+            "presence": 0.5,
+            "air": 2,
+            "saturation": 0,
+            "toneMode": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Thick Male Lead",
+          "params": {
+            "inputDrive": 0,
+            "output": 0,
+            "hpf": 50,
+            "body": 2,
+            "presence": 0,
+            "air": 0.5,
+            "saturation": 12,
+            "toneMode": 1,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Voiceover Front",
+          "params": {
+            "inputDrive": 0,
+            "output": 0,
+            "hpf": 80,
+            "body": 0,
+            "presence": 1.2,
+            "air": 0.3,
+            "saturation": 0,
+            "toneMode": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "AI restrained front end",
+          "params": {
+            "inputDrive": 0,
+            "output": 0,
+            "hpf": 50,
+            "body": 0,
+            "presence": -0.5,
+            "air": 0,
+            "saturation": 0,
+            "toneMode": 0,
+            "mix": 100
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-vocal73",
+        "type": "vocal73",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "inputDrive": 0,
+          "output": 0,
+          "hpf": 0,
+          "body": 0,
+          "presence": 0,
+          "air": 0,
+          "saturation": 0,
+          "toneMode": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "deesser",
+      "name": "Smart De-Esser Pro",
+      "pack": "Vocals",
+      "theme": "cyan",
+      "description": "Frequency-selective envelope detection. Split and wide modes, reduction metering and a detector audition.",
+      "params": {
+        "threshold": [
+          -60,
+          0,
+          0,
+          "dB"
+        ],
+        "frequency": [
+          2500,
+          12000,
+          6500,
+          "Hz"
+        ],
+        "range": [
+          0,
+          18,
+          0,
+          "dB"
+        ],
+        "mode": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "smoothness": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "airPreserve": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "monitor": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "mode": [
+          [
+            0,
+            "Wide"
+          ],
+          [
+            1,
+            "Split"
+          ]
+        ],
+        "monitor": [
+          [
+            0,
+            "Monitor off"
+          ],
+          [
+            1,
+            "Monitor sibilance"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Pop Smooth",
+          "params": {
+            "threshold": -28,
+            "frequency": 6500,
+            "range": 5,
+            "mode": 1,
+            "smoothness": 60,
+            "airPreserve": 30,
+            "monitor": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Bright Female Tame",
+          "params": {
+            "threshold": -30,
+            "frequency": 7800,
+            "range": 7,
+            "mode": 1,
+            "smoothness": 60,
+            "airPreserve": 0,
+            "monitor": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Rap Presence Control",
+          "params": {
+            "threshold": -28,
+            "frequency": 5800,
+            "range": 4,
+            "mode": 1,
+            "smoothness": 35,
+            "airPreserve": 0,
+            "monitor": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Podcast Clean",
+          "params": {
+            "threshold": -28,
+            "frequency": 5500,
+            "range": 5,
+            "mode": 1,
+            "smoothness": 75,
+            "airPreserve": 0,
+            "monitor": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Aggressive S Saver",
+          "params": {
+            "threshold": -34,
+            "frequency": 7200,
+            "range": 10,
+            "mode": 1,
+            "smoothness": 60,
+            "airPreserve": 20,
+            "monitor": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "AI gentle S control",
+          "params": {
+            "threshold": -24,
+            "frequency": 8000,
+            "range": 3,
+            "mode": 1,
+            "smoothness": 65,
+            "airPreserve": 0,
+            "monitor": 0,
+            "mix": 100
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Audition sibilance and adjust frequency/threshold; back off if consonants lose clarity.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-deesser",
+        "type": "deesser",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "threshold": 0,
+          "frequency": 6500,
+          "range": 0,
+          "mode": 0,
+          "smoothness": 0,
+          "airPreserve": 0,
+          "monitor": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "fet",
+      "name": "FET Vocal Snap",
+      "pack": "Vocals",
+      "theme": "black",
+      "description": "Fast feed-forward compression with a filtered detector, parallel blend and harmonic presence.",
+      "params": {
+        "input": [
+          0,
+          30,
+          0,
+          "dB"
+        ],
+        "output": [
+          -30,
+          18,
+          0,
+          "dB"
+        ],
+        "attack": [
+          0.1,
+          10,
+          1,
+          "ms"
+        ],
+        "release": [
+          20,
+          1000,
+          100,
+          "ms"
+        ],
+        "ratio": [
+          4,
+          20,
+          4,
+          ":1"
+        ],
+        "presenceDrive": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "sidechainHPF": [
+          0,
+          300,
+          0,
+          "Hz"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "ratio": [
+          [
+            4,
+            "4:1"
+          ],
+          [
+            8,
+            "8:1"
+          ],
+          [
+            12,
+            "12:1"
+          ],
+          [
+            20,
+            "20:1"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Lead Vocal Control",
+          "params": {
+            "input": 2,
+            "output": -1,
+            "attack": 2,
+            "release": 100,
+            "ratio": 4,
+            "presenceDrive": 0,
+            "sidechainHPF": 80,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Rap Clamp",
+          "params": {
+            "input": 5,
+            "output": -3,
+            "attack": 0.5,
+            "release": 70,
+            "ratio": 8,
+            "presenceDrive": 12,
+            "sidechainHPF": 80,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Pop Edge",
+          "params": {
+            "input": 3,
+            "output": 0,
+            "attack": 3,
+            "release": 100,
+            "ratio": 4,
+            "presenceDrive": 18,
+            "sidechainHPF": 80,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Ad-Lib Push",
+          "params": {
+            "input": 7,
+            "output": -4,
+            "attack": 0.3,
+            "release": 60,
+            "ratio": 12,
+            "presenceDrive": 0,
+            "sidechainHPF": 80,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Parallel Energy",
+          "params": {
+            "input": 10,
+            "output": -2,
+            "attack": 0.1,
+            "release": 50,
+            "ratio": 20,
+            "presenceDrive": 0,
+            "sidechainHPF": 80,
+            "mix": 25
+          }
+        },
+        {
+          "name": "AI light peak blend",
+          "params": {
+            "input": 0,
+            "output": 0,
+            "attack": 5,
+            "release": 120,
+            "ratio": 4,
+            "presenceDrive": 0,
+            "sidechainHPF": 0,
+            "mix": 20
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Set input/threshold for light gain reduction first; already compressed audio may need none.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-fet",
+        "type": "fet",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "input": 0,
+          "output": 0,
+          "attack": 1,
+          "release": 100,
+          "ratio": 4,
+          "presenceDrive": 0,
+          "sidechainHPF": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "opto",
+      "name": "Opto Vocal Leveler",
+      "pack": "Vocals",
+      "theme": "cream",
+      "description": "A dual-time-constant leveler with signal-dependent recovery and gentle optional harmonic color.",
+      "params": {
+        "peakReduction": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "gain": [
+          -24,
+          18,
+          0,
+          "dB"
+        ],
+        "mode": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "warmth": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "emphasis": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "mode": [
+          [
+            0,
+            "Compress"
+          ],
+          [
+            1,
+            "Limit"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Smooth Lead",
+          "params": {
+            "peakReduction": 35,
+            "gain": 0,
+            "mode": 0,
+            "warmth": 8,
+            "emphasis": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Hook Leveler",
+          "params": {
+            "peakReduction": 48,
+            "gain": 1,
+            "mode": 0,
+            "warmth": 10,
+            "emphasis": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "R&B Velvet",
+          "params": {
+            "peakReduction": 40,
+            "gain": 0,
+            "mode": 0,
+            "warmth": 18,
+            "emphasis": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Ballad Warmth",
+          "params": {
+            "peakReduction": 28,
+            "gain": 0,
+            "mode": 0,
+            "warmth": 22,
+            "emphasis": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Soft Voice Control",
+          "params": {
+            "peakReduction": 22,
+            "gain": 0,
+            "mode": 0,
+            "warmth": 0,
+            "emphasis": 20,
+            "mix": 100
+          }
+        },
+        {
+          "name": "AI subtle leveling",
+          "params": {
+            "peakReduction": 15,
+            "gain": 0,
+            "mode": 0,
+            "warmth": 0,
+            "emphasis": 0,
+            "mix": 50
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Set input/threshold for light gain reduction first; already compressed audio may need none.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-opto",
+        "type": "opto",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "peakReduction": 0,
+          "gain": 0,
+          "mode": 0,
+          "warmth": 0,
+          "emphasis": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "vocalair",
+      "name": "Vocal Air EQ",
+      "pack": "Vocals",
+      "theme": "silver",
+      "description": "Broad vocal curves for body, mud, presence, air and static upper-mid softening.",
+      "params": {
+        "hpf": [
+          0,
+          250,
+          0,
+          "Hz"
+        ],
+        "body": [
+          -8,
+          8,
+          0,
+          "dB"
+        ],
+        "mudCut": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "presence": [
+          -8,
+          8,
+          0,
+          "dB"
+        ],
+        "air": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "deHarsh": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "output": [
+          -24,
+          12,
+          0,
+          "dB"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {},
+      "factory": [
+        {
+          "name": "Pop Shine",
+          "params": {
+            "hpf": 70,
+            "body": 0,
+            "mudCut": 12,
+            "presence": 1,
+            "air": 18,
+            "deHarsh": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Rap Clarity",
+          "params": {
+            "hpf": 65,
+            "body": 0,
+            "mudCut": 25,
+            "presence": 1.5,
+            "air": 8,
+            "deHarsh": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Female Air",
+          "params": {
+            "hpf": 95,
+            "body": 0,
+            "mudCut": 0,
+            "presence": 0,
+            "air": 28,
+            "deHarsh": 15,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Male Presence",
+          "params": {
+            "hpf": 70,
+            "body": 0.8,
+            "mudCut": 18,
+            "presence": 1.2,
+            "air": 10,
+            "deHarsh": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Backing Vocal Clean",
+          "params": {
+            "hpf": 140,
+            "body": 0,
+            "mudCut": 20,
+            "presence": -0.7,
+            "air": 14,
+            "deHarsh": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "AI brittle vocal softener",
+          "params": {
+            "hpf": 50,
+            "body": 0,
+            "mudCut": 10,
+            "presence": 0,
+            "air": 0,
+            "deHarsh": 15,
+            "output": 0,
+            "mix": 100
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-vocalair",
+        "type": "vocalair",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "hpf": 0,
+          "body": 0,
+          "mudCut": 0,
+          "presence": 0,
+          "air": 0,
+          "deHarsh": 0,
+          "output": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "doubler",
+      "name": "Vocal Doubler Wide",
+      "pack": "Vocals",
+      "theme": "violet",
+      "description": "Two crossfaded moving delay heads per side provide real micro-pitch doubling. Audition mono compatibility.",
+      "params": {
+        "amount": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "leftDetune": [
+          -24,
+          24,
+          0,
+          "cent"
+        ],
+        "rightDetune": [
+          -24,
+          24,
+          0,
+          "cent"
+        ],
+        "leftDelay": [
+          0,
+          80,
+          0,
+          "ms"
+        ],
+        "rightDelay": [
+          0,
+          80,
+          0,
+          "ms"
+        ],
+        "width": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "centerKeep": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "modulation": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {},
+      "factory": [
+        {
+          "name": "Hook Width",
+          "params": {
+            "amount": 70,
+            "leftDetune": -5,
+            "rightDetune": 5,
+            "leftDelay": 14,
+            "rightDelay": 20,
+            "width": 10,
+            "centerKeep": 100,
+            "modulation": 0,
+            "mix": 20
+          }
+        },
+        {
+          "name": "Chorus Lift",
+          "params": {
+            "amount": 70,
+            "leftDetune": -7,
+            "rightDetune": 7,
+            "leftDelay": 14,
+            "rightDelay": 20,
+            "width": 25,
+            "centerKeep": 100,
+            "modulation": 0,
+            "mix": 26
+          }
+        },
+        {
+          "name": "Ad-Lib Spread",
+          "params": {
+            "amount": 70,
+            "leftDetune": -12,
+            "rightDetune": 9,
+            "leftDelay": 25,
+            "rightDelay": 37,
+            "width": 55,
+            "centerKeep": 55,
+            "modulation": 0,
+            "mix": 45
+          }
+        },
+        {
+          "name": "Backing Stack",
+          "params": {
+            "amount": 70,
+            "leftDetune": -9,
+            "rightDetune": 11,
+            "leftDelay": 14,
+            "rightDelay": 20,
+            "width": 30,
+            "centerKeep": 100,
+            "modulation": 0,
+            "mix": 35
+          }
+        },
+        {
+          "name": "Wide Pop Lead",
+          "params": {
+            "amount": 70,
+            "leftDetune": -4,
+            "rightDetune": 4,
+            "leftDelay": 14,
+            "rightDelay": 20,
+            "width": 20,
+            "centerKeep": 100,
+            "modulation": 8,
+            "mix": 16
+          }
+        },
+        {
+          "name": "AI subtle support width",
+          "params": {
+            "amount": 35,
+            "leftDetune": -3,
+            "rightDetune": 3,
+            "leftDelay": 12,
+            "rightDelay": 18,
+            "width": 0,
+            "centerKeep": 100,
+            "modulation": 0,
+            "mix": 8
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Creative processing adds sound; it does not remove existing reverb, distortion or AI artifacts.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-doubler",
+        "type": "doubler",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "amount": 0,
+          "leftDetune": 0,
+          "rightDetune": 0,
+          "leftDelay": 0,
+          "rightDelay": 0,
+          "width": 0,
+          "centerKeep": 0,
+          "modulation": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "plate",
+      "name": "Plate Vocal Space",
+      "pack": "Vocals",
+      "theme": "blue",
+      "description": "Eight-line modulated feedback reverb inspired by plate density. This is an algorithmic design.",
+      "params": {
+        "preDelay": [
+          0,
+          180,
+          0,
+          "ms"
+        ],
+        "decay": [
+          0.1,
+          8,
+          0.1,
+          "s"
+        ],
+        "brightness": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "damping": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "lowCut": [
+          0,
+          500,
+          0,
+          "Hz"
+        ],
+        "highCut": [
+          1000,
+          20000,
+          20000,
+          "Hz"
+        ],
+        "width": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "modulation": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {},
+      "factory": [
+        {
+          "name": "Lead Vocal Plate",
+          "params": {
+            "preDelay": 32,
+            "decay": 1.4,
+            "brightness": 45,
+            "damping": 45,
+            "lowCut": 180,
+            "highCut": 10500,
+            "width": 0,
+            "modulation": 10,
+            "mix": 14
+          }
+        },
+        {
+          "name": "Tight Pop Plate",
+          "params": {
+            "preDelay": 18,
+            "decay": 0.8,
+            "brightness": 45,
+            "damping": 45,
+            "lowCut": 180,
+            "highCut": 10500,
+            "width": 0,
+            "modulation": 10,
+            "mix": 11
+          }
+        },
+        {
+          "name": "Long Ballad Plate",
+          "params": {
+            "preDelay": 55,
+            "decay": 3.2,
+            "brightness": 45,
+            "damping": 45,
+            "lowCut": 180,
+            "highCut": 10500,
+            "width": 0,
+            "modulation": 20,
+            "mix": 19
+          }
+        },
+        {
+          "name": "Rap Space",
+          "params": {
+            "preDelay": 45,
+            "decay": 0.65,
+            "brightness": 45,
+            "damping": 45,
+            "lowCut": 230,
+            "highCut": 10500,
+            "width": 0,
+            "modulation": 10,
+            "mix": 8
+          }
+        },
+        {
+          "name": "BGV Shine",
+          "params": {
+            "preDelay": 12,
+            "decay": 1.9,
+            "brightness": 65,
+            "damping": 45,
+            "lowCut": 180,
+            "highCut": 10500,
+            "width": 25,
+            "modulation": 10,
+            "mix": 25
+          }
+        },
+        {
+          "name": "AI short dry-vocal space",
+          "params": {
+            "preDelay": 30,
+            "decay": 0.6,
+            "brightness": 0,
+            "damping": 60,
+            "lowCut": 200,
+            "highCut": 7500,
+            "width": 0,
+            "modulation": 0,
+            "mix": 6
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Creative processing adds sound; it does not remove existing reverb, distortion or AI artifacts.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-plate",
+        "type": "plate",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "preDelay": 0,
+          "decay": 0.1,
+          "brightness": 0,
+          "damping": 0,
+          "lowCut": 0,
+          "highCut": 20000,
+          "width": 0,
+          "modulation": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "throw",
+      "name": "Throw Delay Vox",
+      "pack": "Vocals",
+      "theme": "violet",
+      "description": "Tempo-aware stereo repeats, envelope ducking, filtered feedback and a finite-export freeze mode.",
+      "params": {
+        "time": [
+          0,
+          2000,
+          0,
+          "ms"
+        ],
+        "sync": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "division": [
+          0,
+          6,
+          3,
+          ""
+        ],
+        "feedback": [
+          0,
+          95,
+          0,
+          "%"
+        ],
+        "tone": [
+          -100,
+          100,
+          0,
+          ""
+        ],
+        "ducking": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "saturation": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "width": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "intensity": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "freeze": [
+          0,
+          1,
+          0,
+          ""
+        ]
+      },
+      "choices": {
+        "sync": [
+          [
+            0,
+            "Free time"
+          ],
+          [
+            1,
+            "Tempo sync"
+          ]
+        ],
+        "division": [
+          [
+            0,
+            "1/16"
+          ],
+          [
+            1,
+            "1/8"
+          ],
+          [
+            2,
+            "1/8 dotted"
+          ],
+          [
+            3,
+            "1/4"
+          ],
+          [
+            4,
+            "1/4 dotted"
+          ],
+          [
+            5,
+            "1/2"
+          ],
+          [
+            6,
+            "1 bar"
+          ]
+        ],
+        "freeze": [
+          [
+            0,
+            "Freeze off"
+          ],
+          [
+            1,
+            "Freeze repeats"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Clean Slap",
+          "params": {
+            "time": 95,
+            "sync": 0,
+            "division": 3,
+            "feedback": 8,
+            "tone": -15,
+            "ducking": 30,
+            "saturation": 0,
+            "width": 15,
+            "intensity": 100,
+            "mix": 12,
+            "freeze": 0
+          }
+        },
+        {
+          "name": "Hook Throw",
+          "params": {
+            "time": 360,
+            "sync": 1,
+            "division": 3,
+            "feedback": 32,
+            "tone": -15,
+            "ducking": 65,
+            "saturation": 0,
+            "width": 15,
+            "intensity": 100,
+            "mix": 18,
+            "freeze": 0
+          }
+        },
+        {
+          "name": "Rap Throw",
+          "params": {
+            "time": 360,
+            "sync": 1,
+            "division": 2,
+            "feedback": 25,
+            "tone": -15,
+            "ducking": 80,
+            "saturation": 0,
+            "width": 15,
+            "intensity": 100,
+            "mix": 17,
+            "freeze": 0
+          }
+        },
+        {
+          "name": "Wide Delay Wash",
+          "params": {
+            "time": 360,
+            "sync": 1,
+            "division": 4,
+            "feedback": 62,
+            "tone": -15,
+            "ducking": 40,
+            "saturation": 0,
+            "width": 60,
+            "intensity": 100,
+            "mix": 32,
+            "freeze": 0
+          }
+        },
+        {
+          "name": "Dark Echo Tail",
+          "params": {
+            "time": 360,
+            "sync": 1,
+            "division": 5,
+            "feedback": 55,
+            "tone": -75,
+            "ducking": 65,
+            "saturation": 12,
+            "width": 15,
+            "intensity": 100,
+            "mix": 23,
+            "freeze": 0
+          }
+        },
+        {
+          "name": "AI sparse dry-vocal echo",
+          "params": {
+            "time": 280,
+            "sync": 0,
+            "division": 3,
+            "feedback": 15,
+            "tone": -30,
+            "ducking": 75,
+            "saturation": 0,
+            "width": 0,
+            "intensity": 100,
+            "mix": 7,
+            "freeze": 0
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Creative processing adds sound; it does not remove existing reverb, distortion or AI artifacts.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-throw",
+        "type": "throw",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "time": 0,
+          "sync": 0,
+          "division": 3,
+          "feedback": 0,
+          "tone": 0,
+          "ducking": 0,
+          "saturation": 0,
+          "width": 0,
+          "intensity": 0,
+          "mix": 0,
+          "freeze": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "mastereq",
+      "name": "Master Tone EQ",
+      "pack": "Mastering",
+      "theme": "gold",
+      "description": "Broad stereo, mid-only or side-only tonal shaping with independently filtered M/S paths.",
+      "params": {
+        "hpf": [
+          0,
+          200,
+          0,
+          "Hz"
+        ],
+        "lowShelf": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "lowMidTilt": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "presence": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "airShelf": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "deHarsh": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "msMode": [
+          0,
+          2,
+          0,
+          ""
+        ]
+      },
+      "choices": {
+        "msMode": [
+          [
+            0,
+            "Stereo"
+          ],
+          [
+            1,
+            "Mid only"
+          ],
+          [
+            2,
+            "Side only"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Gentle Polish",
+          "params": {
+            "hpf": 25,
+            "lowShelf": 0,
+            "lowMidTilt": 0,
+            "presence": 0,
+            "airShelf": 0.5,
+            "deHarsh": 0,
+            "output": 0,
+            "msMode": 0
+          }
+        },
+        {
+          "name": "Warmth and Air",
+          "params": {
+            "hpf": 25,
+            "lowShelf": 0.6,
+            "lowMidTilt": 0,
+            "presence": 0,
+            "airShelf": 1,
+            "deHarsh": 0,
+            "output": 0,
+            "msMode": 0
+          }
+        },
+        {
+          "name": "Low-End Tighten",
+          "params": {
+            "hpf": 32,
+            "lowShelf": -0.6,
+            "lowMidTilt": -0.5,
+            "presence": 0,
+            "airShelf": 0,
+            "deHarsh": 0,
+            "output": 0,
+            "msMode": 0
+          }
+        },
+        {
+          "name": "Bright Mix Softener",
+          "params": {
+            "hpf": 25,
+            "lowShelf": 0,
+            "lowMidTilt": 0,
+            "presence": 0,
+            "airShelf": -0.5,
+            "deHarsh": 20,
+            "output": 0,
+            "msMode": 0
+          }
+        },
+        {
+          "name": "Vocal-Forward Master",
+          "params": {
+            "hpf": 25,
+            "lowShelf": 0,
+            "lowMidTilt": 0,
+            "presence": 0.8,
+            "airShelf": 0,
+            "deHarsh": 0,
+            "output": 0,
+            "msMode": 1
+          }
+        },
+        {
+          "name": "AI gentle bright-mix restraint",
+          "params": {
+            "hpf": 0,
+            "lowShelf": 0,
+            "lowMidTilt": 0,
+            "presence": 0,
+            "airShelf": -0.5,
+            "deHarsh": 10,
+            "output": 0,
+            "msMode": 0
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-mastereq",
+        "type": "mastereq",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "hpf": 0,
+          "lowShelf": 0,
+          "lowMidTilt": 0,
+          "presence": 0,
+          "airShelf": 0,
+          "deHarsh": 0,
+          "output": 0,
+          "msMode": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "glue",
+      "name": "Glue Bus Master",
+      "pack": "Mastering",
+      "theme": "black",
+      "description": "Stereo-linked bus compression with a sidechain high-pass and optional signal-dependent release.",
+      "params": {
+        "threshold": [
+          -48,
+          0,
+          0,
+          "dB"
+        ],
+        "ratio": [
+          1.5,
+          4,
+          1.5,
+          ":1"
+        ],
+        "attack": [
+          0.1,
+          100,
+          10,
+          "ms"
+        ],
+        "release": [
+          30,
+          1500,
+          100,
+          "ms"
+        ],
+        "autoRelease": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "makeup": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "sidechainHPF": [
+          0,
+          300,
+          0,
+          "Hz"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "ratio": [
+          [
+            1.5,
+            "1.5:1"
+          ],
+          [
+            2,
+            "2:1"
+          ],
+          [
+            4,
+            "4:1"
+          ]
+        ],
+        "autoRelease": [
+          [
+            0,
+            "Manual release"
+          ],
+          [
+            1,
+            "Auto release"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Mix Glue Light",
+          "params": {
+            "threshold": -18,
+            "ratio": 2,
+            "attack": 30,
+            "release": 180,
+            "autoRelease": 1,
+            "makeup": 0,
+            "sidechainHPF": 90,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Pop Cohesion",
+          "params": {
+            "threshold": -20,
+            "ratio": 2,
+            "attack": 20,
+            "release": 180,
+            "autoRelease": 1,
+            "makeup": 0.8,
+            "sidechainHPF": 90,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Rock Tighten",
+          "params": {
+            "threshold": -16,
+            "ratio": 4,
+            "attack": 30,
+            "release": 120,
+            "autoRelease": 0,
+            "makeup": 0,
+            "sidechainHPF": 90,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Hip-Hop Bus Lock",
+          "params": {
+            "threshold": -17,
+            "ratio": 2,
+            "attack": 40,
+            "release": 180,
+            "autoRelease": 1,
+            "makeup": 0,
+            "sidechainHPF": 130,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Parallel Glue",
+          "params": {
+            "threshold": -26,
+            "ratio": 4,
+            "attack": 15,
+            "release": 180,
+            "autoRelease": 1,
+            "makeup": 1,
+            "sidechainHPF": 90,
+            "mix": 35
+          }
+        },
+        {
+          "name": "AI light bus blend",
+          "params": {
+            "threshold": -12,
+            "ratio": 1.5,
+            "attack": 30,
+            "release": 180,
+            "autoRelease": 0,
+            "makeup": 0,
+            "sidechainHPF": 100,
+            "mix": 50
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Set input/threshold for light gain reduction first; already compressed audio may need none.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-glue",
+        "type": "glue",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "threshold": 0,
+          "ratio": 1.5,
+          "attack": 10,
+          "release": 100,
+          "autoRelease": 0,
+          "makeup": 0,
+          "sidechainHPF": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "varimu",
+      "name": "Vari-Mu Finish",
+      "pack": "Mastering",
+      "theme": "gold",
+      "description": "Original soft-knee, level-dependent compression with adjustable stereo detector linking.",
+      "params": {
+        "input": [
+          0,
+          18,
+          0,
+          "dB"
+        ],
+        "threshold": [
+          -40,
+          0,
+          0,
+          "dB"
+        ],
+        "timeConstant": [
+          1,
+          6,
+          1,
+          ""
+        ],
+        "tone": [
+          -100,
+          100,
+          0,
+          ""
+        ],
+        "stereoLink": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "output": [
+          -18,
+          12,
+          0,
+          "dB"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "timeConstant": [
+          [
+            1,
+            "1 · fast"
+          ],
+          [
+            2,
+            "2"
+          ],
+          [
+            3,
+            "3"
+          ],
+          [
+            4,
+            "4"
+          ],
+          [
+            5,
+            "5"
+          ],
+          [
+            6,
+            "6 · slow"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Silk Finish",
+          "params": {
+            "input": 0,
+            "threshold": -16,
+            "timeConstant": 3,
+            "tone": 6,
+            "stereoLink": 100,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Warm Master",
+          "params": {
+            "input": 0,
+            "threshold": -18,
+            "timeConstant": 4,
+            "tone": 22,
+            "stereoLink": 100,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Ballad Smooth",
+          "params": {
+            "input": 0,
+            "threshold": -20,
+            "timeConstant": 5,
+            "tone": 12,
+            "stereoLink": 100,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Dense Pop Finish",
+          "params": {
+            "input": 2,
+            "threshold": -19,
+            "timeConstant": 2,
+            "tone": 0,
+            "stereoLink": 100,
+            "output": -1,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Luxury Glue",
+          "params": {
+            "input": 0,
+            "threshold": -17,
+            "timeConstant": 4,
+            "tone": 15,
+            "stereoLink": 100,
+            "output": 0,
+            "mix": 75
+          }
+        },
+        {
+          "name": "AI gentle finish blend",
+          "params": {
+            "input": 0,
+            "threshold": -12,
+            "timeConstant": 4,
+            "tone": 0,
+            "stereoLink": 100,
+            "output": 0,
+            "mix": 25
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Set input/threshold for light gain reduction first; already compressed audio may need none.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-varimu",
+        "type": "varimu",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "input": 0,
+          "threshold": 0,
+          "timeConstant": 1,
+          "tone": 0,
+          "stereoLink": 0,
+          "output": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "passive",
+      "name": "Passive Master Air",
+      "pack": "Mastering",
+      "theme": "cream",
+      "description": "Broad boost and attenuation bands with different turnover frequencies for simultaneous low shaping.",
+      "params": {
+        "lowBoost": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "lowAttenuation": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "lowFrequency": [
+          20,
+          100,
+          60,
+          "Hz"
+        ],
+        "highBoost": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "highFrequency": [
+          3000,
+          16000,
+          10000,
+          "Hz"
+        ],
+        "bandwidth": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "highAttenuation": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "lowFrequency": [
+          [
+            20,
+            "20 Hz"
+          ],
+          [
+            30,
+            "30 Hz"
+          ],
+          [
+            60,
+            "60 Hz"
+          ],
+          [
+            100,
+            "100 Hz"
+          ]
+        ],
+        "highFrequency": [
+          [
+            3000,
+            "3 kHz"
+          ],
+          [
+            5000,
+            "5 kHz"
+          ],
+          [
+            8000,
+            "8 kHz"
+          ],
+          [
+            10000,
+            "10 kHz"
+          ],
+          [
+            12000,
+            "12 kHz"
+          ],
+          [
+            16000,
+            "16 kHz"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Master Air",
+          "params": {
+            "lowBoost": 0,
+            "lowAttenuation": 0,
+            "lowFrequency": 60,
+            "highBoost": 0.8,
+            "highFrequency": 10000,
+            "bandwidth": 20,
+            "highAttenuation": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Low-End Roundness",
+          "params": {
+            "lowBoost": 1.5,
+            "lowAttenuation": 1,
+            "lowFrequency": 60,
+            "highBoost": 0,
+            "highFrequency": 10000,
+            "bandwidth": 20,
+            "highAttenuation": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Pop Gloss",
+          "params": {
+            "lowBoost": 0.5,
+            "lowAttenuation": 0,
+            "lowFrequency": 60,
+            "highBoost": 1.2,
+            "highFrequency": 12000,
+            "bandwidth": 20,
+            "highAttenuation": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Vocal Lift Master",
+          "params": {
+            "lowBoost": 0,
+            "lowAttenuation": 0,
+            "lowFrequency": 60,
+            "highBoost": 1,
+            "highFrequency": 5000,
+            "bandwidth": 10,
+            "highAttenuation": 0,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Smooth Brightness",
+          "params": {
+            "lowBoost": 0,
+            "lowAttenuation": 0,
+            "lowFrequency": 60,
+            "highBoost": 1.3,
+            "highFrequency": 10000,
+            "bandwidth": 20,
+            "highAttenuation": 0.6,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "AI subtle top attenuation",
+          "params": {
+            "lowBoost": 0,
+            "lowAttenuation": 0,
+            "lowFrequency": 60,
+            "highBoost": 0,
+            "highFrequency": 10000,
+            "bandwidth": 0,
+            "highAttenuation": 0.5,
+            "output": 0,
+            "mix": 100
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-passive",
+        "type": "passive",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "lowBoost": 0,
+          "lowAttenuation": 0,
+          "lowFrequency": 60,
+          "highBoost": 0,
+          "highFrequency": 10000,
+          "bandwidth": 0,
+          "highAttenuation": 0,
+          "output": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "tape",
+      "name": "Tape Master 30",
+      "pack": "Mastering",
+      "theme": "amber",
+      "description": "Optional harmonic color and tone shaping. Noise synthesis has been removed; this effect is not a denoiser.",
+      "params": {
+        "inputDrive": [
+          0,
+          18,
+          0,
+          "dB"
+        ],
+        "speed": [
+          15,
+          30,
+          30,
+          "ips"
+        ],
+        "bias": [
+          -100,
+          100,
+          0,
+          ""
+        ],
+        "saturation": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "headBump": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "hfSmooth": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "output": [
+          -18,
+          12,
+          0,
+          "dB"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {
+        "speed": [
+          [
+            15,
+            "15 ips"
+          ],
+          [
+            30,
+            "30 ips"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Clean Tape Finish",
+          "params": {
+            "inputDrive": 0,
+            "speed": 30,
+            "bias": 0,
+            "saturation": 8,
+            "headBump": 0,
+            "hfSmooth": 8,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Warm Pop Glue",
+          "params": {
+            "inputDrive": 0,
+            "speed": 30,
+            "bias": 0,
+            "saturation": 18,
+            "headBump": 12,
+            "hfSmooth": 17,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Vintage Master",
+          "params": {
+            "inputDrive": 0,
+            "speed": 15,
+            "bias": 10,
+            "saturation": 30,
+            "headBump": 25,
+            "hfSmooth": 25,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Low-End Weight",
+          "params": {
+            "inputDrive": 0,
+            "speed": 15,
+            "bias": 0,
+            "saturation": 10,
+            "headBump": 40,
+            "hfSmooth": 8,
+            "output": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Subtle Analog Coat",
+          "params": {
+            "inputDrive": 0,
+            "speed": 30,
+            "bias": 0,
+            "saturation": 5,
+            "headBump": 0,
+            "hfSmooth": 5,
+            "output": 0,
+            "mix": 65
+          }
+        },
+        {
+          "name": "AI restrained top smoothing",
+          "params": {
+            "inputDrive": 0,
+            "speed": 30,
+            "bias": 0,
+            "saturation": 0,
+            "headBump": 0,
+            "hfSmooth": 8,
+            "output": 0,
+            "mix": 50
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Creative processing adds sound; it does not remove existing reverb, distortion or AI artifacts.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-tape",
+        "type": "tape",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "inputDrive": 0,
+          "speed": 30,
+          "bias": 0,
+          "saturation": 0,
+          "headBump": 0,
+          "hfSmooth": 0,
+          "output": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "imager",
+      "name": "Stereo Image Control",
+      "pack": "Mastering",
+      "theme": "cyan",
+      "description": "Complementary M/S bands, low-side filtering and continuous stereo correlation measurement.",
+      "params": {
+        "width": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "lowMono": [
+          0,
+          250,
+          0,
+          "Hz"
+        ],
+        "midSpread": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "highWidth": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "centerFocus": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "msBalance": [
+          -100,
+          100,
+          0,
+          ""
+        ],
+        "output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ]
+      },
+      "choices": {},
+      "factory": [
+        {
+          "name": "Gentle Width",
+          "params": {
+            "width": 5,
+            "lowMono": 100,
+            "midSpread": 0,
+            "highWidth": 0,
+            "centerFocus": 0,
+            "msBalance": 0,
+            "output": 0
+          }
+        },
+        {
+          "name": "Pop Open",
+          "params": {
+            "width": 8,
+            "lowMono": 100,
+            "midSpread": 0,
+            "highWidth": 10,
+            "centerFocus": 0,
+            "msBalance": 0,
+            "output": 0
+          }
+        },
+        {
+          "name": "Center Focus",
+          "params": {
+            "width": -5,
+            "lowMono": 100,
+            "midSpread": 0,
+            "highWidth": 0,
+            "centerFocus": 20,
+            "msBalance": 0,
+            "output": 0
+          }
+        },
+        {
+          "name": "Club Mono Low End",
+          "params": {
+            "width": 2,
+            "lowMono": 180,
+            "midSpread": 0,
+            "highWidth": 0,
+            "centerFocus": 0,
+            "msBalance": 0,
+            "output": 0
+          }
+        },
+        {
+          "name": "Wide Cinematic",
+          "params": {
+            "width": 18,
+            "lowMono": 100,
+            "midSpread": 8,
+            "highWidth": 18,
+            "centerFocus": 0,
+            "msBalance": 0,
+            "output": 0
+          }
+        },
+        {
+          "name": "AI conservative stereo focus",
+          "params": {
+            "width": -5,
+            "lowMono": 80,
+            "midSpread": 0,
+            "highWidth": 0,
+            "centerFocus": 0,
+            "msBalance": 0,
+            "output": 0
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-imager",
+        "type": "imager",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "width": 0,
+          "lowMono": 0,
+          "midSpread": 0,
+          "highWidth": 0,
+          "centerFocus": 0,
+          "msBalance": 0,
+          "output": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "dynamic",
+      "name": "Dynamic Master Control",
+      "pack": "Mastering",
+      "theme": "cyan",
+      "description": "Four band-envelope detectors drive downward dynamic EQ only above their level thresholds.",
+      "params": {
+        "lowControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "lowMidControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "presenceControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "harshnessControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "sensitivity": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "smoothness": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ]
+      },
+      "choices": {},
+      "factory": [
+        {
+          "name": "Bright Mix Tamer",
+          "params": {
+            "lowControl": 0,
+            "lowMidControl": 0,
+            "presenceControl": 15,
+            "harshnessControl": 45,
+            "sensitivity": 45,
+            "smoothness": 70,
+            "output": 0
+          }
+        },
+        {
+          "name": "Boomy Low-End Control",
+          "params": {
+            "lowControl": 50,
+            "lowMidControl": 20,
+            "presenceControl": 0,
+            "harshnessControl": 0,
+            "sensitivity": 45,
+            "smoothness": 70,
+            "output": 0
+          }
+        },
+        {
+          "name": "Presence Smoother",
+          "params": {
+            "lowControl": 0,
+            "lowMidControl": 0,
+            "presenceControl": 40,
+            "harshnessControl": 15,
+            "sensitivity": 45,
+            "smoothness": 70,
+            "output": 0
+          }
+        },
+        {
+          "name": "Transparent Fix",
+          "params": {
+            "lowControl": 12,
+            "lowMidControl": 10,
+            "presenceControl": 10,
+            "harshnessControl": 15,
+            "sensitivity": 45,
+            "smoothness": 70,
+            "output": 0
+          }
+        },
+        {
+          "name": "Streaming Prep",
+          "params": {
+            "lowControl": 20,
+            "lowMidControl": 15,
+            "presenceControl": 0,
+            "harshnessControl": 25,
+            "sensitivity": 45,
+            "smoothness": 70,
+            "output": 0
+          }
+        },
+        {
+          "name": "AI gentle harshness control",
+          "params": {
+            "lowControl": 0,
+            "lowMidControl": 0,
+            "presenceControl": 10,
+            "harshnessControl": 20,
+            "sensitivity": 35,
+            "smoothness": 75,
+            "output": 0
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-dynamic",
+        "type": "dynamic",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "lowControl": 0,
+          "lowMidControl": 0,
+          "presenceControl": 0,
+          "harshnessControl": 0,
+          "sensitivity": 0,
+          "smoothness": 0,
+          "output": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "final",
+      "name": "Final Limit Clipper",
+      "pack": "Mastering",
+      "theme": "gold",
+      "description": "Zero-lookahead peak compression and soft clipping. True peak uses an uncertified 4× FIR estimate.",
+      "params": {
+        "inputDrive": [
+          0,
+          18,
+          0,
+          "dB"
+        ],
+        "ceiling": [
+          -12,
+          0,
+          0,
+          "dBTP est."
+        ],
+        "clipAmount": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "limiterAmount": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "release": [
+          10,
+          1000,
+          100,
+          "ms"
+        ],
+        "lowProtect": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "overshoot": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "tone": [
+          -6,
+          6,
+          0,
+          "dB"
+        ]
+      },
+      "choices": {
+        "overshoot": [
+          [
+            0,
+            "Protection off"
+          ],
+          [
+            1,
+            "Extra peak margin"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Clean Loud",
+          "params": {
+            "inputDrive": 2,
+            "ceiling": -1,
+            "clipAmount": 8,
+            "limiterAmount": 100,
+            "release": 100,
+            "lowProtect": 60,
+            "overshoot": 1,
+            "tone": 0
+          }
+        },
+        {
+          "name": "Pop Finish",
+          "params": {
+            "inputDrive": 3,
+            "ceiling": -1,
+            "clipAmount": 12,
+            "limiterAmount": 100,
+            "release": 100,
+            "lowProtect": 60,
+            "overshoot": 1,
+            "tone": 0
+          }
+        },
+        {
+          "name": "Hip-Hop Loud",
+          "params": {
+            "inputDrive": 4,
+            "ceiling": -1,
+            "clipAmount": 20,
+            "limiterAmount": 100,
+            "release": 140,
+            "lowProtect": 80,
+            "overshoot": 1,
+            "tone": 0
+          }
+        },
+        {
+          "name": "Punchy Streaming",
+          "params": {
+            "inputDrive": 1.5,
+            "ceiling": -1,
+            "clipAmount": 5,
+            "limiterAmount": 100,
+            "release": 75,
+            "lowProtect": 60,
+            "overshoot": 1,
+            "tone": 0
+          }
+        },
+        {
+          "name": "Safe Ceiling",
+          "params": {
+            "inputDrive": 0,
+            "ceiling": -1.2,
+            "clipAmount": 0,
+            "limiterAmount": 100,
+            "release": 100,
+            "lowProtect": 80,
+            "overshoot": 1,
+            "tone": 0
+          }
+        },
+        {
+          "name": "AI no-drive peak margin",
+          "params": {
+            "inputDrive": 0,
+            "ceiling": -1.5,
+            "clipAmount": 0,
+            "limiterAmount": 100,
+            "release": 120,
+            "lowProtect": 0,
+            "overshoot": 1,
+            "tone": 0
+          }
+        }
+      ],
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-final",
+        "type": "final",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "inputDrive": 0,
+          "ceiling": 0,
+          "clipAmount": 0,
+          "limiterAmount": 0,
+          "release": 100,
+          "lowProtect": 0,
+          "overshoot": 0,
+          "tone": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "masterrack",
+      "name": "Master Rack Pro – Complete Mastering Chain",
+      "pack": "Master Rack",
+      "theme": "gold",
+      "description": "Fixed order: Tone EQ → Glue → Vari-Mu → Passive EQ → Tape → Imaging → Dynamic EQ → Clipper/Limiter. Meter status is not release certification.",
+      "params": {
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "outputGain": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "eqOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "eq_hpf": [
+          0,
+          200,
+          0,
+          "Hz"
+        ],
+        "eq_lowShelf": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "eq_lowMidTilt": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "eq_presence": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "eq_airShelf": [
+          -6,
+          6,
+          0,
+          "dB"
+        ],
+        "eq_deHarsh": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "eq_output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "eq_msMode": [
+          0,
+          2,
+          0,
+          ""
+        ],
+        "glueOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "glue_threshold": [
+          -48,
+          0,
+          0,
+          "dB"
+        ],
+        "glue_ratio": [
+          1.5,
+          4,
+          1.5,
+          ":1"
+        ],
+        "glue_attack": [
+          0.1,
+          100,
+          10,
+          "ms"
+        ],
+        "glue_release": [
+          30,
+          1500,
+          100,
+          "ms"
+        ],
+        "glue_autoRelease": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "glue_makeup": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "glue_sidechainHPF": [
+          0,
+          300,
+          0,
+          "Hz"
+        ],
+        "glue_mix": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "muOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "mu_input": [
+          0,
+          18,
+          0,
+          "dB"
+        ],
+        "mu_threshold": [
+          -40,
+          0,
+          0,
+          "dB"
+        ],
+        "mu_timeConstant": [
+          1,
+          6,
+          1,
+          ""
+        ],
+        "mu_tone": [
+          -100,
+          100,
+          0,
+          ""
+        ],
+        "mu_stereoLink": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "mu_output": [
+          -18,
+          12,
+          0,
+          "dB"
+        ],
+        "mu_mix": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "passiveOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "passive_lowBoost": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "passive_lowAttenuation": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "passive_lowFrequency": [
+          20,
+          100,
+          60,
+          "Hz"
+        ],
+        "passive_highBoost": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "passive_highFrequency": [
+          3000,
+          16000,
+          10000,
+          "Hz"
+        ],
+        "passive_bandwidth": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "passive_highAttenuation": [
+          0,
+          8,
+          0,
+          "dB"
+        ],
+        "passive_output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "passive_mix": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "tapeOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "tape_inputDrive": [
+          0,
+          18,
+          0,
+          "dB"
+        ],
+        "tape_speed": [
+          15,
+          30,
+          30,
+          "ips"
+        ],
+        "tape_bias": [
+          -100,
+          100,
+          0,
+          ""
+        ],
+        "tape_saturation": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "tape_headBump": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "tape_hfSmooth": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "tape_output": [
+          -18,
+          12,
+          0,
+          "dB"
+        ],
+        "tape_mix": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "imageOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "image_width": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "image_lowMono": [
+          0,
+          250,
+          0,
+          "Hz"
+        ],
+        "image_midSpread": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "image_highWidth": [
+          -100,
+          100,
+          0,
+          "% change"
+        ],
+        "image_centerFocus": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "image_msBalance": [
+          -100,
+          100,
+          0,
+          ""
+        ],
+        "image_output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "dynOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "dyn_lowControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "dyn_lowMidControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "dyn_presenceControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "dyn_harshnessControl": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "dyn_sensitivity": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "dyn_smoothness": [
+          0,
+          100,
+          0,
+          ""
+        ],
+        "dyn_output": [
+          -12,
+          12,
+          0,
+          "dB"
+        ],
+        "limitOn": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "limit_inputDrive": [
+          0,
+          18,
+          0,
+          "dB"
+        ],
+        "limit_ceiling": [
+          -12,
+          0,
+          0,
+          "dBTP est."
+        ],
+        "limit_clipAmount": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "limit_limiterAmount": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "limit_release": [
+          10,
+          1000,
+          100,
+          "ms"
+        ],
+        "limit_lowProtect": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "limit_overshoot": [
+          0,
+          1,
+          0,
+          ""
+        ],
+        "limit_tone": [
+          -6,
+          6,
+          0,
+          "dB"
+        ]
+      },
+      "choices": {
+        "eqOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "eq_msMode": [
+          [
+            0,
+            "Stereo"
+          ],
+          [
+            1,
+            "Mid only"
+          ],
+          [
+            2,
+            "Side only"
+          ]
+        ],
+        "glueOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "glue_ratio": [
+          [
+            1.5,
+            "1.5:1"
+          ],
+          [
+            2,
+            "2:1"
+          ],
+          [
+            4,
+            "4:1"
+          ]
+        ],
+        "glue_autoRelease": [
+          [
+            0,
+            "Manual release"
+          ],
+          [
+            1,
+            "Auto release"
+          ]
+        ],
+        "muOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "mu_timeConstant": [
+          [
+            1,
+            "1 · fast"
+          ],
+          [
+            2,
+            "2"
+          ],
+          [
+            3,
+            "3"
+          ],
+          [
+            4,
+            "4"
+          ],
+          [
+            5,
+            "5"
+          ],
+          [
+            6,
+            "6 · slow"
+          ]
+        ],
+        "passiveOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "passive_lowFrequency": [
+          [
+            20,
+            "20 Hz"
+          ],
+          [
+            30,
+            "30 Hz"
+          ],
+          [
+            60,
+            "60 Hz"
+          ],
+          [
+            100,
+            "100 Hz"
+          ]
+        ],
+        "passive_highFrequency": [
+          [
+            3000,
+            "3 kHz"
+          ],
+          [
+            5000,
+            "5 kHz"
+          ],
+          [
+            8000,
+            "8 kHz"
+          ],
+          [
+            10000,
+            "10 kHz"
+          ],
+          [
+            12000,
+            "12 kHz"
+          ],
+          [
+            16000,
+            "16 kHz"
+          ]
+        ],
+        "tapeOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "tape_speed": [
+          [
+            15,
+            "15 ips"
+          ],
+          [
+            30,
+            "30 ips"
+          ]
+        ],
+        "imageOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "dynOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "limitOn": [
+          [
+            0,
+            "Section bypassed"
+          ],
+          [
+            1,
+            "Section engaged"
+          ]
+        ],
+        "limit_overshoot": [
+          [
+            0,
+            "Protection off"
+          ],
+          [
+            1,
+            "Extra peak margin"
+          ]
+        ]
+      },
+      "factory": [
+        {
+          "name": "Gentle Polish",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 0,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 8,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Pop Finish",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -18,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 1,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 2,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 8,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Hip-Hop Loud",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 140,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 4,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 20,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 85,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Rock Tight",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 4,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 2,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 8,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Ballad Warmth",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 5,
+            "mu_tone": 20,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 14,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 0,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 8,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Cinematic Wide",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 20,
+            "image_lowMono": 110,
+            "image_midSpread": 0,
+            "image_highWidth": 15,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 0,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 8,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Streaming Safe",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 0,
+            "limit_ceiling": -1.5,
+            "limit_clipAmount": 0,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Vintage Tape Master",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 15,
+            "tape_bias": 0,
+            "tape_saturation": 25,
+            "tape_headBump": 20,
+            "tape_hfSmooth": 25,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 0,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 8,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Punchy Modern",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 50,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 2,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 8,
+            "limit_limiterAmount": 100,
+            "limit_release": 70,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Transparent Reference",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 0,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 0,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 0,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 0,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 0,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 5,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 0,
+            "image_width": 4,
+            "image_lowMono": 100,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 0,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 0,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 0,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 60,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "Loud Club Ready",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 25,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0.5,
+            "eq_deHarsh": 0,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 1,
+            "glue_threshold": -16,
+            "glue_ratio": 2,
+            "glue_attack": 30,
+            "glue_release": 180,
+            "glue_autoRelease": 1,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 90,
+            "glue_mix": 100,
+            "muOn": 1,
+            "mu_input": 0,
+            "mu_threshold": -14,
+            "mu_timeConstant": 3,
+            "mu_tone": 6,
+            "mu_stereoLink": 100,
+            "mu_output": 0,
+            "mu_mix": 100,
+            "passiveOn": 1,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0.8,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 20,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 100,
+            "tapeOn": 1,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 22,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 8,
+            "tape_output": 0,
+            "tape_mix": 100,
+            "imageOn": 1,
+            "image_width": 4,
+            "image_lowMono": 180,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 1,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 15,
+            "dyn_harshnessControl": 45,
+            "dyn_sensitivity": 45,
+            "dyn_smoothness": 70,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 5,
+            "limit_ceiling": -1,
+            "limit_clipAmount": 25,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 90,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        },
+        {
+          "name": "AI minimal finish",
+          "params": {
+            "mix": 100,
+            "outputGain": 0,
+            "eqOn": 1,
+            "eq_hpf": 0,
+            "eq_lowShelf": 0,
+            "eq_lowMidTilt": 0,
+            "eq_presence": 0,
+            "eq_airShelf": 0,
+            "eq_deHarsh": 8,
+            "eq_output": 0,
+            "eq_msMode": 0,
+            "glueOn": 0,
+            "glue_threshold": 0,
+            "glue_ratio": 1.5,
+            "glue_attack": 10,
+            "glue_release": 100,
+            "glue_autoRelease": 0,
+            "glue_makeup": 0,
+            "glue_sidechainHPF": 0,
+            "glue_mix": 0,
+            "muOn": 0,
+            "mu_input": 0,
+            "mu_threshold": 0,
+            "mu_timeConstant": 1,
+            "mu_tone": 0,
+            "mu_stereoLink": 0,
+            "mu_output": 0,
+            "mu_mix": 0,
+            "passiveOn": 0,
+            "passive_lowBoost": 0,
+            "passive_lowAttenuation": 0,
+            "passive_lowFrequency": 60,
+            "passive_highBoost": 0,
+            "passive_highFrequency": 10000,
+            "passive_bandwidth": 0,
+            "passive_highAttenuation": 0,
+            "passive_output": 0,
+            "passive_mix": 0,
+            "tapeOn": 0,
+            "tape_inputDrive": 0,
+            "tape_speed": 30,
+            "tape_bias": 0,
+            "tape_saturation": 0,
+            "tape_headBump": 0,
+            "tape_hfSmooth": 0,
+            "tape_output": 0,
+            "tape_mix": 0,
+            "imageOn": 0,
+            "image_width": 0,
+            "image_lowMono": 0,
+            "image_midSpread": 0,
+            "image_highWidth": 0,
+            "image_centerFocus": 0,
+            "image_msBalance": 0,
+            "image_output": 0,
+            "dynOn": 0,
+            "dyn_lowControl": 0,
+            "dyn_lowMidControl": 0,
+            "dyn_presenceControl": 0,
+            "dyn_harshnessControl": 0,
+            "dyn_sensitivity": 0,
+            "dyn_smoothness": 0,
+            "dyn_output": 0,
+            "limitOn": 1,
+            "limit_inputDrive": 0,
+            "limit_ceiling": -1.5,
+            "limit_clipAmount": 0,
+            "limit_limiterAmount": 100,
+            "limit_release": 100,
+            "limit_lowProtect": 0,
+            "limit_overshoot": 1,
+            "limit_tone": 0
+          }
+        }
+      ],
+      "rackOrder": [
+        [
+          "eq",
+          "mastereq",
+          "Tone & EQ"
+        ],
+        [
+          "glue",
+          "glue",
+          "Dynamics 1"
+        ],
+        [
+          "mu",
+          "varimu",
+          "Dynamics 1"
+        ],
+        [
+          "passive",
+          "passive",
+          "Tone 2"
+        ],
+        [
+          "tape",
+          "tape",
+          "Tone 2"
+        ],
+        [
+          "image",
+          "imager",
+          "Imaging"
+        ],
+        [
+          "dyn",
+          "dynamic",
+          "Dynamic Control"
+        ],
+        [
+          "limit",
+          "final",
+          "Output & Limiting"
+        ]
+      ],
+      "groups": {
+        "eq": "Tone & EQ",
+        "glue": "Dynamics 1",
+        "mu": "Dynamics 1",
+        "passive": "Tone 2",
+        "tape": "Tone 2",
+        "image": "Imaging",
+        "dyn": "Dynamic Control",
+        "limit": "Output & Limiting"
+      },
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Set input/threshold for light gain reduction first; already compressed audio may need none.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-masterrack",
+        "type": "masterrack",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "mix": 0,
+          "outputGain": 0,
+          "eqOn": 0,
+          "eq_hpf": 0,
+          "eq_lowShelf": 0,
+          "eq_lowMidTilt": 0,
+          "eq_presence": 0,
+          "eq_airShelf": 0,
+          "eq_deHarsh": 0,
+          "eq_output": 0,
+          "eq_msMode": 0,
+          "glueOn": 0,
+          "glue_threshold": 0,
+          "glue_ratio": 1.5,
+          "glue_attack": 10,
+          "glue_release": 100,
+          "glue_autoRelease": 0,
+          "glue_makeup": 0,
+          "glue_sidechainHPF": 0,
+          "glue_mix": 0,
+          "muOn": 0,
+          "mu_input": 0,
+          "mu_threshold": 0,
+          "mu_timeConstant": 1,
+          "mu_tone": 0,
+          "mu_stereoLink": 0,
+          "mu_output": 0,
+          "mu_mix": 0,
+          "passiveOn": 0,
+          "passive_lowBoost": 0,
+          "passive_lowAttenuation": 0,
+          "passive_lowFrequency": 60,
+          "passive_highBoost": 0,
+          "passive_highFrequency": 10000,
+          "passive_bandwidth": 0,
+          "passive_highAttenuation": 0,
+          "passive_output": 0,
+          "passive_mix": 0,
+          "tapeOn": 0,
+          "tape_inputDrive": 0,
+          "tape_speed": 30,
+          "tape_bias": 0,
+          "tape_saturation": 0,
+          "tape_headBump": 0,
+          "tape_hfSmooth": 0,
+          "tape_output": 0,
+          "tape_mix": 0,
+          "imageOn": 0,
+          "image_width": 0,
+          "image_lowMono": 0,
+          "image_midSpread": 0,
+          "image_highWidth": 0,
+          "image_centerFocus": 0,
+          "image_msBalance": 0,
+          "image_output": 0,
+          "dynOn": 0,
+          "dyn_lowControl": 0,
+          "dyn_lowMidControl": 0,
+          "dyn_presenceControl": 0,
+          "dyn_harshnessControl": 0,
+          "dyn_sensitivity": 0,
+          "dyn_smoothness": 0,
+          "dyn_output": 0,
+          "limitOn": 0,
+          "limit_inputDrive": 0,
+          "limit_ceiling": 0,
+          "limit_clipAmount": 0,
+          "limit_limiterAmount": 0,
+          "limit_release": 100,
+          "limit_lowProtect": 0,
+          "limit_overshoot": 0,
+          "limit_tone": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    },
+    {
+      "type": "cleanup",
+      "name": "Stem Cleanup",
+      "pack": "Repair",
+      "theme": "cyan",
+      "description": "Conservative spectral noise reduction and isolated click repair. Prepared before playback, with original timing preserved. Cannot reconstruct clipped audio or reliably undo every AI artifact.",
+      "params": {
+        "noiseReduction": [
+          0,
+          12,
+          0,
+          "dB"
+        ],
+        "noiseFloor": [
+          -100,
+          0,
+          0,
+          "dBFS"
+        ],
+        "clickRepair": [
+          0,
+          100,
+          0,
+          "%"
+        ],
+        "mix": [
+          0,
+          100,
+          0,
+          "%"
+        ]
+      },
+      "choices": {},
+      "factory": [
+        {
+          "name": "Light Noise Reduction",
+          "params": {
+            "noiseReduction": 3,
+            "noiseFloor": -60,
+            "clickRepair": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Quiet-Section Hiss",
+          "params": {
+            "noiseReduction": 6,
+            "noiseFloor": -55,
+            "clickRepair": 0,
+            "mix": 100
+          }
+        },
+        {
+          "name": "Isolated Click Repair",
+          "params": {
+            "noiseReduction": 0,
+            "noiseFloor": 0,
+            "clickRepair": 100,
+            "mix": 100
+          }
+        },
+        {
+          "name": "AI light hiss and clicks",
+          "params": {
+            "noiseReduction": 3,
+            "noiseFloor": -65,
+            "clickRepair": 35,
+            "mix": 100
+          }
+        },
+        {
+          "name": "AI delicate stem cleanup",
+          "params": {
+            "noiseReduction": 2,
+            "noiseFloor": -70,
+            "clickRepair": 20,
+            "mix": 100
+          }
+        }
+      ],
+      "offline": true,
+      "presetGuidance": "Starting points for auditioning AI-generated or recorded audio. Match bypass loudness; adjust by ear. These are original Ghost settings, not manufacturer presets. Learn noise from a noise-only passage where possible. Back off if watery artifacts appear. This cannot reconstruct missing musical detail.",
+      "presetSources": [
+        [
+          "Noise profiles and artifact control",
+          "https://docs.izotope.com/rx11/en/spectral-de-noise.html"
+        ],
+        [
+          "De-essing: threshold, range and audition",
+          "https://www.fabfilter.com/help/pro-ds/using/basiccontrols"
+        ],
+        [
+          "Compression threshold and ratio",
+          "https://www.fabfilter.com/help/pro-c/using/dynamicscontrols"
+        ],
+        [
+          "Compression attack and release",
+          "https://www.fabfilter.com/help/pro-c/using/timecontrols"
+        ]
+      ],
+      "zeroDefault": {
+        "id": "ghost-factory-cleanup",
+        "type": "cleanup",
+        "enabled": false,
+        "preset": "Zero / Neutral",
+        "params": {
+          "noiseReduction": 0,
+          "noiseFloor": 0,
+          "clickRepair": 0,
+          "mix": 0
+        },
+        "automation": {},
+        "midi": {}
+      }
+    }
+  ]
+}

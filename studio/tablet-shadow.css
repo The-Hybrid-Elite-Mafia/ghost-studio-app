@@ -1,0 +1,81 @@
+/* The Studio add-on has a Shadow DOM, so it needs the same theme inside it. */
+:host {
+  color-scheme:dark;
+  --screen:linear-gradient(132deg,#112a3d,#081523 45%,#17172e);
+  --rim:linear-gradient(128deg,#57ddefb3,#32647999 36%,#8b64c299 74%,#cf9bffb3);
+  --frame:0 10px 22px #0005,inset 0 0 0 3px #070e1b,inset 0 0 0 4px #75d8f21a;
+}
+* { font-family:'Space Grotesk',system-ui,sans-serif; }
+.ov { position:static; inset:auto; z-index:auto; background:#050a15; color:#edf8ff; }
+:host([data-tools-open]) .fab { display:none; }
+.hd { background:#0a1729; background-image:linear-gradient(90deg,#07111ff5,#0b1830eb),var(--hem-header-art); background-size:cover; background-position:center; border-bottom:1px solid #5ddcec66; padding:14px 16px; gap:12px; }
+.hd .brand { min-width:0; }
+.hd .t { color:#efd287; font-size:1rem; letter-spacing:.025em; }
+.hd .s { color:#a8bdd2; font-size:.75rem; letter-spacing:.04em; }
+.hd img { width:64px; height:64px; flex-shrink:0; object-fit:contain; border-color:#d7b25666; }
+.hd .brand>div { min-width:0; }
+.fab,.tb,.fb,.g,.pk,.rm,.cp,.cpa,.x {
+  position:relative; background:var(--screen) padding-box,var(--rim) border-box;
+  color:#d6eaf7; border:1px solid transparent; border-radius:7px;
+  min-height:44px; font-size:.875rem; letter-spacing:.02em;
+  box-shadow:0 4px 10px #0005,inset 0 0 0 3px #070e1b;
+}
+.fab { inset:auto; min-height:56px; padding:14px 22px; color:#b4f7ff; border-color:#62ebff99; box-shadow:0 0 18px #62ebff26,0 7px 20px #0009; }
+.fab img { display:block; width:28px; height:28px; object-fit:contain; border-radius:5px; }
+.tabs { display:flex; flex-wrap:wrap; gap:10px; padding:14px 16px; overflow:visible; background:#081321; border-bottom:1px solid #42688155; }
+.tb { flex:1 1 116px; min-height:58px; padding:14px 15px 18px; white-space:normal; }
+.tb::after,.fab::after {
+  content:''; position:absolute; bottom:7px; left:14px; right:14px; height:2px; pointer-events:none;
+  background:linear-gradient(90deg,#62ebff80 0 32%,transparent 32% 40%,#cf9bff80 40% 56%,#5489aa26 56%);
+}
+.tb.on,.fb.on,.pr.on,.g:active {
+  background:linear-gradient(130deg,#12344a,#102238 60%,#29203e);
+  color:#c4faff; border-color:#62ebffb3; box-shadow:0 0 14px #50dfff19,inset 0 0 0 3px #091323;
+}
+.tb.on::after { background:linear-gradient(90deg,#62ebff,#cf9bff); }
+.srch { background:#050a15; }
+.q { background:#0a1729; border-color:#426881; color:#edf8ff; font-size:1rem; }
+.q:focus { border-color:#62ebff; }
+.bd { flex:none; overflow:visible; min-height:0; padding:16px 16px 32px; }
+.fr { flex-wrap:wrap; overflow:visible; gap:8px; }
+.fb { flex:0 1 auto; white-space:normal; }
+.pr,.det,.bc,.vcard,.spec,.slot,.po {
+  background:var(--screen) padding-box,var(--rim) border-box;
+  border:1px solid transparent; border-radius:9px; box-shadow:var(--frame);
+}
+.pr { padding:16px; min-height:62px; }
+.vcard.open,.slot.fl { background:var(--screen) padding-box,var(--rim) border-box; border-color:#62ebff99; }
+.pr .n,.vcard h4,.bc h4,.slot .vl,.br strong { color:#e6f7ff; }
+.pr.on .n,.det .dt,.ls,.lc,.po .pt,.gs h3,th { color:#99f1ff; }
+.ln { color:#ffadb9; }
+.cnt,.pr .m,.det .dm,.lp,.br,.vcard .vd,.vx,.gs p,.gs li,td,.po .pl,.slot .lb,.slot .sub,.gf h3 span {
+  color:#a8bdd2; font-size:.875rem; line-height:1.65;
+}
+.sc,.code { background:#060f1e; border-color:#42688177; color:#e5f4ff; font-size:.9375rem; }
+.ss { color:#e5f4ff; } .sn { color:#f1b4c4; } .sp { color:#b1c5db; }
+.sl { font-size:.8125rem; letter-spacing:.06em; gap:10px; }
+.bpm,.catp,.btg span { background:#11263b; border-color:#62ebff44; color:#a5efff; font-size:.75rem; }
+.spec .sh,.spec .sh.teal { color:#b4f7ff; font-size:.8125rem; letter-spacing:.06em; }
+.krow { border-bottom-color:#42688155; font-size:.875rem; gap:12px; }
+.krow .k { color:#a8bdd2; font-size:.8125rem; flex-shrink:1; min-width:0; overflow-wrap:anywhere; letter-spacing:.025em; }
+.krow .v { color:#e5f4ff; min-width:0; overflow-wrap:anywhere; }
+.chip { color:#c5dbf0; background:#11263b; border-color:#42688166; font-size:.8125rem; }
+.pairs { color:#c7a9ee; font-size:.875rem; }
+.pairs strong { color:#a8bdd2; font-size:.8125rem; letter-spacing:.06em; }
+.gf h3,.gs h3 { border-bottom-color:#42688166; }
+th,td { border-bottom-color:#42688155; overflow-wrap:anywhere; }
+td:first-child { color:#d7b7ff; white-space:normal; }
+table { table-layout:fixed; }
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:2px solid #aff6ff; outline-offset:3px; }
+@media(hover:hover) and (pointer:fine) {
+  .fab:hover,.tb:hover,.fb:hover,.g:hover,.cp:hover,.cpa:hover,.pk:hover,.rm:hover { border-color:#7de8ff; color:#fff; }
+}
+@media(max-width:680px) {
+  .hd { padding:12px; }
+  .tabs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); padding:12px; gap:8px; }
+  .tb { min-width:0; font-size:.875rem; }
+  .tb:last-child:nth-child(odd) { grid-column:1 / -1; }
+  .bd { padding:12px 12px 28px; }
+  .dh { flex-wrap:wrap; }
+}
+@media(forced-colors:active) { .tb,.fab,.fb { border:1px solid ButtonText; } .tb.on,.fb.on { border:2px solid Highlight; } }

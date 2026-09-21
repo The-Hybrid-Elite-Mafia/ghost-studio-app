@@ -1,0 +1,4055 @@
+{
+  "exportName": "hybrid-effects-chain-library",
+  "exportVersion": "1.1.0",
+  "exportedAt": "2026-09-13T18:35:11.969584+00:00",
+  "sourceApp": "Hybrid Elite Mafia Creative Studio",
+  "recordCount": 25,
+  "totalSignalChainSteps": 468,
+  "schemaNotes": {
+    "signalChain": "Array of channel/element objects, each with an ordered array of processing steps (mic -> preamp -> EQ -> compression -> saturation -> reverb/delay, etc).",
+    "step.step": "1-based order position of this processor within its channel chain.",
+    "step.processorType": "Category of processor, e.g. Microphone, Preamp, EQ, Compression, De-essing / Saturation, Reverb, Delay.",
+    "step.product": "Specific hardware unit or plugin used at this step.",
+    "step.settings": "The exact parameter settings applied (ratios, frequencies, times, wet/dry, etc).",
+    "step.why": "Engineering rationale explaining why this processor/setting was chosen at this point in the chain."
+  },
+  "artists": [
+    {
+      "id": 1,
+      "artist": "Hybrid Iron Cipher",
+      "genre": "Hip-Hop / Rap",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Iron Cipher)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / AKG C414",
+              "settings": "Cardioid, pop filter 4-6 inches, close-miked",
+              "why": "Standard in Detroit/LA rap sessions; captures chest and consonant attack for rapid delivery"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Slight gain push, HPF ~80 Hz",
+              "why": "Adds harmonic density and weight without harshness; cleans low rumble"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 channel EQ",
+              "settings": "2-3 dB boost 3-4 kHz presence, gentle cut 300 Hz",
+              "why": "Pushes intelligibility forward through dense low-mid beat"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "Urei 1176",
+              "settings": "4:1, fast attack ~20us, release ~300ms, 6-8 dB GR",
+              "why": "Controls dynamic range of aggressive rap without killing punch; vintage saturation"
+            },
+            {
+              "step": 5,
+              "processorType": "De-essing / Saturation",
+              "product": "Waves DeEsser + tape saturation",
+              "settings": "De-ess 7-8 kHz, saturation ~10% wet",
+              "why": "Tames sibilance; subtle harmonic excitement maintains presence"
+            },
+            {
+              "step": 6,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L short room",
+              "settings": "Pre-delay 15ms, decay 0.4s, 8-12% wet",
+              "why": "Room ambience without washing dry upfront vocal"
+            }
+          ]
+        },
+        {
+          "channelName": "Background / Harmony Vocals (Hybrid Harmony hook)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87",
+              "settings": "Cardioid, pop filter, 6-8 inches",
+              "why": "Warm detailed pickup for sung R&B-inflected hook"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, no HPF roll-off",
+              "why": "Preserves body and warmth to contrast punchy rap"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "Pultec EQP-1A",
+              "settings": "2 dB boost 10 kHz, 1 dB boost 100 Hz",
+              "why": "Classic air boost opens top end above instrumental"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "LA-2A optical",
+              "settings": "4-6 dB GR, medium/slow release",
+              "why": "Smooth musical compression; optical warmth"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L medium hall",
+              "settings": "Pre-delay 25ms, decay 1.2s, 20-25% wet",
+              "why": "Opens hook spatially, separates from drier rap"
+            },
+            {
+              "step": 6,
+              "processorType": "Delay",
+              "product": "TC Electronic 2290 ping-pong",
+              "settings": "1/8 note at 96 BPM, feedback 20%, 15% wet",
+              "why": "Rhythmic movement on hook phrases"
+            }
+          ]
+        },
+        {
+          "channelName": "Looped Soul Sample / Keys",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Akai MPC3000 / E-mu SP-1200 loop",
+              "settings": "Trimmed tight, tuned, velocity normalized",
+              "why": "MPC-style chopped loop standard for West Coast hip-hop"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL 4000 G",
+              "settings": "HP 40 Hz, cut 200-250 Hz 2-3 dB, boost 8-10 kHz 1.5 dB",
+              "why": "Clears low-mid muddiness; restores air from sampling"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms attack, auto release, 4-6 dB GR",
+              "why": "Glues loop into drum texture; SSL pumping defined era"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Neve / Studer A800 emulation",
+              "settings": "Subtle warmth, not distortion",
+              "why": "Restores analog warmth from digital sampling"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "EMT 140 plate",
+              "settings": "0.6s decay, 10% wet",
+              "why": "Vintage glue so sample feels real"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit (programmed / sampled)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Akai MPC3000 tuned samples",
+              "settings": "Kick 55-60 Hz, snare layered body+crack, hats 1/8th",
+              "why": "MPC standard for Aftermath/Shady; layering builds punch"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073 EQ",
+              "settings": "Boost 60 Hz sub, 4 kHz click, cut 200-300 Hz",
+              "why": "Hit on speakers and earbuds — weight plus attack"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "Urei 1176",
+              "settings": "Fast attack, medium release, 8:1, 8-10 dB GR smashed",
+              "why": "Cracking punchy snare snaps through dense mix"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel Compression",
+              "product": "SSL G-Bus parallel bus",
+              "settings": "10:1, fast, ~15 dB GR, 30% wet",
+              "why": "NY-style density without killing dry snap"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon 480L short ambience",
+              "settings": "Pre-delay 8ms, decay 0.3s, 8% wet",
+              "why": "Tiny splash without clutter"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass (sub / 808-style)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Roland TR-808 / Moog sub",
+              "settings": "Long decay, full sustain, tuned to root",
+              "why": "808-style sub for chest-frequency weight"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL 4000 G",
+              "settings": "Boost 50-60 Hz 3 dB, HP <35 Hz, cut 200-400 Hz",
+              "why": "Focuses sub energy; prevents low-mid muddiness"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A optical",
+              "settings": "4-6 dB GR, slow optical attack",
+              "why": "Even sustain; prevents overload"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Waves Kramer Tape",
+              "settings": "Light harmonic ~15%",
+              "why": "Adds harmonics for speaker translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Hard-hitting early 2000s hip-hop track with dusty looped soul sample, deep sub-bass, cracking dry snare, dry upfront rap with fast-attack compression. Sparse heavy low end and punchy midrange. Dark aggressive energy, radio-ready major-label feel.",
+      "mixBusNotes": "Dry punchy front-loaded housts and drums upfront with minimal reverb wash, for a direct, polished hip-hop balance. Master bus: SSL G-Bus glue (2:1, slow attack, ~3 dB GR) then Neve/Manley shelf polish. Stereo moderate and controlled — kick, bass, lead vocal mono center; sample loop and reverb tails provide spread."
+    },
+    {
+      "id": 2,
+      "artist": "Hybrid Velvet Current",
+      "genre": "Hip-Hop / Pop",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Velvet Current)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / Shure SM7B",
+              "settings": "Cardioid, 4-6 inches, close-miked",
+              "why": "SM7B provides a focused vocal tone; U87 adds detail for sung passages"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Universal Audio 610 / Neve 1073",
+              "settings": "Clean gain, slight warmth",
+              "why": "Analog character without over-coloring intimate vocal"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / FabFilter Pro-Q",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz air",
+              "why": "Clarifies rapid syllables; air shelf lifts sung verses"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "Urei 1176 / FabFilter Pro-C 2",
+              "settings": "4:1, medium attack, medium release, 5-7 dB GR",
+              "why": "Controls dynamic shifts between sung and rapped passages"
+            },
+            {
+              "step": 5,
+              "processorType": "De-essing / Saturation",
+              "product": "Waves DeEsser + console saturation",
+              "settings": "7.5 kHz de-ess, subtle tape warmth ~8%",
+              "why": "Tames sibilance in high-register sung parts"
+            },
+            {
+              "step": 6,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L / Valhalla VintageVerb",
+              "settings": "Medium hall, pre-delay 30ms, decay 1.5s, 15-20% wet",
+              "why": "Spacious emotional atmosphere for ballad vibe"
+            },
+            {
+              "step": 7,
+              "processorType": "Delay",
+              "product": "TC Electronic 2290 / UAD Galaxy",
+              "settings": "1/4 note at 82 BPM, feedback 25%, 12% wet",
+              "why": "Rhythmic echoes fill space around melodic phrases"
+            }
+          ]
+        },
+        {
+          "channelName": "Background Vocals",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87",
+              "settings": "Cardioid, 6-8 inches",
+              "why": "Consistent with lead for tonal cohesion"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, slight warmth",
+              "why": "Matches lead preamp character"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "Pultec EQP-1A",
+              "settings": "Air 10 kHz +2 dB, body 100 Hz +1 dB",
+              "why": "Opens harmonies without congestion"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "3-5 dB GR, smooth release",
+              "why": "Keeps backing vocals even and warm"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L large hall",
+              "settings": "Pre-delay 35ms, decay 2.0s, 25-30% wet",
+              "why": "Creates depth and separation behind lead"
+            }
+          ]
+        },
+        {
+          "channelName": "Piano / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled/real piano (Yamaha C7)",
+              "settings": "Loop trimmed, tuned, velocity mapped",
+              "why": "Real piano samples provide organic warmth"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, cut 200 Hz 2 dB, boost 8 kHz 1 dB",
+              "why": "Clears muddiness; shimmer on top"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms attack, auto release, 3-4 dB",
+              "why": "Glues piano into arrangement"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Neve console / tape",
+              "settings": "Subtle warmth",
+              "why": "Restores analog richness"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "EMT 140 plate",
+              "settings": "0.8s decay, 12% wet",
+              "why": "Vintage space for emotional depth"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / sampled (MPC / Maschine / Kontakt)",
+              "settings": "Kick 50 Hz, snare layered, hats 1/8th",
+              "why": "Blend of programmed and live drums"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073 / SSL",
+              "settings": "Boost 60 Hz, 3 kHz click, cut 250 Hz",
+              "why": "Punch and definition"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176 / API 2500",
+              "settings": "8:1, 8-10 dB GR, fast",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel Compression",
+              "product": "SSL G-Bus parallel",
+              "settings": "10:1, ~15 dB GR, 30% wet",
+              "why": "Density and sustain"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon / Valhalla",
+              "settings": "0.4s decay, 10% wet",
+              "why": "Controlled space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Synth / 808 sub / bass guitar",
+              "settings": "Tuned to root, long sustain",
+              "why": "Deep sub foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50-60 Hz 3 dB, HP <35 Hz, cut 200-400 Hz",
+              "why": "Focused sub energy"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR, slow optical",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Waves Kramer / tape",
+              "settings": "~15% harmonic saturation",
+              "why": "Translation on small speakers"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Melodic rap ballad with rich piano loop, spacious drums, polished emotional vocal blending singing and rapping. Deep sub-bass, shimmering piano, warm reverb create cinematic atmosphere. Modern major-label production with intimate vocal presence.",
+      "mixBusNotes": "Polished and spacious - lead vocal intimate front-center with moderate hall reverb and rhythmic delays. Drums punchy but not aggressive. Piano loop and sub-bass fill low end. Stereo wider than classic hip-hop; piano and reverb spread wide while kick, vocal, bass stay centered. Master bus: SSL G-Bus 2:1 ~4 dB, subtle shelf EQ for shimmer and sub weight."
+    },
+    {
+      "id": 3,
+      "artist": "Hybrid Prism Verse",
+      "genre": "Hip-Hop / Jazz-Rap",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Prism Verse)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / Shure SM7B",
+              "settings": "Close-miked, cardiod, minimal treatment",
+              "why": "Raw direct capture for unfiltered emotional delivery"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073 / API 512c",
+              "settings": "Clean gain with slight warmth",
+              "why": "Preserves natural vocal texture without over-smoothing"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec EQP",
+              "settings": "Presence 3 kHz +2 dB, low-mids 300 Hz -2 dB, air shelf 12 kHz",
+              "why": "Clarifies dense syllables; air lifts head voice"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium-fast, 5-8 dB GR",
+              "why": "Tames dynamic shifts while keeping raw punch"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon / Valhalla VintageVerb",
+              "settings": "Short plate, 0.3s, 5-8% wet",
+              "why": "Minimal wash keeps vocal dry and direct"
+            }
+          ]
+        },
+        {
+          "channelName": "Piano / Jazz Samples",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled jazz piano / live recording",
+              "settings": "Loop trimmed, tuned, velocity mapped",
+              "why": "Live jazz samples give organic texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 50 Hz, cut 200 Hz 2 dB, boost 10 kHz 1 dB",
+              "why": "Clears low-mid; shimmer restores air"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms attack, 3-5 dB",
+              "why": "Glues into beat"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "Short plate, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / sampled (MPC / Kontakt / live)",
+              "settings": "Kick 55 Hz, layered snare, tight hats",
+              "why": "Blend of programmed punch and live dynamics"
+            },
+            {
+              "step": 2,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 3,
+              "processorType": "Parallel Compression",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB GR, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 8% wet",
+              "why": "Small room splash"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Synth sub / 808 / bass guitar",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50-60 Hz 3 dB, cut 250 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Confident dense rap with jazz-influenced piano, punchy drums, direct unpolished vocal. Raw urgency with polished production. Deep sub, snapping snare, minimal reverb. Modern major-label feel staying streetwise.",
+      "mixBusNotes": "Direct and aggressive - vocal dry, close, front-loaded with minimal reverb. Drums punch hard with cracked snare and heavy kick. Jazz piano midrange with slight space. Bass deep and even. Stereo moderate; center for kick/bass/vocal, piano and reverb spread. Master bus: SSL G-Bus 2:1 slow attack ~3 dB, Neve shelf polish."
+    },
+    {
+      "id": 4,
+      "artist": "Hybrid Neon Eclipse",
+      "genre": "R&B / Pop / Alternative",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Neon Eclipse)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / Shure SM7B",
+              "settings": "Close-miked, cardiod, minimal filtering",
+              "why": "Captures intimate dark tone and vocal texture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073 / UA 610",
+              "settings": "Clean gain with slight warmth push",
+              "why": "Adds body to lower register"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / FabFilter Pro-Q",
+              "settings": "Boost 2-4 kHz presence, gentle cut 350 Hz, shelf 14 kHz air",
+              "why": "Clarifies melodic delivery and creates shimmer"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "LA-2A + 1176 blended",
+              "settings": "5-7 dB GR, medium attack/release",
+              "why": "Smooth consistent vocal with punch"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Valhalla VintageVerb / Lexicon",
+              "settings": "Large hall, 30ms pre-delay, 2.0s decay, 20% wet",
+              "why": "Expansive cinematic atmosphere"
+            },
+            {
+              "step": 6,
+              "processorType": "Delay",
+              "product": "UAD Galaxy / TC 2290",
+              "settings": "1/8th note at 118 BPM, feedback 25%, 15% wet",
+              "why": "Rhythmic echo movement behind phrases"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Arpeggio Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Analog / software synth (Roland Juno / Arturia)",
+              "settings": "Arpeggiator, tuned, velocity mapped",
+              "why": "Retro-futuristic synth texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G / Pultec",
+              "settings": "HP 40 Hz, boost 8-12 kHz shimmer, cut 200 Hz 2 dB",
+              "why": "Shimmer and clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus / 1176",
+              "settings": "4:1, 3ms attack, 3-5 dB",
+              "why": "Glues synth into track"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / console",
+              "settings": "Subtle warmth",
+              "why": "Vintage analog richness"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Valhalla / EMT 140",
+              "settings": "Medium hall, 15% wet, 1.2s decay",
+              "why": "Depth and space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Machine / Programmed",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Roland TR-808 / drum machine / samples",
+              "settings": "Kick 55 Hz, snare 1kHz crack, hats 1/8th",
+              "why": "Retro-futuristic programmed groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "SSL / Neve",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 200 Hz",
+              "why": "Weight and definition"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking punch"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel Compression",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon / Valhalla",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass (Sub / Synth)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sub synth / 808 / Moog",
+              "settings": "Root note, long sustain, sidechain to kick",
+              "why": "Deep sub foundation with sidechain movement"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz 3 dB, HP <35 Hz, cut 200 Hz",
+              "why": "Focused sub"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A / 1176",
+              "settings": "4-6 dB GR, slow optical",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Retro-futuristic synth-driven track with haunting vocal, massive sub-bass, shimmering arpeggiated synths over driving drum machine beat. Dark cinematic expansive. Modern major-label production with intimate vocal presence and wide stereo spread.",
+      "mixBusNotes": "Spacious and cinematic - vocal intimate surrounded by large hall reverb and rhythmic delays. Synth arpeggios spread wide in stereo. Drums punchy and programmed. Bass deep with sidechain. Master bus sees SSL G-Bus glue (2:1, ~3 dB) followed by subtle shelf EQ for shimmer and sub weight. Stereo wide with vocal and bass center."
+    },
+    {
+      "id": 5,
+      "artist": "Hybrid Astral Pulse",
+      "genre": "Hip-Hop / Trap",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Astral Pulse)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / Shure SM7B",
+              "settings": "Close-miked, cardiod, minimal filtering",
+              "why": "Captures dark resonant tone and textured delivery"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain with warmth push",
+              "why": "Adds body to lower register"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / FabFilter Pro-Q",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies rapid delivery; air lifts melodic parts"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium attack, 5-8 dB GR",
+              "why": "Controls dynamic shifts while keeping punch"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Valhalla VintageVerb / Lexicon",
+              "settings": "Large hall, 30ms pre-delay, 2.0s decay, 20% wet",
+              "why": "Expansive dark atmosphere"
+            },
+            {
+              "step": 6,
+              "processorType": "Saturation",
+              "product": "Tape / console",
+              "settings": "Subtle warmth ~10%",
+              "why": "Vintage analog richness"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / 808 Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Analog / software synth / 808",
+              "settings": "Arpeggiator, tuned, layered",
+              "why": "Dark trap synth texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8-12 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer and clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "1176 / SSL G-Bus",
+              "settings": "4:1, 3ms attack, 4-6 dB",
+              "why": "Glues into beat"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / console",
+              "settings": "Subtle",
+              "why": "Warmth"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit / Programmed",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / Maschine / samples",
+              "settings": "Kick 55 Hz, snare layered, tight hats",
+              "why": "Trap standard"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "SSL / Neve",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel Compression",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Valhalla / Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass (Sub / 808)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Roland TR-808 / sub synth",
+              "settings": "Root note, long sustain, sidechain",
+              "why": "Deep sub foundation with sidechain movement"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz 3 dB, HP <35 Hz, cut 200 Hz",
+              "why": "Focused sub"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A / 1176",
+              "settings": "4-6 dB GR, slow optical",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Dark trap with layered synths, booming 808 sub, reverb-heavy vocal shifting between melodic and aggressive. Expansive cinematic atmosphere with heavy low end and snap.",
+      "mixBusNotes": "Spacious and dark - vocal is intimate with large hall reverb and delay. Synths spread wide. Drums punchy with heavy kick and cracked snare. Bass deep with sidechain movement. Master bus: SSL G-Bus 2:1 ~3 dB followed by shelf EQ."
+    },
+    {
+      "id": 6,
+      "artist": "Hybrid Voltage Quill",
+      "genre": "Hip-Hop / Rock",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Voltage Quill)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Captures playful melodic rap texture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds body without over-smoothing"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz",
+              "why": "Clarifies playful syllables"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls playful dynamics"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.2s decay, 15% wet",
+              "why": "Warm spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled / synth loop",
+              "settings": "Trimmed, tuned",
+              "why": "Smooth melodic loop"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz, cut 200 Hz",
+              "why": "Clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-4 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Laid-back groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200-400 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Playful rap over smooth synth loop with warm vocal, deep bass, laid-back drums. Bright and melodic with a polished major-label feel.",
+      "mixBusNotes": "Warm and spacious - vocal intimate with moderate hall reverb. Drums laid-back with punchy snare. Synth loop smooth and clear. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB, subtle shelf polish."
+    },
+    {
+      "id": 7,
+      "artist": "Hybrid Crown Cadence",
+      "genre": "Hip-Hop / Rap",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Crown Cadence)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Captures authoritative baritone delivery"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds weight to authoritative vocal"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies dense syllables; air lifts anthemic sections"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Controls large dynamics while keeping punch"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Large hall, 35ms pre-delay, 2.0s decay, 20% wet",
+              "why": "Expansive anthemic atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Piano / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled / real piano",
+              "settings": "Loop trimmed, tuned",
+              "why": "Powerful melodic piano loop"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, cut 200 Hz, boost 8 kHz",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 4-6 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.8s, 12% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Grandiose programmed groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / synth sub",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Grandiose rap over powerful piano loop with booming drums, deep bass, anthemic vocal. Expansive major-label production with authority and scale.",
+      "mixBusNotes": "Anthemic and expansive - vocal authoritative with large hall reverb. Piano powerful with vintage space. Drums boom with heavy kick and snapped snare. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB, Neve shelf polish."
+    },
+    {
+      "id": 8,
+      "artist": "Hybrid Chrome Mirage",
+      "genre": "Hip-Hop / Trap",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Chrome Mirage)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Captures melodic trap vocal texture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, slight warmth",
+              "why": "Adds body to melodic delivery"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies syllables; air lifts melodic parts"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls dynamics while keeping melodic punch"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Valhalla / Lexicon",
+              "settings": "Medium hall, 1.5s decay, 15% wet",
+              "why": "Spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Flute / Synth Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled flute / synth loop",
+              "settings": "Trimmed, tuned",
+              "why": "Melodic trap loop"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer and clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Trap standard"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass (Sub / 808)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain, sidechain",
+              "why": "Deep sub with sidechain"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz 3 dB, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Trap anthem with flute loop, booming 808 sub, melodic heroic vocal over sparse heavy drums. Dark and atmospheric with heavy low end.",
+      "mixBusNotes": "Heroic and atmospheric - vocal melodic with spacious reverb. Flute loop clear and wide. Drums heavy with booming kick and snapped snare. Bass deep with sidechain movement. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ."
+    },
+    {
+      "id": 9,
+      "artist": "Hybrid Ember Horizon",
+      "genre": "Pop / Hip-Hop / Rock",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Ember Horizon)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Captures warm melodic pop vocal"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds body and warmth"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies melody; air lifts vocal"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls dynamics while keeping warmth"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.5s decay, 15-20% wet",
+              "why": "Warm spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Acoustic / Guitar Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled / real acoustic guitar",
+              "settings": "Loop trimmed, tuned",
+              "why": "Organic acoustic texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-4 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.8s, 12% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / sampled",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Pop-rock groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / synth sub",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Pop-rock with acoustic guitar loop, warm vocal, deep bass, punchy drums. Warm and melodic with polished production.",
+      "mixBusNotes": "Warm and melodic - vocal intimate with moderate reverb. Acoustic guitar clear and wide. Drums punchy with weight. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ."
+    },
+    {
+      "id": 10,
+      "artist": "Hybrid Cedar Chord",
+      "genre": "Pop / Singer-Songwriter",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Cedar Chord)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Intimate singer-songwriter capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds warmth to intimate vocal"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies melody; air lifts vocal"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls dynamics while keeping intimacy"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.2s decay, 15% wet",
+              "why": "Warm spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Guitar / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Fingerstyle guitar / synth loop",
+              "settings": "Loop trimmed, tuned",
+              "why": "Organic folk texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-4 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.8s, 12% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / live drums",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Pop groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / synth sub / bass guitar",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Pop-folk with looped fingerstyle guitar, punchy drums, warm intimate vocal. Intimate singer-songwriter feel with polished major-label production.",
+      "mixBusNotes": "Intimate and warm - vocal close with moderate reverb. Guitar loop organic and wide. Drums punchy with weight. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB, subtle shelf polish."
+    },
+    {
+      "id": 11,
+      "artist": "Hybrid Golden Circuit",
+      "genre": "Pop / R&B / Funk",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Golden Circuit)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Captures charismatic energetic vocal"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds body to charismatic vocal"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies rapid syllables; air lifts energy"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Controls big dynamics while keeping punch"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.2s decay, 15% wet",
+              "why": "Spacious energetic atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Brass / Funk Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Live brass / synth loop",
+              "settings": "Loop trimmed, tuned",
+              "why": "Funk brass texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 4-6 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit / Live",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Live drums / programmed",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Funk groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass (Funk / Sub)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Bass guitar / 808 / synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep funk foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Funk-pop with live brass, punchy drums, charismatic vocal full of energy. Bright, energetic, polished major-label production with live instrumentation feel.",
+      "mixBusNotes": "Energetic and bright - vocal charismatic with moderate reverb. Brass loop wide and punchy. Drums live with snap and weight. Bass deep and funky. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ for shimmer."
+    },
+    {
+      "id": 12,
+      "artist": "Hybrid Crystal Tide",
+      "genre": "Pop / R&B",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Crystal Tide)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Captures smooth intimate pop vocal"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds warmth without over-coloring"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies smooth melody; air lifts"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls dynamics while keeping warmth"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.5s decay, 15% wet",
+              "why": "Warm spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Bass Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Synth / 808 loop",
+              "settings": "Trimmed, tuned, layered",
+              "why": "Pop-R&B loop texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8-12 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer and clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Pop-R&B groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass (Sub / Synth)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / synth sub",
+              "settings": "Root note, long sustain, sidechain",
+              "why": "Deep sub foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz 3 dB, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Pop-R&B with synth bass loop, punchy drums, smooth intimate vocal. Modern polished production with warmth and clarity.",
+      "mixBusNotes": "Smooth and warm - vocal intimate with moderate reverb. Synth bass loop clear and deep. Drums punchy with snap. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ."
+    },
+    {
+      "id": 13,
+      "artist": "Hybrid Scarlet Motion",
+      "genre": "R&B / Pop",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Scarlet Motion)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Smooth intimate R&B vocal capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds warmth and body"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies melody; air lifts"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls dynamics while keeping warmth"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.5s decay, 15% wet",
+              "why": "Warm spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Synth / sample loop",
+              "settings": "Trimmed, tuned",
+              "why": "Smooth R&B texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.8s, 12% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "R&B groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / synth sub / bass guitar",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "R&B with smooth synth loop, punchy drums, smooth intimate vocal. Warm modern production with polished major-label feel.",
+      "mixBusNotes": "Smooth and warm - vocal intimate with moderate reverb. Synth loop clear. Drums punchy with snap. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ."
+    },
+    {
+      "id": 14,
+      "artist": "Hybrid Silver Bloom",
+      "genre": "Pop / Rock",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Silver Bloom)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Bright charismatic vocal capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds warmth and clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies melody; air lifts bright vocal"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls dynamics while keeping brightness"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.5s decay, 15% wet",
+              "why": "Spacious bright atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Guitar / Synth Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled / live guitar / synth",
+              "settings": "Loop trimmed, tuned",
+              "why": "Bright pop-rock texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.8s, 12% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / live drums",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Pop-rock groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / synth sub / bass guitar",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Pop-rock with bright guitar loop, punchy drums, warm charismatic vocal. Bright and energetic with polished production.",
+      "mixBusNotes": "Bright and energetic - vocal charismatic with moderate reverb. Guitar loop bright and wide. Drums punchy with snap. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ."
+    },
+    {
+      "id": 15,
+      "artist": "Hybrid Skyline Flow",
+      "genre": "Hip-Hop / Pop-Rap",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Skyline Flow)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Smooth charismatic rap capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Adds body to smooth delivery"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies syllables; air lifts"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Controls dynamics while keeping smoothness"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L",
+              "settings": "Medium hall, 1.5s decay, 15% wet",
+              "why": "Spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Piano / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled / real piano",
+              "settings": "Loop trimmed, tuned",
+              "why": "Bright melodic loop"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.8s, 12% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Upbeat pop-rap groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight plus click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / synth sub",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Upbeat rap-pop with bright piano loop, punchy drums, smooth charismatic vocal. Bright and polished with modern production.",
+      "mixBusNotes": "Bright and smooth - vocal smooth with moderate reverb. Piano loop bright and wide. Drums punchy with snap. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ."
+    },
+    {
+      "id": 16,
+      "artist": "Hybrid Midnight Relay",
+      "genre": "Pop / R&B / Dance",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Midnight Relay)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Cardioid, close-miked",
+              "why": "Charismatic vocal capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Analog character"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Clarifies syllables"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Dynamic control with punch"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L / Valhalla",
+              "settings": "Medium hall, 1.5s decay, 15-20% wet",
+              "why": "Spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Analog / software synth loop",
+              "settings": "Loop trimmed, tuned",
+              "why": "Futuristic texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "Valhalla / EMT 140",
+              "settings": "Medium hall, 15% wet, 1.2s",
+              "why": "Depth"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / Maschine / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Pop groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz 3 dB, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Futuristic pop-R&B with gritty synth loop, punchy drums, charismatic vocal, deep sub-bass. Bright and polished major-label production.",
+      "mixBusNotes": "Charismatic and spacious - vocal intimate with large hall reverb. Synth loop gritty and wide. Drums punchy with weight. Bass deep with sidechain. Master bus: SSL G-Bus 2:1 ~3 dB, shelf EQ."
+    },
+    {
+      "id": 17,
+      "artist": "Hybrid Silk Voltage",
+      "genre": "R&B / Pop / Dance",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Silk Voltage)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Cardioid, close-miked",
+              "why": "Classic R&B capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Body for ballad"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Presence and air"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Smooth dynamics"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- medium hall",
+              "settings": "Pre-delay 25ms, decay 1.2s, 20% wet",
+              "why": "Emotional space"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Analog synth / sample loop",
+              "settings": "Loop trimmed, tuned",
+              "why": "Lush ballad texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Smooth groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Classic R&B ballad with lush synth pad loop, smooth drums, warm vocal, deep bass, emotional reverb. Polished and spacious.",
+      "mixBusNotes": "Warm and spacious - vocal intimate with medium hall reverb. Synth pad lush and wide. Drums smooth with snap. Bass deep and even. Master bus: SSL G-Bus 2:1 ~3 dB."
+    },
+    {
+      "id": 18,
+      "artist": "Hybrid Ivory Ember",
+      "genre": "Pop / R&B / Soul",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Ivory Ember)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Intimate singer-songwriter"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Warmth for ballad"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Presence and air"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Smooth dynamics"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- medium hall",
+              "settings": "Pre-delay 25ms, decay 1.2s, 20% wet",
+              "why": "Spacious emotion"
+            }
+          ]
+        },
+        {
+          "channelName": "Piano / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Real piano / Yamaha C7",
+              "settings": "Loop trimmed, tuned",
+              "why": "Organic ballad"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G / Pultec",
+              "settings": "HP 60 Hz, cut 200 Hz 2 dB, boost 8 kHz 1 dB",
+              "why": "Clarity and shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.8s, 12% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / live",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Ballad groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth / bass guitar",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Piano-led pop-ballad with warm vocal, deep bass, punchy drums, intimate production, subtle reverb. Soulful and polished.",
+      "mixBusNotes": "Soulful and intimate - vocal close with medium hall. Piano warm and wide. Drums punchy but not aggressive. Bass deep and even. Master bus: SSL G-Bus 2:1 ~3 dB."
+    },
+    {
+      "id": 19,
+      "artist": "Hybrid Azure Serenade",
+      "genre": "R&B / Soul / Pop",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Azure Serenade)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Cardioid, close-miked",
+              "why": "Smooth R&B capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Body for ballad"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Presence and air"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Dynamics with warmth"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- large hall",
+              "settings": "Pre-delay 30ms, decay 2.0s, 25% wet",
+              "why": "Expansive emotion"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Analog synth / sample loop",
+              "settings": "Loop trimmed, tuned",
+              "why": "Smooth R&B texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Smooth groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Smooth R&B with warm synth loop, punchy drums, emotional vocal, deep bass, lush reverb. Polished major-label production.",
+      "mixBusNotes": "Smooth and emotional - vocal intimate with large hall. Synth loop warm and wide. Drums punchy with snap. Bass deep. Master bus: SSL G-Bus 2:1 ~4 dB."
+    },
+    {
+      "id": 20,
+      "artist": "Hybrid Steel Borough",
+      "genre": "Hip-Hop / Rap",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Steel Borough)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Shure SM7B / Neumann U87",
+              "settings": "Close-miked, cardiod",
+              "why": "Gritty rap capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Body and weight"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Presence"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "Urei 1176",
+              "settings": "4:1, fast, 6-8 dB GR",
+              "why": "Aggressive control"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- short room",
+              "settings": "Pre-delay 15ms, decay 0.4s, 8% wet",
+              "why": "Minimal wash"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled / software synth loop",
+              "settings": "Loop trimmed, tuned",
+              "why": "Gangsta rap melodic loop"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Punchy groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep sub"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Hard-hitting gangsta rap with looped synth melody, heavy 808 sub, cracking snare, dry upfront vocal with aggressive compression. Dark major-label production.",
+      "mixBusNotes": "Hard and dry - vocal dry upfront with minimal wash. Synth loop dark and wide. Drums heavy with cracked snare. Bass deep with sidechain. Master bus: SSL G-Bus 2:1 ~3 dB."
+    },
+    {
+      "id": 21,
+      "artist": "Hybrid Coastline Drift",
+      "genre": "Hip-Hop / Rap / Reggae",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Coastline Drift)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Cardioid, close-miked",
+              "why": "Warm laid-back capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Body"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Presence and air"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-7 dB GR",
+              "why": "Smooth dynamics"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- medium hall",
+              "settings": "Pre-delay 25ms, decay 1.2s, 15-20% wet",
+              "why": "Spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Keys Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sampled / software synth",
+              "settings": "Loop trimmed, tuned",
+              "why": "Laid-back loop"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Clarity"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "EMT 140",
+              "settings": "0.6s, 10% wet",
+              "why": "Vintage space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Laid-back groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "West Coast rap with smooth synth loop, laid-back drums, warm vocal, deep bass, spacious reverb. Polished and smooth.",
+      "mixBusNotes": "Smooth and laid-back - vocal warm with medium hall. Synth loop smooth and wide. Drums laid-back with snap. Bass deep and even. Master bus: SSL G-Bus 2:1 ~3 dB."
+    },
+    {
+      "id": 22,
+      "artist": "Hybrid Frost Arcade",
+      "genre": "Rock / Indie / Alternative",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Frost Arcade)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Shure SM58 / Neumann U87",
+              "settings": "Close-miked, cardiod",
+              "why": "Gritty indie capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073 / API",
+              "settings": "Clean gain with warmth",
+              "why": "Body for gritty vocal"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Presence and air"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Smooth dynamics"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- short room",
+              "settings": "Pre-delay 15ms, decay 0.4s, 8% wet",
+              "why": "Minimal wash"
+            }
+          ]
+        },
+        {
+          "channelName": "Guitar / Distorted Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Distorted guitar / loop",
+              "settings": "Loop trimmed, tuned, saturated",
+              "why": "Intense indie-rock texture"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 3 kHz, cut 200 Hz",
+              "why": "Clarity and punch"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "1176 / SSL G-Bus",
+              "settings": "8:1, 4-6 dB",
+              "why": "Glue and punch"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / console",
+              "settings": "Heavy saturation",
+              "why": "Distortion character"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Punchy groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Indie-rock with distorted guitar loops, punchy drums, gritty vocal, deep bass, minimal reverb for intensity. Raw and loud major-label production.",
+      "mixBusNotes": "Raw and loud - vocal gritty with small room. Guitar intense and wide. Drums punchy with weight. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB."
+    },
+    {
+      "id": 23,
+      "artist": "Hybrid Fracture Signal",
+      "genre": "Rock / Metal / Alternative",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Fracture Signal)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Shure SM7B / Neumann U87",
+              "settings": "Close-miked, cardiod",
+              "why": "Aggressive capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Weight for aggressive"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, cut 250 Hz, shelf 12 kHz",
+              "why": "Presence and air"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Dynamic control"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- short room",
+              "settings": "Pre-delay 15ms, decay 0.4s, 8% wet",
+              "why": "Minimal wash"
+            }
+          ]
+        },
+        {
+          "channelName": "Guitar / Heavy Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Distorted guitar / loop",
+              "settings": "Loop trimmed, tuned, saturated",
+              "why": "Heavy nu-metal"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 60 Hz, boost 2-4 kHz, cut 300 Hz",
+              "why": "Clarity and punch"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "1176 / SSL G-Bus",
+              "settings": "8:1, 4-6 dB",
+              "why": "Glue and intensity"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / console",
+              "settings": "Heavy saturation",
+              "why": "Distortion"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "MPC / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Explosive groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight and click"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Cracking snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Nu-metal with heavy guitar loops, explosive drums, aggressive vocal with layered harmonies, deep bass, minimal reverb. Intense and polished.",
+      "mixBusNotes": "Intense and polished - vocal aggressive with small room. Guitar heavy and wide. Drums explosive with weight. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB."
+    },
+    {
+      "id": 24,
+      "artist": "Hybrid Circuit Phantom",
+      "genre": "Electronic / Dance / Pop",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Circuit Phantom - robotic)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 with vocoder / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Robotic capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Body"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Presence"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Dynamics"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Lexicon 480L -- large hall",
+              "settings": "Pre-delay 30ms, decay 2.0s, 25% wet",
+              "why": "Expansive digital"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Electronic Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Analog / software synth loop",
+              "settings": "Loop trimmed, tuned, layered",
+              "why": "French house"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G / Pultec",
+              "settings": "HP 40 Hz, boost 8-12 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus / 1176",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "Valhalla / Lexicon",
+              "settings": "Large hall, 2.0s decay, 25% wet",
+              "why": "Expansive space"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "House groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "SSL / Neve",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 200 Hz",
+              "why": "Weight"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Sub synth / 808",
+              "settings": "Root note, long sustain, sidechain",
+              "why": "Deep sub"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "French house with robotic vocal processing, synth loops, punchy drums, deep sub, huge digital reverb. Expansive and polished.",
+      "mixBusNotes": "Expansive and digital - vocal robotic with large hall. Synth loops bright and wide. Drums punchy with weight. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB."
+    },
+    {
+      "id": 25,
+      "artist": "Hybrid Dual Horizon",
+      "genre": "Rock / Alternative / Electropop",
+      "era": "Hybrid production recipe",
+      "signalChain": [
+        {
+          "channelName": "Lead Vocal (Hybrid Dual Horizon)",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Microphone",
+              "product": "Neumann U87 / SM7B",
+              "settings": "Close-miked, cardiod",
+              "why": "Intimate capture"
+            },
+            {
+              "step": 2,
+              "processorType": "Preamp",
+              "product": "Neve 1073",
+              "settings": "Clean gain, warmth",
+              "why": "Warmth"
+            },
+            {
+              "step": 3,
+              "processorType": "EQ",
+              "product": "SSL 4000 / Pultec",
+              "settings": "Boost 3-4 kHz presence, gentle cut 250 Hz, shelf 12 kHz",
+              "why": "Presence and air"
+            },
+            {
+              "step": 4,
+              "processorType": "Compression",
+              "product": "1176 / LA-2A blended",
+              "settings": "4:1, medium, 5-8 dB GR",
+              "why": "Dynamics"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb",
+              "product": "Valhalla VintageVerb -- large hall",
+              "settings": "Pre-delay 30ms, decay 2.0s, 20% wet",
+              "why": "Spacious atmosphere"
+            }
+          ]
+        },
+        {
+          "channelName": "Synth / Loop",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Synth / sample loop",
+              "settings": "Loop trimmed, tuned",
+              "why": "Alternative synth"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "HP 40 Hz, boost 8 kHz shimmer, cut 200 Hz",
+              "why": "Shimmer"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "SSL G-Bus",
+              "settings": "4:1, 3ms, 3-5 dB",
+              "why": "Glue"
+            },
+            {
+              "step": 4,
+              "processorType": "Reverb",
+              "product": "Valhalla / EMT 140",
+              "settings": "Medium hall, 15% wet, 1.2s",
+              "why": "Depth"
+            }
+          ]
+        },
+        {
+          "channelName": "Drum Kit",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "Programmed / samples",
+              "settings": "Kick 55 Hz, snare layered, hats 1/8th",
+              "why": "Modern groove"
+            },
+            {
+              "step": 2,
+              "processorType": "Kick EQ",
+              "product": "Neve 1073",
+              "settings": "Boost 60 Hz, 4 kHz click, cut 250 Hz",
+              "why": "Weight"
+            },
+            {
+              "step": 3,
+              "processorType": "Snare Compression",
+              "product": "1176",
+              "settings": "8:1, 8-10 dB GR",
+              "why": "Snap"
+            },
+            {
+              "step": 4,
+              "processorType": "Parallel",
+              "product": "SSL G-Bus",
+              "settings": "10:1, ~15 dB, 30% wet",
+              "why": "Density"
+            },
+            {
+              "step": 5,
+              "processorType": "Reverb (snare)",
+              "product": "Lexicon",
+              "settings": "0.3s, 10% wet",
+              "why": "Small space"
+            }
+          ]
+        },
+        {
+          "channelName": "Bass",
+          "steps": [
+            {
+              "step": 1,
+              "processorType": "Source",
+              "product": "808 / sub synth",
+              "settings": "Root note, long sustain",
+              "why": "Deep foundation"
+            },
+            {
+              "step": 2,
+              "processorType": "EQ",
+              "product": "SSL G",
+              "settings": "Boost 50 Hz, HP <35 Hz, cut 200 Hz",
+              "why": "Sub focus"
+            },
+            {
+              "step": 3,
+              "processorType": "Compression",
+              "product": "LA-2A",
+              "settings": "4-6 dB GR",
+              "why": "Even sustain"
+            },
+            {
+              "step": 4,
+              "processorType": "Saturation",
+              "product": "Tape / Kramer",
+              "settings": "~15%",
+              "why": "Translation"
+            }
+          ]
+        }
+      ],
+      "sunoPrompt": "Alternative rock with synth loops, punchy drums, intimate vocal, deep bass, modern spacious production. Bright and modern.",
+      "mixBusNotes": "Bright and modern - vocal intimate with large hall. Synth loops bright and wide. Drums punchy with snap. Bass deep. Master bus: SSL G-Bus 2:1 ~3 dB."
+    }
+  ],
+  "namingPolicy": "Original Hybrid profile names. Production recipes are starting points, not artist or recording-session attributions."
+}

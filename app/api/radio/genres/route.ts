@@ -1,0 +1,2 @@
+import {db,identity,owner,sameOrigin,safe,fail} from "@/lib/radio/station";
+export async function POST(r:Request){return safe(async()=>{if(!sameOrigin(r)||!await owner(await identity()))return fail("Owner access required",403);const {name}=await r.json() as {name?:unknown};if(typeof name!=="string"||!name.trim()||name.trim().length>35)return fail("Use a genre name between 1 and 35 characters");await db().prepare("INSERT OR IGNORE INTO genres(name) VALUES(?)").bind(name.trim()).run();return Response.json({ok:true});});}

@@ -1,0 +1,883 @@
+{
+  "format": "ghost-production-references",
+  "version": 1,
+  "sourceUrl": "https://arena.ai/c/019ffe58-0520-7926-8214-a077a017c2e6",
+  "categories": {
+    "vocalProfiles": [
+      {
+        "n": 1,
+        "name": "Obsidian Profundo",
+        "p": "Style Profile\n\nGenre family: Cinematic pop, dark folk, industrial, ambient rock\nEra: 1980s–modern\nOrigin cue: International film-score and dark studio production\nVoice: Bass/profundo\nTarget range: C2–E4\nRegister: Predominantly chest; controlled upper mix\nResonance: Chest and pharyngeal\nVibrato: Slow, restrained, 4–5.5 Hz\nOrnamentation: Sustained low notes, deliberate slides, spoken-sung endings\nMix: Large and authoritative without turning the low mids muddy\n\nPlugin prompt — “Obsidian Profundo”\n\nBuild a solo male bass vocal processor. Use a microphone character like a Neumann U47 or M49. Apply an 18 dB/oct high-pass filter at 42 Hz; dynamic de-boom reduction from 140–240 Hz, maximum -3 dB; bell boost +2 dB at 1.2 kHz, Q 1.0; presence +1 dB at 3.5 kHz; de-esser from 5.5–7.5 kHz. Add Fairchild 660-style compression at 2:1, 25 ms attack, 250 ms release, targeting 2–4 dB GR. Add 10% tape saturation and a 0.8-second dark chamber with 25 ms pre-delay and 7% wet mix. Keep everything below 180 Hz mono.\n\nKnobs: Sub Weight, Word Edge, Iron, Room\nMacro: Gravity raises 100–180 Hz weight, compression and tape saturation together\nPresets: Cinematic Depth, Dark Folk Bass, Industrial Low\n\nSuno style text:\nsolo male profundo bass, extremely low chest resonance, controlled dark tone, deliberate phrasing, restrained vibrato, cinematic authority, dry studio intimacy",
+        "id": "vocalProfiles-1",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 2,
+        "name": "Velvet Bass-Baritone Crooner",
+        "p": "Style Profile\n\nGenre: Traditional pop, jazz, orchestral ballad\nEra: 1940s–1960s\nOrigin cue: New York and Los Angeles studio orchestras\nVoice: Bass-baritone\nRange: E2–G4\nResonance: Warm chest with forward diction\nVibrato: Smooth, regular, 5–6 Hz\nOrnamentation: Portamento, delayed consonants, gentle scoops\nMix: Vocal stays above the arrangement without excessive brightness\n\nPlugin prompt — “Velvet Crooner”\n\nCreate a bass-baritone crooner chain like a Neumann M49 into a tube console. High-pass at 55 Hz; low shelf +1.5 dB at 120 Hz; mud cut -2 dB at 280 Hz, Q 1.2; diction boost +1.5 dB at 2.2 kHz; air shelf +1 dB at 10 kHz. Use LA-2A-style optical compression for 2–3 dB GR. Add 5% tube saturation, a vintage plate reverb with 1.5-second decay, 45 ms pre-delay and 10% mix, plus a filtered 95 ms slap at 7% mix.\n\nKnobs: Velvet, Smile, Slap, Plate\nMacro: Supper Club adds warmth, plate and gentle compression\nPresets: Velvet Close, Orchestra Lead, Noir Crooner\n\nSuno style text:\nsolo male bass-baritone crooner, polished legato, warm chest resonance, precise diction, controlled traditional vibrato, intimate studio orchestra character",
+        "id": "vocalProfiles-2",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 3,
+        "name": "Midnight Narrator",
+        "p": "Style Profile\n\nGenre: Spoken-sung alternative, trip-hop, noir pop\nEra: 1990s–modern\nVoice: Low baritone\nRange: E2–F♯4\nRegister: Speech-dominant chest register\nResonance: Close, dark and forward\nVibrato: Minimal\nOrnamentation: Vocal fry entrances, whispered endings, pitch inflection\nMix: Almost completely dry and centered\n\nPlugin prompt — “Midnight Narrator”\n\nBuild a close spoken-sung baritone chain like an Electro-Voice RE20 or Shure SM7B. High-pass at 65 Hz; dynamic proximity control from 100–220 Hz, maximum -4 dB; cut -2.5 dB at 320 Hz; diction boost +3 dB at 1.8 kHz; low-pass at 15 kHz. Use an 1176-style compressor at 4:1, 8 ms attack, 120 ms release, 4 dB GR. Add a mouth-click remover for events 0.2–8 ms long and a 0.35-second room at 4% mix.\n\nKnobs: Proximity, Diction, Stillness, Shadow\nMacro: Closer increases low-mid intimacy and reduces room mix\nPresets: Noir Close, Spoken Melody, Dry Documentary",
+        "id": "vocalProfiles-3",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 4,
+        "name": "Candlelight Baritone",
+        "p": "Style Profile\n\nGenre: Intimate pop, singer-songwriter, bedroom folk\nEra: 1970s–modern\nVoice: Warm baritone\nRange: G2–G4\nResonance: Chest-forward with soft upper harmonics\nVibrato: Narrow and occasional\nOrnamentation: Breathy onsets, gentle cracks, falling phrase endings\nMix: Preserve breaths and room detail without exaggerating noise\n\nPlugin prompt — “Candlelight Baritone”\n\nCreate an intimate baritone chain with a Neumann U67 or Coles 4038-style softness. High-pass at 70 Hz; warmth +1.5 dB at 180 Hz; cut -2.5 dB at 320 Hz; dynamic harshness reduction from 2.5–4.5 kHz, maximum -2.5 dB; air shelf +1.5 dB at 10 kHz. Apply LA-2A-style compression for 2–3 dB GR and 8% tape saturation. Add a 0.75-second wooden room with 12 ms pre-delay and 8% mix. Keep tuning slower than 50 ms or disabled.\n\nKnobs: Close, Wood, Breath, Ease\nMacro: Candlelight adds warmth, soft compression and room\nPresets: Bedroom 2AM, Wooden Room, Barely Processed",
+        "id": "vocalProfiles-4",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 5,
+        "name": "Clean High Baritone",
+        "p": "Style Profile\n\nGenre: Pop, alternative pop, clean rock\nEra: 1990s–modern\nVoice: High baritone\nRange: A2–B4\nRegister: Chest into connected mix\nResonance: Balanced chest and facial mask\nVibrato: Controlled, medium width\nOrnamentation: Clean scoops and modest sustained notes\nMix: Neutral enough to work across multiple genres\n\nPlugin prompt — “High Baritone Standard”\n\nBuild a clean high-baritone channel like a Neumann U87 through an API preamp. High-pass at 80 Hz; cut -2 dB at 250 Hz; dynamic honk suppression from 800 Hz–1.2 kHz; presence +2 dB at 3.2 kHz; air +2 dB at 11 kHz. Compress at 3:1 with 12 ms attack, 90 ms release and 4 dB GR. De-ess from 6.5–8 kHz. Add a 1.2-second plate with 35 ms pre-delay and 10% mix.\n\nKnobs: Body, Focus, Air, Control\nMacro: Finished raises focus, compression and air\nPresets: Clean High Baritone, Pop Neutral, Rock Clear",
+        "id": "vocalProfiles-5",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 6,
+        "name": "Bright Pop Tenor",
+        "p": "Style Profile\n\nGenre: Mainstream pop, dance-pop, pop-rock\nEra: 2000s–modern\nVoice: Lyric tenor\nRange: C3–C5\nResonance: Forward mask with clean upper mix\nVibrato: Narrow and controlled\nOrnamentation: Quick runs, clean flips, sustained hook notes\nMix: Highly polished and present but not piercing\n\nPlugin prompt — “Pop Radio Tenor”\n\nCreate a polished pop-tenor chain like a Sony C-800G into a Tube-Tech CL 1B. High-pass at 95 Hz; cut -2.5 dB at 220 Hz; dynamic harshness control from 2.8–4.5 kHz; presence +3 dB at 5 kHz; high shelf +3 dB at 12.5 kHz. Compress at 3:1, 8 ms attack, 80 ms release, 4–6 dB GR. De-ess around 7.2 kHz. Use natural pitch correction at 20–35 ms. Add a 1.6-second plate, 70 ms pre-delay, 14% mix and filtered dotted-eighth delay at 12%.\n\nKnobs: Polish, Clarity, Tune, Halo\nMacro: Pop Radio increases compression, air and delay ducking\nPresets: Pop Radio, Clean Verse, Glossy Hook",
+        "id": "vocalProfiles-6",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 7,
+        "name": "Power-Ballad Tenor",
+        "p": "Style Profile\n\nGenre: Rock ballad, power pop, dramatic pop\nEra: 1980s–2000s\nVoice: Tenor/baritenor\nRange: B2–C♯5\nResonance: Chest-dominant mix opening into head resonance\nVibrato: Wide and dramatic on sustained notes\nOrnamentation: Long notes, controlled breaks, octave leaps\nMix: Verses restrained; climaxes expand without clipping\n\nPlugin prompt — “Power Tenor Lift”\n\nBuild a two-stage power-tenor chain like a Neumann U67 into an 1176 and LA-2A. High-pass at 85 Hz; dynamic cut from 180–350 Hz, maximum -3 dB; boost +2 dB at 2 kHz; +3 dB at 4.5 kHz; shelf +2 dB at 10 kHz. First compressor: 4:1, 5 ms attack, 120 ms release, 3 dB GR. Second optical compressor: 2 dB GR. Add a vintage plate at 2.2 seconds, 65 ms pre-delay, 18% mix. Add automatic +2 dB rides to sustained notes, followed by a -1 dBTP limiter.\n\nKnobs: Chest, Lift, Sustain, Plate\nMacro: Final Chorus opens the air, increases sustain and expands the reverb\nPresets: Restrained Verse, Power Chorus, Dramatic Bridge",
+        "id": "vocalProfiles-7",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 8,
+        "name": "Airy Falsetto",
+        "p": "Style Profile\n\nGenre: Pop, intimate R&B, dream pop\nEra: 1970s–modern\nVoice: High tenor falsetto/head voice\nRange: E3–E5\nResonance: Head-dominant, light and airy\nVibrato: Narrow, floating\nOrnamentation: Register flips, breath releases, descending runs\nMix: Add body without making the falsetto sound artificial\n\nPlugin prompt — “Falsetto Cloud”\n\nBuild an airy male falsetto processor. High-pass at 120 Hz; add +2 dB body at 220 Hz, Q 0.8; cut -1.5 dB at 1 kHz; dynamic sibilance reduction from 6–9 kHz, maximum -5 dB; shelf +2 dB at 14 kHz. Compress at 2:1, 20 ms attack, 160 ms release, 2 dB GR. Add a gentle breath expander below -45 dB at 1.5:1. Add a 2.6-second shimmer plate, 90 ms pre-delay, 10% wet.\n\nKnobs: Body, Feather, Air, Cloud\nMacro: Float increases air, stereo reverb and soft compression\nPresets: Airy Hook, Intimate Falsetto, Dream Head Voice",
+        "id": "vocalProfiles-8",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 9,
+        "name": "Art-Pop Countertenor",
+        "p": "Style Profile\n\nGenre: Art pop, chamber pop, electronic experimental\nEra: 1970s–modern\nVoice: Countertenor/head-dominant male voice\nRange: G3–E5\nResonance: Head, mask and upper pharyngeal space\nVibrato: Precise and intentionally exposed\nOrnamentation: Classical turns, long straight tones, controlled slides\nMix: Unusual and elevated but recognizably human\n\nPlugin prompt — “Glass Countertenor”\n\nCreate a countertenor processor with AKG C12 or Neumann U67 character. High-pass at 110 Hz; cut -2 dB at 350 Hz; boost +2 dB at 1.6 kHz; dynamic control from 3–5 kHz, maximum -3 dB; air shelf +1.5 dB at 12 kHz. Use slow optical compression for 2.5 dB GR. Add a 1.8-second chamber, 50 ms pre-delay, 12% mix. Pitch correction should remain slower than 40 ms to protect intentional vibrato.\n\nKnobs: Glass, Human, Vibrato Protect, Chamber\nMacro: Art Form increases chamber depth, upper-mid focus and sustain\nPresets: Glass Solo, Chamber Voice, Electronic Countertenor",
+        "id": "vocalProfiles-9",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 10,
+        "name": "Silky R&B Tenor",
+        "p": "Style Profile\n\nGenre: Contemporary R&B, pop-soul\nEra: 1990s–modern\nVoice: Smooth tenor\nRange: C3–C5\nResonance: Forward and rounded\nVibrato: Controlled; delayed at note endings\nOrnamentation: Melisma, falsetto transitions, gentle scoops\nMix: Close and expensive with smooth high frequencies\n\nPlugin prompt — “R&B Silk”\n\nBuild a silky R&B tenor chain like a Sony C-800G into a Neve 1073 and Tube-Tech CL 1B. High-pass at 90 Hz; warmth +1 dB at 180 Hz; cut -2 dB at 250 Hz; presence +2.5 dB at 4 kHz; shelf +2 dB at 12 kHz. Compress at 3:1, 10 ms attack, 100 ms release, 4 dB GR. De-ess at 6.8 kHz. Add same-source microshift at -6/+6 cents with 12/18 ms delays and 8% mix. Plate: 1.8 seconds, 55 ms pre-delay, 12% mix.\n\nKnobs: Silk, Body, Double, Late Night\nMacro: Slow Jam adds warmth, widening and plate\nPresets: R&B Lead, Silky Hook, Dry Run",
+        "id": "vocalProfiles-10",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 11,
+        "name": "Smoky Neo-Soul Baritenor",
+        "p": "Style Profile\n\nGenre: Neo-soul, alternative R&B, jazz-soul\nEra: 1970s and 1990s–modern\nVoice: Baritenor\nRange: A2–A4\nResonance: Chest-rich with softened mask resonance\nVibrato: Loose, conversational\nOrnamentation: Behind-the-beat scoops, blue notes, gentle rasp\nMix: Warm, rounded and slightly aged\n\nPlugin prompt — “Neo-Soul Smoke”\n\nCreate a smoky baritenor processor like a Neumann U67 through a Neve 1073. High-pass at 75 Hz; shelf +2 dB at 140 Hz; cut -2 dB at 350 Hz; presence +1 dB at 2.2 kHz; gentle low-pass at 14 kHz. Use LA-2A-style compression for 3–5 dB GR and 12% tube saturation. Add a 0.9-second spring at 10% and an eighth-note tape delay at 8%, filtered from 450 Hz–5 kHz.\n\nKnobs: Smoke, Pocket, Tube, Spring\nMacro: After Hours increases tube saturation, delay and low-mid warmth\nPresets: Neo-Soul Lead, Smoky Verse, Warm Falsetto",
+        "id": "vocalProfiles-11",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 12,
+        "name": "Solo Soul Belter",
+        "p": "Style Profile\n\nGenre: Soul, blues-soul, pop-soul\nEra: 1960s–modern\nVoice: Baritenor/tenor\nRange: A2–C5\nResonance: Chest and forward mask\nVibrato: Strong and deliberate\nOrnamentation: Melisma, growled attacks, sustained belts\nMix: Dynamic and emotional without turning into a choir sound\n\nPlugin prompt — “Soul Fire”\n\nBuild a solo soul-belter chain like a Neumann M49 into an 1176 and Fairchild. High-pass at 85 Hz; dynamic de-mud at 250 Hz, maximum -3 dB; boost +2 dB at 1.5 kHz and +3 dB at 3.5 kHz; dynamic de-harsh from 2.5–5 kHz. First compressor: 1176-style, 8:1, 3 ms attack, 90 ms release, 3–5 dB GR. Second: Fairchild-style, 2:1, 2 dB GR. Blend 20% parallel compression. Add a 1.7-second vintage plate at 14% mix.\n\nKnobs: Fire, Testimony, Control, Plate\nMacro: Open Up raises parallel compression, presence and plate\nPresets: Soul Lead, Controlled Belt, Raw Testimony",
+        "id": "vocalProfiles-12",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 13,
+        "name": "Funk Precision Tenor",
+        "p": "Style Profile\n\nGenre: Funk, disco-funk, rhythmic pop\nEra: 1970s–modern\nVoice: Light tenor/high baritone\nRange: B2–B4\nResonance: Bright, forward and percussive\nVibrato: Minimal except sustained endings\nOrnamentation: Staccato syllables, yelps, rhythmic falsetto flips\nMix: Tight and rhythmically locked, never group-like\n\nPlugin prompt — “Funk Precision”\n\nCreate a rhythmic male funk-vocal chain like a Shure SM7B into an API preamp and dbx 160. High-pass at 100 Hz; cut -3 dB at 250 Hz; boost +2 dB at 1.2 kHz and +3 dB at 4.5 kHz. Compress at 4:1, 5 ms attack, 80 ms release, 4 dB GR. Add a downward expander with -42 dB threshold and 150 ms release. Add a 75 ms filtered slap and a 0.4-second studio room.\n\nKnobs: Bite, Pocket, Snap, Slap\nMacro: On The One tightens the gate, compression and slap\nPresets: Dry Funk, Falsetto Funk, Rhythmic Pop",
+        "id": "vocalProfiles-13",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 14,
+        "name": "Fragile Indie Tenor",
+        "p": "Style Profile\n\nGenre: Indie pop, bedroom pop, dream folk\nEra: 2000s–modern\nVoice: Light tenor\nRange: C3–B4\nResonance: Light nasal mask with airy edges\nVibrato: Unstable by design but not digitally warped\nOrnamentation: Voice cracks, soft scoops, unfinished phrase endings\nMix: Preserve vulnerability and natural level variation\n\nPlugin prompt — “Indie Fragile”\n\nBuild a delicate indie-tenor processor with Neumann U67 softness. High-pass at 100 Hz; cut -2 dB at 300 Hz; add +1.5 dB at 1.8 kHz; dynamic de-ess from 6.5–8.5 kHz. Use 15% tape saturation and gentle 2:1 compression at 30 ms attack, 180 ms release, 2 dB GR. Add a 1.1-second wooden room with 20 ms pre-delay and 9% mix. Same-source microshift should remain below 5%.\n\nKnobs: Fragile, Tape, Breath, Window\nMacro: Bedroom adds subtle tape, room and softness\nPresets: Bedroom Close, Indie Clear, Dreamy Dry",
+        "id": "vocalProfiles-14",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 15,
+        "name": "Low Dry Rap Baritone",
+        "p": "Profile: Modern rap; low baritone; G2–E4; chest-dominant resonance; almost no vibrato; deliberate consonants and low inflection.\n\nPlugin prompt — “Low Rap Authority”\n\nBuild a dry baritone rap chain like a Shure SM7B into a Neve 1073. High-pass at 70 Hz; chest boost +2 dB at 120 Hz; cut -3 dB at 280 Hz; diction +3 dB at 2 kHz; presence +2 dB at 5 kHz; low-pass at 16 kHz. Use 1176-style compression at 4:1, 8 ms attack, 100 ms release, 4–6 dB GR. Blend 15% parallel compression. Room must be no longer than 0.25 seconds and no more than 2% wet.\n\nKnobs: Authority, Diction, Clamp, Dry\nMacro: Front Row increases presence and parallel compression\nPresets: Dry Low Rap, Heavy Verse, Spoken Threat",
+        "id": "vocalProfiles-15",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 16,
+        "name": "Boom-Bap Gravel Rap",
+        "p": "Profile: 1980s–2000s hip-hop; baritone; G2–G4; gritty chest resonance; no sung vibrato; hard consonants and deliberate breath placement.\n\nPlugin prompt — “Boom-Bap Gravel”\n\nBuild a rugged rap chain like a U87 or RE20 through a Neve 1073. High-pass at 75 Hz; boost +2 dB at 140 Hz; cut -3 dB at 350 Hz; presence +2 dB at 3 kHz; high shelf -1 dB above 10 kHz. Use an 1176 at 8:1, 5 ms attack, 120 ms release, 5 dB GR. Add 15% tape saturation and 25% parallel compression. Add a 0.45-second dark room at 5%.\n\nKnobs: Gravel, Chest, Crush, Dust\nMacro: Head Nod raises tape, parallel compression and 140 Hz weight\nPresets: Golden Era, Gravel Center, Sampled Darkness",
+        "id": "vocalProfiles-16",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 17,
+        "name": "Modern Punch Rap",
+        "p": "Profile: Contemporary rap; high baritone/tenor; A2–A4; forward mask; straight tone; tightly timed attacks and clean phrase endings.\n\nPlugin prompt — “Modern Punch”\n\nCreate a modern rap-vocal chain like a Sony C-800G through an API preamp and Empirical Labs Distressor. High-pass at 90 Hz; cut -2 dB at 200 Hz; dynamic de-mud at 350 Hz; boost +3 dB at 3.5 kHz; shelf +2.5 dB at 11 kHz. Compress at 6:1, 4 ms attack, 80 ms release, 5 dB GR. De-ess at 7.5 kHz. Add a -1 dBTP limiter and automatable delay throws filtered from 500 Hz–6 kHz.\n\nKnobs: Punch, Focus, Ess, Throw\nMacro: Record Ready increases focus, limiting and short parallel compression\nPresets: Modern Clean, Punch Verse, Delay Throw",
+        "id": "vocalProfiles-17",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 18,
+        "name": "Rapid Technical Rap",
+        "p": "Profile: Technical and rapid rap; tenor/high baritone; crisp speech register; minimal vibrato; rapid consonants, internal rhymes and controlled breath gaps.\n\nPlugin prompt — “Syllable Lock”\n\nBuild a fast-articulation rap processor. High-pass at 100 Hz; cut -2 dB at 180 Hz; dynamic control from 250–500 Hz; diction boost +4 dB at 2.8 kHz; dynamic de-esser from 5.5–8 kHz. Use 1176-style compression at 4:1, 2 ms attack, 60 ms release, 3 dB GR. Add a transient articulation band from 1–4 kHz with a maximum +2 dB attack enhancement. Room: 0.2 seconds, 1–2% wet.\n\nKnobs: Syllables, Breath Gap, Speed Clamp, Focus\nMacro: Machine Precision tightens compression and articulation enhancement\nPresets: Fast Clean, Dense Verse, Dry Technical",
+        "id": "vocalProfiles-18",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 19,
+        "name": "Dark Drill Baritone",
+        "p": "Profile: Drill and dark trap; 2010s–modern; London/Chicago/New York color cue; low baritone; E2–F4; stern chest resonance; nearly monotone delivery.\n\nPlugin prompt — “Drill Shadow”\n\nBuild a dark drill vocal chain like a close SM7B. High-pass at 65 Hz; shelf +2 dB at 100 Hz; notch -3 dB at 250 Hz; presence +2 dB at 1.5 kHz; low-pass at 9 kHz. Add 12% transistor saturation. Compress at 4:1, 10 ms attack, 110 ms release, 5 dB GR. Optional pitch correction: 15–30 ms. Add a 120 ms dark slap filtered from 400 Hz–3.5 kHz at 8% mix.\n\nKnobs: Shadow, Weight, Threat, Slap\nMacro: Cold darkens the top, increases saturation and shortens ambience\nPresets: Dark Drill, Cold Monotone, Low Threat",
+        "id": "vocalProfiles-19",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 20,
+        "name": "Melodic Trap Tenor",
+        "p": "Profile: Melodic trap; 2010s–modern; Atlanta/Memphis production cue; tenor; B2–C5; chest-to-head transitions; pronounced tuned slides and sustained notes.\n\nPlugin prompt — “Melodic Trap Lock”\n\nBuild a tuned melodic-trap chain. High-pass at 100 Hz. Pitch correction: 0–8 ms retune for hard mode, 15–25 ms for melodic mode, humanize 5–15%, formant shift from 0 to -1 semitone. Cut -2.5 dB at 250 Hz; presence +3 dB at 3.2 kHz; air +2 dB at 11 kHz. Use CL 1B-style compression at 3:1, 7 ms attack, 85 ms release, 5 dB GR. Add dotted-eighth delay at 12%, dark plate at 1.4 seconds and same-source microshift at ±7 cents.\n\nKnobs: Tune Speed, Formant, Drip, Space\nMacro: Trap Ready tightens tuning, raises air and widens the microshift\nPresets: Trap Ready, Melodic Glide, Natural Trap",
+        "id": "vocalProfiles-20",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 21,
+        "name": "Cracked Emo-Rap Tenor",
+        "p": "Profile: Emo rap and alternative trap; tenor; C3–C5; vulnerable chest/head breaks; narrow vibrato; cracks, breath catches and unstable emotional endings.\n\nPlugin prompt — “Cracked Melody”\n\nBuild an emotional melodic-rap chain. High-pass at 95 Hz; warmth +2 dB at 180 Hz; cut -2 dB at 400 Hz; dynamic harshness control from 2.5–4.5 kHz. Tune at 8–18 ms while preserving intentional breaks. Compress at 4:1, 8 ms attack, 120 ms release, 4 dB GR. Add 10% warm tube saturation, a 2.4-second plate with 75 ms pre-delay and an eighth-note delay filtered above 5 kHz.\n\nKnobs: Crack Protect, Pain, Tune, Rain\nMacro: Broken Hook increases saturation, tuning and reverb\nPresets: Fragile Verse, Cracked Hook, Dry Confession",
+        "id": "vocalProfiles-21",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 22,
+        "name": "Whisper Trap Vocal",
+        "p": "Profile: Intimate trap and alternative rap; high baritone/tenor; whispered chest/head blend; straight tone; close breaths and low-volume tension.\n\nPlugin prompt — “Whisper Trap Close”\n\nBuild a close whisper-rap chain like an SM7B recorded 2–4 inches away. High-pass at 120 Hz; body +2 dB at 200 Hz; cut -3 dB at 500 Hz; intelligibility +3 dB at 4 kHz; de-ess from 6–9 kHz. Blend 30% parallel compression while keeping the main compressor at 2:1, 20 ms attack and 140 ms release. Use a 0.7-second dark room and 1/8-note delay, both ducked 5 dB by the dry vocal with 250 ms release.\n\nKnobs: Whisper, Body, Breath Protect, Dark Space\nMacro: Inside Your Head increases proximity, parallel compression and dark delay\nPresets: Close Whisper, Dark Secret, Intimate Trap",
+        "id": "vocalProfiles-22",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 23,
+        "name": "Distorted Alternative Rap",
+        "p": "Profile: Industrial rap, experimental hip-hop and trap-rock; high baritone/tenor; speech-to-shout range; pitch drops, whispered sections and controlled distortion.\n\nPlugin prompt — “Broken Circuit Rap”\n\nBuild a three-band distorted rap processor. Keep frequencies below 180 Hz clean and mono. Apply 15–35% tube/transistor distortion from 180 Hz–4 kHz. Apply only 5–10% bit reduction above 4 kHz. Add an optional -12-semitone parallel pitch layer at 8% and a +7-semitone texture at 3%. Gate the processed paths at -42 dB with 5 ms attack and 120 ms release. Compress the final output at 4:1, 3 ms attack, 90 ms release.\n\nKnobs: Circuit, Low Ghost, Digital Teeth, Clean Blend\nMacro: Malfunction raises distortion, pitch layers and gating intensity\nPresets: Broken Verse, Industrial Rap, Controlled Glitch",
+        "id": "vocalProfiles-23",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 24,
+        "name": "Folk Storyteller",
+        "p": "Profile: Folk and singer-songwriter; 1960s–modern; baritone/tenor; G2–A4; natural chest resonance; restrained vibrato; conversational phrasing.\n\nPlugin prompt — “Folk Storyteller”\n\nBuild a natural solo folk-vocal chain like a Neumann U67 or Coles 4038. High-pass at 75 Hz; cut -2.5 dB at 250 Hz; dynamic control from 2.5–4 kHz, maximum -2 dB; shelf +1 dB at 10 kHz. Use optical compression for only 2 dB GR. Add a 0.8-second wooden room with 15 ms pre-delay and 8% mix. Disable hard tuning and preserve timing variation.\n\nKnobs: Story, Wood, Honesty, Distance\nMacro: Front Porch Studio adds warmth and a restrained wooden room\nPresets: Storyteller Close, Dry Folk, Wooden Room Solo",
+        "id": "vocalProfiles-24",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 25,
+        "name": "High-Lonesome Solo Tenor",
+        "p": "Profile: Bluegrass-adjacent folk and acoustic roots; high tenor; C3–D5; bright nasal-mask resonance; mostly straight tone; upward scoops and held vowels. No harmony singers.\n\nPlugin prompt — “High Lonesome Solo”\n\nCreate a solo high-folk-tenor processor with RCA 77 or U67 smoothness. High-pass at 100 Hz; cut -2 dB at 250 Hz; boost +2 dB at 1.4 kHz; dynamic pluck-like harshness suppression from 3–4.5 kHz; shelf +1 dB at 9 kHz. Compress at 3:1, 15 ms attack, 160 ms release, 3 dB GR. Add a 1.1-second chamber at 8%. Do not create harmony layers.\n\nKnobs: Lonesome, Nasal Focus, Smooth, Chamber\nMacro: Mountain Air increases mid focus and chamber depth\nPresets: Solo High Folk, Acoustic Lead, No Harmony",
+        "id": "vocalProfiles-25",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 26,
+        "name": "Country Twang High Baritone",
+        "p": "Profile: Country and country-pop; 1950s–modern; Nashville/Texas color cue; high baritone; A2–B4; forward twang; delayed vibrato and note scoops.\n\nPlugin prompt — “Country Twang Lead”\n\nBuild a solo country vocal chain like a Neumann U47 into an LA-2A. High-pass at 85 Hz; cut -2.5 dB at 300 Hz; boost +2 dB at 1.2 kHz and +2 dB at 3.5 kHz; de-ess around 7 kHz. Use a fast 1176-style compressor for 2 dB peak control followed by 2–3 dB optical compression. Add a 110 ms tape slap at 9% and a 1.1-second plate at 7%.\n\nKnobs: Twang, Chest, Slap, Polish\nMacro: Country Radio increases diction, slap and controlled air\nPresets: Modern Country, Vintage Twang, Acoustic Country",
+        "id": "vocalProfiles-26",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 27,
+        "name": "Blues-Roots Rasp",
+        "p": "Profile: Blues, roots rock and folk-blues; baritenor; G2–B4; chest-heavy resonance; loose vibrato; controlled rasp, blue-note slides and cracked attacks.\n\nPlugin prompt — “Roots Rasp”\n\nCreate a rough solo blues vocal with RCA 77 or SM7B character. High-pass at 70 Hz; boost +2 dB at 160 Hz; cut -2 dB at 400 Hz; boost +3 dB at 1.8 kHz; dynamic harshness control from 3–5 kHz; roll off gently above 12 kHz. Blend 25% parallel tube saturation. Compress at 3:1, 12 ms attack, 140 ms release, 4 dB GR. Add a 0.9-second spring reverb at 10%.\n\nKnobs: Rasp, Roots, Tube, Spring\nMacro: Weathered raises grit and warmth while reducing high-frequency polish\nPresets: Roots Lead, Weathered Blues, Clean Rasp",
+        "id": "vocalProfiles-27",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 28,
+        "name": "Classic Rock Tenor",
+        "p": "Profile: Classic and blues rock; 1960s–1980s; tenor/baritenor; A2–C5; chest-forward mix; medium-wide vibrato; sustained belts and gritty note entrances.\n\nPlugin prompt — “Classic Rock Lead”\n\nBuild a classic-rock vocal chain like a Neumann U67 into an 1176. High-pass at 80 Hz; cut -2.5 dB at 250 Hz; boost +2 dB at 1.6 kHz and +2.5 dB at 3.5 kHz; shelf +1.5 dB at 10 kHz. Compress at 4:1, 5 ms attack, 100 ms release, 5 dB GR. Add 15% tape saturation, a 1.8-second plate at 13%, and a 100 ms slap at 6%.\n\nKnobs: Rock Chest, Edge, Tape, Plate\nMacro: Lead Guitar Rival increases presence, compression and saturation\nPresets: Classic Lead, Rock Ballad, Dry Rasp",
+        "id": "vocalProfiles-28",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 29,
+        "name": "Grunge Gravel Baritone",
+        "p": "Profile: Alternative rock and grunge; late 1980s–1990s; Pacific Northwest color cue; baritone; F2–A4; chest/pharyngeal resonance; unstable vibrato; breathy verses and gravelly peaks.\n\nPlugin prompt — “Grunge Gravel”\n\nCreate a close aggressive rock chain like an SM7B into an 1176 and tape machine. High-pass at 75 Hz; boost +2 dB at 180 Hz; dynamic mud control around 300 Hz; boost +3 dB at 2.2 kHz; dynamic harshness clamp from 3–6 kHz, maximum -5 dB. Compress at 8:1, 2 ms attack, 90 ms release, 6 dB GR. Add 20% tape saturation and a 0.7-second dirty room at 10%.\n\nKnobs: Gravel, Chest, Bleed, Dirty Room\nMacro: Loud Quiet Loud increases saturation and compression while opening room ambience\nPresets: Grunge Verse, Gravel Chorus, Unplugged Dark",
+        "id": "vocalProfiles-29",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 30,
+        "name": "Pop-Punk Nasal High Baritone",
+        "p": "Profile: Pop-punk and alternative rock; 1990s–2000s; West Coast/Midwestern U.S. cue; high baritone; A2–B4; nasal mask resonance; narrow vibrato; scoops and urgent phrase attacks.\n\nPlugin prompt — “Pop-Punk Bite”\n\nBuild a solo pop-punk vocal chain like a Shure SM7B through an API preamp. High-pass at 100 Hz; cut -3 dB at 250 Hz; boost +2 dB at 900 Hz and +4 dB at 3.2 kHz; de-ess at 7 kHz. Compress at 4:1, 3 ms attack, 70 ms release, 6 dB GR. Add 2 dB soft clipping, an 85 ms slap at 7%, and a 0.7-second plate at 8%. Never add gang vocals.\n\nKnobs: Nasal Bite, Urgency, Clip, Slap\nMacro: Hook Energy increases bite, clipping and slap\nPresets: Pop-Punk Lead, Urgent Verse, Clean Hook",
+        "id": "vocalProfiles-30",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 31,
+        "name": "Machine-Room Dynamic Tenor/High Baritone",
+        "p": "Expanded version of your example\n\nStyle Profile\n\nGenre family: Industrial rock, alternative rock, electronic rock\nEra: 1990s\nOrigin: Chicago/Cleveland studio color cue\nVoice: Tenor/high baritone\nRange: Approximately G2–C5\nRegister: Complete range deployment—spoken chest, whisper, mixed belts, head voice and processed scream\nResonance: Chest-to-head movement with deliberately extreme changes\nVibrato: Precise and dramatic; withheld until key sustained notes\nOrnamentation: Distorted screams, whispers, broken phrase endings, pitch drops and massive sustained notes\nDiction: Intimate and nearly internal in quiet sections; cutting and over-articulated in loud passages\nDynamic architecture: Near silence followed by controlled walls of vocal sound\nMixing philosophy: The vocal becomes part lead singer, part synthesizer and part percussion instrument\n\nPlugin prompt — “Machine Room Morph”\n\nBuild an industrial male-vocal super-plugin with two parallel vocal paths and extreme automation capability.\n\nQuiet Path: microphone character like a Neumann U87; high-pass at 70 Hz; warmth +2 dB at 180 Hz; cut -2.5 dB at 350 Hz; compressor at 3:1, 15 ms attack, 180 ms release, 3 dB GR; dark tape saturation at 7%; 0.45-second room at 5%.\n\nAggressive Path: microphone character like a Shure SM7B; high-pass at 95 Hz; cut -4 dB at 250 Hz; boost +4 dB at 2.7 kHz; dynamic harshness control from 3.5–7 kHz, maximum -6 dB. Add an 1176-style compressor at 12:1, 0.8 ms attack, 60 ms release, targeting 8–12 dB GR. Distort only 500 Hz–4 kHz with 20–55% drive; keep frequencies below 160 Hz clean.\n\nAdd parallel pitch layers: -12 semitones at 8% mix, +7 semitones at 3% mix and ±9-cent microshift at 7%. Add a digital ring-modulation texture adjustable from 15–40 Hz at no more than 5% mix. Include an industrial-noise input that opens only while the vocal is active, using -38 dB threshold, 2 ms attack and 100 ms release.\n\nAdd two spaces: 0.35-second metallic room for aggression and 2.5-second dark plate for exposed notes. Both reverbs must duck 6 dB during active singing and recover in 300 ms.\n\nInclude section automation that can move from -12 dB intimate phrases to +8 dB aggressive walls without clipping. Add a final -1 dBTP limiter.\n\nKnobs: Warmth, Cut, Damage, Pitch Ghost, Metal Room, Dark Plate\nPrimary macro: Pressure crossfades from warm U87 intimacy to compressed SM7B distortion\nSecondary macro: Human↔Machine increases pitch layers, ring modulation, noise and spectral distortion\nThird macro: Silence↔Wall controls level rides, compression intensity, stereo width and reverb size\nPresets: Machine Whisper, Controlled Breakdown, Industrial Wall, Sustained Damage, 1990s Digital\n\nSuno style text\n\nSolo male tenor/high-baritone industrial alternative-rock vocal, 1990s Midwestern studio character, extreme quiet-to-loud dynamics, warm close whispers contrasted with harsh cutting belts and controlled distorted screams, precise dramatic vibrato on selected sustained notes, digital processing and industrial texture integrated into the single lead voice, vocal functioning as part singer and part sound design.",
+        "id": "vocalProfiles-31",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 32,
+        "name": "Alternative-Metal Clean-to-Scream",
+        "p": "Profile: Alternative metal; 1990s–2010s; high baritone/tenor; G2–C5; clean chest/mix passages contrasted with solo distorted peaks.\n\nPlugin prompt — “Clean/Rage Morph”\n\nBuild two parallel paths. Clean path: U87 character, high-pass 80 Hz, cut -2 dB at 280 Hz, presence +2 dB at 3 kHz, 3:1 compression at 12 ms attack and 130 ms release. Rage path: SM7B character, high-pass 100 Hz, dynamic cut from 250–450 Hz, boost +3 dB at 1.8 kHz, dynamic harshness control from 3–6 kHz, 8:1 compression at 1 ms attack and 70 ms release. Add 20% mid-band saturation and a 0.6-second room.\n\nKnobs: Clean, Rage, Harsh Control, Room\nMacro: Morph crossfades between the clean and distorted paths\nPresets: Clean Verse, Heavy Chorus, Balanced Metal",
+        "id": "vocalProfiles-32",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 33,
+        "name": "Metalcore Fry-Scream Processor",
+        "p": "Profile: Metalcore and modern heavy rock; 2000s–modern; high baritone/tenor; fry-like distortion; intense forward resonance; minimal vibrato.\n\nPlugin prompt — “Fry Control”\n\nBuild a solo harsh-vocal processor. High-pass at 100 Hz; cut -4 dB at 250 Hz; boost +3 dB at 1.5 kHz; dynamic harshness reduction from 2.5–5 kHz, maximum -6 dB; de-ess from 6–9 kHz. Compress at 8:1, 1 ms attack, 70 ms release, 8 dB GR. Add 15% tube saturation and a 0.45-second concrete room at 8%. Include a 30% clean parallel path to preserve words.\n\nKnobs: Fry, Words, Clamp, Concrete\nMacro: Controlled Violence increases saturation and compression while protecting diction\nPresets: Fry Lead, Readable Scream, Heavy but Controlled",
+        "id": "vocalProfiles-33",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 34,
+        "name": "Death-Growl Processor",
+        "p": "Profile: Death metal and extreme industrial; bass/baritone; approximately C2–E4; low pharyngeal resonance; no conventional vibrato; growls and guttural articulation.\n\nPlugin prompt — “Abyss Growl”\n\nBuild a low-growl processor like an RE20 or SM7B into a Distressor. High-pass at 55 Hz; shelf +2 dB at 90 Hz; cut -4 dB at 220 Hz; boost +3 dB at 900 Hz for words; boost +2 dB at 2.5 kHz; low-pass at 10 kHz. Compress at 6:1, 5 ms attack, 100 ms release, 6 dB GR. Add 20% saturation and a 0.3-second dark room. Keep the fundamental centered and mono below 180 Hz.\n\nKnobs: Abyss, Words, Grind, Depth\nMacro: Monster Focus raises 900 Hz articulation with saturation and low weight\nPresets: Readable Growl, Deep Industrial, Dry Guttural",
+        "id": "vocalProfiles-34",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 35,
+        "name": "High Extreme Shriek",
+        "p": "Profile: Extreme metal, horror rock and industrial noise; high tenor; head-dominant distorted register; straight or chaotic sustained tone.\n\nPlugin prompt — “Razor Shriek”\n\nHigh-pass at 140 Hz; cut -3 dB at 400 Hz; boost +3 dB at 2.8 kHz; dynamic harshness suppression from 4–8 kHz, maximum -7 dB; de-ess at 7 kHz. Add 10% clipping and 8:1 compression at 1 ms attack, 60 ms release, 6–8 dB GR. Add a filtered 1.2-second room with everything below 500 Hz and above 6 kHz removed.\n\nKnobs: Razor, Pain Control, Clip, Void\nMacro: Horror Focus increases distortion and filtered room without adding voices\nPresets: Readable Shriek, Industrial Horror, Dry Razor",
+        "id": "vocalProfiles-35",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 36,
+        "name": "Hardcore Solo Shout",
+        "p": "Profile: Punk and hardcore; baritone/high baritone; chest-dominant projected voice; straight tone; explosive attacks. Always one vocalist—never gang shouts.\n\nPlugin prompt — “Solo Shout”\n\nBuild a single-vocalist hardcore processor like an SM7B. High-pass at 90 Hz; cut -3 dB at 250 Hz; boost +3 dB at 1.5 kHz and +3 dB at 4 kHz. Compress at 8:1, 2 ms attack, 90 ms release, 7 dB GR. Blend 20% parallel soft clipping. Add a 0.5-second dry studio room at 6%. Do not generate group vocals or unison layers.\n\nKnobs: Shout, Words, Clip, Room\nMacro: Solo Impact raises compression, articulation and clipping\nPresets: Hardcore Solo, Punk Lead, Studio Shout\n\nHarsh-vocal processing cannot make unsafe physical technique safe. Specialized distortion techniques should be learned with qualified voice instruction; sudden hoarseness following screaming can require medical evaluation. \n3",
+        "id": "vocalProfiles-36",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 37,
+        "name": "Shoegaze Buried Whisper",
+        "p": "Profile: Shoegaze, dream rock and ambient alternative; 1990s–modern; tenor/high baritone; breathy mixed register; narrow vibrato; blurred but intelligible phrasing.\n\nPlugin prompt — “Buried Light”\n\nHigh-pass at 100 Hz; cut -2.5 dB at 300 Hz; presence +1 dB at 2.5 kHz; de-ess from 6–9 kHz. Compress gently at 2:1, 25 ms attack, 180 ms release, 2 dB GR. Add a 4.5-second plate with 90 ms pre-delay. Duck the plate 8 dB while the vocal is active and recover in 350 ms. Add quarter-note delay at 12% and same-source microshift at ±6 cents.\n\nKnobs: Buried, Light, Bloom, Readability\nMacro: Dream Wall increases reverb, delay and microshift while retaining the center vocal\nPresets: Buried Whisper, Readable Dream, Dry Shoegaze",
+        "id": "vocalProfiles-37",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 38,
+        "name": "Electronic Vocoder/Formant Voice",
+        "p": "Profile: Synth-pop, industrial pop, electronic R&B; any male register; intentionally robotic but rhythmically articulate.\n\nPlugin prompt — “Human Machine Voice”\n\nBuild a 16/24-band vocoder and formant processor. Pre-filter the vocal with a 100 Hz high-pass and de-esser from 6–9 kHz. Vocoder range: 100 Hz–8 kHz; analysis attack 8 ms; release 90 ms. Formant control: -4 to +4 semitones while preserving musical pitch. Add 5–20% digital saturation and a 40% clean-vocal blend. Keep consonant enhancement between 2–6 kHz on a separate path.\n\nKnobs: Carrier, Formant, Robot, Words\nMacro: Human↔Machine crossfades clean voice, vocoder depth, formants and saturation\nPresets: Readable Robot, Industrial Formant, Soft Synth Voice",
+        "id": "vocalProfiles-38",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 39,
+        "name": "Theatrical Cinematic Baritenor",
+        "p": "Profile: Theatrical rock, cinematic pop and dramatic ballads; baritenor; G2–C5; full chest-to-head deployment; precise vibrato; sustained notes and dramatic pauses.\n\nPlugin prompt — “Cinematic Baritenor”\n\nBuild a theatrical chain like a U87 or M49 into an 1176 and Fairchild. High-pass at 80 Hz; cut -2 dB at 280 Hz; boost +2 dB at 1.8 kHz and +3 dB at 4 kHz; shelf +2 dB at 12 kHz. First compressor: 4:1, 6 ms attack, 120 ms release, 3 dB GR. Second compressor: 2:1, 2 dB GR. Add a 2-second plate and automatic 0–3 dB rides on sustained notes. Preserve vibrato between 4.5–7 Hz.\n\nKnobs: Drama, Sustain, Vibrato Protect, Scene\nMacro: Final Scene increases level rides, plate and upper-mid focus\nPresets: Cinematic Lead, Theatrical Rock, Quiet Monologue",
+        "id": "vocalProfiles-39",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 40,
+        "name": "Spoken-Word Male Voice",
+        "p": "Profile: Poetry, narration, spoken interludes and cinematic monologues; bass through tenor; speech register; no vibrato; emphasis from timing, diction and dynamics.\n\nPlugin prompt — “Spoken Truth”\n\nBuild a natural spoken-word processor like an RE20 or U87. High-pass at 70 Hz; shelf +1 dB at 120 Hz; cut -2.5 dB at 250 Hz; diction +2 dB at 2.5 kHz; de-ess from 5.5–8 kHz. Remove mouth clicks lasting 0.2–8 ms. Compress at 3:1, 12 ms attack, 150 ms release, 3–5 dB GR. Add a 0.3-second room at 3% mix and a -1 dBTP output limiter.\n\nKnobs: Truth, Proximity, Diction, Stillness\nMacro: Documentary increases intelligibility, level consistency and subtle room\nPresets: Poetry Close, Documentary, Dark Monologue\nUniversal Male Vocal Artifact-Removal Plugin",
+        "id": "vocalProfiles-40",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 41,
+        "name": "Vocal Artifact Surgeon",
+        "p": "Create an adaptive restoration plugin specifically for generated or stem-separated male vocals.\n\nStage 1 — Rumble and plosives: Use a variable high-pass filter from 25–120 Hz. Detect plosives in the 20–160 Hz region with 5 ms attack, 80 ms release and maximum 6 dB reduction.\n\nStage 2 — Click/crackle repair: Detect discontinuities from 0.1–8 ms. Interpolate only the damaged samples and preserve consonant attacks.\n\nStage 3 — De-warble: Analyze pitch stability over a 60–350 ms window. Correct unintended motion up to ±25 cents while protecting intentional vibrato between 4.5–7.5 Hz.\n\nStage 4 — De-swirl: Smooth watery spectral movement from 1.5–9 kHz with adjustable 0–60% strength. Never flatten the complete vocal spectrum.\n\nStage 5 — Metallic resonance control: Use dynamic notches from 2.2–6.5 kHz, Q 6–14, maximum -5 dB reduction.\n\nStage 6 — Phantom-voice suppression: Preserve the center lead. Gate side-channel vocal energy from 250 Hz–6 kHz at -38 dB threshold, 5 ms attack and 220 ms release. Preserve stereo air above 9 kHz.\n\nStage 7 — Ghost syllable detector: Identify repeated or overlapping fragments occurring 20–150 ms after the original consonant. Attenuate them by 3–12 dB without shortening the real word.\n\nStage 8 — Tail cleanup: Reduce generated reverb decay by 20–60%; use a -48 dB tail threshold and 250 ms release.\n\nStage 9 — Final protection: Apply transparent de-essing from 5–9 kHz and a -1 dBTP limiter.\n\nControls\nDe-Click\nDe-Plosive\nDe-Warble\nDe-Swirl\nMetal Remover\nGhost Voice\nTail Shorten\nLead Protect\nNatural Blend\nArtifact Solo\nMacros\nRestore controls the overall depth of every restoration stage\nLead Protect reduces processing around fundamentals, consonants and intentional vibrato\nNatural blends back untreated material while keeping clicks and phantom voices removed\nPresets\nGentle Male Vocal Polish\nGenerated Vocal Rescue\nStem Separation Cleanup\nRemove Phantom Backers\nHeavy Artifact Repair\nIndustrial Vocal Safe\nIntimate Vocal Protect\nRecommended starting point\nDe-Click: 45%\nDe-Plosive: 30%\nDe-Warble: 25%\nDe-Swirl: 30%\nMetal Remover: 35%\nGhost Voice: 55%\nTail Shorten: 25%\nLead Protect: 80%\nNatural Blend: 20%\nRestore macro: 40–50%\nSuno artifact-removal/regeneration prompt\n\nUse this when creating an alternate vocal take:\n\nRegenerate only the solo male lead vocal as a clean, isolated, studio-recorded stem. Preserve the original melody, timing, register, emotional dynamics, diction and phrase lengths. Remove watery spectral artifacts, metallic ringing, digital warble, unstable formants, clipped consonants, repeated syllables, phantom harmonies, background voices, smeared transients, excessive breath noise and artificial reverb. Complete every word naturally. One singer only, center-focused, dry and artifact-free. No choir, chant, crowd, gang vocal, call-and-response, live ambience or newly generated backing singers.\n\nFor clips where reverb or delay is the main problem, Suno Studio’s official Remove FX command can generate a drier version before export and external processing. \n1\n\nMale Vocal Autopilot Plugin",
+        "id": "vocalProfiles-41",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 42,
+        "name": "Solo Male Vocal Engineer",
+        "p": "Create an adaptive male-vocal mixing plugin that listens to at least three seconds of incoming audio before processing.\n\nDetect bass, bass-baritone, baritone, high baritone, tenor or head-dominant vocal behavior.\nDetect whether the performance is spoken, rapped, sung, whispered, belted or intentionally distorted.\nAuto-gain the input to approximately -18 dBFS average with peaks between -10 and -6 dBFS.\nSet the high-pass filter automatically between 45–120 Hz.\nUse dynamic EQ for mud from 180–450 Hz, honk from 700 Hz–1.4 kHz, harshness from 2.5–6 kHz and sibilance from 5–9 kHz. Never cut more than 5 dB per band.\nSelect compression automatically: 2–3 dB GR for intimate singing, 4–6 dB for pop and rap, or 6–10 dB for distorted rock.\nDetect BPM and choose 1/16, 1/8, dotted-1/8 or 1/4-note delay.\nSelect a room between 0.25–0.9 seconds, plate between 1.1–2.5 seconds or remain completely dry.\nDetect artifacts before compression so generated noise is not made louder.\nPrevent additional voices, chant-like layers and side-channel phantom vocals.\nFinish with an output ceiling of -1 dBTP.\nAutopilot macros\nClean: artifact removal and resonance suppression\nCharacter: clean console to tube/tape saturation\nEmotion: dynamic range and automation intensity\nEdge: clean to distorted\nSpace: dry to cinematic\nEngineer: overall processing amount\nPresets\nFull Auto Male Vocal\nAuto Pop Tenor\nAuto Trap Vocal\nAuto Dry Rap\nAuto Intimate Baritone\nAuto Folk Natural\nAuto Rock Dynamic\nAuto Industrial\nAuto Artifact Rescue\nUniversal male-vocal morph plugin",
+        "id": "vocalProfiles-42",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 43,
+        "name": "Male Voice Laboratory",
+        "p": "Build a same-source male-vocal morph processor. Do not synthesize additional singers. Provide:\n\nWeight: low shelf centered between 90–180 Hz, ±4 dB\nRegister Focus: chest resonance at 120–350 Hz to head resonance at 1.5–4 kHz\nFormant: -3 to +3 semitones without changing musical pitch\nAir: shelf from 8–16 kHz, ±5 dB\nEdge: clean to tube, tape, transistor and controlled digital distortion\nTune: 0–80 ms correction speed\nHuman: 0–100% timing, pitch-transition and vibrato preservation\nDistance: dry close vocal to 2.5-second plate\nEra: 1950s tube, 1970s tape, 1990s digital or modern clean\n\nAdd a master macro called Identity that coordinates formant, weight, resonance and saturation while keeping the performance recognizable and natural.\n\nHybrid presets\nBass-Baritone Crooner\nIntimate Folk Baritone\nPop High Baritone\nSilky R&B Tenor\nHard-Tuned Trap Tenor\nDry Rap Authority\nGrunge Gravel\nIndustrial Dynamic\nClean-to-Scream\nElectronic Formant\nTheatrical Baritenor",
+        "id": "vocalProfiles-43",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      }
+    ],
+    "industrialVocals": [
+      {
+        "n": 1,
+        "name": "Close Whisper Intro Plugin",
+        "p": "Use: intros, breakdowns, threatening soft passages, breath-heavy lines.\n\nPrompt\n\nCreate a mono vocal plugin called “Close Whisper Frame.” Base it on a Neumann U87 into a Neve 1073 and LA-2A-style opto compressor.\nAdd a high-pass filter at 70 Hz, 18 dB/oct.\nEQ: +2 dB at 180 Hz (Q 0.8), -2.5 dB at 420 Hz (Q 1.4), +1.5 dB at 4.8 kHz (Q 1.1), high shelf +2 dB at 11 kHz.\nCompressor: Peak Reduction for 3–5 dB gain reduction, with a smooth opto response.\nAdd a de-esser at 6.4 kHz, threshold for 2–4 dB reduction only on sharp consonants.\nAdd a tiny room reverb like a dead vocal booth, 0.45 s decay, 8 ms pre-delay, 8% wet.\nAdd a tape hiss control capped at -36 dB below vocal peak.\nMacro knobs:\n\nIntimacy = boosts 180 Hz, lowers room mix, and adds slight proximity effect\nBreath Focus = raises 4.8 kHz, de-esser threshold, and air shelf together\nPresets: Threat Whisper, Confessional, Needle Close.\nKeep it single-voice and dry-centered.\n\nRefine\n\n“Make the breaths smoother and reduce mouth noise above 7 kHz.”\n“Darken the whisper and shorten the room to 0.25 s.”",
+        "id": "industrialVocals-1",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 2,
+        "name": "Warm Chest Verse Plugin",
+        "p": "Use: low/mid-register verse delivery, controlled emotional sections.\n\nPrompt\n\nCreate a vocal chain plugin called “Rust Belt Chest.” Model it like a U87 into Neve 1073 into Tube-Tech CL 1B.\nHPF: 75 Hz, 18 dB/oct.\nEQ: +1.5 dB at 160 Hz (Q 0.9), -2 dB at 320 Hz (Q 1.2), +2 dB at 3.2 kHz (Q 0.9), high shelf +1.5 dB at 10.5 kHz.\nCompressor: ratio 3:1, attack 8 ms, release 85 ms, target 4–6 dB gain reduction.\nAdd console saturation with Drive 6% and Output Trim -1.5 dB.\nAdd a mono ambience send like a small live room muted down, 0.55 s decay, 10 ms pre-delay, 7% wet.\nMacro knobs:\n\nWarmth = increases 160 Hz, lowers 3.2 kHz, reduces saturation brightness\nPush = lowers threshold, raises 3.2 kHz, adds 1 dB at 1.6 kHz\nPresets: Factory Verse, Muted Pressure, Overdub Warm.\n\nRefine\n\n“Make the chest resonance tighter; pull 250–350 Hz down another 1.5 dB.”\n“Add more edge around 2.5 kHz without adding sibilance.”",
+        "id": "industrialVocals-2",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 3,
+        "name": "Aggressive Midrange Verse Plugin",
+        "p": "Use: spoken-sung lines, attack-heavy verse, pre-chorus tension.\n\nPrompt\n\nCreate a vocal processor called “Steel Throat Verse.” Base it on an SM7B into 1176-style compressor into SansAmp-style saturation.\nHPF: 90 Hz, 24 dB/oct.\nEQ: -2 dB at 240 Hz (Q 1.3), +3 dB at 1.8 kHz (Q 1.1), +2.5 dB at 4.2 kHz (Q 1.0), low-pass at 14 kHz.\nCompressor: ratio 4:1, attack 3 ms, release 55 ms, target 6–8 dB GR.\nSaturation: Drive 14%, Tone 58%, Mix 22%.\nAdd a second stage clipper with Ceiling -1.0 dB, shaving only 1–2 dB peaks.\nMacro knobs:\n\nBite = boosts 1.8 kHz and 4.2 kHz, increases saturation drive\nRestraint = lowers clipper input, reduces 4.2 kHz, lengthens release to 80 ms\nPresets: Cutting Verse, Machine Nerve, Dry Aggression.\n\nRefine\n\n“Back off the fizz above 8.5 kHz.”\n“Let more transient consonants through; attack 6 ms.”",
+        "id": "industrialVocals-3",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 4,
+        "name": "High-Baritone Grit Plugin",
+        "p": "Use: heavier low-mid hooks, brooding lead, dark chorus stacks.\n\nPrompt\n\nCreate a vocal plugin called “Iron Baritone.” Use SM7B tone into API-style preamp into Distressor-style compression.\nHPF: 80 Hz.\nEQ: +2 dB at 140 Hz (Q 0.8), -2 dB at 380 Hz (Q 1.3), +2 dB at 1.4 kHz (Q 1.0), +1.5 dB at 3.5 kHz, LPF at 12.5 kHz.\nCompression: ratio 5:1, attack 6 ms, release 90 ms, 5–7 dB GR.\nAdd odd-harmonic saturation at 11% Drive.\nAdd a short plate like a dark EMT 140, 0.9 s decay, 14 ms pre-delay, 10% wet.\nMacro knobs:\n\nGravel = raises saturation and 1.4 kHz\nWeight = boosts 140 Hz, lowers 3.5 kHz, adds plate low-cut at 280 Hz\nPresets: Dark Lead, Steel Hook, Low Tension.\n\nRefine\n\n“Make it less boxy; cut 450 Hz another 2 dB.”\n“More throat, less fizz.”",
+        "id": "industrialVocals-4",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 5,
+        "name": "Tenor Belt Chorus Plugin",
+        "p": "Use: the huge lead chorus, sustained loud notes, dramatic peaks.\n\nPrompt\n\nCreate a lead vocal plugin called “Razor Belt.” Blend U87 clarity with 1176 into LA-2A serial compression, then add plate reverb like an EMT 140.\nHPF: 85 Hz.\nEQ: -2 dB at 300 Hz (Q 1.1), +2 dB at 2.2 kHz (Q 0.9), +3 dB at 5.1 kHz (Q 1.0), high shelf +2 dB at 12 kHz.\n1176 stage: ratio 4:1, attack 4 ms, release 60 ms, 3–5 dB GR.\nLA-2A stage: 2–3 dB additional leveling.\nPlate: 1.25 s decay, 22 ms pre-delay, 12% wet, HPF reverb at 250 Hz, LPF reverb at 7.5 kHz.\nAdd a dynamic harshness tamer centered at 3.8–5.5 kHz, max -3 dB when screaming.\nMacro knobs:\n\nLift = raises 5.1 kHz, shelf at 12 kHz, and plate send\nControl = deepens dynamic EQ and increases LA-2A reduction\nPresets: Wide Belt, Sustained Hook, Glass Pressure.\n\nRefine\n\n“Reduce harshness on sustained vowels at 4.5 kHz.”\n“Make the chorus more dry and forward.”",
+        "id": "industrialVocals-5",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 6,
+        "name": "Distorted Scream Plugin",
+        "p": "Use: scream accents, peak lines, breakdown explosions.\n\nPrompt\n\nCreate a scream-processing plugin called “Controlled Ruin.” Base it on SM7B into 1176-style aggression, split-band distortion, and industrial clipping.\nSplit bands at 180 Hz and 2.8 kHz.\nLow band: compress 4:1, attack 20 ms, release 110 ms.\nMid band: saturation Drive 22%, Tone 62%, emphasize 1.5–2.8 kHz.\nHigh band: clipper with Ceiling -1.5 dB, followed by low-pass at 9.2 kHz to remove fizz.\nAdd a dynamic notch at 3.9 kHz, max -4 dB, and de-ess at 6.8 kHz.\nAdd a short slap ambience: 65 ms mono delay, 7% mix.\nMacro knobs:\n\nTear = raises mid-band drive, clipper input, and 2.2 kHz presence\nSafety = deepens 3.9 kHz notch, lowers high-band clip, and tightens de-esser\nPresets: Short Burst, Sustained Scream, Broken Speaker.\n\nRefine\n\n“Keep the scream savage but reduce white-noise fizz.”\n“Make the low mids bigger so it doesn’t thin out.”",
+        "id": "industrialVocals-6",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 7,
+        "name": "Falsetto / Head Voice Lift Plugin",
+        "p": "Use: fragile lift notes, ghost chorus top layer, eerie contrast.\n\nPrompt\n\nCreate a vocal plugin called “Ghost Head.” Use U87-style brightness into optical compression with clean digital widening.\nHPF: 120 Hz.\nEQ: -2 dB at 500 Hz (Q 1.2), +2 dB at 3.5 kHz, +3 dB at 8.5 kHz, high shelf +2 dB at 12.5 kHz.\nCompression: ratio 2.5:1, attack 12 ms, release 120 ms, 3–4 dB GR.\nWidening: micro-pitch L -5 cents / R +5 cents, delays L 14 ms / R 19 ms, mix 18%.\nAdd a hall tail like a Lexicon-style short hall, 1.4 s decay, 26 ms pre-delay, 11% wet.\nMacro knobs:\n\nGlass = raises 8.5 kHz and widen mix\nFragility = reduces low mids, increases hall, slightly lowers compression threshold\nPresets: Air Lift, Ghost Top, Thin Halo.\n\nRefine\n\n“Narrow the width and reduce the 12.5 kHz shelf.”\n“Make it more haunting, less pretty.”",
+        "id": "industrialVocals-7",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 8,
+        "name": "Low Octave Support Plugin",
+        "p": "Use: hidden octave support under choruses, body without obvious doubling.\n\nPrompt\n\nCreate a vocal support plugin called “Sub Octave Shadow.” Duplicate the lead, pitch it -12 semitones, formant-correct only 40%, and filter it hard.\nHPF: 95 Hz.\nLPF: 2.2 kHz.\nEQ: +2 dB at 170 Hz, -3 dB at 400 Hz, -2 dB at 1.2 kHz.\nCompression: ratio 6:1, attack 10 ms, release 100 ms, 8 dB GR.\nSaturation: Drive 9%.\nBlend level default: -14 dB below lead.\nMacro knobs:\n\nShadow = raises octave level and 170 Hz\nClarity = lowers 400 Hz and octave mix while increasing LPF to 2.8 kHz\nPresets: Hidden Weight, Chorus Floor, Dark Underlay.\n\nRefine\n\n“Make the octave less audible as a separate voice.”\n“Tighten the mud between 180 and 350 Hz.”",
+        "id": "industrialVocals-8",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 9,
+        "name": "Tight Double Tracker Plugin",
+        "p": "Use: lead thickening without gang-vocal feel.\n\nPrompt\n\nCreate a doubler plugin called “Mono Twin Tight.” No chorus effect, no crowd spread.\nDuplicate the vocal twice.\nDelay times: Left 11 ms / Right 17 ms.\nDetune: Left -4 cents / Right +4 cents.\nHPF doubles at 140 Hz.\nLPF doubles at 8.8 kHz.\nCompress doubles 3:1, attack 5 ms, release 70 ms.\nBlend doubles at -12 dB relative to lead.\nWidth cap: 35% max.\nMacro knobs:\n\nThickness = raises double level and widens to max 35%\nFocus = darkens doubles and lowers width\nPresets: Tight Lead, Dense Hook, Hidden Double.\n\nRefine\n\n“Collapse the doubles more toward center.”\n“Make it thicker but never like group vocals.”",
+        "id": "industrialVocals-9",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 10,
+        "name": "Robotic Pitch Layer Plugin",
+        "p": "Use: 90s industrial digital layer, unnatural but musical.\n\nPrompt\n\nCreate a vocal effect called “Pitch Machinery.” Blend a clean lead with a processed pitch-shift layer.\nAdd one duplicate at +7 semitones, formant shift -2, and filter it between 300 Hz and 4.5 kHz.\nAdd another duplicate at -5 semitones, formant shift +1, filter 160 Hz to 2.8 kHz.\nMain processed layers should be -16 dB and -18 dB below the lead.\nAdd digital distortion Drive 12% and bit reduction to 14-bit only on the processed layers.\nAdd a stereo delay: 1/8 note, feedback 12%, mix 8%.\nMacro knobs:\n\nMachine = raises processed layers, distortion, and delay mix\nHuman = lowers bit reduction, lowers pitch-layer level, and narrows width\nPresets: Cold Double, Digital Vein, Processed Hook.\n\nRefine\n\n“Make it less sci-fi and more damaged analog-digital.”\n“Remove any chipmunk edge from the upper shifted layer.”",
+        "id": "industrialVocals-10",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 11,
+        "name": "Telephone / PA Bridge Plugin",
+        "p": "Use: verse flips, industrial bridge, radio-transmitted lines.\n\nPrompt\n\nCreate a vocal plugin called “Factory Intercom.” Model it like a band-limited megaphone/PA tone with controlled grit.\nBand-pass from 240 Hz to 4.2 kHz.\nBoost 1.6 kHz by +3 dB, 2.8 kHz by +2 dB, cut 500 Hz by -3 dB.\nCompression: ratio 8:1, attack 2 ms, release 45 ms.\nSaturation: Drive 16%.\nAdd a short room reflection 0.22 s decay, 0 ms pre-delay, 5% wet.\nOptional flutter: 0.15% wow, 0.05% flutter.\nMacro knobs:\n\nIntercom = narrows bandwidth and raises 1.6 kHz\nDamage = increases saturation and flutter\nPresets: PA Break, Radio Threat, Narrow Bridge.\n\nRefine\n\n“Make it more midrangy and less lo-fi.”\n“Take out the toy-like distortion.”",
+        "id": "industrialVocals-11",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 12,
+        "name": "Sustained Note Wall Plugin",
+        "p": "Use: long held notes that bloom into huge automated moments.\n\nPrompt\n\nCreate a sustain-enhancement plugin called “Wall Bloom.” Start with 1176 into LA-2A serial compression, then add filtered plate and parallel distortion.\nEQ: -2 dB at 320 Hz, +2 dB at 2.5 kHz, +2.5 dB at 6 kHz, shelf +1.5 dB at 12 kHz.\n1176: ratio 4:1, attack 5 ms, release 80 ms, 4 dB GR.\nLA-2A: 2–4 dB leveling.\nParallel distortion send: HPF 220 Hz, LPF 6.5 kHz, saturation Drive 18%, return at -15 dB.\nPlate: 1.8 s decay, 28 ms pre-delay, HPF 300 Hz, LPF 7 kHz, 12% wet.\nMacro knobs:\n\nBloom = raises plate send and parallel distortion return\nHold = increases LA-2A reduction and extends release feel\nPresets: Long Cry, Chorus Hold, Wide Sustain.\n\nRefine\n\n“Shorten the tail and keep the held note more centered.”\n“Make the sustain wider but still solo-voice.”",
+        "id": "industrialVocals-12",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 13,
+        "name": "Breath and Silence Automation Plugin",
+        "p": "Use: “the vocal IS the production” moments, mutes, sharp entrances, dead stops.\n\nPrompt\n\nCreate an automation-focused vocal plugin called “Silence to Impact.”\nAdd an intelligent gate with attack 1 ms, hold 35 ms, release 120 ms, threshold tuned so room tone disappears between phrases without chopping breath endings.\nAdd transient emphasis on phrase entries: +1.5 dB at 2.8 kHz for first 80 ms of each phrase.\nAdd optional phrase-end ducking: -1.5 dB over 90 ms before silence.\nAdd a reverse swell send option: 250 ms reverse tail, filtered 500 Hz to 6 kHz.\nMacro knobs:\n\nCut Black = deepens gate and shortens release\nImpact = increases phrase-entry transient presence and reverse swell\nPresets: Hard Mute, Jump Cut Entry, Breath Edge.\n\nRefine\n\n“Make the gate less obvious.”\n“More shock contrast between silence and entry.”",
+        "id": "industrialVocals-13",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 14,
+        "name": "Artifact Remover for Harsh AI/Digital Problems",
+        "p": "Use: warble, fizz, watery highs, phasey edges, crunchy consonants.\n\nPrompt\n\nCreate a restoration plugin called “Artifact Surgeon.” Blend spectral de-noise, dynamic resonance suppression, and phase repair.\nTarget zones: 2.7–4.3 kHz for harsh digital edge, 7.5–10.5 kHz for fizz, and above 12 kHz for phasey air smear.\nDynamic cuts should range from -2 dB to -6 dB depending on severity.\nAdd de-click for mouth ticks at 2–12 ms events.\nAdd low-end cleanup with HPF 65 Hz and sub-rumble gate below 50 Hz.\nAdd transient recovery so cleaned vocals do not go dull.\nMacro knobs:\n\nDe-Warble = increases spectral smoothing and 2.7–4.3 kHz suppression\nRestore Edge = adds transient recovery and eases top-end cuts\nPresets: Phase Repair, Vocal De-Gunk, Digital Scar Cleanup.\n\nRefine\n\n“Keep the vocal bright; undo 1.5 dB of top-end reduction.”\n“Focus more on watery highs than mid harshness.”",
+        "id": "industrialVocals-14",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 15,
+        "name": "Sibilance and Harshness Tamer",
+        "p": "Use: loud belts and screams that stab too hard.\n\nPrompt\n\nCreate a vocal dynamics plugin called “Needle Tamer.”\nAdd split-band control with one band at 5.5–7.2 kHz for sibilance and another at 2.8–4.6 kHz for scream harshness.\nSibilance band max reduction: -5 dB.\nHarshness band max reduction: -3 dB.\nAttack 0.5 ms, release 45 ms on sibilance; attack 5 ms, release 70 ms on harshness.\nAdd a post-band air shelf at 11.5 kHz +1 dB so de-essing doesn’t sound dull.\nMacro knobs:\n\nTame S = deepens 5.5–7.2 kHz reduction\nSmooth Rage = deepens 2.8–4.6 kHz reduction and lowers clipper drive\nPresets: Sharp S Fix, Scream Smooth, Bright but Safe.\n\nRefine\n\n“Keep consonants aggressive but remove needle pain.”\n“Only tame the top when he really leans in.”",
+        "id": "industrialVocals-15",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 16,
+        "name": "Full Auto-Pilot Vocal Brain",
+        "p": "Use: one-plugin adaptive chain.\n\nPrompt\n\nCreate a fully automatic vocal plugin called “Adaptive Male Vocal Brain.” It must listen to the incoming vocal and switch behavior between whisper, chest verse, aggressive verse, belt, and scream without manual intervention.\nInternal clean chain should resemble U87 > 1073 > CL 1B.\nInternal aggressive chain should resemble SM7B > 1176 > saturation.\nThe plugin must detect phrase intensity, spectral brightness, sibilance density, and sustain length.\nAutomatic rules:\n\nif quiet/intimate: use HPF 70 Hz, soft opto compression, low room send\nif chest verse: use HPF 75–85 Hz, 3:1 compression, slight 3 kHz push\nif aggressive verse: engage saturation 10–16%, 4:1 compression, reduce 250–350 Hz\nif belt: add dynamic harshness control at 3.8–5.5 kHz, plate 1.1–1.4 s\nif scream: split-band saturation, low-pass highs around 9–10 kHz, deeper de-ess\nGlobal knobs:\nIntensity = more compression, saturation, and presence\nStability = more de-ess, artifact control, and transient management\nDistance = dry/close to wider/processed\nPresets: Auto Verse, Auto Full Range, Auto Scream Safe.\nKeep it mono-compatible, chant-free, and studio-tight.\n\nRefine\n\n“Make the auto mode less bright in whispers.”\n“Let the scream mode stay ugly, but stop the fizzy top.”",
+        "id": "industrialVocals-16",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      }
+    ],
+    "genreBlueprints": [
+      {
+        "n": 1,
+        "name": "Pop Radio Vocal Chain",
+        "p": "Build a vocal channel strip plugin. Stage 1: high-pass filter at 90 Hz, 12 dB/oct. Stage 2: subtractive EQ — cut 2.5 dB at 300 Hz (Q 1.4) for mud, cut 4 dB at 4.2 kHz (Q 3.0) for harshness. Stage 3: compressor like an LA-2A — slow optical attack (~10 ms), auto release, 3:1 ratio, 4–6 dB gain reduction. Stage 4: a second faster compressor like an 1176 at 4:1, attack 3 ms, release 250 ms, catching 2–3 dB peaks. Stage 5: air shelf +3 dB at 12 kHz like a Maag EQ4 \"Air Band.\" Knobs: Body, De-Mud, Smooth, Air, Drive. Add a macro knob called \"Radio\" that simultaneously raises Air, tightens both compressors, and adds 5% parallel saturation. Presets: \"Pop Radio,\" \"Ballad Soft,\" \"Dance Anthem.\"",
+        "id": "genreBlueprints-1",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 2,
+        "name": "Shimmer Halo\" (pop vocal reverb)",
+        "p": "Make a plate reverb like a vintage EMT 140 with pre-delay 80 ms, decay 1.8 s, low-cut at 250 Hz, high-cut at 9 kHz, plus a shimmer layer pitched +12 semitones at 20% blend. Knobs: Pre-Delay (0–200 ms), Decay (0.5–6 s), Shimmer, Width (0–150%), Duck (sidechained to input so reverb ducks 4 dB while vocal is active, releases in 300 ms). Presets: \"Dua Halo,\" \"Ballad Cathedral,\" \"Tight Booth.\"",
+        "id": "genreBlueprints-2",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 3,
+        "name": "Slap & Throw Delay",
+        "p": "Stereo delay: left 1/8 note, right 1/8 dotted, feedback 25%, ping-pong on. Filter the repeats: high-pass 400 Hz, low-pass 6 kHz, like a Roland Space Echo tape delay with 8% wow/flutter. Add a \"Throw\" button momentary mode for automating word-throws. Macro knob \"Vibe\": raises flutter, feedback, and saturation together. Presets: \"Pop Slap 120 BPM,\" \"Throw Ready,\" \"Dreamy 1/4.\"",
+        "id": "genreBlueprints-3",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 4,
+        "name": "Glass Keys Enhancer\" (for pop piano/keys)",
+        "p": "EQ + chorus for keys: bell boost +2 dB at 5 kHz (Q 1.0), high shelf +1.5 dB at 10 kHz, chorus like a Roland Juno-60 (rate 0.8 Hz, depth 25%, stereo spread 100%). Knobs: Glass, Warmth (low shelf at 200 Hz, ±4 dB), Motion, Width. Preset: \"Piano Ballad,\" \"Synthwave Keys.\"",
+        "id": "genreBlueprints-4",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 5,
+        "name": "Pop Bass Glue",
+        "p": "Bass plugin: mono below 120 Hz, saturation like an Ampeg tube preamp on 700 Hz–2 kHz only, compressor 4:1 with 30 ms attack / 100 ms release, sidechain input from the kick with 3 dB duck, release timed to 1/8 note at project BPM. Knobs: Sub Mono, Grit, Glue, Duck Depth.",
+        "id": "genreBlueprints-5",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 6,
+        "name": "Bus Finisher",
+        "p": "Mix-bus plugin like an SSL G-series bus compressor: ratio 2:1, attack 30 ms, release auto, 1–2 dB gain reduction, plus tape saturation like a Studer A800 at 15 ips, and a stereo widener above 8 kHz only. Macro knob \"Finish\" scales all three. Presets: \"Pop Radio Glue,\" \"EDM Pump\" (release 0.1 s), \"Gentle Ballad.\"\n\n🔥 TRAP",
+        "id": "genreBlueprints-6",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 7,
+        "name": "Trap Ready Vocal Chain",
+        "p": "Vocal chain: high-pass 100 Hz; hard autotune-style pitch correction, retune speed 0–10 ms, scale-locked; compressor like a CLA-76 all-buttons-in, attack 1 ms, release 200 ms, 6–8 dB GR; de-esser centered 6–8 kHz; presence boost +4 dB at 3 kHz; saturation like a distressor at 10% mix. Knobs: Tune Speed, Slam, Ess Control, Cut, Heat. Macro knob \"Drip\": increases autotune sharpness, presence, and stereo doubler width together. Presets: \"Trap Ready,\" \"Melodic Auto,\" \"Aggressive Ad-Lib.\"",
+        "id": "genreBlueprints-7",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 8,
+        "name": "Dark Bounce Verb",
+        "p": "Small dark room reverb — decay 0.6 s, pre-delay 20 ms, high-cut 4 kHz, like an old Lexicon PCM60 \"small room\" — plus a parallel 1/16-note slapback at 15% mix. Duck the wet signal 6 dB via sidechain from the dry vocal. Knobs: Room, Dark, Bounce, Duck. Presets: \"Booth Tight,\" \"Underwater Hook.\"",
+        "id": "genreBlueprints-8",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 9,
+        "name": "808 Commander\" ⭐ (the essential one)",
+        "p": "Build an 808 processor: Stage 1 — glide/pitch snap control. Stage 2 — saturation like a driven Neve 1073 preamp adding harmonics at 60–250 Hz so the 808 reads on small speakers. Stage 3 — low shelf +3 dB at 45 Hz, tight high-pass at 25 Hz to remove rumble. Stage 4 — limiter with 0.1 ms lookahead. Sidechain input from kick, duck 5 dB, attack 0.5 ms, release 60 ms. Knobs: Sub, Knock (transient at 100–200 Hz), Grill (distortion), Phone (small-speaker harmonics), Tail (sustain envelope). Presets: \"Memphis Knock,\" \"Melodic Glide,\" \"Distorted Rage.\"",
+        "id": "genreBlueprints-9",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 10,
+        "name": "Hi-Hat Machine",
+        "p": "Hat processor: transient shaper +6 dB attack, high-pass 500 Hz, top-end exciter like an Aphex Aural Exciter above 10 kHz, auto-pan LFO synced to 1/16 notes with depth control, pitch knob ±12 semitones. Knobs: Snap, Sizzle, Travel, Pitch. Presets: \"Rolls & Stutters,\" \"Dark Hats.\"",
+        "id": "genreBlueprints-10",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 11,
+        "name": "Snare Crack",
+        "p": "Snare/clap plugin: transient attack +8 dB (10 ms window), EQ bump +3 dB at 200 Hz (body) and +4 dB at 5 kHz (crack), short bright plate reverb 0.4 s decay, gated at -30 dB threshold like an 80s gated snare. Knobs: Body, Crack, Splash, Gate.",
+        "id": "genreBlueprints-11",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 12,
+        "name": "Dark Melody Texture",
+        "p": "For trap melodies (bells, keys, flutes): pitch wobble like a warped VHS tape (±8 cents, 0.3 Hz), low-pass at 8 kHz, vinyl noise layer at -35 dB, reverb 4 s decay 100% wet at 25% mix, sidechain-ducked to the 808. Knobs: Warp, Age, Ghost, Duck. Presets: \"Memphis Phonk,\" \"Ambient Trap.\"\n\n🎙️ RAP (boom-bap / modern hip-hop)",
+        "id": "genreBlueprints-12",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 13,
+        "name": "Front & Center Rap Vocal",
+        "p": "Rap vocal chain, minimal tuning: high-pass 80 Hz; EQ +2 dB at 120 Hz (chest), cut 3 dB at 400 Hz, +3 dB at 5 kHz (diction); compressor like an 1176 at 8:1, attack 5 ms, release 150 ms, 5 dB GR; parallel compression bus crushed 12 dB blended at 30%; tape saturation at 15%. Knobs: Chest, Clarity, Punch, Crush Blend, Tape. Macro \"In Your Face\": raises Punch + Crush + Clarity. Presets: \"Boom Bap 90s,\" \"Modern Clean,\" \"Lo-Fi Mic.\"",
+        "id": "genreBlueprints-13",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 14,
+        "name": "Doubles & Ad-Lib Widener",
+        "p": "Ad-lib plugin: micro-pitch doubler (±9 cents, 15 ms delay L/R) like an Eventide H3000 preset, telephone EQ mode (band-pass 800 Hz–3 kHz) on a toggle, pan spread knob. Knobs: Wide, Phone, Spread, Blend. Presets: \"Stacked Hook,\" \"Left-Right Ad-Libs.\"",
+        "id": "genreBlueprints-14",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 15,
+        "name": "Dusty Sampler\" (boom-bap drums/samples)",
+        "p": "Lo-fi processor like an SP-1200 / MPC60: 12-bit reduction, 26 kHz downsample, low-pass 7.5 kHz, vinyl crackle layer, slight swing-feel transient softening. Knobs: Bits, Dust, Filter, Era (morphs 1988→1995→2020). Presets: \"SP Dust,\" \"Golden Era,\" \"Clean Modern.\"",
+        "id": "genreBlueprints-15",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 16,
+        "name": "Boom Bap Drum Bus",
+        "p": "Drum bus: compressor like an API 2500 (ratio 4:1, attack 10 ms, release 100 ms, \"thrust\" HPF on detector at 100 Hz), +2 dB at 60 Hz, +2 dB at 8 kHz, parallel drive blend. Knobs: Slam, Boom, Snap, Blend. Presets: \"Head Nod,\" \"Hard NY.\"",
+        "id": "genreBlueprints-16",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 17,
+        "name": "Upright Bassline Warmer",
+        "p": "For rap basslines: like an LA-2A on bass — slow optical compression 3–5 dB GR, tube warmth at 80–200 Hz, mono-maker below 150 Hz. Knobs: Warm, Even, Mono. Preset: \"Q-Tip Low End.\"\n\n🕯️ INTIMATE (bedroom / acoustic / lo-fi soul)",
+        "id": "genreBlueprints-17",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 18,
+        "name": "Whisper Close Vocal",
+        "p": "Intimate vocal chain: gentle high-pass at 70 Hz; proximity boost +2.5 dB at 180 Hz like singing close to a Neumann U47; compressor like an LA-2A, 2–3 dB GR only, slow and invisible; de-esser 7 kHz, gentle; breath enhancer (upward expansion above 8 kHz, +2 dB). NO hard tuning. Knobs: Close, Silk, Breath, Ease. Macro \"Candlelight\": adds warmth, softens the top, raises breath detail. Presets: \"Bedroom 2AM,\" \"Billie Whisper,\" \"Acoustic Session.\"",
+        "id": "genreBlueprints-18",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 19,
+        "name": "Small Room Truth",
+        "p": "Reverb like a real wooden room — convolution-style, decay 0.9 s, pre-delay 12 ms, early reflections prominent, high-cut 6 kHz. Second mode: spring reverb like a Fender tank at 20% mix. Knobs: Room Size, Wood, Spring, Distance. Presets: \"Living Room,\" \"Chapel Soft,\" \"Tape Room.\"",
+        "id": "genreBlueprints-19",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 20,
+        "name": "Fingerpick Focus\" (acoustic guitar)",
+        "p": "Acoustic guitar plugin: cut 3 dB at 250 Hz (boom), notch -4 dB at 2.8 kHz (string squeak zone, Q 5), +2 dB at 10 kHz shimmer, compressor 2:1, attack 25 ms, release 200 ms, subtle tape flutter 0.2%. Knobs: De-Boom, Squeak Tame, Sparkle, Flutter. Presets: \"Fingerstyle Close,\" \"Strummed Wide.\"",
+        "id": "genreBlueprints-20",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 21,
+        "name": "Felt Piano Maker",
+        "p": "Piano intimacy plugin: low-pass 6 kHz, mechanical key noise layer at -30 dB, tape wobble ±6 cents at 0.5 Hz, compressor squashing to 4 dB dynamic range like a heavily-limited Nils Frahm recording. Knobs: Felt, Mechanics, Wobble, Hug. Presets: \"Felt & Tape,\" \"Rainy Window.\"",
+        "id": "genreBlueprints-21",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 22,
+        "name": "\"Wooden Room Lead Vocal\" (folk)",
+        "p": "Build a folk lead vocal chain for ONE solo voice only — no background vocals, no group vocals, no crowd, no audience ambience. High-pass 85 Hz; ribbon-mic tone like an RCA 77 (smooth roll-off above 12 kHz, warm 200 Hz lift); compressor like a Fairchild 670, 2:1, slow attack, 3 dB gain reduction; plate reverb 1.4 s decay, pre-delay 40 ms, 12% mix. Knobs: Ribbon, Round, Plate, Honesty (raw-signal blend 0–100%). Presets: \"Solo Warm,\" \"Harvest Close,\" \"Solo Hall.\"",
+        "aliases": [
+          "Campfire Lead Vocal"
+        ],
+        "id": "genreBlueprints-22",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 23,
+        "name": "\"Solo Double Blender\" (folk/pop)",
+        "p": "Create a single-voice thickener that never adds new voices — it only duplicates the existing dry vocal. Micro-pitch double at ±7 cents, 12 ms L / 18 ms R delay like an Eventide H3000 micro-shift, mid-side EQ (sides +2 dB at 3 kHz, mid untouched), width capped at 110%, bus compressor 2:1 slow glue, subtle tape hiss for era feel. Explicitly exclude: choir, chant, group vocal, crowd layers. Knobs: Double, Wide, Era, Glue. Presets: \"Thick Solo,\" \"Duet Illusion (still one singer).\"",
+        "aliases": [
+          "Harmony Stack Blender"
+        ],
+        "id": "genreBlueprints-23",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 24,
+        "name": "Banjo/Mandolin Tamer",
+        "p": "Cut harsh pluck at 3.5 kHz (-4 dB, Q 3), body boost +2 dB at 300 Hz, fast compressor 4:1, attack 8 ms to catch pluck transients, spring reverb 15%. Knobs: Pluck Tame, Body, Boing, Sit Back.",
+        "id": "genreBlueprints-24",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 25,
+        "name": "Fiddle Silk",
+        "p": "Violin/fiddle plugin: de-harsh dynamic EQ at 2.5–4 kHz (triggers above -18 dB), warm shelf +2 dB at 250 Hz, hall reverb 2.2 s like a stone church convolution. Knobs: Silk, Rosin, Hall, Distance.",
+        "id": "genreBlueprints-25",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 26,
+        "name": "\"Studio Thump\" (folk percussion)",
+        "p": "Build a percussion weight plugin for close-miked studio drums only — no room crowd, no group claps, no live-audience character. Heavy parallel compression like smashed ribbon room mics (10:1, 20 dB GR, blended 40%), +3 dB at 80 Hz for low thump weight, transient shaper +4 dB attack in a 15 ms window, high-cut at 10 kHz to keep it dark and dry. Knobs: Thump, Smash, Dry Blend, Dark. Presets: \"Floor Tom Weight,\" \"Dry Kick Boom.\"",
+        "aliases": [
+          "Stomp & Clap Room"
+        ],
+        "id": "genreBlueprints-26",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 27,
+        "name": "\"Basement Fusion\" (trap/pop/rock hybrid bus)",
+        "p": "Build a hybrid bus plugin for a trap/pop/rock fusion — fully studio-produced character, zero live-audience or crowd ambience. Parallel path A: 808-style sub enhancer below 100 Hz. Parallel path B: guitar-amp distortion like a Marshall JCM800 applied only to 500 Hz–4 kHz. Path C: clean pop sheen — high shelf +3 dB at 11 kHz. Glue with an SSL-style bus compressor, 2:1, 30 ms attack, auto release. Sidechain pump synced to 1/4 notes, depth 0–8 dB. Knobs: Sub Riot, Amp Rage, Gloss, Glue, Pump. Macro knob \"Polished↔Gritty\" morphs from huge glossy studio (long verb, wide) to raw small (dry, distorted, mono-leaning). Presets: \"Heavy Fusion,\" \"Pop Punk 808,\" \"Grunge Hook.\"",
+        "aliases": [
+          "Stadium Trapper\" (master hybrid bus)"
+        ],
+        "id": "genreBlueprints-27",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 28,
+        "name": "Hybrid Vocal Morph",
+        "p": "One vocal plugin with a 3-way morph knob: position A = \"Trap\" (hard tune, dark short verb, slam compression), position B = \"Pop\" (light tune, plate shimmer, air +3 dB at 12 kHz), position C = \"Rock\" (no tune, tape drive, slap delay 110 ms like a Zeppelin vocal). Crossfade smoothly between all three. Add a \"Scream Safe\" limiter at the end. Presets: \"Verse Trap→Hook Rock\" (automatable morph), \"All Gas.\"",
+        "id": "genreBlueprints-28",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 29,
+        "name": "Set-and-Forget AI Engineer",
+        "p": "Create an intelligent auto-mixing plugin that listens to the incoming audio and adapts continuously. It should: (1) detect the source type (vocal, 808, drums, guitar, keys) and load the right processing chain automatically; (2) auto-detect the project key and BPM and sync all delay times and duck-release values to the tempo; (3) run auto-gain-staging to hit -18 dBFS average into each stage; (4) apply dynamic EQ that only cuts resonances when they ring (mud 200–400 Hz, harshness 2–5 kHz, sibilance 5–9 kHz); (5) auto-select reverb size based on song energy — small room in verses, bigger plate in hooks; (6) auto-ride the compressor to keep 4–6 dB GR on vocals and 2 dB on buses; (7) match the tonal balance to the genre it detects. Give me only four macro knobs: Amount (0–100% of all processing), Character (clean digital ↔ analog tape/console), Space (dry ↔ lush), and Loud (streaming-safe -14 LUFS target on/off). Presets: \"Full Auto,\" \"Auto But Gentle,\" \"Auto Trap Bias,\" \"Auto Folk Bias.\" Everything else, decide yourself by listening.",
+        "id": "genreBlueprints-29",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 30,
+        "name": "\"Artifact Eraser\" (the main one)",
+        "p": "Build a restoration plugin that removes AI-generation artifacts from audio. Stage 1: spectral de-noise — learn the noise floor from the quietest 500 ms and subtract it, reduction 0–12 dB. Stage 2: de-swirl — detect and smooth metallic/watery phasing artifacts in the 2–8 kHz range using spectral smoothing, strength 0–100%. Stage 3: de-warble — pitch-stabilize wobbling sustained notes (correction window 50 ms, max ±15 cents). Stage 4: de-click/de-pop — remove transient glitches under 5 ms. Stage 5: aliasing cleaner — low-pass shimmer/fizz above 16 kHz with a smooth 24 dB/oct slope. Stage 6: mud-resonance suppressor — dynamic notch that only cuts 200–400 Hz when it rings above -20 dB. Knobs: De-Noise, De-Swirl, De-Warble, De-Click, De-Fizz, Focus. Macro knob \"Restore\" scales all six at once. Presets: \"Vocal Rescue,\" \"Full Mix Clean,\" \"Gentle Polish,\" \"Heavy Repair.\"",
+        "id": "genreBlueprints-30",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 31,
+        "name": "\"Ghost Voice Mute\" (kills phantom chants/backing vocals)",
+        "p": "Create a plugin that detects and suppresses unwanted background vocal artifacts — ghost harmonies, faint chants, phantom crowd murmurs, and residual backing-vocal bleed — while preserving the main lead voice. Use center-channel isolation: keep the mid signal intact, apply spectral gating to the side channels in the 300 Hz–5 kHz vocal band, threshold -35 dB, attack 5 ms, release 200 ms. Add a \"Lead Protect\" detector that never touches audio when only one voice is present. Knobs: Ghost Mute (0–100%), Side Gate Threshold, Lead Protect, Air Keep (preserves side content above 8 kHz for width). Presets: \"Solo Voice Only,\" \"Mute Phantom Chants,\" \"Light Cleanup.\"",
+        "id": "genreBlueprints-31",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 32,
+        "name": "\"Tail Cleaner\" (reverb/breath artifact edition)",
+        "p": "Build a plugin that tightens smeared AI reverb tails and breath artifacts: downward expander below -45 dB with 2:1 ratio, 10 ms attack, 300 ms release; de-breath detector on 1–4 kHz noise bursts between phrases, reduction 0–10 dB; reverb-tail shortener that ducks the ambience 6 dB whenever the dry signal stops. Knobs: Tighten, De-Breath, Tail Cut, Natural (blend). Presets: \"Dry It Up,\" \"Keep It Human.\"",
+        "id": "genreBlueprints-32",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 33,
+        "name": "The Ultimate Pop Vocal Polish",
+        "p": "Plugin Idea: The Ultimate Pop Vocal Polish\n\nThe Prompt: \"Create a custom vocal chain plugin that sounds like a Sony C800G microphone running into a Tube-Tech CL 1B compressor. Set the compressor to a 4:1 ratio, a quick 3ms attack, and a smooth 50ms release. Add a built-in EQ with a +3dB high shelf at exactly 10kHz for air, and a -2dB cut at 400Hz to remove mud. Create a macro knob called 'Sheen & Squeeze' that simultaneously increases the high shelf and lowers the compressor threshold. Include named presets: 'Pop Radio', 'Dua Whisper', and 'Solo Studio Lead'.\" (Replaced \"Boyband\" to prevent gang vocals)\nIteration Prompt (if needed): \"Make the saturation warmer by rolling off the absolute highs above 12kHz, and make the 'Sheen' macro a bit less aggressive.\"",
+        "id": "genreBlueprints-33",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 34,
+        "name": "Sub-Harmonic 808 Destroyer",
+        "p": "Plugin Idea: Sub-Harmonic 808 Destroyer\n\nThe Prompt: \"Build an 808 enhancer plugin modeled after a Thermionic Culture Vulture saturator blended with a dbx 120A subharmonic synthesizer. The sub-synth must target the 30Hz–60Hz frequency range. Include a 'Drive' knob that scales from 1% to 100% introducing 2nd and 3rd order harmonics. Create a macro knob named '808 Melt' that turns up the drive while slightly lowering the master output to volume-match. Include named presets: 'Trap Ready', 'Atlanta Sub', and 'Blown Trunk'.\"\nIteration Prompt (if needed): \"Add a sidechain input linked to the kick drum so the 808 automatically ducks by -6dB with a fast 10ms attack and 40ms release every time the kick hits.\"",
+        "id": "genreBlueprints-34",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 35,
+        "name": "Boom-Bap In-Your-Face Compressor",
+        "p": "Plugin Idea: Boom-Bap In-Your-Face Compressor\n\nThe Prompt: \"Generate a vocal compressor plugin that mimics an aggressive Urei 1176 with 'all buttons in', running through a vintage Neve 1073 preamp. Set default parameters to a lightning-fast attack (<1ms) and a fast release (50ms). Add an EQ module boosting +2.5dB at 5kHz for vocal presence. Add a single macro knob called 'Aggression' that pushes the preamp input gain while dropping the compressor threshold. Give me presets called '90s Boom Bap', 'Modern Drill', and 'Dry Center Vocal'.\" (Replaced \"Hype/Ad-lib\" to prevent background shouting)\nIteration Prompt (if needed): \"Slow the attack down to 3ms to let the sharp consonants of the rap delivery punch through before the compression clamps down.\"",
+        "id": "genreBlueprints-35",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 36,
+        "name": "ASMR Breath & Proximity Enhancer",
+        "p": "Plugin Idea: ASMR Breath & Proximity Enhancer\n\nThe Prompt: \"Design a vocal processor for intimate vocals. I want it to sound like a Neumann U47 tube mic into an optical LA-2A style compressor. It must include a dynamic EQ that automatically dips -3dB precisely between 4.5kHz and 7kHz only when sharp sibilance hits. Set the compressor to a slow 10ms attack to let breaths through. Add a macro knob named 'Proximity Effect' that gently boosts 120Hz while bringing up the noise floor with a subtle analog tape hiss. Presets: 'Bedtime Whisper', 'Isolated Whisper Room', and 'Raw Takes'.\" (Replaced \"Coffeehouse\" to prevent background chatter/live audience noise)\nIteration Prompt (if needed): \"The tape hiss is too loud. Turn the noise floor down by -12dB and make the tape saturation warmer and darker.\"",
+        "id": "genreBlueprints-36",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 37,
+        "name": "Acoustic Wood & Resonance Reverb",
+        "p": "Plugin Idea: Acoustic Wood & Resonance Reverb\n\nThe Prompt: \"Create an acoustic guitar plugin that combines a Pultec EQP-1A style equalizer with a vintage EMT 140 Plate Reverb. On the EQ side, boost 100Hz for body and 8kHz for string shimmer simultaneously. Set the plate reverb decay to 1.2 seconds, with a pre-delay of 25ms to separate the initial string pluck from the reverb tail. Add a macro knob called 'Wood Room Resonance' that controls the wet/dry mix and the EQ boosts at the same time. Include presets: 'Indie Folk', 'Appalachian Strings', and 'Dry Acoustic Cabin'.\" (Replaced \"Campfire\" to prevent sing-alongs and crackling fire noise)\nIteration Prompt (if needed): \"Lengthen the pre-delay to 45ms and roll off the low frequencies of the reverb tail below 250Hz so the mix doesn't get muddy.\"",
+        "id": "genreBlueprints-37",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 38,
+        "name": "The Genre-Bender Bus Strip",
+        "p": "Plugin Idea: The Genre-Bender Bus Strip\n\nThe Prompt: \"Create a hybrid mix bus plugin combining Trap, Pop, and Rock elements. It should behave like a Distressor compressor (6:1 ratio, 5ms attack, 100ms release) routed into a Marshall JCM800 cabinet simulator, finishing with a Lexicon 224 hall reverb (0.8s decay). Add an EQ with a drastic scoop of -4dB at 400Hz and a wide boost of +3dB at 3kHz. Give me a macro knob called 'Tight Control' that increases overdrive distortion, widens the stereo image by 15% above 5kHz, and shortens the reverb decay. Presets: 'Pop-Punk Trap', 'Studio 808 Rock', and 'Tight Hybrid Crush'.\" (Replaced \"Stadium\", \"Mosh\", and \"Riot\" to prevent live crowd chants and cheering)\nIteration Prompt (if needed): \"Bypass the cabinet simulator on frequencies below 150Hz so the Trap 808s and subs stay clean and don't distort.\"",
+        "id": "genreBlueprints-38",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 39,
+        "name": "The Sentient Mastering Engineer",
+        "p": "Plugin Idea: The Sentient Mastering Engineer\n\nThe Prompt: \"Create a sentient mastering plugin that runs entirely on auto-pilot. I want it to listen to the incoming audio in real-time, automatically identify the BPM and frequency balance, and dynamically adjust an internal SSL-style bus compressor (auto-release, 1.5:1 ratio), a FabFilter-style dynamic EQ to tame resonant harshness, and a true-peak limiter. It should feature only two main macro knobs: 'Loudness Target' (measured in LUFS from -14 to -7) and 'Spectral Balance' (sweeping from Dark/Warm to Bright/Modern). Include a preset called 'Auto-Magic'.\"\nIteration Prompt (if needed): \"It sounds too squashed. Ease up the limiting threshold by 2dB, slow down the SSL compressor attack to 30ms to let the transients breathe, and prioritize keeping the snare drum punchy.\"",
+        "id": "genreBlueprints-39",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 40,
+        "name": "AI Audio Purifier",
+        "p": "The Prompt: \"Create an audio restoration plugin modeled after a hybrid of iZotope RX Spectral De-noise and a Soothe2 dynamic resonance suppressor. Set it to automatically identify and dynamically cut -6dB of digital harshness in the 2.5kHz to 4kHz range, and remove high-frequency phase artifacts above 12kHz. Add a multi-band noise gate targeting frequencies below 200Hz with a fast 1ms attack and 200ms release to clean up low-end rumble. Create a macro knob called 'Artifact Cleanse' that simultaneously increases the depth of the dynamic EQ cuts and tightens the noise gate. Include named presets: 'De-Warble', 'Vocal De-Gunk', and 'Phase Repair'.\"\nIteration Prompt (if needed): \"The vocal sounds too muffled now. Ease up the high-frequency cuts above 12kHz by +3dB and add a subtle phase-alignment tool to bring the transients back into focus.\"",
+        "id": "genreBlueprints-40",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      }
+    ],
+    "productionGuides": [
+      {
+        "n": 1,
+        "name": "Solo male studio footer",
+        "p": "One solo male lead vocalist only, recorded in a controlled studio. No crowd, audience, choir, gang vocals, chants, group shouts, unison responses, call-and-response, sing-along passages, applause, stage bleed, concert ambience, or live-room wash. Avoid “hey,” “oh,” “whoa,” and audience-cue phrases. Do not generate additional singers. Any doubling must be made from the same dry lead through micro-delay or pitch shifting. Stable formants, complete consonants, clean phrase endings, no ghost syllables, watery phasing, metallic smear, digital warble, or phantom backing vocals.",
+        "id": "productionGuides-1",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 2,
+        "name": "Industrial vocal settings blueprint",
+        "p": "Vocal Role\tHPF\tKey EQ\tCompression\tSaturation\tSpace\nWhisper\t70 Hz\t+180 Hz, -420 Hz, +4.8 kHz\tOpto 3–5 dB GR\t0–3%\tRoom 0.45 s\nChest Verse\t75 Hz\t+160 Hz, -320 Hz, +3.2 kHz\t3:1, 8 ms, 85 ms\t6%\tRoom 0.55 s\nAggressive Verse\t90 Hz\t-240 Hz, +1.8 kHz, +4.2 kHz\t4:1, 3 ms, 55 ms\t14%\tNearly dry\nHigh Baritone Grit\t80 Hz\t+140 Hz, -380 Hz, +1.4 kHz\t5:1, 6 ms, 90 ms\t11%\tPlate 0.9 s\nTenor Belt\t85 Hz\t-300 Hz, +2.2 kHz, +5.1 kHz\tSerial comp\t4–8%\tPlate 1.25 s\nScream\t80–90 Hz equivalent\tsplit-band, notch 3.9 kHz\tmulti-stage\t22% mid band\t65 ms slap\nFalsetto\t120 Hz\t-500 Hz, +3.5 kHz, +8.5 kHz\t2.5:1, 12 ms, 120 ms\tvery low\tHall 1.4 s\nLow Octave\t95 Hz\t+170 Hz, -400 Hz\t6:1\t9%\tdry\nDoubles\t140 Hz on doubles\tdarkened above 8.8 kHz\t3:1\tnone/light\t11/17 ms\nPitch Layer\tfiltered 160/300 Hz up\tband-limited\tmoderate\t12%\t1/8 delay\nTelephone/PA\tband-pass 240–4.2k\t+1.6 kHz, +2.8 kHz\t8:1\t16%\ttiny room\nSustain Wall\t85 Hz\t-320 Hz, +2.5 kHz, +6 kHz\tserial comp\t18% parallel\tPlate 1.8 s",
+        "id": "productionGuides-2",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 3,
+        "name": "Industrial vocal suite and automation directions",
+        "p": "If you want one giant prompt that asks for the whole pack at once, use this:\n\nCreate a complete male vocal plugin suite for a 1990s industrial/alternative rock tenor/high-baritone with Chicago/Cleveland energy. Build separate plugins for: close whisper intro, warm chest verse, aggressive midrange verse, high-baritone grit, tenor belt chorus, distorted scream, falsetto/head voice lift, low octave support, tight double tracker, robotic pitch layer, telephone/PA bridge, sustained note wall, breath and silence automation, artifact remover, sibilance/harshness tamer, and full auto-pilot vocal brain.\nUse U87-style tone for clean overdubs and SM7B-style tone for aggression.\nInclude exact EQ frequencies, Q values, compressor ratios, attack/release times, saturation drive amounts, delay times, reverb decay and pre-delay values, and knob names.\nReference real sonic archetypes like 1176, LA-2A, Neve 1073, CL 1B, Distressor, SansAmp, EMT 140, Lexicon hall.\nAdd macro knobs that control multiple parameters at once.\nAdd named presets for every plugin.\nDesign all processing for single-voice, studio-isolated male vocals only.\nNo crowd, no chants, no gang vocals, no singalong layers, no audience ambience, no choir bloom.\nThe sound should move from warm and intimate in quiet parts to harsh, cut-forward, distorted, and dramatic in loud parts, with extreme automation, intentional silence, industrial texture, and no accidental mess.",
+        "id": "productionGuides-3",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 4,
+        "name": "Cleanup settings and recommended order",
+        "p": "Plugin\tRecommended Starting Settings\nWooden Room Lead (#22-R)\tRibbon roll-off from 12 kHz • 3 dB GR • Plate 1.4 s @ 12% • Honesty 15–25%\nSolo Double Blender (#23-R)\t±7 cents • 12/18 ms L/R • Width max 110% • Era 20%\nStudio Thump (#26-R)\tSmash 10:1, 20 dB GR • Dry Blend 60% • Thump +3 dB @ 80 Hz • Dark cut @ 10 kHz\nBasement Fusion (#27-R)\tSub Riot 50% • Amp Rage 35% verse / 65% hook • Pump 4 dB @ 1/4 • Polished↔Gritty: gritty verses → polished hooks\nArtifact Eraser (#30)\tDe-Noise 6 dB • De-Swirl 40% • De-Warble 30% • De-Fizz on @ 16 kHz • Restore macro 50% — never above 70% or it gets hollow\nGhost Voice Mute (#31)\tGhost Mute 60% • Threshold -35 dB • Lead Protect ON • Air Keep 70%\nTail Cleaner (#32)\tTighten 2:1 below -45 dB • De-Breath 6 dB • Tail Cut 4 dB • Natural 25%\n\nRecommended chain order for cleanup: Artifact Eraser (#30) → Ghost Voice Mute (#31) → Tail Cleaner (#32) → then your genre vocal chain. Always clean before you flavor — compressing artifacts makes them louder and permanent.",
+        "id": "productionGuides-4",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 5,
+        "name": "Cleanup refinement prompts",
+        "p": "\"Remove any crowd, chant, audience, or group-vocal character — single studio voice only.\"\n\"The de-swirl is dulling the vocal — reduce strength to 40% and protect 5–8 kHz presence.\"\n\"The ghost-vocal suppression is making it too mono — raise Air Keep to 70%.\"\n\"Still hearing warble on long notes — shorten the correction window to 30 ms.\"\n\"The de-noise is leaving a hollow sound — lower reduction to 6 dB and add a Natural blend knob at 20%.\"\n\"Add an Artifact Solo button so I can hear only what's being removed.\"",
+        "id": "productionGuides-5",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 6,
+        "name": "Genre effects starting settings",
+        "p": "Vocals\nPlugin\tKey Settings to Dial In\nPop Radio Vocal Chain (#1)\tHPF 90 Hz • Cut 300 Hz -2.5 dB • Air +3 dB @ 12 kHz • Opto comp 4-6 dB GR • Radio macro at 40% verse / 70% hook\nShimmer Halo (#2)\tPre-delay 80 ms • Decay 1.8 s (verse) → 2.6 s (hook via automation) • Shimmer 20% • Duck 4 dB • Mix 18%\nTrap Ready Chain (#7)\tTune Speed 0-5 ms (hard) / 25 ms (melodic) • Slam 6-8 dB GR • De-ess @ 7 kHz -4 dB • Heat 10-15% • Drip macro 60% on hooks\nDark Bounce Verb (#8)\tDecay 0.6 s • High-cut 4 kHz • Duck 6 dB • Mix 12% — automate to 20% on last word of each bar\nFront & Center Rap (#13)\tChest +2 dB @ 120 Hz • Clarity +3 dB @ 5 kHz • Punch = 5 dB GR, 5 ms attack • Crush Blend 30% • Tape 15%\nWhisper Close (#18)\tClose +2.5 dB @ 180 Hz • Only 2-3 dB GR • Breath +2 dB above 8 kHz • Keep Ease under 30% — the point is restraint\nCampfire Lead (#22)\tRibbon roll-off from 12 kHz • Fairchild-style 3 dB GR • Plate 1.4 s @ 12% mix • Honesty 15-25% raw blend\nHybrid Vocal Morph (#28)\tAutomate morph: Verse = A (Trap), Pre = B (Pop), Hook = C (Rock) at 70% with B at 30%\nInstruments\nPlugin\tKey Settings to Dial In\n808 Commander (#9)\tHPF 25 Hz • Sub shelf +3 dB @ 45 Hz • Knock @ 150 Hz +4 dB • Phone 35% • Duck from kick: 5 dB, 60 ms release (raise to 90 ms below 130 BPM)\nHi-Hat Machine (#10)\tSnap +6 dB • HPF 500 Hz • Sizzle 25% • Travel depth 30% synced 1/16\nSnare Crack (#11)\tBody +3 dB @ 200 Hz • Crack +4 dB @ 5 kHz • Splash 0.4 s decay @ 15% • Gate -30 dB\nDusty Sampler (#15)\t12-bit • 26 kHz • Filter 7.5 kHz • Era at \"1994\" • Dust 20% (less on melodic samples)\nBoom Bap Drum Bus (#16)\t4:1 • Attack 10 ms • Release 100 ms • 3-4 dB GR • Boom +2 dB @ 60 Hz • Blend 50/50 parallel\nPop Bass Glue (#5)\tMono below 120 Hz • Grit 20% • Duck 3 dB timed to 1/8 note\nFingerpick Focus (#20)\tDe-Boom -3 dB @ 250 Hz • Squeak notch @ 2.8 kHz • 2:1 comp, 25 ms attack • Flutter 0.2% max\nFelt Piano (#21)\tLPF 6 kHz • Mechanics -30 dB • Wobble ±6 cents @ 0.5 Hz • Hug ~70%\nBanjo Tamer (#24)\tPluck Tame -4 dB @ 3.5 kHz • Attack 8 ms • Boing (spring) 15%\nFiddle Silk (#25)\tDynamic cut 2.5-4 kHz, threshold -18 dB • Hall 2.2 s @ 15%\nStomp & Clap (#26)\tSmash 10:1, ~20 dB GR • Room Blend 40% • Stomp +3 dB @ 80 Hz\nBus Finisher (#6)\t2:1 • 30 ms attack • auto release • never more than 2 dB GR • Tape drive just until you hear it, then back off 10%\nStadium Trapper (#27)\tSub Riot 50% • Amp Rage 35% verse / 65% hook • Pump 4 dB synced 1/4 • Arena↔Basement: automate Basement verses → Arena hooks\nAutopilot (#29)\tAmount 65% • Character 40% toward analog • Space 30% verse / 60% hook • Loud ON only for final bounce",
+        "id": "productionGuides-6",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 7,
+        "name": "Effects refinement prompts",
+        "p": "Use these as follow-ups after any generation:\n\n\"Make the saturation warmer — more like tube than transistor, harmonics focused on 100–400 Hz.\"\n\"Add a sidechain input and duck the wet signal 4 dB when the dry signal is active.\"\n\"The compressor is pumping — slow the release to 250 ms and lower the ratio to 3:1.\"\n\"Too bright. Move the air shelf from 12 kHz down to 10 kHz and reduce it to +1.5 dB.\"\n\"Add a Mix knob so I can run this in parallel at 30%.\"\n\"Make the reverb ducking release sync to 1/8 notes at the project tempo.\"\n\"Give me a Vintage/Modern toggle: Vintage adds wow/flutter and rolls off above 12 kHz.\"\n\"The 808 is disappearing on phone speakers — add more harmonics at 120–250 Hz.\"\n\"Widen it, but keep everything below 150 Hz dead mono.\"\n\"Combine plugins #7 and #8 into one super-plugin with a single Distance macro.\"\n\"Add an output limiter with -1 dBTP ceiling so nothing clips.\"\n\"Tidy this up: fewer knobs — collapse it into 3 macros: Tone, Squeeze, Space.\"",
+        "id": "productionGuides-7",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      },
+      {
+        "n": 8,
+        "name": "Studio instrument and vocal settings",
+        "p": "Single Instrument Plugins (Clean Isolation)\nInstrument\tPlugin Type / Gear Ref\tCrucial Frequency\tAttack / Release Time\tRatio\tIdeal Saturation/Effect\nTrap Kick\tVCA Compressor (dbx 160)\tBoost +3dB @ 60Hz, Cut -4dB @ 300Hz\tAttack: 15ms (slow enough to let the knock through) / Release: 40ms\t4:1\tHard-clipper at the output to chop peaks.\nTrap 808\tTube Saturator & Sidechain\tBoost +3dB @ 40Hz\tSC Attack: <1ms / SC Release: 50ms\tSC: 8:1\tTape overdrive biased to 200Hz to make it audible on phones.\nPop/Rock Snare\tSSL Channel Strip\tCut -2dB @ 500Hz, Boost +4dB @ 7kHz\tAttack: 10ms / Release: 150ms\t3.5:1\tVintage Plate Reverb (0.8s decay, 15ms pre-delay).\nPop Synth\tChorus & Stereo Widener\tHigh Shelf +2dB @ 8kHz\tN/A\tN/A\tL-Delay: 12ms / R-Delay: 18ms. Mix 25%.\nFolk Acoustic\tPultec EQ & Opto Comp\tHPF @ 100Hz, Boost +3dB @ 10kHz\tAttack: 25ms / Release: 250ms (Smooth)\t2:1\tConsole preamp saturation; no harsh digital clipping.\nRock Electric\tAmp Sim & Distressor\tMid-boost +3dB @ 2.5kHz\tAttack: 5ms / Release: 50ms\t6:1\t3rd-order harmonic distortion (aggressive).\nVocal Plugins (No Gang Vocals or Crowd Reverb)\nVocal Style\tPlugin Type / Gear Ref\tEQ Settings\tCompressor Settings\tReverb & Delay Settings\nPop Lead\t1176 (Peak) into LA-2A (Leveling)\tHPF @ 90Hz, +2dB @ 220Hz, +4dB @ 10kHz\t1176: Att 3, Rel 5. LA-2A: Peak Reduction 50%.\tHall Reverb: 1.5s decay, 20ms pre-delay. 1/4 note delay tucked at 10% mix.\nPop Backing\tStereo Widener & De-Esser\tAggressive HPF @ 150Hz, -3dB @ 400Hz\tFast Attack (1ms), Med Release (100ms) to squash transients.\tWiden stereo field 30%. Drench in Plate Reverb (2.0s decay). (Keep tight to avoid gang-vocal sound)\nRap Lead\tNeve 1073 Preamp & 1176\t+2.5dB @ 5kHz (presence), De-ess heavily at 6.5kHz\tFast Attack (1ms), Fast Release (50ms). Threshold for -7dB GR.\tSlapback delay (80ms), almost zero reverb to keep it entirely upfront.\nIntimate Lead\tTube Preamp & Opto Comp\tGentle roll-off above 12kHz (warms it up), Boost 150Hz\tSlow Attack (15ms), Slow Release (300ms). Ratio: 2:1.\tRoom Reverb: 0.6s decay, 10ms pre-delay (sounds like an isolated vocal booth).",
+        "id": "productionGuides-8",
+        "kind": "Production blueprint",
+        "source": "Arena production library, September 2026"
+      }
+    ]
+  }
+}

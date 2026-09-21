@@ -1,0 +1,27 @@
+.ghost-chain-ui{color:#dfeaf0;font:15px/1.6 system-ui,sans-serif;letter-spacing:normal;text-transform:none;overflow-wrap:anywhere;color-scheme:dark}
+.ghost-chain-ui *{box-sizing:border-box;min-width:0}
+.ghost-chain-ui [hidden]{display:none!important}
+.ghost-chain-ui h2,.ghost-chain-ui h3,.ghost-chain-ui h4{font-family:system-ui,sans-serif;line-height:1.3;letter-spacing:normal;text-transform:none;color:#f2f6fa;margin:12px 0 8px}
+.ghost-chain-ui h2{font-size:24px}.ghost-chain-ui h3{font-size:19px}.ghost-chain-ui h4{font-size:16px}
+.ghost-chain-ui p{font:inherit;margin:8px 0;white-space:normal}
+.ghost-chain-ui button,.ghost-chain-ui input,.ghost-chain-ui select,.ghost-chain-link{font:600 14px/1.4 system-ui,sans-serif!important;letter-spacing:normal!important;text-transform:none!important;border:1px solid #446570!important;border-radius:9px!important;background:#142832!important;color:#e4f5f8!important;padding:10px 14px!important;min-height:44px!important;white-space:normal!important;cursor:pointer;box-shadow:none!important;text-align:left}
+.ghost-chain-ui button::before,.ghost-chain-ui button::after,.ghost-chain-link::before,.ghost-chain-link::after{content:none!important}
+.ghost-chain-ui button:hover,.ghost-chain-link:hover{background:#234451!important}.ghost-chain-ui button:disabled{opacity:.45;cursor:default}
+.ghost-chain-ui :focus-visible,.ghost-chain-link:focus-visible{outline:3px solid #8fe4ec!important;outline-offset:3px}
+.ghost-chain-ui input,.ghost-chain-ui select{width:100%;font-weight:400!important}
+.ghost-chain-ui a{color:#8fe4ec;text-decoration:underline}
+.ghost-chain-dialog{width:min(1100px,calc(100% - 24px));max-width:none;max-height:calc(100dvh - 24px);margin:auto;padding:0 24px 24px;background:#09141e;border:1px solid #55727c;border-radius:16px;overflow:auto;overscroll-behavior:contain}
+.ghost-chain-dialog::backdrop{background:#020810dc}
+.chain-dialog-head{position:sticky;top:0;z-index:2;background:#09141e;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #344653}
+.chain-dialog-head h2{margin:0}.chain-dialog-head button{flex-shrink:0}.chain-back{margin:14px 0}
+.chain-library{padding:16px 0}.chain-filters{display:grid;grid-template-columns:minmax(160px,2fr) minmax(140px,1fr) minmax(140px,1fr) auto;gap:10px;margin:20px 0 10px}
+.chain-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px;scroll-margin-top:90px}
+.chain-result{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px;background:#101f2b;border:1px solid #344653;border-radius:12px}
+.chain-result p{margin:0 0 8px}.chain-result button{margin-top:auto}.chain-meta{color:#9fb9c6;font-size:13px!important}.chain-pagination,.chain-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:16px 0}
+.chain-pagination{justify-content:center}.ghost-chain-ui output{display:block;min-height:24px;color:#a5e3cf;font-size:14px}
+.chain-path{color:#99d8e2;padding:14px 0;border-bottom:1px solid #344653}.chain-workflow,.chain-stages{padding-left:24px;margin:18px 0}.chain-workflow>li,.chain-stages>li{padding:4px 0 14px 8px}.chain-workflow>li::marker,.chain-stages>li::marker{color:#9bdde3;font-weight:700}
+.ghost-chain-ui details{margin:12px 0;padding:14px 16px;background:#101f2b;border:1px solid #344653;border-radius:10px}
+.ghost-chain-ui details details{background:#0a1721}.ghost-chain-ui summary{cursor:pointer;font:600 15px/1.5 system-ui,sans-serif;color:#cfedf1;min-height:32px;padding:3px 0;white-space:normal}
+.chain-note{border-left:3px solid #77a5ad;padding:10px 14px;background:#122631;color:#c3d5de}.chain-listen{color:#adc7d3}.ghost-chain-ui .chain-primary{border-color:#89d9dd!important;background:#1d4549!important}
+.ghost-chain-ui dt{font-weight:700;text-transform:capitalize;color:#a5c2ce}.ghost-chain-ui dd{margin:0 0 12px}.chain-table-wrap{overflow-x:auto}.ghost-chain-ui table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.5}.ghost-chain-ui caption{text-align:left;padding:8px 0}.ghost-chain-ui th,.ghost-chain-ui td{padding:10px;text-align:left;border-bottom:1px solid #344653;vertical-align:top}.ghost-chain-ui th{font-weight:600}.ghost-chain-link{display:inline-flex;align-items:center;gap:6px;margin:6px 0}
+@media(max-width:700px){.chain-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.chain-filters input{grid-column:1/-1}.chain-results{grid-template-columns:1fr}.ghost-chain-dialog{padding:0 14px 18px;width:calc(100% - 12px);max-height:calc(100dvh - 12px);border-radius:12px}.chain-dialog-head h2{font-size:20px}.ghost-chain-ui .chain-actions button{width:100%}.ghost-chain-ui details{padding:12px}.chain-result{padding:14px}.chain-workflow,.chain-stages{padding-left:18px}}

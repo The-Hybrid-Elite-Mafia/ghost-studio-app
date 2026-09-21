@@ -1,0 +1,85 @@
+<section id="resourcePages" class="resource-pages" hidden>
+ <section id="hemAtmPage" class="resource-page" hidden aria-label="Creative Studio music library">
+  <div class="page-heading creative-page-heading"><div class="creative-page-title"><img class="creative-page-logo" src="branding/hem-creative-studio-logo.webp" width="88" height="88" alt=""><div><span class="eyebrow">HEM CREATIVE STUDIO</span><h1>Music Library</h1><p>Vocal styles, genres, production recipes, comparisons, saved styles and Studio tools.</p></div></div><button class="quiet" data-view="lyrics">Open Lyrics Creator ↗</button></div>
+  <p class="page-note">Reference prompts guide your choices. Add audio processors from the Plugin workshop.</p>
+  <iframe id="hemAtmFrame" class="resource-frame" title="HEM Creative Studio music library" sandbox="allow-scripts allow-same-origin allow-downloads allow-popups allow-popups-to-escape-sandbox" allow="clipboard-write" loading="lazy"></iframe>
+ </section>
+ <section id="encyclopediaPage" class="resource-page" hidden aria-label="Plugin Prompt Encyclopedia">
+  <div class="page-heading creative-page-heading"><div class="creative-page-title"><img class="creative-page-logo" src="branding/hem-creative-studio-logo.webp" width="88" height="88" alt=""><div><span class="eyebrow">HEM CREATIVE STUDIO</span><h1>Prompt Encyclopedia</h1><p>Browse, search and copy your vocal, instrument, repair, processing, effects and mastering prompts.</p></div></div><button class="quiet" data-view="lyrics">Open Lyrics Creator ↗</button></div>
+  <iframe id="encyclopediaFrame" class="resource-frame" title="HEM Creative Studio prompt encyclopedia" sandbox="allow-scripts allow-same-origin allow-downloads" allow="clipboard-write" loading="lazy"></iframe>
+ </section>
+ <section id="lyricsPage" class="lyrics-page" hidden aria-label="Lyrics Creator">
+  <div class="page-heading creative-page-heading"><div class="creative-page-title"><img class="creative-page-logo" src="branding/hem-creative-studio-logo.webp" width="88" height="88" alt=""><div><span class="eyebrow">HEM CREATIVE STUDIO · WRITING ROOM</span><h1>Lyrics Creator</h1><p>A specific story. Words you can sing. Your complete Suno framework.</p></div></div><button id="lyricsClearBtn" type="button" class="lyrics-clear">Clear lyrics</button><button id="lyricsConnectBtn" class="secondary">Ghost connection</button></div>
+  <p class="lyrics-privacy-note">Lyrics are temporary. Copy or download before leaving this page — leaving or reloading clears your writing.</p>
+  <p id="lyricsConnection" class="page-note" aria-live="polite">Uses Ghost’s connected AI. Your brief and submitted lyrics are sent when you generate.</p>
+  <details class="desk lyrics-blueprint">
+   <summary>Production blueprint · My Time Coming to an End · 69 BPM / 4/4</summary>
+   <p>Saved reference with all 12 stem EQs, four compressors, the lead-vocal lift and Master Clarity. Use blueprint sets the tempo to 69 BPM and replaces the Reference / library prompt with a concise writing reference. Your story and lyrics stay in place.</p>
+   <div class="lyrics-small-actions"><button id="lyricsUseBlueprintBtn" type="button" class="primary">Use blueprint</button><button id="lyricsCopyBlueprintBtn" type="button" class="quiet">Copy full blueprint</button><button id="lyricsCopyBlueprintJsonBtn" type="button" class="quiet">Copy blueprint JSON</button><button id="lyricsDownloadBlueprintBtn" type="button" class="quiet">Download blueprint JSON</button></div>
+   <output id="lyricsBlueprintStatus" role="status" aria-live="polite"></output>
+   <div id="lyricsBlueprintSections"></div>
+  </details>
+  <details class="desk lyrics-blueprint effects-library">
+   <summary>Hybrid effects-chain library · 25 profiles · 468 processing steps</summary>
+   <p>Original Hybrid profiles with ordered channel chains, Suno prompts and mix-bus notes. These production recipes are starting points for your own sound.</p>
+   <p>Use in Lyrics Creator replaces the Reference / library prompt with the selected Suno prompt and mix-bus notes. Full chains remain here for manual reference.</p>
+   <output id="lyricsEffectsStatus" role="status" aria-live="polite"></output>
+   <div id="lyricsEffectsLibrary"></div>
+  </details>
+  <div class="lyrics-layout">
+   <form id="lyricsForm" class="lyrics-form desk">
+    <div class="lyrics-form-header"><h2>Build the song</h2><label>Mode<select id="lyricsMode"><option value="create">Write new lyrics</option><option value="rewrite">Rewrite my lyrics</option></select></label></div>
+    <details open class="lyrics-reference-controls"><summary>1 · Reference &amp; creative direction</summary><div class="lyrics-fields">
+     <label>Reference song / artist · optional<input id="lyricsReferenceTrack" maxlength="240" placeholder="A starting point for the sound, not lyrics to copy"></label>
+     <p class="muted-small">Reference names guide writing. This does not listen to a track or measure its tempo or key. Add the musical details you know below.</p>
+     <label>Creative mode<select id="lyricsCreativeMode"><option value="faithful">Faithful · keep my supplied musical traits</option><option value="inspired" selected>Inspired · keep the feeling, develop something original</option><option value="reimagined">Reimagined · explore a new interpretation</option></select></label>
+     <label>Lyric density <output id="lyricsDensityLabel">65 · Full vocal</output><input id="lyricsLyricDensity" type="range" min="0" max="100" step="1" value="65"></label>
+     <p class="muted-small">0 = instrumental · 25 = sparse · 50 = light · 75 = full · 100 = dense. Locked rewrite lines stay protected.</p>
+    </div></details>
+    <label>Title · optional<input id="lyricsTitle" maxlength="160" placeholder="Let the story earn its title"></label>
+    <label id="lyricsBriefLabel">What is this song about?<textarea id="lyricsBrief" rows="5" maxlength="6000" placeholder="Tell Ghost what happened, what someone wants, and what they cannot bring themselves to say."></textarea></label>
+    <div id="lyricsRewriteFields" hidden>
+     <label>Your original lyrics<textarea id="lyricsSourceLyrics" rows="10" maxlength="12000" placeholder="Paste the lyrics you want rewritten. Your original stays here."></textarea></label>
+     <div class="lyrics-small-actions"><button id="lyricsImportTextBtn" type="button" class="text-button">Import a text file</button><output id="lyricsSourceCount">0 / 12,000 characters</output></div>
+     <label>Meaning, details or sections to keep<textarea id="lyricsKeep" rows="2" maxlength="2000" placeholder="Keep the story, first-person voice and the central hook."></textarea></label>
+     <label>Exact lines to protect · one per line<textarea id="lyricsLockedLines" rows="3" maxlength="2500" placeholder="These lines must already appear in the original lyrics."></textarea></label>
+     <label>What needs fixing?<textarea id="lyricsFix" rows="3" maxlength="2000" placeholder="Make verse two more specific. Shorten the chorus. Keep the anger without forcing rhymes."></textarea></label>
+     <label>What should be extended?<input id="lyricsExtend" maxlength="1000" placeholder="Optional: the bridge, final verse, or a particular scene"></label>
+    </div>
+    <details open><summary>2 · Sound &amp; delivery</summary><div class="lyrics-fields">
+     <label>Genre / blend<input id="lyricsGenre" maxlength="240" placeholder="Up to two main genres"></label>
+     <label>Instruments<input id="lyricsInstruments" maxlength="400" placeholder="Choose 2–4, or let Ghost decide"></label>
+     <label>Groove<input id="lyricsGroove" maxlength="400" placeholder="Straight, swung, half-time, syncopated…"></label>
+     <label>Energy arc<input id="lyricsEnergyArc" maxlength="400" placeholder="Restrained verse → rising pre-chorus → full chorus"></label>
+     <label>Section order / bar counts<input id="lyricsSections" maxlength="600" placeholder="Intro 4, verse 16, chorus 8…"></label>
+     <label>Lead voice<input id="lyricsVocal" maxlength="600" value="Male lead, clear and natural, singing only"></label>
+     <div class="lyrics-pair"><label>Tempo · BPM<input id="lyricsBpm" type="number" min="40" max="240" value="110"></label><label>Key<input id="lyricsKey" maxlength="80" placeholder="Optional"></label></div>
+     <div class="lyrics-pair"><label>Language<input id="lyricsLanguage" maxlength="80" value="English"></label><label>Target length<input id="lyricsTargetLength" maxlength="100" value="About 2:30"></label></div>
+     <label>Writing / rhyme<select id="lyricsRhyme"><option value="none">No deliberate rhyming</option><option value="natural">Natural, unforced rhyme</option><option value="custom">My own scheme</option></select></label>
+     <label id="lyricsRhymeNotesLabel" hidden>Rhyme scheme<input id="lyricsRhymeNotes" maxlength="500" placeholder="Describe the scheme by section"></label>
+    </div></details>
+    <details><summary>Story &amp; production direction</summary><div class="lyrics-fields">
+     <label>Audience<input id="lyricsAudience" maxlength="400" placeholder="Who should feel this song?"></label>
+     <label>Core emotion<input id="lyricsEmotion" maxlength="400" placeholder="What is underneath the words?"></label>
+     <label>Perspective<input id="lyricsPerspective" maxlength="200" value="First person"></label>
+     <label>Reference / library prompt<textarea id="lyricsReference" rows="4" maxlength="2000" placeholder="Paste a direction from Music Library or Prompt Encyclopedia. Ghost translates references into musical traits."></textarea></label>
+     <label>Avoid<textarea id="lyricsAvoid" rows="3" maxlength="1000">hiss and crackle, crowd/gang/chant vocals, robotic or whispered vocals</textarea></label>
+    </div></details>
+    <details open><summary>3 · Review your musical brief</summary><p class="muted-small">Your entered targets—not measured audio analysis. Reviewing is local and sends no request.</p><pre id="lyricsBriefReview" class="lyrics-brief-review"></pre></details>
+    <div class="lyrics-submit"><button id="lyricsGenerateBtn" class="primary" type="submit">Write song package</button><button id="lyricsUseDraftBtn" class="quiet" type="button" disabled>Rewrite this draft</button></div>
+    <output id="lyricsProgress" class="lyrics-status" role="status" aria-live="polite">Ready when your story is.</output>
+    <p class="muted-small">Generation uses the same model and monthly app budget as Ghost chat. Editing, copying and downloading drafts are local.</p>
+   </form>
+   <div class="lyrics-output-column">
+    <section class="desk lyrics-draft-bar" aria-label="Lyric file tools"><label hidden>Recent drafts<select id="lyricsDraftList"><option value="">Choose a saved draft</option></select></label><button id="lyricsImportDraftBtn" class="quiet">Open draft file</button><span id="lyricsSaveStatus" class="muted-small" role="status"></span></section>
+    <div id="lyricsEmpty" class="desk lyrics-empty"><span class="lyric-mark" aria-hidden="true">“</span><h2>Start with something real.</h2><p>Give Ghost a moment, an object, a choice or a line you cannot shake. The finished draft includes your song brief, voice, structure, lyrics and production notes.</p><p>No deliberate rhymes by default. Your rewrite source remains available beside the new draft.</p></div>
+    <section id="lyricsResults" class="lyrics-results" hidden>
+     <div class="desk lyrics-result-heading"><div><span class="eyebrow">YOUR SONG PACKAGE</span><h2 id="lyricsResultTitle"></h2></div><div class="lyrics-small-actions"><button id="lyricsCopyAllBtn" class="primary">Copy full framework</button><button id="lyricsDownloadBtn" class="quiet">Download text</button><button id="lyricsSaveDraftBtn" class="quiet">Download draft</button></div><ul id="lyricsWarnings" class="lyrics-warnings" hidden></ul></div>
+     <div id="lyricsOutputCards" class="lyrics-output-cards"></div>
+     <details class="desk lyrics-framework"><summary>Full SUNO v5.5 master framework</summary><textarea id="lyricsFramework" rows="30" readonly aria-label="Complete Suno master framework"></textarea></details>
+    </section>
+   </div>
+  </div>
+  <input id="lyricsTextFile" type="file" accept=".txt,.md,text/plain" hidden><input id="lyricsDraftFile" type="file" accept=".ghostlyrics.json,.json,application/json" hidden>
+ </section>
+</section>

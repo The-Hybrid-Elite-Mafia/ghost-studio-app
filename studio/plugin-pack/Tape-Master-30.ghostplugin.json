@@ -1,0 +1,25 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Tape Master 30",
+  "effects": [
+    {
+      "id": "ghost-factory-tape",
+      "type": "tape",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "inputDrive": 0,
+        "speed": 30,
+        "bias": 0,
+        "saturation": 0,
+        "headBump": 0,
+        "hfSmooth": 0,
+        "output": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

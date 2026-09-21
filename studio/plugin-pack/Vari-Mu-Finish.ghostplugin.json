@@ -1,0 +1,24 @@
+{
+  "format": "ghost-plugin",
+  "version": 1,
+  "name": "Vari-Mu Finish",
+  "effects": [
+    {
+      "id": "ghost-factory-varimu",
+      "type": "varimu",
+      "enabled": false,
+      "preset": "Zero / Neutral",
+      "params": {
+        "input": 0,
+        "threshold": 0,
+        "timeConstant": 1,
+        "tone": 0,
+        "stereoLink": 0,
+        "output": 0,
+        "mix": 0
+      },
+      "automation": {},
+      "midi": {}
+    }
+  ]
+}

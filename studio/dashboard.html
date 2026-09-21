@@ -1,0 +1,21 @@
+<section id="dashboard" class="command-dashboard" hidden aria-label="Studio dashboard">
+ <div class="dashboard-title"><div><span class="eyebrow">GHOST IN THE MACHINE</span><h1>Your studio. Everything within reach.</h1></div><span class="dashboard-badge">HYBRID ELITE MAFIA</span></div>
+ <!-- CONSOLE_STAGE -->
+ <div class="dashboard-launchers" aria-label="Studio tools">
+  <button data-view="studio"><span>01 / CREATE</span><strong>Open the DAW</strong><small>Record · arrange · mix</small></button>
+  <button data-view="forge"><span>02 / SHAPE</span><strong>Plugin workshop</strong><small>Build your sound chain</small></button>
+  <button data-view="hem-atm"><span>03 / EXPLORE</span><strong>Music Library</strong><small>Genres · vocals · instruments</small></button>
+  <button data-view="lyrics"><span>04 / WRITE</span><strong>Lyrics Creator</strong><small>Open your drafts</small></button>
+ </div>
+ <section class="dashboard-radio glass-panel" aria-label="Hybrid Elite Mafia Radio">
+  <header><div><span class="eyebrow">THE STATION</span><h2>Hybrid Elite Mafia Radio</h2><p>Music from your station. Sound shaped your way.</p></div><span class="radio-location-label">Built into your studio</span></header>
+  <p id="radioConnection" role="status">Connecting to your station…</p>
+  <iframe id="dashboardRadio" title="Mafia Radio player, equalizer and uploads" allow="autoplay" referrerpolicy="strict-origin" scrolling="no"></iframe>
+  <p class="dashboard-note">Your player, EQ, uploads and station library are all here in the studio.</p>
+ </section>
+ <div class="dashboard-bottom">
+  <section class="glass-panel dashboard-session"><span class="eyebrow">ON THE DESK</span><h2 id="dashboardSession">Current session</h2><p id="dashboardTracks">No tracks loaded</p><div class="dashboard-actions"><button data-view="studio">Continue session</button><button id="dashboardProjects">Open saved project</button><button id="dashboardImport">Import stems</button></div></section>
+  <section class="glass-panel"><span class="eyebrow">WRITING ROOM</span><h2>Lyrics workspace</h2><ul id="dashboardDrafts"></ul><button data-view="lyrics">Open Lyrics Creator</button></section>
+  <section class="glass-panel"><span class="eyebrow">GHOST’S TOOLKIT</span><h2>Find your next move</h2><div class="dashboard-actions"><button data-chain-library>Workflows &amp; chains</button><button data-view="encyclopedia">Prompt Encyclopedia</button><a href="/manual" target="_blank" rel="noopener">Illustrated studio manual ↗</a></div></section>
+ </div>
+</section>
