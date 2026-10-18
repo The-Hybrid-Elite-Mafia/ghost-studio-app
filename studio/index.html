@@ -3379,8 +3379,27 @@ const SYSTEM=[
  'Do not report measured loudness or assert distribution certification: no audio is provided to this writer. mastering.loudness should say that loudness must be measured after audio exists, unless the user supplies a target; identify any supplied target as a target. mastering.format can specify a planned WAV export, not claim a file was rendered.',
  'Reference workflow: referenceTrack is a reference name supplied by the user, not audio analysis. Never claim to have listened to or decoded it. Do not invent measured BPM, key or arrangement facts about a named track. Use explicit musical traits in reference, genre, instruments, groove and energyArc. Faithful retains those supplied traits, Inspired keeps their mood with original development, Reimagined permits a fresh interpretation. Explicit user tempo, key, sections and protected rewrite lines take precedence in every mode. If no reference is supplied, work from the original brief.',
  'lyricDensity controls vocal occupancy, not an exact word count: 0 means instrumental, 1–25 sparse short sung phrases, 26–50 light vocal with space, 51–80 full song, 81–100 dense delivery with breathable phrasing. At 0, lyrics must contain only bracketed instrumental arrangement directions, voice and vocal tags must specify no vocals, and the style must be instrumental. Never add chants to satisfy low density. If protected rewrite lines conflict with density, preserve the lines and explain the conflict in productionNotes. Follow sections, groove and energyArc when supplied. These are composition targets, not guaranteed audio results.',
+ 'Do not write any [START_ON:...] tag yourself: the app adds [START_ON:TRUE][START_ON:"<first sung line>"] to the start of both stylePrompt and lyrics. Keep stylePrompt under 850 characters so the complete style stays under 1000 with that tag. Make the first sung line strong, because it is repeated in that tag.',
  'Review silently for human phrasing, story continuity, locked lines, the rhyme preference, singability and completion before returning the JSON.'
 ].join('\n\n');
+// HEM rule: Style and Lyrics both open with [START_ON:TRUE][START_ON:"<first sung line>"], always matching the lyrics.
+const START_ON_LINE=/^\s*\[START_ON:TRUE\][^\n]*\n?/i,START_ON_TAG=/^\s*\[START_ON:TRUE\](?:\[START_ON:"[^\n]*?"\])?\s*/i;
+function firstSungLine(lyrics){
+ for(const raw of String(lyrics||'').replace(START_ON_LINE,'').split('\n')){
+  const line=raw.replace(/\[[^\]\n]*\]/g,' ').replace(/\s+/g,' ').trim();
+  if(line)return line.replace(/"/g,"'").slice(0,200);
+ }
+ return '';
+}
+function startOnTag(lyrics){const line=firstSungLine(lyrics);return line?'[START_ON:TRUE][START_ON:"'+line+'"]':'';}
+function applyStartOn(song){
+ if(!song||typeof song.lyrics!=='string'||typeof song.stylePrompt!=='string')return song;
+ const tag=startOnTag(song.lyrics);
+ const body=song.lyrics.replace(START_ON_LINE,''),style=song.stylePrompt.replace(START_ON_TAG,'').trim();
+ song.lyrics=tag?tag+'\n'+body:body;
+ song.stylePrompt=tag?(tag+' '+style).trim():style;
+ return song;
+}
 function validateSong(value,{allowEmpty=false}={}){
  function visit(node,shape,path){
   if(shape.type==='string'){if(typeof node!=='string'||(!allowEmpty&&!node.trim())||node.length>20000)throw Error('The song response is missing a usable '+path+' field.');return node.replace(/\r\n?/g,'\n').trim();}
@@ -3389,7 +3408,7 @@ function validateSong(value,{allowEmpty=false}={}){
  }
  const song=visit(value,schema,'');
  for(const key of ['stylePrompt','instrumentalPrompt','negativePrompt'])song[key]=song[key].replace(/\s*\n\s*/g,' ');
- return song;
+ return applyStartOn(song);
 }
 function parse(text){let value;try{value=JSON.parse(text);}catch{throw Error('The model did not return a complete song package. No automatic retry was made.');}return validateSong(value);}
 function warnings(song,spec={}){
@@ -3406,7 +3425,7 @@ function format(value,options){
  return [LINE,'SUNO v5.5 MASTER FRAMEWORK — COPY BOX',LINE,'','SYSTEM — SUNO v5.5 MASTER TEMPLATE','','SONG BRIEF','TITLE: '+b.title,'AUDIENCE: '+b.audience,'CORE EMOTION: '+b.emotion,'STORY / CONCEPT: '+b.story,'REFERENCE: '+b.reference,'','SUNO v5.5 STYLE STRING',s.stylePrompt,'','VOICE / PERSONA','Type: '+v.type,'Timbre: '+v.timbre,'Accent: '+v.accent,'Character: '+v.character,'Delivery: '+v.delivery,'','SONG STRUCTURE','Sections: '+t.sections,'Target length: '+t.targetLength,'Dynamic arc: '+t.dynamicArc,'','META TAGS TO USE','Vocals: '+g.vocals,'Instruments: '+g.instruments,'Transitions: '+g.transitions,'','LANGUAGE: '+s.language,'RHYME / WRITING STYLE: '+s.rhymeStyle,'','NEGATIVE PROMPT',s.negativePrompt,'','EDITING / ITERATION NOTES','Keep: '+e.keep,'Extend: '+e.extend,'Fix: '+e.fix,'','REMIX / REMASTER','Mix: '+m.mix,'Loudness: '+m.loudness,'Format: '+m.format,'','DELIVERABLES','1. STYLE PROMPT (one line)',s.stylePrompt,'','2. LYRICS (with Suno meta tags)',s.lyrics,'','3. NEGATIVE PROMPT (one line)',s.negativePrompt,'','4. PRODUCTION NOTES',s.productionNotes,'','INSTRUMENTAL PROMPT (one line)',s.instrumentalPrompt,'',LINE].join('\n');
 }
 function isRequest(text){return typeof text==='string'&&!/\b(?:plugin|midi)\b/i.test(text)&&/^\s*(?:(?:ghost[, :]*)?(?:please\s+)?(?:(?:can|could) you\s+|help me\s+|i want you to\s+)?)?(?:write|rewrite|re-write|create|revise|rework|polish|finish|generate|draft|turn|make)\b[\s\S]*\b(?:lyrics?|song)\b/i.test(text);}
-const api={LINE,OUTPUT_TOKENS,defaults,limits,schema,SYSTEM,normalizeInput,validateSong,parse,warnings,format,isRequest};
+const api={LINE,OUTPUT_TOKENS,defaults,limits,schema,SYSTEM,normalizeInput,validateSong,parse,warnings,format,isRequest,firstSungLine,startOnTag,applyStartOn};
 root.GhostLyrics=api;if(typeof module==='object'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);
 
@@ -3877,9 +3896,20 @@ root.GhostWorkspacePages=function({$,state,toast,download,filename,showView,show
   if(!copied){const el=document.createElement('textarea'),focused=document.activeElement;el.value=text;el.style.cssText='position:fixed;left:-10000px;top:0';document.body.append(el);el.focus();el.select();try{copied=document.execCommand('copy');}catch{}el.remove();focused?.focus();}
   toast(copied?'Copied.':'Copy failed. Select the text and copy it manually.',!copied);
  }
+ let fieldViews={};
+ // Keep the [START_ON:TRUE][START_ON:"first line"] tag in Style and Lyrics matched to the current first sung line.
+ function syncStartOn(editing){
+  L.applyStartOn(song);
+  for(const key of ['lyrics','stylePrompt']){
+   const view=fieldViews[key];if(!view||view.text.value===song[key])continue;
+   if(view.text===editing){const end=view.text.value.length-view.text.selectionEnd;view.text.value=song[key];const at=Math.max(0,song[key].length-end);view.text.setSelectionRange(at,at);}
+   else view.text.value=song[key];
+   view.count();
+  }
+ }
  function renderSong(){
   $('lyricsEmpty').hidden=!!song;$('lyricsResults').hidden=!song;$('lyricsUseDraftBtn').disabled=!song||writing;
-  $('lyricsOutputCards').replaceChildren();if(!song)return;
+  $('lyricsOutputCards').replaceChildren();fieldViews={};if(!song)return;
   const cards=[['stylePrompt','1 · Style prompt',4,1000],['lyrics','2 · Lyrics',19,5000],['negativePrompt','3 · Negative prompt',3,0],['productionNotes','4 · Production notes',7,0],['instrumentalPrompt','Instrumental prompt',4,1000]];
   for(const [key,label,rows,max] of cards){
    const card=document.createElement('section');card.className='desk lyrics-card';card.dataset.field=key;
@@ -3889,7 +3919,8 @@ root.GhostWorkspacePages=function({$,state,toast,download,filename,showView,show
    const text=document.createElement('textarea');text.value=song[key];text.rows=rows;text.maxLength=20000;text.setAttribute('aria-label',label);text.spellcheck=true;
    const counter=document.createElement('output');
    const count=()=>{counter.textContent=text.value.length.toLocaleString('en-US')+(max?' / '+max.toLocaleString('en-US'):'')+' characters';counter.classList.toggle('over',!!max&&text.value.length>max);};
-   text.oninput=()=>{song[key]=text.value;count();try{checks();queueSave();}catch{progress('This draft has an empty required section. Add text before exporting the full framework.',true);}};
+   text.oninput=()=>{song[key]=text.value;if(key==='lyrics'||key==='stylePrompt')syncStartOn(text);count();try{checks();queueSave();}catch{progress('This draft has an empty required section. Add text before exporting the full framework.',true);}};
+   fieldViews[key]={text,count};
    count();heading.append(title,button);card.append(heading,text,counter);$('lyricsOutputCards').append(card);
   }
   checks();

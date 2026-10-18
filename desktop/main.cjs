@@ -81,6 +81,11 @@ async function start() {
   session.defaultSession.setPermissionRequestHandler((contents, permission, callback, details) => callback(sameOrigin(details.requestingUrl || contents.getURL()) && allowed.has(permission)));
   session.defaultSession.setPermissionCheckHandler((contents, permission, requestingOrigin) => requestingOrigin === origin && allowed.has(permission));
   app.on('web-contents-created', (_, contents) => guard(contents));
+  // Save windows get a plain title instead of the internal blob:/127.0.0.1 address.
+  session.defaultSession.on('will-download', (_, item) => {
+    const name = item.getFilename() || 'file';
+    item.setSaveDialogOptions({title: 'Save ' + name + ' - ' + PRODUCT, defaultPath: path.join(app.getPath('downloads'), name)});
+  });
 
   Menu.setApplicationMenu(Menu.buildFromTemplate([
     {label: 'File', submenu: [{role: 'quit', label: 'Exit'}]},

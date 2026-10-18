@@ -33,7 +33,8 @@ async function copyDir(from, to) {
 export const LOCAL_STYLESHEETS = [
   ['https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', '/vendor/bootstrap.min.css'],
   ['https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap', '/vendor/fonts/space-grotesk.css'],
-  ['https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap', '/vendor/fonts/hem-atm-fonts.css'],
+  // The HEM ATM page runs in its own blob: frame, where "/vendor/..." links cannot resolve, so its fonts are inlined as a data: URL.
+  ['https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap', 'inline:hem-atm-fonts.css'],
 ];
 const FONTS = {
   'space-grotesk.css': [['space-grotesk', [400, 500, 600, 700]]],
@@ -46,10 +47,24 @@ export const DESKTOP_WORDING = [
   ['This is the online app’s estimate, not an account-wide billing limit.', 'This is Ghost Studio’s estimate, not an account-wide billing limit.'],
   ['Lyrics Creator could not reach the online service. Reopen Ghost’s website.', 'Lyrics Creator could not reach Ghost Studio’s local service. Close and reopen the app.'],
   ['Open Ghost from its signed-in website to connect.', 'Open Ghost from the HEM Ghost Studio app to connect.'],
+  ['Browser storage can be cleared. Keep a downloaded backup for important work.', 'Saved sessions stay in Ghost Studio on this PC. Keep a downloaded backup for important work.'],
+  ['Keep this tab open.', 'Keep Ghost Studio open.'],
+  ['Save this session on this browser,', 'Save this session in Ghost Studio,'],
+  ['Save on this browser', 'Save in Ghost Studio'],
+  ['to use Ghost on this website.', 'to use Ghost in this app.'],
+  ['Saved on this browser · ', 'Saved in Ghost Studio · '],
+  ['Saving the session on this browser…', 'Saving the session in Ghost Studio…'],
+  ['Session saved on this browser.', 'Session saved in Ghost Studio.'],
+  ['There is no saved session in this browser yet.', 'There is no saved session in Ghost Studio yet.'],
+  ['in this browser', 'in Ghost Studio on this PC'],
 ];
-export function localizeHead(html) {
+export function localizeHead(html, inline = {}) {
   for (const [web, desktop] of DESKTOP_WORDING) html = html.replaceAll(web, desktop);
-  for (const [remote, local] of LOCAL_STYLESHEETS) html = html.replaceAll(remote, local).replaceAll(remote.replaceAll('&', '&amp;'), local);
+  for (const [remote, target] of LOCAL_STYLESHEETS) {
+    const local = target.startsWith('inline:') ? inline[target.slice(7)] : target;
+    if (!local) throw new Error('Missing inline stylesheet ' + target);
+    html = html.replaceAll(remote, local).replaceAll(remote.replaceAll('&', '&amp;'), local);
+  }
   return html;
 }
 
@@ -73,18 +88,11 @@ export async function build() {
 
   // Public files first (branding, manual pictures, plugin prompt guide, worklet), then the pages.
   await copyDir(path.join(root, 'public'), web);
-  const pages = {'workstation.html': 'studio/index.html', 'rack.html': 'studio/rack-reference.html', 'manual.html': 'studio/manual.html'};
-  for (const [name, source] of Object.entries(pages)) await fs.copyFile(path.join(root, source), path.join(web, name));
-  for (const name of await fs.readdir(web)) {
-    if (!name.endsWith('.html')) continue;
-    const file = path.join(web, name), html = await fs.readFile(file, 'utf8'), local = localizeHead(html);
-    if (local !== html) await fs.writeFile(file, local);
-  }
-
   // Bootstrap and the fonts, so the pages look the same with no internet. Only the Latin files are shipped.
   await fs.mkdir(path.join(web, 'vendor/fonts/files'), {recursive: true});
   await fs.copyFile(require.resolve('bootstrap/dist/css/bootstrap.min.css'), path.join(web, 'vendor/bootstrap.min.css'));
   await fs.copyFile(require.resolve('bootstrap/LICENSE'), path.join(web, 'vendor/BOOTSTRAP-LICENSE.txt'));
+  const inlineSheets = {};
   for (const [cssName, families] of Object.entries(FONTS)) {
     let css = '';
     for (const [family, weights] of families) {
@@ -102,6 +110,23 @@ export async function build() {
     }
     if (!css.includes('@font-face')) throw new Error('No font faces found for ' + cssName);
     await fs.writeFile(path.join(web, 'vendor/fonts', cssName), css);
+    // Self-contained copy (woff2 embedded) for pages that cannot load files by path.
+    let embedded = '';
+    for (const face of css.split('@font-face').slice(1)) {
+      const file = /url\(\.\/files\/([^)]+\.woff2)\)/.exec(face)?.[1];
+      if (!file) continue;
+      const data = (await fs.readFile(path.join(web, 'vendor/fonts/files', file))).toString('base64');
+      embedded += '@font-face' + face.replace(/src:[^;]+;/, `src: url(data:font/woff2;base64,${data}) format('woff2');`);
+    }
+    inlineSheets[cssName] = 'data:text/css;base64,' + Buffer.from(embedded).toString('base64');
+  }
+
+  const pages = {'workstation.html': 'studio/index.html', 'rack.html': 'studio/rack-reference.html', 'manual.html': 'studio/manual.html'};
+  for (const [name, source] of Object.entries(pages)) await fs.copyFile(path.join(root, source), path.join(web, name));
+  for (const name of await fs.readdir(web)) {
+    if (!name.endsWith('.html')) continue;
+    const file = path.join(web, name), html = await fs.readFile(file, 'utf8'), local = localizeHead(html, inlineSheets);
+    if (local !== html) await fs.writeFile(file, local);
   }
 
   // Station page: the same React component the website uses, bundled for the desktop.

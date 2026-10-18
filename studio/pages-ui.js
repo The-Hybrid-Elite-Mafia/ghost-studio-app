@@ -59,9 +59,20 @@ root.GhostWorkspacePages=function({$,state,toast,download,filename,showView,show
   if(!copied){const el=document.createElement('textarea'),focused=document.activeElement;el.value=text;el.style.cssText='position:fixed;left:-10000px;top:0';document.body.append(el);el.focus();el.select();try{copied=document.execCommand('copy');}catch{}el.remove();focused?.focus();}
   toast(copied?'Copied.':'Copy failed. Select the text and copy it manually.',!copied);
  }
+ let fieldViews={};
+ // Keep the [START_ON:TRUE][START_ON:"first line"] tag in Style and Lyrics matched to the current first sung line.
+ function syncStartOn(editing){
+  L.applyStartOn(song);
+  for(const key of ['lyrics','stylePrompt']){
+   const view=fieldViews[key];if(!view||view.text.value===song[key])continue;
+   if(view.text===editing){const end=view.text.value.length-view.text.selectionEnd;view.text.value=song[key];const at=Math.max(0,song[key].length-end);view.text.setSelectionRange(at,at);}
+   else view.text.value=song[key];
+   view.count();
+  }
+ }
  function renderSong(){
   $('lyricsEmpty').hidden=!!song;$('lyricsResults').hidden=!song;$('lyricsUseDraftBtn').disabled=!song||writing;
-  $('lyricsOutputCards').replaceChildren();if(!song)return;
+  $('lyricsOutputCards').replaceChildren();fieldViews={};if(!song)return;
   const cards=[['stylePrompt','1 · Style prompt',4,1000],['lyrics','2 · Lyrics',19,5000],['negativePrompt','3 · Negative prompt',3,0],['productionNotes','4 · Production notes',7,0],['instrumentalPrompt','Instrumental prompt',4,1000]];
   for(const [key,label,rows,max] of cards){
    const card=document.createElement('section');card.className='desk lyrics-card';card.dataset.field=key;
@@ -71,7 +82,8 @@ root.GhostWorkspacePages=function({$,state,toast,download,filename,showView,show
    const text=document.createElement('textarea');text.value=song[key];text.rows=rows;text.maxLength=20000;text.setAttribute('aria-label',label);text.spellcheck=true;
    const counter=document.createElement('output');
    const count=()=>{counter.textContent=text.value.length.toLocaleString('en-US')+(max?' / '+max.toLocaleString('en-US'):'')+' characters';counter.classList.toggle('over',!!max&&text.value.length>max);};
-   text.oninput=()=>{song[key]=text.value;count();try{checks();queueSave();}catch{progress('This draft has an empty required section. Add text before exporting the full framework.',true);}};
+   text.oninput=()=>{song[key]=text.value;if(key==='lyrics'||key==='stylePrompt')syncStartOn(text);count();try{checks();queueSave();}catch{progress('This draft has an empty required section. Add text before exporting the full framework.',true);}};
+   fieldViews[key]={text,count};
    count();heading.append(title,button);card.append(heading,text,counter);$('lyricsOutputCards').append(card);
   }
   checks();

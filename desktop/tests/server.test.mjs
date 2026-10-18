@@ -57,6 +57,7 @@ test('pages are served with bundled Bootstrap and fonts (no internet needed)', a
   assert.ok(studio.includes('/vendor/bootstrap.min.css'));
   assert.ok(studio.includes('protected by your Windows account'), 'desktop wording is applied');
   assert.ok(!studio.includes('Reopen Ghost’s website'), 'website wording is replaced');
+  for (const phrase of ['on this browser', 'in this browser', 'on this website', 'Keep this tab open']) assert.ok(!studio.includes(phrase), 'still says: ' + phrase);
   assert.ok(studio.includes('GhostImportedPages'), 'HEM ATM and encyclopedia pages are embedded');
   for (const file of ['/vendor/bootstrap.min.css', '/vendor/fonts/space-grotesk.css', '/radio/radio.js', '/radio/globals.css', '/radio/radio.css', '/branding/hem-creative-studio-logo.webp', '/ghost-worklet-bundle.js']) {
     const response = await call(file);
@@ -69,7 +70,8 @@ test('pages are served with bundled Bootstrap and fonts (no internet needed)', a
     assert.ok(files.length >= 4, sheet);
     for (const file of files) assert.equal((await call('/vendor/fonts/files/' + file)).status, 200, file);
   }
-  assert.ok(studio.includes('/vendor/fonts/hem-atm-fonts.css'), 'HEM ATM fonts are bundled');
+  assert.ok(studio.includes('data:text/css;base64,'), 'HEM ATM fonts are embedded in its page');
+  assert.ok(!studio.includes('/vendor/fonts/hem-atm-fonts.css'), 'no path-based font link inside the blob-frame page');
 });
 
 test('files outside the app folder cannot be read', async () => {

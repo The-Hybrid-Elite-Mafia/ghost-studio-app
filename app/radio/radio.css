@@ -157,3 +157,6 @@ body{background:radial-gradient(ellipse at 50% 5%,#123048,#050c18 45%,#02040a 80
 .rotary-cap{box-shadow:inset 0 2px 3px #d9faff77,inset 0 -3px 5px #000c,0 4px 5px #000b!important}
 .rotary>output{display:none}
 @media(max-width:350px){.glass-eq .knob-grid{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}}
+/* Framed pages: keep text off the frame edge. */
+.form-page{padding:26px 28px 32px!important}.form-page .upload-form,.form-page .manage-stats{margin-left:0;margin-right:0}
+@media(max-width:650px){.form-page{padding:18px 16px 24px!important}}

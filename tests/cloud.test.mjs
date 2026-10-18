@@ -73,7 +73,7 @@ test('chat and lyrics use one durable budget with different bounded output contr
  const lyricMock=upstream({reply:JSON.stringify(songFixture)});
  const lyrics=createCloudService(options(binding,'owner',lyricMock.fetchImpl));
  const song=await lyrics.lyrics({mode:'create',title:'The Spare Key',brief:'Someone leaving a spare key by the sink.'});
- assert.equal(song.task,'lyrics');assert.match(song.reply,/SUNO v5\.5 MASTER/);assert.equal(song.song.lyrics,songFixture.lyrics);
+ assert.equal(song.task,'lyrics');assert.match(song.reply,/SUNO v5\.5 MASTER/);assert.equal(song.song.lyrics,'[START_ON:TRUE][START_ON:"I left the spare key by the sink"]\n'+songFixture.lyrics);assert.ok(song.song.stylePrompt.startsWith('[START_ON:TRUE][START_ON:"I left the spare key by the sink"] '));
  assert.equal(song.budget.requestsToday,2);assert.equal(song.budget.reservedUsd,0);
  assert.equal(lyricMock.calls[1].body.max_output_tokens,6000);
  assert.equal(lyricMock.calls[1].body.text.format.type,'json_schema');assert.equal(lyricMock.calls[1].body.text.format.strict,true);
