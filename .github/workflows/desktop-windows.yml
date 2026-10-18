@@ -1,0 +1,117 @@
+# Builds the HEM Ghost Studio Windows installer. Manual only: it never runs unless started by hand
+# (Actions tab -> "Ghost Studio Windows installer" -> Run workflow).
+name: Ghost Studio Windows installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Publish the installer as a GitHub release
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ghost-studio-desktop
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    name: Studio + desktop tests (Linux)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.1
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            desktop/package-lock.json
+      - name: Install studio packages
+        run: npm ci --no-audit --no-fund
+      - name: Studio build and its tests
+        run: npm test
+      - name: Install desktop packages
+        working-directory: desktop
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: "1"
+        run: npm ci --no-audit --no-fund
+      - name: Desktop build
+        working-directory: desktop
+        run: node build.mjs
+      - name: Desktop server tests
+        working-directory: desktop
+        run: node --test tests/*.test.mjs
+
+  windows:
+    name: Windows installer
+    needs: tests
+    runs-on: windows-2022
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.1
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            desktop/package-lock.json
+      - name: Install studio packages
+        run: npm ci --no-audit --no-fund
+      - name: Install desktop packages
+        working-directory: desktop
+        run: npm ci --no-audit --no-fund
+      - name: Desktop build
+        working-directory: desktop
+        run: node build.mjs
+      - name: Desktop server tests (Windows)
+        working-directory: desktop
+        run: node --test tests/*.test.mjs
+      - name: Package installer
+        working-directory: desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+        run: npx electron-builder --win nsis --x64 --publish never
+      - name: Open every page in the packaged app
+        working-directory: desktop
+        shell: pwsh
+        run: |
+          $env:GHOST_SMOKE_REPORT = "$PWD\smoke-report.json"
+          $exe = Get-ChildItem release\win-unpacked -Filter "*.exe" | Where-Object { $_.Name -like "HEM Ghost Studio*.exe" } | Select-Object -First 1
+          $p = Start-Process -FilePath $exe.FullName -ArgumentList "--smoke-test" -PassThru -Wait
+          Get-Content smoke-report.json
+          if ($p.ExitCode -ne 0) { throw "Smoke test failed with exit code $($p.ExitCode)" }
+      - name: Checksum
+        id: info
+        shell: pwsh
+        working-directory: desktop
+        run: |
+          $version = (Get-Content package.json | ConvertFrom-Json).version
+          $setup = Get-ChildItem release -Filter "HEM-Ghost-Studio-Setup-*.exe" | Select-Object -First 1
+          $hash = (Get-FileHash $setup.FullName -Algorithm SHA256).Hash.ToLower()
+          "$hash  $($setup.Name)" | Out-File -Encoding ascii release\SHA256SUMS.txt
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "setup=$($setup.FullName)" >> $env:GITHUB_OUTPUT
+          "hash=$hash" >> $env:GITHUB_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HEM-Ghost-Studio-Setup-${{ steps.info.outputs.version }}
+          path: |
+            desktop/release/HEM-Ghost-Studio-Setup-*.exe
+            desktop/release/SHA256SUMS.txt
+            desktop/smoke-report.json
+          retention-days: 30
+      - name: Publish release
+        if: ${{ inputs.release }}
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "ghost-studio-${{ steps.info.outputs.version }}-run-${{ github.run_id }}"
+          $notes = "HEM Ghost Studio ${{ steps.info.outputs.version }} for Windows (64-bit).`n`nSHA-256: ${{ steps.info.outputs.hash }}`n`nThe installer is not code-signed, so Windows SmartScreen may warn on first run (More info -> Run anyway)."
+          gh release create $tag "${{ steps.info.outputs.setup }}" desktop/release/SHA256SUMS.txt desktop/smoke-report.json --title "HEM Ghost Studio ${{ steps.info.outputs.version }}" --notes $notes --target ${{ github.sha }}

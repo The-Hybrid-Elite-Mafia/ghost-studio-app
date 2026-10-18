@@ -54,3 +54,7 @@ next-env.d.ts
 **/.wrangler/
 **/.sites-runtime/
 **/.cache/
+
+# Desktop app build output
+/desktop/out/
+/desktop/release/

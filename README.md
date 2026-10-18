@@ -7,6 +7,10 @@ Complete existing source export for the private repository `The-Hybrid-Elite-Maf
 - Export date: 2026-09-21
 - Application code, artwork, DSP, manifests, lockfiles and existing generated front-end documents are unchanged. No build or feature changes were performed for this export.
 
+## Windows desktop app (HEM Ghost Studio)
+
+The whole studio also ships as a Windows program with an installer and desktop icon. No website or sign-in needed; Ghost chat and Lyrics Creator use your own OpenAI key saved on the PC. Source and details: [`desktop/README.md`](desktop/README.md). Installers are on the Releases page, built by the manual-only workflow **Ghost Studio Windows installer**.
+
 ## Requirements
 
 Use Node.js **22.13 or later**, npm, Bash and GNU coreutils (including `timeout`). On Windows, use **WSL2 with Ubuntu** for the commands below; the existing build scripts use Bash. Internet access is needed to install dependencies.

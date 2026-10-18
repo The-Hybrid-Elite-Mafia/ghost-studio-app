@@ -1,0 +1,50 @@
+{
+  "name": "hem-ghost-studio",
+  "productName": "HEM Ghost Studio",
+  "version": "1.0.0",
+  "description": "Hybrid Elite Mafia Creative Studio (Ghost Studio) for Windows: DAW, plugin workshop, lyrics creator, music library, prompt encyclopedia, manual and radio.",
+  "author": "Hybrid Elite Mafia",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "dist": "electron-builder --win nsis --x64 --publish never"
+  },
+  "dependencies": {
+    "sql.js": "1.13.0"
+  },
+  "devDependencies": {
+    "@fontsource/jetbrains-mono": "5.2.8",
+    "@fontsource/plus-jakarta-sans": "5.2.8",
+    "@fontsource/space-grotesk": "5.2.10",
+    "@fontsource/syne": "5.2.7",
+    "bootstrap": "5.3.3",
+    "electron": "39.8.10",
+    "electron-builder": "26.16.1"
+  },
+  "build": {
+    "appId": "com.hybridelitemafia.ghoststudio",
+    "productName": "HEM Ghost Studio",
+    "executableName": "HEM Ghost Studio",
+    "copyright": "Hybrid Elite Mafia",
+    "directories": {"output": "release", "buildResources": "build-resources"},
+    "files": ["main.cjs", "package.json", "out/**/*", "build-resources/icon.png"],
+    "asar": true,
+    "win": {"target": [{"target": "nsis", "arch": ["x64"]}], "icon": "build-resources/icon.ico", "artifactName": "HEM-Ghost-Studio-Setup-${version}.${ext}"},
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "HEM Ghost Studio",
+      "menuCategory": "Hybrid Elite Mafia",
+      "deleteAppDataOnUninstall": false,
+      "runAfterFinish": true,
+      "installerIcon": "build-resources/icon.ico",
+      "uninstallerIcon": "build-resources/icon.ico"
+    }
+  }
+}
