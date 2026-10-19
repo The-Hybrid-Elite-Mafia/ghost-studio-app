@@ -54,6 +54,18 @@ function windowOptions() {
 }
 
 function guard(contents) {
+  // The studio asks to stay open when the session has unsaved changes. Electron never shows the browser's
+  // "Leave site?" question by itself, so the close was silently cancelled. Ask here instead.
+  contents.on('will-prevent-unload', event => {
+    if (smokeTest) { event.preventDefault(); return; }
+    const win = BrowserWindow.fromWebContents(contents);
+    const choice = dialog.showMessageBoxSync(win, {
+      type: 'question', buttons: ['Close without saving', 'Cancel'], defaultId: 1, cancelId: 1, noLink: true,
+      title: PRODUCT, message: 'You have unsaved changes in this session.',
+      detail: 'Close anyway? To keep your work, choose Cancel, then press Save (or download a project backup).',
+    });
+    if (choice === 0) event.preventDefault();
+  });
   contents.setWindowOpenHandler(({url}) => {
     if (sameOrigin(url)) return {action: 'allow', overrideBrowserWindowOptions: {...windowOptions(), show: true}};
     if (/^https?:\/\//i.test(url) || /^mailto:/i.test(url)) shell.openExternal(url);
@@ -128,6 +140,15 @@ async function runSmokeTest() {
   const station = await contents.executeJavaScript('fetch("/api/radio/station").then(r => r.json())').catch(e => ({error: String(e)}));
   report.health = health; report.station = {setup: station.setup, isOwner: station.isOwner, genres: station.genres?.length, error: station.error};
   if (health.service !== 'ghost-daw' || station.isOwner !== true) report.ok = false;
+  // Unsaved changes must not make the window impossible to close.
+  await mainWindow.loadURL(origin + '/workstation');
+  await contents.executeJavaScript("addEventListener('beforeunload', e => { e.preventDefault(); e.returnValue = ''; }); document.body.click(); true", true);
+  report.closeWithUnsavedChanges = await new Promise(resolve => {
+    const timer = setTimeout(() => resolve(false), 5000);
+    mainWindow.once('closed', () => { clearTimeout(timer); resolve(true); });
+    mainWindow.close();
+  });
+  if (!report.closeWithUnsavedChanges) report.ok = false;
   const outFile = process.env.GHOST_SMOKE_REPORT || path.join(app.getPath('userData'), 'smoke-report.json');
   fs.writeFileSync(outFile, JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));
@@ -135,7 +156,7 @@ async function runSmokeTest() {
 }
 
 app.on('second-instance', () => { if (mainWindow) { if (mainWindow.isMinimized()) mainWindow.restore(); mainWindow.focus(); } });
-app.on('window-all-closed', () => app.quit());
+app.on('window-all-closed', () => { if (!smokeTest) app.quit(); });
 app.on('will-quit', () => { server?.close().catch(() => {}); });
 app.whenReady().then(start).catch(error => {
   log('startup failed: ' + (error?.stack || error));
