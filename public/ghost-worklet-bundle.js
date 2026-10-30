@@ -146,15 +146,26 @@ class TruePeak {
  constructor(){this.n=24;this.at=0;this.data=[new Float64Array(this.n),new Float64Array(this.n)];this.kernels=[];for(let phase=1;phase<4;phase++){const k=new Float64Array(this.n),delay=this.n/2+phase/4;let sum=0;for(let j=0;j<this.n;j++){const x=j-delay,sinc=x===0?1:Math.sin(PI*x)/(PI*x),win=.42-.5*Math.cos(2*PI*j/(this.n-1))+.08*Math.cos(4*PI*j/(this.n-1));k[j]=sinc*win;sum+=k[j];}for(let j=0;j<this.n;j++)k[j]/=sum;this.kernels.push(k);}}
  tick(l,r){this.data[0][this.at]=l;this.data[1][this.at]=r;let peak=Math.max(Math.abs(l),Math.abs(r));for(let c=0;c<2;c++)for(const k of this.kernels){let v=0;for(let j=0;j<this.n;j++)v+=this.data[c][(this.at-j+this.n)%this.n]*k[j];peak=Math.max(peak,Math.abs(v));}this.at=(this.at+1)%this.n;return peak;}
 }
+// ITU-R BS.1770 K-weighting: the analog prototype behind the published 48 kHz table (as libebur128 /
+// pyloudnorm), re-derived for any rate. An RBJ shelf/high pass with the same numbers is a different
+// filter (+0.44 dB at 1 kHz instead of +0.69) and read every level about 0.25 LU low.
+function kWeighting(sr){
+ let f0=1681.974450955533,G=3.999843853973347,Q=.7071752369554196,K=Math.tan(PI*f0/sr);
+ const Vh=10**(G/20),Vb=Vh**.4996667741545416,a0=1+K/Q+K*K;
+ const shelf={b0:(Vh+Vb*K/Q+K*K)/a0,b1:2*(K*K-Vh)/a0,b2:(Vh-Vb*K/Q+K*K)/a0,a1:2*(K*K-1)/a0,a2:(1-K/Q+K*K)/a0};
+ f0=38.13547087602444;Q=.5003270373238773;K=Math.tan(PI*f0/sr);
+ const d=1+K/Q+K*K;
+ return [shelf,{b0:1,b1:-2,b2:1,a1:2*(K*K-1)/d,a2:(1-K/Q+K*K)/d}];
+}
 class Meter {
- constructor(sr,extended=false){this.sr=sr;this.extended=extended;this.tp=extended?new TruePeak():null;this.k=[new Biquad(sr),new Biquad(sr)];this.k[0].set('highShelf',1682,.707,4);this.k[1].set('high',38,.5);this.window=new Float64Array(Math.ceil(sr*.4/128)+2);this.energies=new Float64Array(this.window.length);this.at=0;this.energy=0;this.frames=0;this.peak=0;this.truePeak=0;this.sum=0;this.n=0;this.xy=0;this.xx=0;this.yy=0;this.peakHold=0;this.maxTP=0;this.lufs=-120;}
+ constructor(sr,extended=false){this.sr=sr;this.extended=extended;this.tp=extended?new TruePeak():null;this.k=kWeighting(sr).map(c=>Object.assign(new Biquad(sr),c,{off:false,key:'k-weighting'}));this.window=new Float64Array(Math.ceil(sr*.4/128)+2);this.energies=new Float64Array(this.window.length);this.at=0;this.energy=0;this.frames=0;this.peak=0;this.truePeak=0;this.sum=0;this.n=0;this.xy=0;this.xx=0;this.yy=0;this.peakHold=0;this.maxTP=0;this.lufs=-120;}
  process(left,right){let e=0;for(let i=0;i<left.length;i++){const l=left[i],r=right[i],p=Math.max(Math.abs(l),Math.abs(r));this.peak=Math.max(this.peak,p);this.truePeak=Math.max(this.truePeak,this.tp?this.tp.tick(l,r):p);this.sum+=l*l+r*r;this.n+=2;this.xy+=l*r;this.xx+=l*l;this.yy+=r*r;if(this.extended){const a=this.k[1].tick(this.k[0].tick(l,0),0),b=this.k[1].tick(this.k[0].tick(r,1),1);e+=a*a+b*b;}}
   if(this.extended){this.energy+=e-this.energies[this.at];this.frames+=left.length-this.window[this.at];this.window[this.at]=left.length;this.energies[this.at]=e;this.at=(this.at+1)%this.window.length;this.lufs=this.energy>1e-20?-.691+10*Math.log10(this.energy/this.frames):-120;}this.peakHold=Math.max(this.peakHold,this.peak);this.maxTP=Math.max(this.maxTP,this.truePeak);
  }
  read(reset=true){const result={peak:db(this.peak),truePeak:db(this.truePeak),peakHold:db(this.peakHold),maxTP:db(this.maxTP),rms:db(Math.sqrt(this.sum/Math.max(1,this.n))),lufs:this.lufs,correlation:this.xx&&this.yy?this.xy/Math.sqrt(this.xx*this.yy):null,midRms:Math.sqrt(Math.max(0,(this.xx+this.yy+2*this.xy)/(2*Math.max(1,this.n)))),sideRms:Math.sqrt(Math.max(0,(this.xx+this.yy-2*this.xy)/(2*Math.max(1,this.n))))};if(reset){this.peak=0;this.truePeak=0;this.sum=0;this.n=0;this.xy=this.xx=this.yy=0;}return result;}
 }
 function automationValue(lane,time,fallback){const pts=lane?.points;if(!lane?.enabled||!pts?.length||time<pts[0].time)return fallback;let lo=0,hi=pts.length;while(lo<hi){const mid=(lo+hi)>>1;if(pts[mid].time<=time)lo=mid+1;else hi=mid;}const a=pts[lo-1],b=pts[lo];if(!b||lane.curve==='step')return a.value;return mix(a.value,b.value,clamp((time-a.time)/(b.time-a.time),0,1));}
-const api={Processor,Biquad,DelayLine,Meter,TruePeak,automationValue,clamp,db,gain,reduction};
+const api={Processor,Biquad,DelayLine,Meter,TruePeak,kWeighting,automationValue,clamp,db,gain,reduction};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.GhostDSP=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
 
